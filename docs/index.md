@@ -1,13 +1,13 @@
 --- 
-title: "A Minimal Book Example"
-author: "Yihui Xie"
+title: "Training for GIS Analyses"
+author: "Firman Hadi"
 date: "2019-10-14"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ."
 ---
 
 # Prerequisites
