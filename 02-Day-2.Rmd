@@ -1,5 +1,11 @@
 # Hari Kedua {#day2}
 
+## Material{-}
+
+1. [Overview GNSS dan CORS di Indonesia](https://github.com/firmanhadi/training-for-gis-analyses/blob/master/PDF/Day2/GNSS_CORS_ID.pdf)
+
+## Overview GNSS dan CORS di Indonesia
+
 ## Konsep Dasar SIG
 
 ## Konsep Dasar Basis Data
