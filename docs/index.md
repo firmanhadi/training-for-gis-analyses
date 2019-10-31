@@ -1,7 +1,7 @@
 --- 
 title: "Training for GIS Analyses"
 author: "Firman Hadi"
-date: "2019-10-14"
+date: "2019-10-31"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -10,7 +10,7 @@ link-citations: yes
 description: "Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ."
 ---
 
-# Prerequisites
+# Prerequisites{-}
 
 This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
 

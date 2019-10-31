@@ -1,7 +1,7 @@
 book_filename: "Pelatihan untuk Analis SIG"
-chapter_name: "Bab"
+chapter_name: "Bab "
 repo: https://github.com/firmanhadi/training-for-gis-analyses
 output_dir: docs
-rmd_files: ["index.Rmd", "01-intro.Rmd", "02-Day-2.Rmd", "02-geospatial-database.Rmd", "03-method.Rmd","04-application.Rmd","05-summary.Rmd","06-references.Rmd"]
+rmd_files: ["index.Rmd", "01-intro.Rmd", "02-Day-2.Rmd", "geospatial-database.Rmd", "03-method.Rmd","04-application.Rmd","05-summary.Rmd","06-references.Rmd"]
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
