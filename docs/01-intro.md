@@ -1,58 +1,34 @@
 # Hari Pertama {#intro}
 
+## Materials{-}
+
+1. [Jadwal Training ](https://github.com/firmanhadi/training-for-gis-analyses/blob/master/PDF/Day1/Jadwal_Training.pdf)
+2. [K3L](https://github.com/firmanhadi/training-for-gis-analyses/blob/master/PDF/Day1/K3L.pdf)
+3. [Komunikasi Efektif di tempat kerja](https://github.com/firmanhadi/training-for-gis-analyses/blob/master/PDF/Day1/Komunikasi_Efektif.pdf)
+
+
 ## Kesehatan dan Keselamatan Kerja Lingungan (K3L)
 
 ## Komunikasi yang efektif di tempat kerja
 
 ## Membaca peta
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
-
-
-```r
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
-
-<div class="figure" style="text-align: center">
-<img src="01-intro_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
-<p class="caption">(\#fig:nice-fig)Here is a nice figure!</p>
-</div>
-
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
-
-
-```r
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
-```
 
 
 
-Table: (\#tab:nice-tab)Here is a nice table!
+<!-- Figures and tables with captions will be placed in `figure` and `table` environments, respectively. -->
 
- Sepal.Length   Sepal.Width   Petal.Length   Petal.Width  Species 
--------------  ------------  -------------  ------------  --------
-          5.1           3.5            1.4           0.2  setosa  
-          4.9           3.0            1.4           0.2  setosa  
-          4.7           3.2            1.3           0.2  setosa  
-          4.6           3.1            1.5           0.2  setosa  
-          5.0           3.6            1.4           0.2  setosa  
-          5.4           3.9            1.7           0.4  setosa  
-          4.6           3.4            1.4           0.3  setosa  
-          5.0           3.4            1.5           0.2  setosa  
-          4.4           2.9            1.4           0.2  setosa  
-          4.9           3.1            1.5           0.1  setosa  
-          5.4           3.7            1.5           0.2  setosa  
-          4.8           3.4            1.6           0.2  setosa  
-          4.8           3.0            1.4           0.1  setosa  
-          4.3           3.0            1.1           0.1  setosa  
-          5.8           4.0            1.2           0.2  setosa  
-          5.7           4.4            1.5           0.4  setosa  
-          5.4           3.9            1.3           0.4  setosa  
-          5.1           3.5            1.4           0.3  setosa  
-          5.7           3.8            1.7           0.3  setosa  
-          5.1           3.8            1.5           0.3  setosa  
+<!-- ```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'} -->
+<!-- par(mar = c(4, 4, .1, .1)) -->
+<!-- plot(pressure, type = 'b', pch = 19) -->
+<!-- ``` -->
 
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+<!-- Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab). -->
+
+<!-- ```{r nice-tab, tidy=FALSE} -->
+<!-- knitr::kable( -->
+<!--   head(iris, 20), caption = 'Here is a nice table!', -->
+<!--   booktabs = TRUE -->
+<!-- ) -->
+<!-- ``` -->
+
+<!-- You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015]. -->
