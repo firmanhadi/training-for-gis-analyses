@@ -24,7 +24,7 @@
 <meta name="author" content="Firman Hadi" />
 
 
-<meta name="date" content="2019-11-03" />
+<meta name="date" content="2019-11-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -82,6 +82,7 @@
 <li class="chapter" data-level="2.1.1" data-path="day2.html"><a href="day2.html#konsep"><i class="fa fa-check"></i><b>2.1.1</b> Konsep</a></li>
 <li class="chapter" data-level="2.1.2" data-path="day2.html"><a href="day2.html#normalisasi"><i class="fa fa-check"></i><b>2.1.2</b> Normalisasi</a></li>
 <li class="chapter" data-level="2.1.3" data-path="day2.html"><a href="day2.html#contoh"><i class="fa fa-check"></i><b>2.1.3</b> Contoh</a></li>
+<li class="chapter" data-level="2.1.4" data-path="day2.html"><a href="day2.html#pemodelan-data"><i class="fa fa-check"></i><b>2.1.4</b> Pemodelan Data</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="day2.html"><a href="day2.html#pembuatan-basis-data-dengan-postgis"><i class="fa fa-check"></i><b>2.2</b> Pembuatan Basis Data dengan PostGIS</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="day2.html"><a href="day2.html#membuat-skema-baru-dengan-pgadmin-4"><i class="fa fa-check"></i><b>2.2.1</b> Membuat Skema Baru dengan pgAdmin 4</a></li>
@@ -113,10 +114,68 @@
             <section class="normal" id="section-">
 <div id="hari-ketiga" class="section level1">
 <h1><span class="header-section-number">3</span> Hari Ketiga</h1>
-<p>Material :</p>
-<p>Data Fasilitas Kesehatan</p>
+<p><strong>Topik</strong></p>
+<ul>
+<li>membuat desain basis data relasional menggunakan diagram ER</li>
+<li>melakukan normalisasi dalam perancangan basis data</li>
+<li>membangun basis data spasial untuk analisis wilayah layanan (<em><strong>service area analyses</strong></em>) terkait fasiitas pendidikan dan kesehatan</li>
+<li>melakukan integrasi data spasial dan non-spasial</li>
+</ul>
+<p><strong>Perangkat</strong></p>
+<ul>
+<li>pgModeler
+<ul>
+<li>Download (<a href="https://pgmodeler.io/download" class="uri">https://pgmodeler.io/download</a>)</li>
+<li>Source code  (<a href="https://github.com/pgmodeler/pgmodeler.git" class="uri">https://github.com/pgmodeler/pgmodeler.git</a>)</li>
+</ul></li>
+<li>CASE tools (ArcGIS 10)</li>
+</ul>
+<p><strong>Studi Kasus</strong></p>
+<ul>
+<li>Analisis Layanan Fasilitas Kesehatan</li>
+</ul>
+<p>Data yang diperlukan :</p>
+<pre><code>1. Fasilitas 
+  - Rumah Sakit
+  - Rumah Bersalin
+  - Posyandu
+  - Puskesmas
+
+2. Batas Administrasi
+
+3. Jalan
+
+4. Jumlah penduduk
+
+5. Kepadatan penduduk (WorldPop)</code></pre>
+<ul>
+<li>Analisis Layanan Fasilitas Pendidikan (SMA)</li>
+</ul>
+<p>Data yang diperlukan:</p>
+<pre><code>1. SMA
+
+2. Batas Administrasi
+
+3. Jalan
+
+4. Jumlah penduduk
+
+5. Kepadatan penduduk (WorldPop)</code></pre>
+<p><strong>Sumber data</strong></p>
+<p>Dapat dapat diperoleh dari :</p>
+<ul>
+<li><p>OpenStreetmap (<a href="http://download.geofabrik.de/asia/indonesia.html">http://download.geofabrik.de/asia/indonesia.html</a>)</p></li>
+<li><p>Direktori Layanan ArcGIS Rest Service Kemendagri (<a href="http://gis.dukcapil.kemendagri.go.id/arcgis/rest/services/">http://gis.dukcapil.kemendagri.go.id/arcgis/rest/services/</a>)</p></li>
+</ul>
 
 </div>
+
+
+
+
+
+
+
             </section>
 
           </div>

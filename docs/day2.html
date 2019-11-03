@@ -24,7 +24,7 @@
 <meta name="author" content="Firman Hadi" />
 
 
-<meta name="date" content="2019-11-03" />
+<meta name="date" content="2019-11-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -82,6 +82,7 @@
 <li class="chapter" data-level="2.1.1" data-path="day2.html"><a href="day2.html#konsep"><i class="fa fa-check"></i><b>2.1.1</b> Konsep</a></li>
 <li class="chapter" data-level="2.1.2" data-path="day2.html"><a href="day2.html#normalisasi"><i class="fa fa-check"></i><b>2.1.2</b> Normalisasi</a></li>
 <li class="chapter" data-level="2.1.3" data-path="day2.html"><a href="day2.html#contoh"><i class="fa fa-check"></i><b>2.1.3</b> Contoh</a></li>
+<li class="chapter" data-level="2.1.4" data-path="day2.html"><a href="day2.html#pemodelan-data"><i class="fa fa-check"></i><b>2.1.4</b> Pemodelan Data</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="day2.html"><a href="day2.html#pembuatan-basis-data-dengan-postgis"><i class="fa fa-check"></i><b>2.2</b> Pembuatan Basis Data dengan PostGIS</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="day2.html"><a href="day2.html#membuat-skema-baru-dengan-pgadmin-4"><i class="fa fa-check"></i><b>2.2.1</b> Membuat Skema Baru dengan pgAdmin 4</a></li>
@@ -119,7 +120,7 @@
 <!-- ## Konsep Dasar SIG -->
 </div>
 <div id="perancangan-basis-data" class="section level2">
-<h2><span class="header-section-number">2.1</span> Perancangan Basis Data</h2>
+<h2><span class="header-section-number">2.1</span> Perancangan Basis Data<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></h2>
 <div id="konsep" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> Konsep</h3>
 <p>Dalam membangun basis data relasional dari awal, adalah penting untuk memberikan waktu lebih dalam memikirkan <strong><em>business process</em></strong> yang terjadi. Basis data yang tidak dirancang dengan baik akan memberikan masalah bagi pengguna, termasuk :</p>
@@ -141,39 +142,58 @@
 </div>
 <div id="normalisasi" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Normalisasi</h3>
-<p>The process of designing a database according to the rules described above is formally referred to as normalization. All database designers carry out normalization, whether they use that term to describe the process or not. Hardcore database designers not only use the term normalization, they’re also able to express the extent to which a database has been normalized:</p>
-<p>First normal form (1NF) describes a database whose tables represent distinct entities, have no duplicative columns (e.g., no Author1, Author2, Author3), and have a column or columns that uniquely identify each row (i.e., a primary key). Databases meeting these requirements are said to be in first normal form.
-Second normal form (2NF) describes a database that is in 1NF and also avoids having non-key columns that are dependent on a subset of the primary key. It’s understandable if that seems confusing, have a look at this simple example [www.1keydata.com/database-normalization/second-normal-form-2nf.php]
-In the example, CustomerID and StoreID form a composite key – that is, the combination of the values from those columns uniquely identifies the rows in the table. In other words, only one row in the table will have a CustomerID of 1 together with a StoreID of 1, only one row will have a CustomerID of 1 together with a StoreID of 3, etc. The PurchaseLocation column depends on the StoreID column, which is only part of the primary key. As shown, the solution to putting the table in 2NF is to move the StoreID-PurchaseLocation relationship into a separate table. This should make intuitive sense as it spells out the PurchaseLocation values just once rather than spelling them out repeatedly.
-Third normal form (3NF) describes a database that is in 2NF and also avoids having columns that derive their values from columns other than the primary key. The wage field example mentioned above is a clear violation of the 3NF rule.
-In most cases, normalizing a database so that it is in 3NF is sufficient. However, it is worth pointing out that there are other normal forms including Boyce-Codman normal form (BCNF, or 3.5NF), fourth normal form (4NF) and fifth normal form (5NF). Rather than spend time going through examples of these other forms, I encourage you to simply keep in mind the basic characteristics of a well-designed table listed above. If you follow those guidelines carefully, in particular, constantly being on the lookout for redundant data, you should be able to reap the benefits of normalization.</p>
-<p>Generally speaking, a higher level of normalization results in a higher number of tables. And as the number of tables increases, the costs of bringing together data through joins increases as well, both in terms of the expertise required in writing the queries and in the performance of the database. In other words, the normalization process can sometimes yield a design that is too difficult to implement or that performs too slowly. Thus, it is important to bear in mind that database design is often a balancing of concerns related to data integrity and storage efficiency (why we normalize) versus concerns related to its usability (getting data into and out of the database).</p>
-<p>Earlier, we talked about city/state combinations being redundant with zip code. That is a great example of a situation in which de-normalizing the data might make sense. I have no hard data on this, but I would venture to say that the vast majority of relational databases that store these three attributes keep them all together in the same table. Yes, there is a benefit to storing the city and state names once in the zip code table (less chance of a misspelling, less disk space used). However, my guess is that the added complexity of joining the city/state together with the rest of the address elements outweighs that benefit to most database designers.</p>
+<p>Proses perancangan sebuah basis data seperti yang diuraikan dalam aturan di atas, secara formal disebut dengan normalisasi. Semua perancang basis data melakukan normalisasi, baik mereka menggunakan istilah tersebut untuk menggambarkan prosesnya atau tidak.</p>
+<p>Ada tiga tingkatan normalisasi, yaitu :</p>
+<ul>
+<li><strong>First Normal Form (1NF)</strong></li>
+</ul>
+<p>menggambarkan sebuah basis data yang tabel-tabelnya merepresentasikan entitas yang unik, tidak ada duplikasi kolom (misal, tidak ada Author1, Author2, Author3), memiliki satu atau banyak kolom yang merupakan identitas unik dari setiap baris (primary key, PK). Basis data yang memenuhi persyaratan ini termasuk ke dalam First Normal Form (1NF).</p>
+<ul>
+<li><strong>Second Normal Form (2NF)</strong></li>
+</ul>
+<p>menggambarkan sebuah basis data yang dalam kondisi 1NF dan juga menghindari kolom non-key yang tergantung dari subset Primary Key. Silakan lihat penjelasan di tautan berikut untuk melihat contoh sederhananya [www.1keydata.com/database-normalization/second-normal-form-2nf.php].</p>
+<p>Dalam contoh di tautan tersebut, CustomerID dan StoreID membangun sebuah composite key (kunci gabungan) – gabungan dari nilai kedua kolom tersebut bersifat unik, menjadi identitas setiap kolom dalam tabel. Dalam kata lain, hanya akan ada satu baris dalam tabel yang memiliki CustomerID 1 dengan StoreID 1, hanya akan ada satu baris dengan CustomerID 1 dan StoreID 3, dan seterusnya. Kolom PurchaseLocation tergantung dari kolom StoreID, yang merupakan sebagian dari Primary Key. Dengan demikian, solusi untuk menempatkan tabel ke dalam 2NF adalah dengan memindahkan hubungan StoreID-PurchaseLocation ke dalam tabel terpisah. Pendekatan ini bersifat intuitif di mana kita dapat membaca nilai PurchaseLocation satu kali dibandingkan berulang kali</p>
+<ul>
+<li><strong>Third Normal Form (3NF)</strong></li>
+</ul>
+<p>menggambarkan sebuah basis data dalam tingkat 2NF dan juga menghindari kolom yang nilainya diturunkan dari kolom lain yang bukan Primary Key. Contoh kolom Wage seperti disebutkan di atas adalah sebuah pelanggaran aturan 3NF.</p>
+<p>Dalam banyak kasus, normalisasi basis data hingga tingkatan 3NF sudah cukup. Perlu ditambahkan juga ada format normalisasi lain seperti Boyce-Codman Normal Form (BCNF, atau 3.5NF), Fourth Normal Form (4NF) dan Fifth Normal Form (5NF). Namun demikian, daripada membuang waktu lebih lama dalam menggambarkan normalisasi tingkat lanjut ini, yang paling simpel adalah mengingat karakteristik dasar dari sebuah tabel yang didesain secara baik seperti di atas. Apabila Anda mengikuti petunjuk tersebut secara seksama, khususnya secara konsisten mencari data berlebih (redundant), Anda akan mampu melakukan normalisasi basis data.</p>
+<p>Singkatnya, semakin tinggi tingkatan normalisasi, maka akan semakin banyak jumlah tabel yang ada dalam basis data. Semakin banyak jumlah tabel, usaha untuk menggabungkan data dengan cara <em><strong>joins</strong></em> juga akan semakin sulit, dalam arti semakin tinggi level keahlian yang diperlukan untuk membuat queri dan dalam meningkatkan performa basis data. Proses normalisasi kadang-kadang menghasilkan desain yang terlalu sulit untuk diimplementasikan atau kalaupun dapat dibuat, ia memiliki performa yang buruk (baca: lambat). Pada dasarnya, perancangan basis data adalah menyeimbangkan antara kebutuhan yang terkait dengan integritas data dan efisiensi penyimpanan data dengan kebutuhan yang terkait dengan penggunaannya (insert, update, query).</p>
 </div>
 <div id="contoh" class="section level3">
 <h3><span class="header-section-number">2.1.3</span> Contoh</h3>
-<p>Let’s work through an example design scenario to demonstrate how these rules might be applied to produce an efficient database. Ice cream entrepreneurs Jen and Barry have opened their business and now need a database to track orders. When taking an order, they record the customer’s name, the details of the order such as the flavors and quantities of ice cream needed, the date the order is needed, and the delivery address. Their database needs to help them answer two important questions:</p>
-<p>Which orders are due to be shipped within the next two days?
-Which flavors must be produced in greater quantities?
-A first crack at storing the order information might look like this:</p>
-<div class="figure">
-<img src="img/tab1_order.png" alt="Pesanan Pelanggan" />
-<p class="caption">Pesanan Pelanggan</p>
+<p>Untuk memahami proses normalisasi basis data, contoh berikut memperlihatkan bagaimana aturan-aturan yang telah dijelaskan dapat diterapkan untuk menghasilkan sebuah basis data yang efisien. Pengusaha Jen dan Barry mengembangkan usaha es krim dan membutuhkan sebuah basis data untuk menjejak pesanan (order). Ketika menerima pesanan, mereka mencatat nama pelanggannya, detil pesanan seperti rasa (flavors) dan jumlah es krim yang dibutuhkan, tanggal pesanan dan alamat pengiriman pesanan. Basis data ini diharapkan dapat membantu mereka dalam menjawab dua penting sebagai berikut :</p>
+<ul>
+<li>Pesanan mana yang tenggatnya dalam 2 hari ke depan?</li>
+<li>Perasa apa yang harus dibuat dalam jumlah yang lebih banyak?</li>
+</ul>
+<p>Tabel pesanan yang dapat dibuat pertama kali adalah seperti gambar berikut :</p>
+<p><img src="img/tab1_order.png" /></p>
+<p>Dengan skema di atas, masalah yang muncul adalah ketika mereka akan membuat sebuah query yang menghitung jumlah perasa vanilla yang diperlukan sesuai pesanan. Jumlahnya bercampur dengan nama perasa dan perasa apapun dapat dimasukkan ke dalam daftar di bagian mana saja (tidak akan konsisten dituliskan dalam kolom pertama atau kedua).</p>
+<p>Oleh karenanya, desain seperti berikut sepertinya lebih baik:</p>
+<p><img src="img/tab2_order.png" />
+Skema yang kedua ini lebih baik karena memungkinkan mereka untuk melakukan query perasa tertentu dan menjumlahkan kuantitasnya. Namun untuk menghitung perasa vanila yang diperlukan, mereka harus menghitung jumlahnya dari tiga kolom berbeda. Desain ini juga tidak akan dapat menjawab permasalahan apabila satu orang pelanggan memesan lebih dari tiga perasa.</p>
+<p>Desain seperti berikut mungkin menjawab pertanyaan di atas:</p>
+<p><img src="img/tab3_order.png" />
+Desain seperti di atas memungkinkan penghitungan kuantitas perasa vanila yang dibutuhkan sesuai pesanan dengan lebih mudah. Sayangnya, desain tersebut menghasilkan data berlebih (redundant) dan menuliskan pesanan dari satu pelanggan ke dalam banyak baris (record).</p>
+<p>Desain yang paling baik adalah dengan memisahkan data ke dalam empat entitas (Customers, Flavors, Orders and Order Items):</p>
+<p><img src="img/tab4_order.png" /></p>
+<p><img src="img/tab5_order.png" />
+<img src="img/tab6_order.png" /></p>
+<p><img src="img/tab7_order.png" /></p>
+<p>Apabila mereka hendak mengimplementasikan desain seperti di atas dalam MS-Access, query yang diperlukan untuk menampilkan pesanan yang harus dikirim dalam 2 hari ke depan adalah seperti yang terlihat pada GUI :</p>
+<p><img src="img/tab8_order.png" /></p>
 </div>
-<div class="figure">
-<img src="img/tab2_order.png" alt="Pesanan Pelanggan 2" />
-<p class="caption">Pesanan Pelanggan 2</p>
-</div>
-<p><img src="img/tab3_order.png" alt="Pesanan Pelanggan" />
-### Pemodelan Data</p>
-<p>Whether it’s just a quick sketch on a napkin or a months-long process involving many stakeholders, the life cycle of any effective database begins with data modeling. Data modeling itself begins with a requirements analysis, which can be more or less formal, depending on the scale of the project. One of the common products of the data modeling process is an entity-relationship (ER) diagram. This sort of diagram depicts the categories of data that must be stored (the entities) along with the associations (or relationships) between them. The Wikipedia entry on ER diagrams is quite good, so I’m going to point you there to learn more:</p>
-<p>Entity-relationship model article at Wikipedia [<a href="http://en.wikipedia.org/wiki/Entity-relationship_model" class="uri">http://en.wikipedia.org/wiki/Entity-relationship_model</a>]</p>
-<p>An ER diagram is essentially a blueprint for a database structure. Some RDBMS’s provide diagramming tools (e.g., Oracle Designer, MySQL Workbench) and often include the capability of automatically creating the table structure conceptualized in the diagram.</p>
-<p>In a GIS context, Esri makes it possible to create new geodatabases based on diagrams authored using CASE (Computer-Aided Software Engineering) tools. This blog post, Using Case tools in Arc GIS 10, [<a href="http://blogs.esri.com/esri/arcgis/2010/08/05/using-case-tools-in-arcgis" class="uri">http://blogs.esri.com/esri/arcgis/2010/08/05/using-case-tools-in-arcgis</a> -10/] provides details if you are interested in learning more.</p>
+<div id="pemodelan-data" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> Pemodelan Data</h3>
+<p>Pemodelan data dimulai denagn analisis kebutuhan, dapat dilakukan secara format atau informal, tergantung dari skala proyeknya. Salah satu perangkat umum yang biasa digunakan dalam proses pemodelan adalah diagrm entity-relationship (ER). Diagram ER mengilustrasikan kategori data yang harus disimpan (entitas), juga hubungan (relasi) antara entitas-entitas yang didefinisikan.</p>
+<p>Artikel model Entity-relationship dapat dibaca doi Wikipedia [<a href="http://en.wikipedia.org/wiki/Entity-relationship_model" class="uri">http://en.wikipedia.org/wiki/Entity-relationship_model</a>]</p>
+<p>Sebuah diagram ER pada dasarnya adalah cetak biru dari satu struktur basis data. Beberapa RDBMS menyediakan perangkat untuk menggambar diagram ER (contohnya Oracle Designer, MySQL workbench, PostgreSQL pgModeler) dan juga kadang menyediakan kemampuan untuk membuat struktur tabel yang telah dikonsepkan dalam diagram.</p>
+<p>Dalam konteks GIS, ESRI menyediakan sebuah perangkat yang memungkinkan kita membuat geodatabase baru berdasarkan diagram dengan CASE (Computer-Aided Software Engineering) tools. Untuk lebih lanjutnya, Anda dapat membaca blog ini yang menyelaskan secara detil penggunaan CASE, Using Case tools in Arc GIS 10, [<a href="http://blogs.esri.com/esri/arcgis/2010/08/05/using-case-tools-in-arcgis" class="uri">http://blogs.esri.com/esri/arcgis/2010/08/05/using-case-tools-in-arcgis</a> -10/].</p>
 </div>
 </div>
 <div id="pembuatan-basis-data-dengan-postgis" class="section level2">
-<h2><span class="header-section-number">2.2</span> Pembuatan Basis Data dengan PostGIS</h2>
+<h2><span class="header-section-number">2.2</span> Pembuatan Basis Data dengan PostGIS<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></h2>
 <div id="membuat-skema-baru-dengan-pgadmin-4" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Membuat Skema Baru dengan pgAdmin 4</h3>
 <p>Instalasi <strong>PgAdmin 4</strong> sangat mudah. Anda tinggal men-<em>download</em>-nya dari <a href="https://www.pgadmin.org/download/">download page</a> di situsnya, dan laksanakan proses instalasi di <strong>workstation</strong> hingga selesai. Sebagai catatan, Anda akan diminta untuk membuat <strong>master password</strong>, yaitu <em>password</em> yang digunakan saat pertama kali mengakses <strong>PgAdmin 4</strong> di <em>workstation</em> Anda.</p>
@@ -377,6 +397,13 @@ A first crack at storing the order information might look like this:</p>
 
 </div>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Sumber: <a href="https://www.e-education.psu.edu/spatialdb/l2_p4.html">https://www.e-education.psu.edu/spatialdb/l2_p4.html</a><a href="day2.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Sumber: <a href="https://github.com/andyprasetya/webmap-development-server">https://github.com/andyprasetya/webmap-development-server</a><a href="day2.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

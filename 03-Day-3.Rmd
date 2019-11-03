@@ -1,7 +1,66 @@
 # Hari Ketiga
 
-Material :
+**Topik** 
 
-Data Fasilitas Kesehatan
+- membuat desain basis data relasional menggunakan diagram ER
+- melakukan normalisasi dalam perancangan basis data
+- membangun basis data spasial untuk analisis wilayah layanan (_**service area analyses**_) terkait fasiitas pendidikan dan kesehatan
+- melakukan integrasi data spasial dan non-spasial
+
+
+**Perangkat**
+
+- pgModeler 
+  - Download (https://pgmodeler.io/download)
+  - Source code  (https://github.com/pgmodeler/pgmodeler.git)
+
+- CASE tools (ArcGIS 10)
+
+**Studi Kasus**
+
+- Analisis Layanan Fasilitas Kesehatan
+
+Data yang diperlukan :
+
+```
+1. Fasilitas 
+  - Rumah Sakit
+  - Rumah Bersalin
+  - Posyandu
+  - Puskesmas
+
+2. Batas Administrasi
+
+3. Jalan
+
+4. Jumlah penduduk
+
+5. Kepadatan penduduk (WorldPop)
+```
+
+- Analisis Layanan Fasilitas Pendidikan (SMA)
+
+Data yang diperlukan:
+
+```
+1. SMA
+
+2. Batas Administrasi
+
+3. Jalan
+
+4. Jumlah penduduk
+
+5. Kepadatan penduduk (WorldPop)
+```
+
+**Sumber data**
+
+Dapat dapat diperoleh dari :
+
+- OpenStreetmap ([http://download.geofabrik.de/asia/indonesia.html](http://download.geofabrik.de/asia/indonesia.html))
+
+- Direktori Layanan ArcGIS Rest Service Kemendagri  ([http://gis.dukcapil.kemendagri.go.id/arcgis/rest/services/](http://gis.dukcapil.kemendagri.go.id/arcgis/rest/services/))
+
 
 
