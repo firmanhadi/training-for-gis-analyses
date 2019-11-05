@@ -1,0 +1,93 @@
+# Hari Keempat
+
+**Topik**
+
+## Service Area Analyses di QGIS
+
+1. Load layer jalan dan fasilitas kesehatan dalam format UTM (Zona 48N).
+
+2. Load raster kepadatan penduduk
+
+3. Melakukan analisis ***service area***
+
+- Processing > Network analyses > Service area
+
+4. Create buffer from service area lines
+
+5. Calculate raster using vector
+
+- Zonal statistics
+
+
+## Non-spatial SQL Queries 
+
+1. Membuat tabel baru 
+
+Tujuan : Membuat tabel baru dari tabel yang sudah ada dengan kolom terpilih
+
+```
+create table kelurahan as select geom, giskemen_2, giskemen_4, giskemen18,giskemen19,giskemen20,giskemen21, giskemen27, giskemen28 from public.desa_batam
+```
+
+2. Rename column
+
+Tujuan : Mengganti nama kolom tertentu
+
+```
+alter table public.kelurahan rename column giskemen_2 to nama_desa;
+```
+
+3. Mengubah Primary Key
+
+```
+ALTER TABLE desa_batam DROP CONSTRAINT id;
+```
+
+```
+KEY and PRIMARY KEY candidates properly.
+ALTER TABLE desa_batam RENAME COLUMN giskemen_4 TO id;
+```
+
+```
+ALTER TABLE desa_batam ADD PRIMARY KEY (id);
+```
+
+4. Menambah Kolom
+
+```
+alter table public.kelurahan add column giskemen33 from public.desa where giskemen_4.public.desa.id = giskemen_4.public.kelurahan.id
+```
+
+
+## Spatial SQL Queries
+
+### Adjacent
+
+1. Create New Layer
+
+```
+SELECT * into qlayer from kelurahan where st_touches(kelurahan.geometry, ( SELECT geometry from kelurahan where nama_desa = 'SADAI'))
+```
+
+2. Create As View
+
+```CREATE VIEW TestView AS  SELECT * from kelurahan where st_touches(kelurahan.geom, ( SELECT geom from kelurahan where nama_desa = 'SADAI'));```
+
+
+## Routing 
+
+1. Menambahkan ekstensi pgrouting 
+
+```
+sudo apt-get install postgresql-10-pgrouting```
+atau 
+```sudo apt-get install postgreql-12-pgrouting```
+
+```create extension pgrouting();```
+
+2. Konversi data OSM ke route
+
+```
+import OSM data to pgrouting
+osm2pgrouting -f batam.osm --dbname batam -U postgres -W password
+```

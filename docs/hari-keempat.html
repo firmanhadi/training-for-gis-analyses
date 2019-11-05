@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1 Hari Pertama | Training for GIS Analyses</title>
+  <title>4 Hari Keempat | Training for GIS Analyses</title>
   <meta name="description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1 Hari Pertama | Training for GIS Analyses" />
+  <meta property="og:title" content="4 Hari Keempat | Training for GIS Analyses" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Hari Pertama | Training for GIS Analyses" />
+  <meta name="twitter:title" content="4 Hari Keempat | Training for GIS Analyses" />
   
   <meta name="twitter:description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="day2.html"/>
+<link rel="prev" href="hari-ketiga.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -122,34 +122,96 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">1</span> Hari Pertama</h1>
-<div id="materials" class="section level2 unnumbered">
-<h2>Materials</h2>
+<div id="hari-keempat" class="section level1">
+<h1><span class="header-section-number">4</span> Hari Keempat</h1>
+<p><strong>Topik</strong></p>
+<div id="service-area-analyses-di-qgis" class="section level2">
+<h2><span class="header-section-number">4.1</span> Service Area Analyses di QGIS</h2>
 <ol style="list-style-type: decimal">
-<li><a href="https://github.com/firmanhadi/training-for-gis-analyses/blob/master/PDF/Day1/Jadwal_Training.pdf">Jadwal Training</a></li>
-<li><a href="https://github.com/firmanhadi/training-for-gis-analyses/blob/master/PDF/Day1/K3L.pdf">K3L</a></li>
-<li><a href="https://github.com/firmanhadi/training-for-gis-analyses/blob/master/PDF/Day1/Komunikasi_Efektif.pdf">Komunikasi Efektif di tempat kerja</a></li>
+<li><p>Load layer jalan dan fasilitas kesehatan dalam format UTM (Zona 48N).</p></li>
+<li><p>Load raster kepadatan penduduk</p></li>
+<li><p>Melakukan analisis <strong><em>service area</em></strong></p></li>
 </ol>
+<ul>
+<li>Processing &gt; Network analyses &gt; Service area</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Create buffer from service area lines</p></li>
+<li><p>Calculate raster using vector</p></li>
+</ol>
+<ul>
+<li>Zonal statistics</li>
+</ul>
 </div>
-<div id="kesehatan-dan-keselamatan-kerja-lingungan-k3l" class="section level2">
-<h2><span class="header-section-number">1.1</span> Kesehatan dan Keselamatan Kerja Lingungan (K3L)</h2>
+<div id="non-spatial-sql-queries" class="section level2">
+<h2><span class="header-section-number">4.2</span> Non-spatial SQL Queries</h2>
+<ol style="list-style-type: decimal">
+<li>Membuat tabel baru</li>
+</ol>
+<p>Tujuan : Membuat tabel baru dari tabel yang sudah ada dengan kolom terpilih</p>
+<pre><code>create table kelurahan as select geom, giskemen_2, giskemen_4, giskemen18,giskemen19,giskemen20,giskemen21, giskemen27, giskemen28 from public.desa_batam</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Rename column</li>
+</ol>
+<p>Tujuan : Mengganti nama kolom tertentu</p>
+<pre><code>alter table public.kelurahan rename column giskemen_2 to nama_desa;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Mengubah Primary Key</li>
+</ol>
+<pre><code>ALTER TABLE desa_batam DROP CONSTRAINT id;</code></pre>
+<pre><code>KEY and PRIMARY KEY candidates properly.
+ALTER TABLE desa_batam RENAME COLUMN giskemen_4 TO id;</code></pre>
+<pre><code>ALTER TABLE desa_batam ADD PRIMARY KEY (id);</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Menambah Kolom</li>
+</ol>
+<pre><code>alter table public.kelurahan add column giskemen33 from public.desa where giskemen_4.public.desa.id = giskemen_4.public.kelurahan.id</code></pre>
 </div>
-<div id="komunikasi-yang-efektif-di-tempat-kerja" class="section level2">
-<h2><span class="header-section-number">1.2</span> Komunikasi yang efektif di tempat kerja</h2>
+<div id="spatial-sql-queries" class="section level2">
+<h2><span class="header-section-number">4.3</span> Spatial SQL Queries</h2>
+<div id="adjacent" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Adjacent</h3>
+<ol style="list-style-type: decimal">
+<li>Create New Layer</li>
+</ol>
+<pre><code>SELECT * into qlayer from kelurahan where st_touches(kelurahan.geometry, ( SELECT geometry from kelurahan where nama_desa = &#39;SADAI&#39;))</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Create As View</li>
+</ol>
+<p><code>CREATE VIEW TestView AS  SELECT * from kelurahan where st_touches(kelurahan.geom, ( SELECT geom from kelurahan where nama_desa = 'SADAI'));</code></p>
 </div>
-<div id="membaca-peta" class="section level2">
-<h2><span class="header-section-number">1.3</span> Membaca peta</h2>
+</div>
+<div id="routing" class="section level2">
+<h2><span class="header-section-number">4.4</span> Routing</h2>
+<ol style="list-style-type: decimal">
+<li>Menambahkan ekstensi pgrouting</li>
+</ol>
+<p><code>sudo apt-get install postgresql-10-pgrouting</code>
+atau
+<code>sudo apt-get install postgreql-12-pgrouting</code></p>
+<p><code>create extension pgrouting();</code></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Konversi data OSM ke route</li>
+</ol>
+<pre><code>import OSM data to pgrouting
+osm2pgrouting -f batam.osm --dbname batam -U postgres -W password</code></pre>
 
 </div>
 </div>
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="day2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="hari-ketiga.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
