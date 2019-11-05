@@ -90,3 +90,27 @@ atau
 import OSM data to pgrouting
 osm2pgrouting -f batam.osm --dbname batam -U postgres -W password
 ```
+## Backup dan Restore
+
+- **Presentasi :** 
+[https://gitpitch.com/firmanhadi/lapan-okt-19/master#/](https://gitpitch.com/firmanhadi/lapan-okt-19/master/)
+
+- **Video Proof of Concept**
+
+  - Backup dengan pgBarman
+  
+  [https://www.dropbox.com/s/tk2g296cc0pv6dh/backup_poc_v1.mkv?dl=0](https://www.dropbox.com/s/tk2g296cc0pv6dh/backup_poc_v1.mkv?dl=0)
+  
+  - Pooling Mechanism
+  
+  [https://www.dropbox.com/s/nl3xa2bnlay6ppk/pooling_mechanism_poc_v1.mkv?dl=0](https://www.dropbox.com/s/nl3xa2bnlay6ppk/pooling_mechanism_poc_v1.mkv?dl=0)
+  
+  [https://www.dropbox.com/s/dtugpqi6k8hcsc3/pooling_mechanism_poc_v2.mkv?dl=0](https://www.dropbox.com/s/dtugpqi6k8hcsc3/pooling_mechanism_poc_v2.mkv?dl=0)
+
+  - Failover Mechanism
+  
+  [https://www.dropbox.com/s/j5f9ks21db18ebv/replication_failover_poc_v1.mkv?dl=0](https://www.dropbox.com/s/j5f9ks21db18ebv/replication_failover_poc_v1.mkv?dl=0)
+  
+- **Software**
+
+  - [https://sqlbackupandftp.com/postgresql-backup](https://sqlbackupandftp.com/postgresql-backup)
