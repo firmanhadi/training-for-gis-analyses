@@ -25,7 +25,4 @@ LTIME = +0.2663 * CARVOLUME + 0.6984 * LLENGTH + 0.0203 * LPOP + 0.0605 * TWOWAY
 ### Menghitung jumlah rumah di sempadan sungai
 
 
-![](./img/model.jpeg)
-\begin{align}
-Hasil dari Mbak Siti
-\end{align}
+![](./img/gismodel4.png)
