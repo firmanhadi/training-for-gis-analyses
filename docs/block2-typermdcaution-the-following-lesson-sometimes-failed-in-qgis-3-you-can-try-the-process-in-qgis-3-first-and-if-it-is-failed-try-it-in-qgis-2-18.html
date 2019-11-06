@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 {block2, type='rmdcaution'} # The following lesson sometimes failed in QGIS 3. You can try the process in QGIS 3 first and if it is failed, try it in QGIS 2.18 # | Training for GIS Analyses</title>
+  <meta name="description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 {block2, type='rmdcaution'} # The following lesson sometimes failed in QGIS 3. You can try the process in QGIS 3 first and if it is failed, try it in QGIS 2.18 # | Training for GIS Analyses" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 {block2, type='rmdcaution'} # The following lesson sometimes failed in QGIS 3. You can try the process in QGIS 3 first and if it is failed, try it in QGIS 2.18 # | Training for GIS Analyses" />
+  
+  <meta name="twitter:description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
+  
+
+<meta name="author" content="Firman Hadi" />
+
+
+<meta name="date" content="2019-11-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="hari-keenam.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Training for GIS Analyses</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pengantar</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Hari Pertama</a><ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#materials"><i class="fa fa-check"></i>Materials</a></li>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#kesehatan-dan-keselamatan-kerja-lingungan-k3l"><i class="fa fa-check"></i><b>1.1</b> Kesehatan dan Keselamatan Kerja Lingungan (K3L)</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#komunikasi-yang-efektif-di-tempat-kerja"><i class="fa fa-check"></i><b>1.2</b> Komunikasi yang efektif di tempat kerja</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#membaca-peta"><i class="fa fa-check"></i><b>1.3</b> Membaca peta</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="day2.html"><a href="day2.html"><i class="fa fa-check"></i><b>2</b> Hari Kedua</a><ul>
+<li class="chapter" data-level="" data-path="day2.html"><a href="day2.html#material"><i class="fa fa-check"></i>Material</a></li>
+<li class="chapter" data-level="2.1" data-path="day2.html"><a href="day2.html#perancangan-basis-data"><i class="fa fa-check"></i><b>2.1</b> Perancangan Basis Data</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="day2.html"><a href="day2.html#konsep"><i class="fa fa-check"></i><b>2.1.1</b> Konsep</a></li>
+<li class="chapter" data-level="2.1.2" data-path="day2.html"><a href="day2.html#normalisasi"><i class="fa fa-check"></i><b>2.1.2</b> Normalisasi</a></li>
+<li class="chapter" data-level="2.1.3" data-path="day2.html"><a href="day2.html#contoh"><i class="fa fa-check"></i><b>2.1.3</b> Contoh</a></li>
+<li class="chapter" data-level="2.1.4" data-path="day2.html"><a href="day2.html#pemodelan-data"><i class="fa fa-check"></i><b>2.1.4</b> Pemodelan Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="day2.html"><a href="day2.html#pembuatan-basis-data-dengan-postgis"><i class="fa fa-check"></i><b>2.2</b> Pembuatan Basis Data dengan PostGIS</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="day2.html"><a href="day2.html#membuat-skema-baru-dengan-pgadmin-4"><i class="fa fa-check"></i><b>2.2.1</b> Membuat Skema Baru dengan pgAdmin 4</a></li>
+<li class="chapter" data-level="2.2.2" data-path="day2.html"><a href="day2.html#postgis-shapefile-and-dbf-loaderexporter"><i class="fa fa-check"></i><b>2.2.2</b> PostGIS Shapefile and DBF Loader/Exporter</a></li>
+<li class="chapter" data-level="2.2.3" data-path="day2.html"><a href="day2.html#download-data"><i class="fa fa-check"></i><b>2.2.3</b> Download Data</a></li>
+<li class="chapter" data-level="2.2.4" data-path="day2.html"><a href="day2.html#impor-data"><i class="fa fa-check"></i><b>2.2.4</b> Impor Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="hari-ketiga.html"><a href="hari-ketiga.html"><i class="fa fa-check"></i><b>3</b> Hari Ketiga</a><ul>
+<li class="chapter" data-level="3.1" data-path="hari-ketiga.html"><a href="hari-ketiga.html#praktek-perancangan-basis-data"><i class="fa fa-check"></i><b>3.1</b> Praktek Perancangan Basis Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="hari-keempat.html"><a href="hari-keempat.html"><i class="fa fa-check"></i><b>4</b> Hari Keempat</a><ul>
+<li class="chapter" data-level="4.1" data-path="hari-keempat.html"><a href="hari-keempat.html#service-area-analyses-di-qgis"><i class="fa fa-check"></i><b>4.1</b> Service Area Analyses di QGIS</a></li>
+<li class="chapter" data-level="4.2" data-path="hari-keempat.html"><a href="hari-keempat.html#non-spatial-sql-queries"><i class="fa fa-check"></i><b>4.2</b> Non-spatial SQL Queries</a></li>
+<li class="chapter" data-level="4.3" data-path="hari-keempat.html"><a href="hari-keempat.html#spatial-sql-queries"><i class="fa fa-check"></i><b>4.3</b> Spatial SQL Queries</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="hari-keempat.html"><a href="hari-keempat.html#adjacent"><i class="fa fa-check"></i><b>4.3.1</b> Adjacent</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="hari-keempat.html"><a href="hari-keempat.html#routing"><i class="fa fa-check"></i><b>4.4</b> Routing</a></li>
+<li class="chapter" data-level="4.5" data-path="hari-keempat.html"><a href="hari-keempat.html#backup-dan-restore"><i class="fa fa-check"></i><b>4.5</b> Backup dan Restore</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="hari-kelima.html"><a href="hari-kelima.html"><i class="fa fa-check"></i><b>5</b> Hari Kelima</a><ul>
+<li class="chapter" data-level="5.1" data-path="hari-kelima.html"><a href="hari-kelima.html#conceptual-framework"><i class="fa fa-check"></i><b>5.1</b> Conceptual framework</a></li>
+<li class="chapter" data-level="5.2" data-path="hari-kelima.html"><a href="hari-kelima.html#data"><i class="fa fa-check"></i><b>5.2</b> Data</a></li>
+<li class="chapter" data-level="5.3" data-path="hari-kelima.html"><a href="hari-kelima.html#final-regression-model"><i class="fa fa-check"></i><b>5.3</b> Final regression model</a></li>
+<li class="chapter" data-level="5.4" data-path="hari-kelima.html"><a href="hari-kelima.html#praktek-pemodelan-sig"><i class="fa fa-check"></i><b>5.4</b> Praktek Pemodelan SIG</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="hari-kelima.html"><a href="hari-kelima.html#menghitung-jumlah-rumah-di-sempadan-sungai"><i class="fa fa-check"></i><b>5.4.1</b> Menghitung jumlah rumah di sempadan sungai</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="hari-kelima.html"><a href="hari-kelima.html#analisis-sig-dasar"><i class="fa fa-check"></i><b>5.5</b> Analisis SIG Dasar</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="hari-kelima.html"><a href="hari-kelima.html#overlay"><i class="fa fa-check"></i><b>5.5.1</b> Overlay</a></li>
+<li class="chapter" data-level="5.5.2" data-path="hari-kelima.html"><a href="hari-kelima.html#buffer"><i class="fa fa-check"></i><b>5.5.2</b> Buffer</a></li>
+<li class="chapter" data-level="5.5.3" data-path="hari-kelima.html"><a href="hari-kelima.html#menghitung-jarak"><i class="fa fa-check"></i><b>5.5.3</b> Menghitung jarak</a></li>
+<li class="chapter" data-level="5.5.4" data-path="hari-kelima.html"><a href="hari-kelima.html#query-by-attribute"><i class="fa fa-check"></i><b>5.5.4</b> Query by attribute</a></li>
+<li class="chapter" data-level="5.5.5" data-path="hari-kelima.html"><a href="hari-kelima.html#clip"><i class="fa fa-check"></i><b>5.5.5</b> Clip</a></li>
+<li class="chapter" data-level="5.5.6" data-path="hari-kelima.html"><a href="hari-kelima.html#intersect"><i class="fa fa-check"></i><b>5.5.6</b> Intersect</a></li>
+<li class="chapter" data-level="5.5.7" data-path="hari-kelima.html"><a href="hari-kelima.html#spatial-query"><i class="fa fa-check"></i><b>5.5.7</b> Spatial query</a></li>
+<li class="chapter" data-level="5.5.8" data-path="hari-kelima.html"><a href="hari-kelima.html#display-raster"><i class="fa fa-check"></i><b>5.5.8</b> Display Raster</a></li>
+<li class="chapter" data-level="5.5.9" data-path="hari-kelima.html"><a href="hari-kelima.html#mosaik-raster"><i class="fa fa-check"></i><b>5.5.9</b> Mosaik raster</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="hari-kelima.html"><a href="hari-kelima.html#analisis-sig-lanjut"><i class="fa fa-check"></i><b>5.6</b> Analisis SIG Lanjut</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="hari-keenam.html"><a href="hari-keenam.html"><i class="fa fa-check"></i><b>6</b> Hari Keenam</a><ul>
+<li class="chapter" data-level="6.1" data-path="hari-keenam.html"><a href="hari-keenam.html#basic-geoprocessing"><i class="fa fa-check"></i><b>6.1</b> Basic Geoprocessing</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="hari-keenam.html"><a href="hari-keenam.html#penapisan-data"><i class="fa fa-check"></i><b>6.1.1</b> Penapisan data</a></li>
+<li class="chapter" data-level="6.1.2" data-path="hari-keenam.html"><a href="hari-keenam.html#dissolve"><i class="fa fa-check"></i><b>6.1.2</b> Dissolve</a></li>
+<li class="chapter" data-level="6.1.3" data-path="hari-keenam.html"><a href="hari-keenam.html#polygon-dari-layer-extent"><i class="fa fa-check"></i><b>6.1.3</b> Polygon dari layer extent</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><i class="fa fa-check"></i><b>7</b> <code>{block2, type='rmdcaution'} # The following lesson sometimes failed in QGIS 3. You can try the process in QGIS 3 first and if it is failed, try it in QGIS 2.18 #</code></a><ul>
+<li class="chapter" data-level="7.0.1" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#reklasifikasi"><i class="fa fa-check"></i><b>7.0.1</b> Reklasifikasi</a></li>
+<li class="chapter" data-level="7.1" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#terrain-analyses"><i class="fa fa-check"></i><b>7.1</b> Terrain analyses</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#persiapan"><i class="fa fa-check"></i><b>7.1.1</b> Persiapan</a></li>
+<li class="chapter" data-level="7.1.2" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#kelerengan"><i class="fa fa-check"></i><b>7.1.2</b> Kelerengan</a></li>
+<li class="chapter" data-level="7.1.3" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#hillshade"><i class="fa fa-check"></i><b>7.1.3</b> Hillshade</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#density-analyses"><i class="fa fa-check"></i><b>7.2</b> Density Analyses</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#density-analyses-and-heatmaps"><i class="fa fa-check"></i><b>7.2.1</b> Density Analyses and Heatmaps</a></li>
+<li class="chapter" data-level="7.2.2" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#creating-heat-maps-with-the-heatmap-plugin"><i class="fa fa-check"></i><b>7.2.2</b> Creating heat maps with the Heatmap plugin</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#suitability-analyses"><i class="fa fa-check"></i><b>7.3</b> Suitability Analyses</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#step-1-define-the-goal-and-objectives"><i class="fa fa-check"></i><b>7.3.1</b> Step 1: Define the goal and objectives</a></li>
+<li class="chapter" data-level="7.3.2" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#step-2-analyze-the-available-data-and-define-its-relevance"><i class="fa fa-check"></i><b>7.3.2</b> Step 2: Analyze the available data and define its relevance</a></li>
+<li class="chapter" data-level="7.3.3" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#step-3-define-the-criteria-of-analyses"><i class="fa fa-check"></i><b>7.3.3</b> Step 3: Define the criteria of analyses</a></li>
+<li class="chapter" data-level="7.3.4" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#step-4-analyze-and-prepare-the-data"><i class="fa fa-check"></i><b>7.3.4</b> Step 4: Analyze and prepare the data</a></li>
+<li class="chapter" data-level="7.3.5" data-path="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html"><a href="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2-18.html#step-5-overlay-the-data-and-interpret-the-results"><i class="fa fa-check"></i><b>7.3.5</b> Step 5: Overlay the data and interpret the results</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/firmanhadi/training-for-gis-analyses" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Training for GIS Analyses</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="block2-typermdcaution-the-following-lesson-sometimes-failed-in-qgis-3.-you-can-try-the-process-in-qgis-3-first-and-if-it-is-failed-try-it-in-qgis-2.18" class="section level1">
+<h1><span class="header-section-number">7</span> <code>{block2, type='rmdcaution'} # The following lesson sometimes failed in QGIS 3. You can try the process in QGIS 3 first and if it is failed, try it in QGIS 2.18 #</code></h1>
+<p>Fungsi ini bermanfaat ketika kita ingin memotong raster atau vektor dengan menggunakan extent (bounding box) dari fitur tertentu.</p>
+<p>Ikuti langkah berikut untuk melakukan ekstraksi batas dari poligon:</p>
+<ol style="list-style-type: decimal">
+<li><p>Pilih <strong>Vector -&gt; Research Tools -&gt; Extract layer extent</strong></p></li>
+<li><p>Anda dapat mengatur apakah luaran disimpan sebagai layer sementara atau disimpan ke dalam berkas baru.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1422"></span>
+<img src="images/04/fig22.png" alt="Extract layer extent" width="70%" />
+<p class="caption">
+Figure 7.1: Extract layer extent
+</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Hasil dari proses ini adalah sebuah poligon kotak (persegi panjang) berdasarkan batas koordinat kiri-atas dan kanan-bawah dari fitur yang digunakan.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1423"></span>
+<img src="images/04/fig23.png" alt="Layer extent created" width="70%" />
+<p class="caption">
+Figure 7.2: Layer extent created
+</p>
+</div>
+<!-- ### Join table -->
+<!-- District data -->
+<!-- Population data -->
+<!-- ### Calculate area -->
+<!-- ### Point sampling tols -->
+<!-- ### Coordinate transformation -->
+<!-- ### Mosaic raster -->
+<!-- Clipping WorlPop mosaic with HNN Extent -->
+<!-- WorldPop Laos + WorldPop Vietnam -->
+<!-- ### Clipping raster -->
+<!-- ### Rescale  -->
+<div id="reklasifikasi" class="section level3">
+<h3><span class="header-section-number">7.0.1</span> Reklasifikasi</h3>
+<p>Fitur ini merupakan salah satu teknik yang bermanfaat untuk mengubah rentang nilai atau mengelompokkannya ke dalam kategori yang baru.</p>
+<p>Kita akan melakukan klasifikasi ketinggian ke dalam tiga kelas:</p>
+<pre><code>- Kurang dari 1.000 m
+
+- Antara 1.000 dan 2.000 m
+
+- Lebih dari 2.000 m</code></pre>
+<p>Untuk melakukan ini, silakan ikuti tahapan berikut :</p>
+<ol style="list-style-type: decimal">
+<li><p>Buka <strong>srtm_58_09.tif</strong></p></li>
+<li><p>Buka fungsi <strong>r.reclass</strong> dari menu <strong>Processing Toolbox</strong>. Isi pilihan seperti terlihat dalam gambar dan klik <strong>Run</strong>.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1474"></span>
+<img src="images/04/fig74.png" alt="Reclassifying the elevation data" width="70%" />
+<p class="caption">
+Figure 7.3: Reclassifying the elevation data
+</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Hasilnya adalah layer dengan kelas baru</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1475"></span>
+<img src="images/04/fig75.png" alt="Reclassified elevation data" width="70%" />
+<p class="caption">
+Figure 7.4: Reclassified elevation data
+</p>
+</div>
+<p>Nilai dari setiap piksel dibandingkan dengan rentang limit yang ada di lookup table.
+Apabila nilai piksel termasuk ke dalam kelas tertentu, nilai kelas untuk rentang ini akan digunakan di dalam layer luaran.</p>
+<!-- ### Zonal statistics -->
+</div>
+<div id="terrain-analyses" class="section level2">
+<h2><span class="header-section-number">7.1</span> Terrain analyses</h2>
+<p>Tipe raster tertentu memungkinkan Anda untuk mendapatkan informasi yang lebih terkait terrain. Biasanya Digital Elevation Models (DEMs) digunakan untuk keperluan ini.</p>
+<div id="persiapan" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Persiapan</h3>
+<ol style="list-style-type: decimal">
+<li><p>Buka <strong>srtm_58_09.tif</strong> (ada di dalam sub folder TIF). Layer ini merupakan DEM dengan
+EPSG:4326 CRS dan ketinggian dalam kaki (feet). Karakteristik ini tidak cocok untuk algoritma terrain analyses, harus dikonversi terlebih dahulu ke dalam proyeksi meter (Universal Transverse Mercator).</p></li>
+<li><p>Reproyeksi layer ke sistem CRS EPSG:32648, menggunakan pilihan <strong>Save as…</strong> pada menu yang muncul ketika di-klik kanan pada nama layer.</p></li>
+<li><p>Buka layer yang dihasilkan.</p></li>
+</ol>
+<p>Ada hal yang perlu diperhatikan ketika menerapkan algoritma terrain analyses, agar hasilnya benar.</p>
+<p>Salah satu permasalahan utamanya adalah apabila raster yang digunakan memiliki piksel dengan ukuran panjang dan lebar yang tidak sama (bukan bujur sangkar). Asumsi yang biasa digunakan adalah semua piksel pasti bujur sangkar. Namun seringkali data yang kita dapatkan tidak seperti itu.</p>
+<p>Oleh karena itu, tahapan yang perlu dilakukan adalah mengekspor layer dan mendefinisikan ukuran piksel dengan nilai yang sama, misalnya 30 atau 90 m. Caranya adalah dengan klik kanan pada nama layer dan pilih <strong>Save as … </strong>. Pada dialog <strong><em>save</em></strong> yang ada, pastikan untuk mengisikan nilai piksel di bagian bawah dialog :</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1471"></span>
+<img src="images/04/fig71.png" alt="Save raster layer as" width="70%" />
+<p class="caption">
+Figure 7.5: Save raster layer as
+</p>
+</div>
+</div>
+<div id="kelerengan" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Kelerengan</h3>
+<p>Kelerengan (Slope) merupakan salah satu parameter dasar yang dapat diturunkan dari DEM.
+Ia adalah turunan pertama dari DEM dan menggambarkan laju perubahan ketinggian. Slope dihitung dengan melakukan analisis ketinggian dari setiap piksel, membandingkannya dengan ketinggian dari piksel di sekelilingnya. Untuk menghitungnya di QGIS, silakan ikuti cara berikut :</p>
+<ol style="list-style-type: decimal">
+<li>Pada opsi <strong>Processing Toolbox</strong> , pilih algoritma <strong>Slope</strong>, klik ganda untuk membukanya.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1472"></span>
+<img src="images/04/fig72.jpeg" alt="Calculating slope" width="70%" />
+<p class="caption">
+Figure 7.6: Calculating slope
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Pilih <strong>DEM</strong> sebagai layer masukan (input).</p></li>
+<li><p>Klik <strong>Run</strong> untuk menjalankan prosesnya.</p></li>
+</ol>
+</div>
+<div id="hillshade" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Hillshade</h3>
+<p>A hillshade layer is commonly used to enhance the appearance of a map and display topography in an intuitive way, by simulating a light source and the shadows it casts. This can be computed from a DEM by using this recipe.</p>
+<ol style="list-style-type: decimal">
+<li>In the Processing Toolbox option, find the Hillshade algorithm and double-click on it to open it.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1473"></span>
+<img src="images/04/fig73.jpeg" alt="Calculating hillshade" width="70%" />
+<p class="caption">
+Figure 7.7: Calculating hillshade
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Select the DEM in the Input layer field. Leave the rest of the parameters with their default values.</p></li>
+<li><p>Click on Run to run the algorithm.</p></li>
+</ol>
+</div>
+</div>
+<div id="density-analyses" class="section level2">
+<h2><span class="header-section-number">7.2</span> Density Analyses</h2>
+<p>We often need to work with large and dense datasets in which there is a lot of overplotting and features experience significant overlap. Such datasets may be very slow at rendering because they contain thousands, or even millions, of features, and very difficult to interpret because overlaps make it difficult to detect any clusters or distribution patterns.</p>
+<p>In this section, you will learn the techniques that allow you to visualize such datasets in a more readable and faster way by displaying feature density instead of the features themselves. After practicing the lessons in this section, you will be able to perform density analysis of your data and extract information from density maps.</p>
+<p>In this section, we will go through the following topics:</p>
+<ul>
+<li><p>Density analysis and heat maps</p></li>
+<li><p>Creating heat maps with the Heatmap plugin</p></li>
+</ul>
+<div id="density-analyses-and-heatmaps" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Density Analyses and Heatmaps</h3>
+<p>Density maps allow visual estimation of object or event concentration over the study area. Such maps are very useful for assessment of the distribution patterns of the features over the study area. When we simply add locations of the features or events (for example, as points) to the map, we cannot see the changes in their concentration in different areas. Density analysis gives us such functionality by using uniform area characteristics, such as feature count per acre or square kilometer.</p>
+<p>A density map gives us the ability to estimate the concentration of some features within an area. This helps us find areas where an urgent reaction is required or which match your criteria. Heatmaps also help control conditions and their changes.</p>
+<p>Density maps are also extremely useful when mapped regions (for example, districts) have different sizes. For example, if we want to know how many people live in each district, we just need an ordinal map with the population data. According to this map, a large district may have a higher population than a smaller district. But if we want to identify the districts with a higher concentration of population, then we need a density map to see the number of people per square kilometer. And a density map will show us that, in fact, small regions with a high population density may have more people per square kilometer than larger districts.</p>
+<p>Generally, we can show on a map the density distributions of the features themselves (for example, schools), as well as distributions of some numerical characteristics of these features (for example, the number of pupils in schools). The results will be completely different in these cases. A density map of schools can help an education department find areas where more schools are needed, while a density map created from information about the number of pupils in each school may help a transportation company to plan bus routes and to decide where to place bus stops.</p>
+<p>The most common use case is the creation of density maps to display the density of point features. Such maps are often called heat maps. What is a heat map? It is a raster layer. Each cell of it contains a representation of the density of features in its vicinity (for example, the number of people per square kilometer), which depends on the number of features within some area.</p>
+<p>To create a heat map, in the simplest case, GIS looks at the features around a cell center, using a given search radius. Then the number of features that fall within the given radius is calculated and divided by the area of the region. This value will be a cell value. Then next cell will be analyzed, and so on. As a result, we will get a combination of values, which creates a smooth surface. To understand this better, refer to the following diagram:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1400"></span>
+<img src="images/04/fig0.jpeg" alt="General principle of creating heatmaps" width="70%" />
+<p class="caption">
+Figure 7.8: General principle of creating heatmaps
+</p>
+</div>
+<p>This diagram shows the general principle of creating heat maps. The green dots depict the features used for density map generation, the blue square is a current raster cell, and the red dotted circle marks the search radius, for example, 1 km. In this case, the area covered will be about 3.14 sq. km. As we can see in the diagram to the left, four features are within the search radius. So, the raster cell will get a value of 4/3.14 = 1.27. On the right side, we notice that the next cell will get a value of 1.59 because now there are five features inside the search radius.</p>
+<p>This is the simplest approach. In real-world applications, more complex algorithms are used, where each point has some impact on the values of the neighboring cells, depending on its distance from those cells.</p>
+</div>
+<div id="creating-heat-maps-with-the-heatmap-plugin" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> Creating heat maps with the Heatmap plugin</h3>
+<p>With the help of the QGIS core plugin called Heatmap, we can easily create heat maps from vector point data and use it for further analysis. First, we need to activate this plugin, if it has not yet been activated. After activation, it creates a submenu under the <strong>Raster</strong> menu and places its button on the <strong>Raster</strong> toolbar.</p>
+<p>Let’s create a density map for the <strong>noise</strong> layer, which contains information about complaints regarding high noise levels. This layer contains 44,397 features, and it is difficult to know which places are noisy.</p>
+<p>Information about such places may be useful for a police department or other agencies to plan some activities for noise reduction, or for those who are looking for apartments and don’t want neighbors who like playing loud music.</p>
+<ol style="list-style-type: decimal">
+<li>Start the plugin by clicking on the <strong>Heatmap</strong> button on the <strong>Raster</strong> panel, or by navigating to <strong>Raster | Heatmap | Heatmap….</strong></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1409"></span>
+<img src="images/04/fig7.jpeg" alt="General principle of creating heatmaps" width="70%" />
+<p class="caption">
+Figure 7.9: General principle of creating heatmaps
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Select the <strong>noise</strong> layer from the <strong>Input point layer</strong> combobox.</p></li>
+<li><p>Using the … button on the right side of the <strong>Output raster</strong> field, specify the location in which the resulting heat map needs to be saved. Note that there is no need to specify the file extension; it will be picked up automatically, based on the output file format.</p></li>
+<li><p>Use the <strong>Output format</strong> combobox to select the desired format for the heat map. The most common choice here is <strong>GeoTIFF</strong>, but for very large maps, it is better to use something different, for example, <strong>Erdas Imagine</strong>.</p></li>
+<li><p>The last thing we need to specify is <strong>Radius</strong>. This value defines the distance from each cell up to which QGIS will look for neighbor features and take their presence into account. Generally, a bigger search radius gives a more generalized result, as the number of features found will be divided by a bigger area. A smaller radius gives more precise results, but if this value is too small, we may not find any distribution patterns. The search radius can be defined in meters or map units.</p></li>
+</ol>
+<p>To determine the search radius from a known area, we can use a very simple formula derived from formula for the area of a circle:</p>
+<p><span class="math display">\[\begin{equation*}
+r = \sqrt{\frac{S}{\pi}}
+\end{equation*}\]</span></p>
+<p>For example, if we need to calculate density per square kilometer, then the search radius will be as follows:</p>
+<p><span class="math display">\[\begin{equation*}
+r = \sqrt{\frac{1 km^2}{\pi}} = \sqrt{\frac{1000000 m^2}{3.1415926}} \approx 564.2 m
+\end{equation*}\]</span></p>
+<p>For more fine-grained control over the result, we can check the <strong>Advanced</strong> box and define some additional parameters:</p>
+<ul>
+<li><strong>Rows and Columns</strong>:</li>
+</ul>
+<p>These allow us to define dimensions of the output raster. Larger dimensions will result in a bigger output file size, while smaller dimensions will result in a rough and pixelated output. Input fields are linked to each other, so changing the value in the Rows field (for example, halving it) will also cause the corresponding change to the value in the Columns field, and vice versa. Furthermore, these values have a direct influence on the raster cell size (see the next point). It is worth mentioning that the extent of the raster preserved when changing raster dimensions.</p>
+<ul>
+<li><strong>Cell size X and Cell size Y</strong>:</li>
+</ul>
+<p>The raster cell size determines how coarse or detailed the display of the distribution patterns will be. A smaller cell size will give smoother results, but the processing time and memory required for the analysis will increase. Large cells will be processed faster, but the resulting raster will be pixelated. If the cells are really big, some patterns will become invisible, so you may need to run the analysis several times, trying different cell sizes to get results that satisfy your requirements.</p>
+<p>The cell size depends on and is linked to the raster dimensions. Increasing it will decrease the number of rows and columns, and vice versa.</p>
+<ul>
+<li><strong>Kernel shape</strong>:</li>
+</ul>
+<p>This controls how the point influence changes with changes in distance from this point. The QGIS <strong>Heatmap plugin</strong> currently supports the following kernels:</p>
+<p>– quartic (also known as biweight)</p>
+<p>– triangular</p>
+<p>– uniform</p>
+<p>– triweight</p>
+<p>– Epanechnikov</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1410"></span>
+<img src="images/04/fig8.jpeg" alt="Distribution of the point influence for different kernel" width="80%" />
+<p class="caption">
+Figure 7.10: Distribution of the point influence for different kernel
+</p>
+</div>
+<p>Depending on the kernel shape, we will get a smoother heat map, or more clearly exposed hotspots. For example, the triweight kernel will give clearer, sharper hotspots than the Epanechnikov kernel, because the Epanechnikov kernel has lower influence near the hotspot center. Also, in different scientific fields, different kernels are preferred; for example, in crime analysis, the quartic kernel is typically used.</p>
+<p>It is also possible to use a variable search radius for each point by selecting the <strong>Use radius from field</strong> checkbox and selecting the attribute field with radius value from the combobox. If you need to weight points (in other words, increase or decrease their influence) by some numeric attribute, activate the <strong>Use weight from field</strong> checkbox and select the corresponding field. In our example, we will not use this functionality, but you can try it yourself.</p>
+<p>As we said before, cell size has a direct influence on the quality of the resulting heat map, so it is important to select it carefully. In most cases, the cell size is chosen in such a way that we get 10 to 100 cells per unit area (which in turn is defined by the search radius). To calculate the cell size, we need to align area units with distance units; for example, if we calculate the density using square kilometers and define the search radius in meters, then it is necessary to convert the square kilometers to square meters. The next step is to divide the area by the desired number of cells. Finally, as the cell size is defined by its width or height (because raster cells usually have a square shape), we need to extract the square root of this value.</p>
+<p>In our example, we will create a heat map with a search radius of 1000 m, so the lookup area will be approximately 3.14 square kilometers. When expressed in meters, this will be as follows:</p>
+<p><span class="math display">\[\begin{equation*}
+3.14 km^2 = 3.14 . 1000 m . 1000 m = 3140000m^2
+\end{equation*}\]</span></p>
+<p>As we want a smooth heat map, we will use a relatively large number of cells per unit area; let’s say 100 cells per 3.14 square kilometers. So, we divide the area in square meters by the desired cell count:</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{3140000m^2}{100 cells} = 3140000m^2 per cell
+\end{equation*}\]</span></p>
+<p>Finally, we calculate the square root of this value to get the cell size that allows us to have 100 cells per 3.14 square kilometers:</p>
+<p><span class="math display">\[\begin{equation*}
+\sqrt{31400m^2} \approx 177.2 m
+\end{equation*}\]</span></p>
+<p>Of course this is not a strict rule but just a recommendation. You can safely use another cell size, depending on your data and the desired results. Just remember that smaller values lead to smoother heat maps, but at the same time increase the analysis time and output raster size.</p>
+<p>When all the inputs and parameters are set, press the OK button to start the process of the heat map generation. The progress of the heat map formation will be displayed in a small progress dialog. If this process is taking too long time to complete, you can interrupt it by pressing the Abort button. Note that after aborting heat map generation, you still get the output, but it will be incomplete and not useful for further analysis.</p>
+<p>When the process completes, the generated heat map will be added to QGIS as a grayscale raster, where lighter regions correspond to higher density values and darker regions correspond to lower density values, like this:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1476"></span>
+<img src="images/04/fig76.jpg" alt="Heatmap result in greyscale" width="80%" />
+<p class="caption">
+Figure 7.11: Heatmap result in greyscale
+</p>
+</div>
+<p>To improve readability and make it look like real heat map, we need to change its style. To do this, follow the next steps.</p>
+<ol style="list-style-type: decimal">
+<li><p>Right-click on the <strong>heatmap</strong> layer in the QGIS layer tree. In the context menu, select <strong>Properties</strong>.</p></li>
+<li><p>Go to the <strong>Style</strong> tab and select <strong>Singleband pseudocolor</strong> as <strong>Render type</strong>.</p></li>
+<li><p>In the <strong>Load min/max values</strong> group, activate the <strong>Min/max</strong> options. Set <strong>Extent to Full</strong> and <strong>Accuracy to Actual (slower)</strong>. Press the <strong>Load</strong> button to get raster statistics. This will be used for further classification.</p></li>
+<li><p>Select a suitable color ramp in the <strong>Generate new color map</strong> group, for example, <strong>YlOrBr</strong> (which changes colors from yellow to orange and then brown), or __Red__s (which uses different shades of red). If necessary, change the number of classes and click on the <strong>Classify</strong> button.</p></li>
+<li><p>Click on <strong>OK</strong> to apply the changes and close the properties dialog.</p></li>
+</ol>
+<p>Now we can easily locate the hottest points (displayed in colors closer to red if the Reds color map is used), and even recognize some distribution patterns that were not visible when we looked at the original point layer:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1477"></span>
+<img src="images/04/fig77.jpg" alt="Heatmap result  pseudocolor" width="80%" />
+<p class="caption">
+Figure 7.12: Heatmap result pseudocolor
+</p>
+</div>
+<p>Now we can easily locate the hottest points (displayed in colors closer to red if the Reds color map is used), and even recognize some distribution patterns that were not visible when we looked at the original point layer. Also, our heatmap layer showed up much faster than the vector which is used to create this heat map.</p>
+<p><strong>Detecting the “hottest” regions</strong></p>
+<p>Sometimes, you don’t need the heat map itself, but just want to find the hotspots—areas with the highest density—and use them in further analysis. It is pretty easy to find such regions in QGIS and extract them in the vector form.</p>
+<p>First, we should define threshold value, which will be used to recognize the hotspots. As a starting value, we can use the maximum pixel value in our heat map and then adjust it as per our needs.</p>
+<p>The simplest way to find the maximum pixel value is to use the <strong>Identify Features</strong> tool. Select a layer in the QGIS layer tree, activate the <strong>Identify Features</strong> tool, click on the most visually “hottest” regions, and look at the reported value. With our heat map, this will be 540.32.</p>
+<p>If we will use this value as is, we cannot find all the important clusters, so this value should be reduced first. The smaller the selected value (in comparison with the maximum value), the larger the number of clusters found. The area of separate clusters will also grow. For our example, we choose a value of 200.</p>
+<p>Now, open <strong>Raster Calculator</strong> from the <strong>Raster</strong> menu, specify a path where the output file should be saved in the <strong>Output layer</strong> field, and enter the <strong>“heatmap@1”&gt;=200</strong> formula in the <strong>Raster calculator expression</strong> field, like this:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1478"></span>
+<img src="images/04/fig78.jpg" alt="Heatmap result  pseudocolor" width="80%" />
+<p class="caption">
+Figure 7.13: Heatmap result pseudocolor
+</p>
+</div>
+<p>This formula is used to create a so-called mask. If the pixel value of the input layer is greater or equal to our threshold value of 200, then the output pixel value will be 1. Otherwise, it will be 0. So, our output raster will be a binary raster, with only two pixel values—0 and 1—which is very easy to convert to a vector.</p>
+<p>Leave all other values unchanged so that the resulting raster will have exactly the same dimensions and cell size as the input one. Press the OK button to start the calculation. When it is done, a new black-and-white raster layer will be added to the QGIS canvas, as shown here:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1479"></span>
+<img src="images/04/fig79.jpg" alt="Mask for heatmap" width="80%" />
+<p class="caption">
+Figure 7.14: Mask for heatmap
+</p>
+</div>
+<p>To convert the mask raster into vector format, we need to create polygons from all connected pixels with the same value. This is where the Polygonize tool comes to help. In the Processing toolbox, you can find the Polygonize algorithm by typing its name in the filter field at the top of the toolbox. Double-click on the algorithm name to open its dialog, and you will see something like this:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1480"></span>
+<img src="images/04/fig80.jpg" alt="Polygonized mask" width="80%" />
+<p class="caption">
+Figure 7.15: Polygonized mask
+</p>
+</div>
+<p>Select the mask layer that was previously created as <strong>Input layer</strong>, specify the path where the result will be saved using the <strong>Output layer</strong> field, and click on the <strong>Run</strong> button to start the algorithm. When it is done, a new vector layer will be added to QGIS. This layer has an attribute called <strong>DN</strong> (if you did not change it) that indicates the pixel value of each polygon in the layer. So, all we need to do is remove all the features that have the attribute value equal to zero. The remaining features will be the hotspots.</p>
+<p>To delete unnecessary features from the hotspots layer, select it in the QGIS layer tree, right-click to open the context menu, and select <strong>Open Attribute Table</strong>. Click on the <strong>Select features using an expression</strong> button. In the <strong>Select by expression</strong> dialog, enter <strong>“DN” = 0</strong> (if necessary, replace DN with your field name), click on the <strong>Select</strong> button, and close the dialog. Start editing by clicking on the Toggle editing mode button, or press <strong>Ctrl + E</strong>. To remove the selected features, press the <strong>Delete key</strong> or click on <strong>Delete selected features</strong>. Finally, turn editing mode off by pressing <strong>Ctrl + E</strong> or clicking on <strong>Toggle editing mode</strong> again.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1481"></span>
+<img src="images/04/fig81.jpg" alt="Cleaned hotspot polygon" width="80%" />
+<p class="caption">
+Figure 7.16: Cleaned hotspot polygon
+</p>
+</div>
+<p>Now, the hotspots layer contains only hotspot polygons, which can be used for further analysis. For example, we can combine this cluster with information about the nearest buildings and noise types to find dependencies and develop some suggestions for reducing the noise levels there.</p>
+<p><strong>Looking for distribution patterns with contour lines</strong></p>
+<p>Apart from detecting hotspots, heat maps can also be used to detect intensity changes or visualize the direction of value changes. The most common way to do both of these tasks is contour lines generation.</p>
+<p>Fortunately, QGIS has all the necessary tools for this. We will use processing again, but contour lines generation is also available in the <strong>GDALTools</strong> plugin (which can be found in the <strong>Raster</strong> menu). In the <strong>Processing</strong> toolbox, you can find the <strong>Contour</strong> algorithm by typing its name in the filter field at the top of the toolbox. Double-click on the algorithm name to open its dialog, which looks like this:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1482"></span>
+<img src="images/04/fig82.jpg" alt="Creating Contour" width="80%" />
+<p class="caption">
+Figure 7.17: Creating Contour
+</p>
+</div>
+<p>Select the <strong>heatmap</strong> raster layer as <strong>Input</strong> layer. In the <strong>Output</strong> file field, specify the path where the results will be saved. Also, it is necessary to define <strong>Interval between contour lines</strong>. There are no strict principles about determining this interval. The general rule is to select such an interval that detects patterns in the areas with smooth density changes. We will select an interval of 10.</p>
+<p>When all of the necessary information has been defined, click on <strong>Run</strong> to start the contour line generation. After some time, a new polygonal vector layer will be added to QGIS, and we can start analyzing it. First, if necessary, move the contours layer to the top of the heat map in the QGIS layer tree. Also, it is better to adjust contours’ symbology to make them more recognizable against the background of the heat map.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1483"></span>
+<img src="images/04/fig83.jpg" alt="Contour heatmap" width="80%" />
+<p class="caption">
+Figure 7.18: Contour heatmap
+</p>
+</div>
+<p>More dense contours correspond to more intense density changes. Also, we can identify the direction of changes in noise. For example, in the preceding screenshot, we can see that in some places, the noise distribution around the center is not equal; the intensity reduces more quickly in the southeast than in the northwest. So, we may assume that there are some obstacles to noise there.</p>
+<!-- ### Mapping density with a hexagonal grid -->
+<!-- There is also another approach of mapping density, called binning. Generally speaking, binning is a technique of grouping N values/features into M groups, where M < N. The result of such an operation can be interpreted as a two-dimensional histogram. -->
+<!-- Binning is an alternative to heat maps, not a replacement. The choice of the method depends on the requirements and further usage of the results. It is, however, worth mentioning that binning produces a vector output, while a heat map produces a raster output. -->
+<!-- In general, binning can be described in two simple steps: -->
+<!-- Create a hexagonal grid on top of the point layer. -->
+<!-- Count the number of points in each grid cell. -->
+<!-- In this section, you will learn how to use this technique in QGIS in the example of hexbinning, in other words, mapping density with a hexagonal grid. -->
+<!-- Note -->
+<!-- In fact, for binning, we can use not only hexagons but also other shapes that allow regular tessellation of a 2D surface—triangles and rectangles. -->
+<!-- Why do we choose hexagons? Well, because a hexagon is closest to a circle among all shapes that tessellate. As a result, they represent curves more naturally. Another advantage of hexagons is a more compact structure, so the distance between cell centers in a hexagonal grid is lower than in a rectangular grid. So data aggregation around the cell center is more efficient. -->
+<!-- Note -->
+<!-- In Chapter 8, Automating Analysis with Processing Models, we will create a model that produces two density maps: hexagonal and rectangular, so that you can compare them side by side and better understand their differences and use cases. -->
+<!-- In the upcoming sections, we will create a density map using this approach. For this exercise, we will use data from Brooklyn's street tree census. This is the trees layer in our map. -->
+<!-- Creating a hexagonal grid -->
+<!-- To create a hexagonal grid, we will use the QGIS Processing framework and its algorithm called Create grid: -->
+<!-- In the Processing toolbox, find the Create grid algorithm by typing its name in the filter field at the top of the toolbox. Double-click on the algorithm name to open its dialog, which looks like this: -->
+<!-- In the Grid type combobox, select Hexagon (polygon). -->
+<!-- To specify grid extent press the … button on the right side of the Grid extent field and choose Use layer/canvas extent from the menu. -->
+<!-- The Select extent dialog will pop up. Use it to select the trees layer from the combobox, and click on OK. The coordinates of the layer extent will be added to the field. -->
+<!-- Set 1000 as the horizontal and vertical spacing. These values have the same meaning as the search radius in the case of heat maps. Grid spacing determines how many cells will be in a grid and how smooth the resulting map will be. A smaller spacing produces smoother results, but very small values prevent us from identifying any distribution patterns. Note that the spacing should be specified in the same units as used by layer; for example, if a layer CRS uses feet as units, then the spacing should be in feet too. -->
+<!-- Finally, in the Output field, specify the path where the resulting grid will be saved and click on Run to create the grid. When the algorithm execution completes, a new polygonal layer will be added to QGIS. -->
+<!-- Counting points in grid cells -->
+<!-- To calculate the number of features inside each grid cell, we can use fTools or Processing core plugins. The latter is more flexible and allows us to automate tasks, as described in Chapter 8, Automating Analysis with Processing Models. We will use the Count points in polygon algorithm from the Processing framework. -->
+<!-- Tip -->
+<!-- There is also a Count unique points algorithm in Processing that lets us count only points with unique attributes in the selected field. This may be useful when a more precise analysis is needed, for example, for mapping diversity. -->
+<!-- In the Processing toolbox, find the Count points in polygon algorithm by typing its name in filter field at the top of the toolbox. Double-click on the algorithm name to open its dialog, and you will see this: -->
+<!-- Select the grid layer created in the previous section as Polygons and the trees layer as Points. Enter Count field name or leave it unchanged. Don't forget the 10-character limitation for the shapefile field names! Finally, in the Result field, specify the location where the resulting layer will be stored, and click on the Run button to start the analysis. Keep in mind that this may take some time, as the tree layer contains many features and the grid size is relatively small. -->
+<!-- When an algorithm execution completes, a new grid layer, containing the field with the number of points in each cell, will be added to QGIS. We can safely remove the original grid layer from QGIS and from the filesystem, as it is no longer needed. -->
+<!-- For better visual representation of our data, we apply a graduated renderer to style cells according to the number of features in them. If necessary, go back to the Developing styles for vector layers section of Chapter 2, Visualizing and Styling the Data. The result may look like this: -->
+<!-- Removing redundant data -->
+<!-- If we look carefully at our grid layer and its attribute table, we will see that some grid cells are empty; there are no points in them. Such cells displayed with a very light green color in the preceding screenshot. It is clear that the empty cells are much more than the nonempty cells. Of course, we can simply hide such empty cells by assigning to them the same color as the map background, or by removing them from the renderer (assigning an empty style). But, is it better to remove them completely and reduce the file size? -->
+<!-- There are two possible ways to remove empty cells: manually or by using one of the existing tools from the Processing toolbox. Each method has own advantages. -->
+<!-- First, you will learn how to remove redundant data manually. This method can be used when you need to process only one layer and don't want to create any temporary intermediate files. Also, it allows you to easily examine the features that will be removed. Let's do it: -->
+<!-- Select the LAYER layer from the QGIS layer tree. Then, click on the Select features using an expression button in the Attributes toolbar to open the Select by expression dialog. -->
+<!-- In the functions tree, under the Fields and Values group, find the NUMPOINTS field and double-click on it to add its name to the expression. -->
+<!-- Then, click on = to add the equal to operator to the expression, and type 0 after it. The final expression will look like "NUMPOINTS" = 0. -->
+<!-- Click on Select to select all the features that match your condition. The selected features will be highlighted in yellow so that you can check whether they are what you want. -->
+<!-- Now, close the Select by expression dialog and open the layer attribute table by clicking on the Open Attribute Table button in the Attributes toolbar. -->
+<!-- Toggle editing mode by clicking on the corresponding button in the attribute table dialog, or by simply pressing Ctrl + E. -->
+<!-- To remove the selected features, just press the Delete key or click on the Delete selected features button. -->
+<!-- Finally, turn editing mode off by pressing Ctrl + E again. Now our layer contains only nonempty cells and is much smaller in size. -->
+<!-- Deleting redundant data with Processing requires fewer steps than removing redundant data manually, but instead of updating the existing layer, it creates another file. The Processing framework is useful when you need to process many layers at once or want to automate some operations. To remove empty cells, we can use the Extract by attribute algorithm. -->
+<!-- Tip -->
+<!-- In our case, the comparison condition is very simple, so we use the Extract by attribute algorithm. When a more complex comparison condition that includes several attributes or some calculations is needed, it is better to use the Select by expression algorithm in combination with Save selected features. -->
+<!-- Here are the necessary steps: -->
+<!-- Find the Extract by attribute algorithm by typing its name in the filter field, and double-click on its name to open its dialog. -->
+<!-- In the Input layer combobox, select LAYER. -->
+<!-- In the Selection attribute combobox, select the NUMPOINTS field, which stores the point count in each cell. -->
+<!-- In the Operator combobox select the not equal operator !=. -->
+<!-- Enter 0 in the Value field. -->
+<!-- Specify the name of the output file in the Output field. -->
+<!-- Now, we can press the Run button to start processing. When it is done, the new layer, with empty cells removed, will be added to QGIS, and we can remove the original layer. The new layer is much smaller, but still contains all of the information. Also, we can now set up styles more precisely and identify some distribution patterns that were not visible earlier. -->
+<!-- If we overlay a layer that has a street network with this density map, we can easily identify that the greenest street is the Ocean Parkway. -->
+<!-- The result looks great, but performing all of these steps manually is not very comfortable. Also, there are a number of intermediate layers that can, and should, be removed. Fortunately, QGIS allows us to automate such operations with the Processing Graphical Modeler. Refer to Chapter 8, Automating Analysis with Processing Models, to learn how to create models and use them. -->
+</div>
+</div>
+<div id="suitability-analyses" class="section level2">
+<h2><span class="header-section-number">7.3</span> Suitability Analyses</h2>
+<p>We live in a world full of various relationships that can be analyzed in functional, temporal, or spatial contexts. Spatial relationships are of particular interest when it comes to GIS, because here objects in space are represented in a way that facilitates explanations and analyses of their geographic relations. Suitability analysis is a fundamental part of GIS analysis that answers the question, “Where is the best place for something to be located?” In this chapter, you will be exposed to the fundamentals of suitability analysis through the search for the best place to live in. You will learn how to:</p>
+<pre><code>- interpret spatial relationships between objects
+
+- express these relationships through spatial data
+
+- analyze spatial data according to a set of predefined criteria
+
+- overlap layers and interpret the results</code></pre>
+<p><strong>Basic of Suitability Analyses</strong></p>
+<p>Suitability analysis is recognized as a multi-criteria decision support approach. In other words, its main aim is to divide the area of interest into two categories based on a set of predefined criteria: appropriate for some kind of use (living, building, conservation, and so on) and inappropriate. A general approach that is used for suitability assessment is multiple layer overlays that support multi-criteria decisions. Depending on the data that represents suitability criteria and overlaid, there are two basic approaches available:</p>
+<ol style="list-style-type: decimal">
+<li>Suitability analysis with vector data.</li>
+</ol>
+<p>This primarily utilizes operations such as buffering and their sequential combination using vector overlay operations, such as clipping, intersection, and union.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Suitability analysis with raster data.</li>
+</ol>
+<p>This heavily relies on raster algebra, which is used to reclassify initial raster coverages and then combine them to produce binary or ranked suitability rasters. This approach is more flexible, as it makes it possible to produce multiple suitability classes and change the raster weight according to the importance of the factor it represents. As a result, the user is able to produce a compound result, but the workflow requires more effort connected to data preprocessing and consolidation decisions.
+</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Vector data</th>
+<th>Raster data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Main operations</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Buffering</td>
+<td>Vector data rasterization</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Clip overlay</td>
+<td>Proximity raster creation</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Intersection overlay</td>
+<td>Raster reclassification</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Union overlay</td>
+<td>Raster algebra addition</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Raster algebra multiplication</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>Raster algebra substraction</td>
+</tr>
+<tr class="even">
+<td><strong>Advantages</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Workflow quickness</td>
+<td>Simple data reclassification</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Workflow simplicity</td>
+<td>Good representation of continuous features</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Good representation of man-made features</td>
+<td>Crisp and fuzzy classes are possible</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Different weighting according to their importance</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>Various assessments are possible</td>
+</tr>
+<tr class="even">
+<td><strong>Limitations</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Provide only crisp classes</td>
+<td>Reclassification and ranking subjectivity</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Usually provide binary assessment only</td>
+<td>Workflow complexity</td>
+</tr>
+</tbody>
+</table>
+<p>No matter what approach you will follow, the general suitability analysis workflow involves several common steps. We will now take a closer look at them to ensure better understanding of the suitability analysis system:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Define the goal and objectives of your analysis</strong></li>
+</ol>
+<p>The question to be studied is formulated in general, and its applied significance is determined, which will later become the set of suitability criteria.</p>
+<p>Some popular suitability applications include the following:</p>
+<ul>
+<li><p><strong>Agriculture</strong>: The appropriateness of the area for cultivation of certain crops is assessed.</p></li>
+<li><p><strong>Retail</strong>: The area is assessed from a marketing prospective—whether it will attract new customers or buyers, or not. This type of analysis is in great demand when selecting preferable shopping locations.</p></li>
+<li><p><strong>Renewable energy</strong>: Assessing land suitability for locations of wind power or solar power stations is a remarkable trend in the field of geospatial planning for sustainability.</p></li>
+<li><p><strong>Nature conservation</strong>: Conservancy needs are prioritized using habitat suitability modeling, and the area is divided into locations that are more or less valuable for certain species survival and reproduction.</p></li>
+</ul>
+<p>Generally speaking, the primary application of suitability analysis is in the field of land use planning, aimed at reasonable prioritization of various types of human activities within limited space and natural resources.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Analyze the available data and define its relevance to the goals and objectives</strong></li>
+</ol>
+<p>Data relevance to the goal and objectives is defined. Current data availability and future data requirements are analyzed, especially the knowledge of whether the current data derivatives can be used for analysis or not. For example, if we have to analyze suitability for agricultural needs, a DEM can be a great source. It provides not only basic information about the relief, but also some useful derivatives, such as slope and aspect. The main outcome of this stage is a list of primary data sources and their potential derivatives.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Define the criteria of analysis</strong></li>
+</ol>
+<p>This is the most important stage, where the objectives of analysis are described as clear numerical criteria based on relevant data. Descriptive objectives are translated into the language of GIS analysis. At this stage, various types of spatial relationships between objects are analyzed, and some of the most popular relationships include the following:
+</p>
+<ul>
+<li>point-to-point relationships:</li>
+</ul>
+<p>– “is within”: All schools that are within a distance of 1 km from a living place</p>
+<p>– “is nearest to”: The primary school that is closest to a living place</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1401"></span>
+<img src="images/04/fig1.jpeg" alt="Example of the &quot;is within&quot; point-to-point relationship" width="20%" />
+<p class="caption">
+Figure 7.19: Example of the “is within” point-to-point relationship
+</p>
+</div>
+<ul>
+<li>point-to-line relationships:</li>
+</ul>
+<p>– “is nearest to”: The street that is closest to a subway station entrance</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1402"></span>
+<img src="images/04/fig2.jpeg" alt="Example of the &quot;nearest to point-to-line&quot; relationship" width="20%" />
+<p class="caption">
+Figure 7.20: Example of the “nearest to point-to-line” relationship
+</p>
+</div>
+<ul>
+<li>point-to-polygon relationships:</li>
+</ul>
+<p>– “is contained in”: All public schools within a certain community boundary</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1403"></span>
+<img src="images/04/fig3.jpeg" alt="Example of the &quot;is contained in&quot; point-to-polygon relationship" width="20%" />
+<p class="caption">
+Figure 7.21: Example of the “is contained in” point-to-polygon relationship
+</p>
+</div>
+<ul>
+<li>line-to-line relationships:</li>
+</ul>
+<p>– “crosses”: Whether a particular trail crosses a road</p>
+<p>– “is within”: Find all trails that are within a distance of 1 km from a particular river</p>
+<p>– “is connected to”: Find all streets connected to a particular highway</p>
+<ul>
+<li>line-to-polygon relationships:</li>
+</ul>
+<p>– “intersects”: Find all districts crossed by a cycleway</p>
+<p>– “contains”: Find all streets that are completely within a certain district</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1404"></span>
+<img src="images/04/fig4.jpeg" alt="Example of the &quot;intersects&quot; line-to-polygon relationship" width="20%" />
+<p class="caption">
+Figure 7.22: Example of the “intersects” line-to-polygon relationship
+</p>
+</div>
+<ul>
+<li>polygon-to-polygon relationships:</li>
+</ul>
+<p>– “completely within”: Find all districts that are completely within a hazard zone</p>
+<p>– “is nearest to”: Find the building that is nearest to a park</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1405"></span>
+<img src="images/04/fig5.jpeg" alt="Example of the &quot;completely within&quot; polygon-to-polygon relationship" width="20%" />
+<p class="caption">
+Figure 7.23: Example of the “completely within” polygon-to-polygon relationship
+</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Primarily analyze and prepare the data</strong></li>
+</ol>
+<p>The data is analyzed according to the set of criteria defined in the previous stages. Common analysis operations involve selection by location, buffering, rasterization, proximity (raster distance), and so on. After all the necessary layers are ready, they should be prepared for overlay, which involves reprojection into a common coordinate reference system (if necessary), setting ranges for various ranks, and reclassification in the common ranking system. All the layers should contain values in uniform units, otherwise their overlay will be meaningless and hard to interpret.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Overlay the data and interpret the results</strong></li>
+</ol>
+<p>Previously prepared layers are combined into a single coverage based on a set of user-defined rules. Depending on the data available and the rules applied, the following suitability assessments are possible:</p>
+<ul>
+<li><strong>Binary suitability assessment</strong></li>
+</ul>
+<p>All of the area is divided into appropriate and inappropriate categories. This is the simplest type of assessment that can be obtained from vector data overlay.</p>
+<ul>
+<li><strong>Ranked suitability assessment</strong></li>
+</ul>
+<p>Places are ranked from least appropriate to most appropriate based on the entire range of predefined criteria. This type of assessment can be derived from both vector and raster data. It lets you avoid simple yes/no assessments, which are not inherent to the real word. This advantage is counterbalanced by the subjectivity of data rankings and equal importance of various factors. Nevertheless, in the real world, their contribution to overall assessment can vary.</p>
+<ul>
+<li><strong>Weighted suitability assessment</strong></li>
+</ul>
+<p>This is similar to the previous type of assessment and has only one significant difference: various factors can be weighted differently according to their importance for a certain type of activity. This type of assessments relies on the raster algebra approach and is thought to be all-inclusive, but not without some subjectivity, especially when it comes to factor weighting and interpreting the final result.</p>
+<div id="step-1-define-the-goal-and-objectives" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Step 1: Define the goal and objectives</h3>
+<p>Throughout this tutorial, we will suppose that we are working on behalf of a young couple with a little child. They are looking for a perfect place to live in within a certain region of their interest. Our goal is to use the power of GIS-based suitability analysis methods and provide an objective and reliable answer to their question.</p>
+<p>The goal of this analysis is to find areas that would be a good match for a young family with a child, given certain considerations. Many of their requirements are similar to those of a traditional housing estate development company. For example, proximity of subway stations, green zones, and public safety must be all taken into consideration. There are also some family-specific requirements that should be considered. As already mentioned, the family has a little baby, which means that we should take into account the existence of early childhood or elementary schools nearby. Also, they are keen on sports, and it would be great if the area they are going to live in has well-developed and active rest infrastructure. After this kind of review, we can formulate some more specific requirements and objectives:</p>
+<ul>
+<li><p><strong>Safety</strong>: The area should not be exposed to various natural and crime hazards</p></li>
+<li><p><strong>Connectivity</strong>: It should be well-connected to the city’s transport network</p></li>
+<li><p><strong>Greenness and openness</strong>: It should be close to parks or other green areas</p></li>
+<li><p><strong>Educational potential</strong>: Early childhood or elementary schools should be located in the neighborhood</p></li>
+<li><p><strong>Active rest opportunities</strong>: These include a cycling network and athletic facilities</p></li>
+<li><p><strong>Cultural life</strong>: Art galleries and museums can be recognized as general signs of cultural pulse beating</p></li>
+</ul>
+<p>Now that the main objectives and requirements have been clarified, we can proceed to the next step and study all of the available data to assess its relevance to our example.</p>
+</div>
+<div id="step-2-analyze-the-available-data-and-define-its-relevance" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Step 2: Analyze the available data and define its relevance</h3>
+<p>As soon as we have defined the basic requirements, we need to explore the data layers that are potentially useful and relevant for our analysis. The training dataset contains a large number of datasets, and the most relevant among them are listed in the following list :</p>
+<div id="safety" class="section level4">
+<h4><span class="header-section-number">7.3.2.1</span> Safety</h4>
+<ul>
+<li>Layer hurricane_evacuation_zones :</li>
+</ul>
+<p>Hurricane evacuation zones are the areas of the city that may need to be evacuated due to life- and safety-related threats from a hurricane storm surge.</p>
+<ul>
+<li>Layer hurricane_inundation_zones :</li>
+</ul>
+<p>Hurricane inundation zones are the areas of worst-case storm surge inundation.</p>
+<ul>
+<li>Layer noise_heatmap :</li>
+</ul>
+<p>The raster created in the Creating heat maps with the Heatmap plugin section of Chapter 5, Answering Questions with Density Analysis, that shows the spatial density of registered noise complaints might be useful for potential assessment for public safety.</p>
+</div>
+<div id="connectivity" class="section level4">
+<h4><span class="header-section-number">7.3.2.2</span> Connectivity</h4>
+<ul>
+<li>Layer subway_entrances :</li>
+</ul>
+<p>Locations of subway entrances.</p>
+</div>
+<div id="greenness-and-openness" class="section level4">
+<h4><span class="header-section-number">7.3.2.3</span> Greenness and openness</h4>
+<ul>
+<li>Layer parks :</li>
+</ul>
+<p>A layer containing open space features, such as courts, tracks, parks, and so on.</p>
+<ul>
+<li>Layer tree_density :</li>
+</ul>
+<p>This is a raster layer created from the tree census data.</p>
+</div>
+<div id="educational-potential" class="section level4">
+<h4><span class="header-section-number">7.3.2.4</span> Educational potential</h4>
+<ul>
+<li>Layer elementary_schools :</li>
+</ul>
+<p>These are the point locations of schools based on the official addresses. This layer includes some basic information about the school, such as the name, address, type, and principal’s contact information.</p>
+</div>
+<div id="active-rest-opportunities" class="section level4">
+<h4><span class="header-section-number">7.3.2.5</span> Active rest opportunities</h4>
+<ul>
+<li>Layer bike_routes :</li>
+</ul>
+<p>Locations of bike lanes and routes throughout the city.</p>
+<ul>
+<li>Layer athletic_facilities</li>
+</ul>
+<p>This layer contains athletic facilities and some basic information about them, including primary sport type, surface, dimensions, and so on.</p>
+</div>
+<div id="cultural-life" class="section level4">
+<h4><span class="header-section-number">7.3.2.6</span> Cultural life</h4>
+<ul>
+<li>Layer musemart :</li>
+</ul>
+<p>Locations of museums and art galleries.</p>
+</div>
+</div>
+<div id="step-3-define-the-criteria-of-analyses" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> Step 3: Define the criteria of analyses</h3>
+<p>According to the description of hurricane_evacuation_zones, there are six zones, ranked in the attribute field zone by risk of storm surge impact, with zone 1 being the region most likely to be flooded. In the event of a hurricane or tropical storm, residents in these zones may be ordered to evacuate. Areas with a zone value of X are not in any evacuation zone. Areas with a zone value of 0 are any of the following: water, small piers, or uninhabited islands. For the purpose of analysis, this layer should be rasterized and ranked according to the risk of hurricane impact, with rank values descending from areas that are not in any evacuation zone to those most likely to be flooded.</p>
+<p>The hurricane_inundation_zones polygon layer contains information about the risk of storm surge inundation in the category attribute field, in which the value is the surge height in feet. Areas that are most likely to be inundated are assigned a value of 1, and areas that are excluded from inundation modeling are assigned a value of 5. This layer should be rasterized and ranked with the highest potential suitability values for excluded areas, and the lowest for the areas of the 1 category.</p>
+<p>The noise_heatmap raster layer is a raster that should be ranked using several categories, with the lowest suitability values for the noisiest places and vice versa. A good thing here is that we don’t need to rasterize this layer, as we did with the previous layers. At the same time, establishing the amount and ranges for the rankings brings subjectivity into our assessment. The tree_density layer, which is also a density raster, should be analyzed similarly.</p>
+<p>The other selected layers should be analyzed first for their proximity. For this purpose, we will first rasterize them, then create continuous proximity rasters, and finally rank them under several categories according to the proximity values (the closer an object, the higher the suitability value). Again, in the case of user rankings, we will not be able to avoid some subjectivity in our assessments. Also, the final proximity rasters can be weighted according to their importance in the overall suitability assessment.</p>
+</div>
+<div id="step-4-analyze-and-prepare-the-data" class="section level3">
+<h3><span class="header-section-number">7.3.4</span> Step 4: Analyze and prepare the data</h3>
+<p>There are three main approaches to primary data analysis. These depend on the initial data type and available attributes:</p>
+<ul>
+<li><p><strong>Rasterizing and ranking categorized vector layers</strong>: These are the layers that already contain all the necessary values, and at the preparation stage, all of them should be rasterized to the similar extent and resolution. Also, their categories should be ranked properly, with the highest values for the most suitable areas and vice versa. Examples of these layers are hurricane_evacuation_zones, hurricane_inundation_zones, and so on.</p></li>
+<li><p><strong>Ranking density rasters</strong>: These are raster heat maps that should be converted from continuous coverages to categorized values where the highest value symbolizes the most appropriate area, and the lowest is related to the least suitable area. Examples of these layers are noise_heatmap and tree_density.</p></li>
+<li><p><strong>Generating and ranking proximity rasters</strong>: This is the most tedious workflow. Vector layers should be rasterized first, and then proximity rasters should be created and ranked properly. This category encompasses the following vector layers: subway_entrances, parks, public_schools, bike_routes, athletic_facilities, and museumart.</p></li>
+</ul>
+<p>Note that for the final output, we will always have ranked unique value rasters, with the highest values denoting the most suitable areas. Also, it is important that all output rasters share a common extent, which is necessary for their proper overlay with the raster calculator and overall suitability assessment.</p>
+<p>In the upcoming sections, we will go through the previously mentioned workflows for the example of raster layers. As soon as you grasp the principle, you will be able to prepare other layers independently.</p>
+<div id="rasterizing-and-ranking-categorized-vector-layers" class="section level4">
+<h4><span class="header-section-number">7.3.4.1</span> Rasterizing and ranking categorized vector layers</h4>
+<p>In this example, we will work on the hurricane_evacuation_zones layer. The attribute we are particularly interested in is zone. This is because by this attribute, areas are prioritized for evacuation. Areas with the lowest value, 1, are the most likely to be evacuated, and vice versa. In this case, we can use these values directly to rank the raster.</p>
+<p>One thing that prevents us from doing rasterization directly is that the attribute field that is used for rasterization should be numeric. If you check out the attribute field in the Fields section under Properties, you will see that the field zone has Type QString, and its values that contain numbers 1-6 and letters (X) are interpreted not as numbers but as sequences of symbols or strings. That’s why this field is unavailable for rasterization and should first be converted to numbers. This can be done easily with Field calculator:</p>
+<ol style="list-style-type: decimal">
+<li><p>Open the attribute table of the layer using the right-click Open Attribute Table shortcut, or hit the relative button from the Attributes toolbar. In the attribute table toolbar, either click on the Open field calculator button or use the Ctrl + I keyboard shortcut.</p></li>
+<li><p>First of all, we should get rid of the X value that cannot be interpreted as a number and cannot be converted to it. As we have only one line that contains the X value, we simply toggle editing mode by clicking on the button in the attribute table toolbar. Double-click on the cell and manually enter the new value of 7. If you have multiple values to change, you can use the following expression in Field calculator to change some zone field values: CASE WHEN “zone” = ‘X’ THEN ‘7’ ELSE “zone” END.</p></li>
+<li><p>Click on the button to open the Field calculator dialog window as shown in the following screenshot, and make the following adjustments:</p></li>
+</ol>
+<ul>
+<li><p>Make sure that the Create a new field toggle is on.</p></li>
+<li><p>Type the Output field name manually, for example, rank.</p></li>
+<li><p>Select Whole number (integer) from the Output field type list, as we are going to use short integers for ranking.</p></li>
+<li><p>Reduce Output field width to 1. This is because the rank values don’t exceed 10 and we don’t want to create excess data by producing fields of length that exceed actual data values.</p></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><p>In the Expression field, we need to type a function that will be used to create the values of a new field. In the Functions list, expand the Conversions item and double-click on the toint function. According to its description, it converts a string to an integer number. Nothing changes if a value cannot be converted to integer (for example, 123asd is invalid). After double-clicking, the function will be added to the expression with an open bracket, after which you should type (or double-click to add an item from Fields and Values) the field name to be converted in double quotation marks, and close the brackets. In our case, the resulting expression will be toint( “zone” ).</p></li>
+<li><p>After you’ve clicked on the OK button, the new field will appear at the end of the table. Deactivate editing mode, confirm saving of the edits, and exit the attribute table window.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1433"></span>
+<img src="images/04/fig33.jpeg" alt="Field Calculator" width="70%" />
+<p class="caption">
+Figure 7.24: Field Calculator
+</p>
+</div>
+<p>The layer is ready for rasterization. Open a dialog window by going to <strong>Raster | Conversion | Rasterize (Vector to Raster)</strong>. In this dialog window as shown in the following screenshot, adjust the following settings:</p>
+<ol style="list-style-type: decimal">
+<li><p>From the Input file (shapefile) drop-down list, select hurricane_evacuation_zones.</p></li>
+<li><p>From the Attribute drop-down list, select rank.</p></li>
+<li><p>In Output file for rasterized vectors (raster), click on the Select button. Navigate to your working directory, and type hurricane_evacuation_zones.tif as the new layer name. This message will be shown: The output file doesn’t exist. You must set up the output size or resolution to create it. Click on OK and proceed to the next stage.</p></li>
+<li><p>In the previous steps, you defined some major options. For convenience, we will create rasters in this tutorial with the same extent and resolution using <span class="math inline">\(lidar_dem.tif\)</span> as a template. Click on the button to make the gdal_rasterize command-line parameters editable. After modification, the line should look similar to the following example:</p></li>
+</ol>
+<pre><code>gdal_rasterize -a rank -l hurricane_evacuation_zones –a_nodata 0 -te 982199.3000000000465661 188224.6749999999883585 991709.3000000000465661 196484.6749999999883585 -tr 10 10 -ot UInt16 fullpath/hurricane_evacuation_zones.shp fullpath/hurricane_evacuation_zones.tif</code></pre>
+<p>This means that the output raster will contain rasterized values from the rank attribute field. Areas outside the layer polygons will be assigned a value of 0, which will be interpreted as nodata. The output data type is a 16-bit unsigned integer.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Click on the OK button. The result of rasterization will appear in the Layers panel.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1434"></span>
+<img src="images/04/fig34.jpeg" alt="Rasterize" width="70%" />
+<p class="caption">
+Figure 7.25: Rasterize
+</p>
+</div>
+<p>The hurricane_inundation_zones layer should be preprocessed in a similar way. The layer contains some zone numbers. These can be interpreted as the severity of inundation risk; that is, the higher the number, the lower the risk. This means that we can use these values directly for ranking. In the case of this layer, the gdal_rasterize command-line parameters will look as follows:</p>
+<pre><code>gdal_rasterize -a category -l hurricane_inundation_zones -a_nodata 0 -te 982199.3000000000465661 188224.6749999999883585 991709.3000000000465661 196484.6749999999883585 -tr 10 10 -ot UInt16 fullpath/hurricane_inundation_zones.shp fullpath/hurricane_inundation_zones.tif</code></pre>
+<p>When combined, these layers can give a cumulative assessment of suitability based on risk’s severity from natural hazards.</p>
+</div>
+<div id="ranking-density-rasters" class="section level4">
+<h4><span class="header-section-number">7.3.4.2</span> Ranking density rasters</h4>
+<p>In the case of density rasters, we can use the ready <strong>noise_heatamp.tif</strong> and create the <strong>tree_density.tif</strong> layer ourselves. First, we will prepare a noise_heatmap.tif that is originally much larger by extent than the area of interest that we are working on in this chapter. To clip the raster layer go to <strong>Raster | Extraction | Clipper</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p>From the Input file (raster) drop-down list select noise-heatmap, which is the raster to be clipped.</p></li>
+<li><p>In Output file, click on the Select button to set a path and name for the output file, for example, noise_heatmap_clip.tif.</p></li>
+<li><p>In the Clipping mode section, there are two possible modes:</p></li>
+</ol>
+<ul>
+<li><p>Extent is where you can enter the bounding box’s coordinates manually or by dragging the map canvas. Use this approach to set the extent for your output file. Just remember that the extent should exceed the boundaries of the area of interest set by the zipcode_bound shapefile.</p></li>
+<li><p>If Mask layer is active, you can select a polygonal shapefile, and it will be used as a clipping boundary.</p></li>
+</ul>
+<p>After you have clicked on the OK button, the layer will be loaded into the map canvas.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1435"></span>
+<img src="images/04/fig35.jpeg" alt="Clipper" width="70%" />
+<p class="caption">
+Figure 7.26: Clipper
+</p>
+</div>
+<p>The following steps should be done to assess its value range, divide it into categories, and rank them:</p>
+<ol style="list-style-type: decimal">
+<li>Double-click on the <strong>noise_heatmap_clip</strong> layer to open the <strong>Layer Properties</strong> window. In this window, go to the <strong>Metadata</strong> section. Explore the <strong>Properties</strong> window in the lower part of the dialog until you find the Band 1 highlighted line with basic raster statistics, as shown here:</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1436"></span>
+<img src="images/04/fig36.jpeg" alt="Band 1 Metadata" width="70%" />
+<p class="caption">
+Figure 7.27: Band 1 Metadata
+</p>
+</div>
+<p>We will deal with the density raster, and its values are interpreted as the number of noise complaints per pixel area. This continuous surface should be divided into categories and they should be ranked according to the number of complaints. For this, a certain critical number of complaints should be set. There are no officially recognized limits and requirements, but we can interpret the mean dataset value as some critical number (it is slightly greater than 56, but we will use 50 for convenience). Divide the values into categories and assign them the following ranks (the less the number of complaints, the better):</p>
+<table>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Value range</th>
+<th>Suitability rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Less than 50</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>50 to 100</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>100 to 150</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>150 to 200</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Greater than 200</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>For the rankings, go to <strong>Raster | Raster Calculator</strong> and adjust the following options in its dialog window:</p>
+<ul>
+<li><p>Enter the <strong>Output</strong> layer path and name, for example, <strong>noise_ranked</strong></p></li>
+<li><p>Select the __noise_heatmap_clip <span class="citation">(<span class="citeproc-not-found" data-reference-id="1__"><strong>???</strong></span>)</span> raster band and click on the <strong>Current layer extent</strong> button to make sure that the output layer will have the same resolution and extent</p></li>
+<li><p>In the <strong>Raster Calculator</strong> expression window, enter the following expression:</p></li>
+</ul>
+<pre><code>(&quot;noise_heatmap_clip@1&quot; &lt;= 50) *5 + (&quot;noise_heatmap_clip@1&quot; &gt; 50 AND&quot;noise_heatmap_clip@1&quot; &lt;= 100) *4 + (&quot;noise_heatmap_clip@1&quot; &gt; 100 AND &quot;noise_heatmap_clip@1&quot; &lt;= 150) *3 + (&quot;noise_heatmap_clip@1&quot; &gt; 150 AND &quot;noise_heatmap_clip@1&quot; &lt;= 200) *2+ (&quot;noise_heatmap_clip@1&quot; &gt; 200)*1</code></pre>
+<p>This expression means that every pixel that falls under a certain range given in brackets first assigned 1 value, and then it is ranked by a certain multiplier value, which is outside the brackets. After you click on the OK button, the reclassified raster will be loaded into the Layers panel.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1437"></span>
+<img src="images/04/fig37.jpeg" alt="Reclassified raster" width="70%" />
+<p class="caption">
+Figure 7.28: Reclassified raster
+</p>
+</div>
+<p>Pay attention to this: due to ranking, the heat map was inverted; that is, the noisiest hotspots get the lowest ranks and the quietest places get the highest.</p>
+<p>In a similar way, we can create and rank heat maps for other point objects that are of interest in our suitability analysis, namely <strong>trees</strong> and <strong>museumart</strong>.</p>
+</div>
+<div id="generating-and-ranking-proximity-rasters" class="section level4">
+<h4><span class="header-section-number">7.3.4.3</span> Generating and ranking proximity rasters</h4>
+<p>The workflow will be explained in the example of the subway_entrances point vector layer:</p>
+<ol style="list-style-type: decimal">
+<li>First, the layer should be rasterized in a common way. The gdal_rasterize line will contain the following parameters:</li>
+</ol>
+<pre><code>gdal_rasterize -l subway_entrances -burn 1 -a_nodata 0 -te 982199.3000000000465661 188224.6749999999883585 991709.3000000000465661 196484.6749999999883585 -tr 10 10 -ot Byte fullpath/subway_entrances.shp fullpath/subway_entances.tif</code></pre>
+<p>In the output layer, existing point locations will be marked by pixel values of 1, while all other areas will be assigned the nodata values of 0.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Go to _<strong>Raster | Analysis | Proximity (Raster Distance)</strong>. This dialog generates a raster proximity map that indicates the distance from the center of each pixel to the center of the nearest pixel identified as a target pixel. Target pixels are those pixels in the source raster for which the raster pixel value is in the set of target pixel values. If not specified, all nonzero pixels will be considered target pixels. In the dialog window, adjust the following parameters:</li>
+</ol>
+<ul>
+<li><p>From the Input file drop-down list, select the <strong>subway_entrances</strong> layer.</p></li>
+<li><p>In the Output file, click on the <strong>Select</strong> button and specify a path and a name for the output layer, for example, <strong>subway_entances_proximity.tif</strong>.</p></li>
+<li><p>Make sure that the Dist units parameter is activated and set to <strong>GEO</strong>. In this case, the distances generated will be in <strong>georeferenced coordinates</strong> (feet).</p></li>
+</ul>
+<p>The resulting parameters line will look like this:</p>
+<pre><code>gdal_proximity.bat fullpath/subway_entances.tif fullpath/subway_entances_proximity.tif -distunits GEO -of GTiff</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:fig1438"></span>
+<img src="images/04/fig38.jpeg" alt="Proximity analyses" width="70%" />
+<p class="caption">
+Figure 7.29: Proximity analyses
+</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>The proximity raster should be divided into discrete categories and they should be ranked. For this operation, we will use Raster Calculator. The major problem here is to decide on the amount and properly select the proximity categories for ranking. The optimal decision depends on the so-called walking radius, that is, the distance that people are comfortable to walk up to. Generally, transport planners have observed that the walking distance that most people seem to cover comfortably— beyond which ridership falls drastically—is about 400 m (approximately 1300 feet). We will apply this 400 m rule to categorize the layer values (min as zero and max as 4988.71) into four categories, with the following ranks:</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Proximity values range (feet)</th>
+<th>Suitability rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Less than 1,300</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1,300 to 2,600</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2,600 to 3,900</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Greater than 3,900</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Go to <strong>Raster | Raster Calculator</strong> and adjust the main options. Enter the following expression to generate a new <strong>subway_entrances_proximity_ranks</strong> raster:</p>
+<pre><code>(&quot;subway_entances_proximity@1&quot; &lt;= 1300) *4 + (&quot;subway_entances_proximity@1&quot; &gt; 1300 AND &quot;subway_entances_proximity@1&quot; &lt;= 2600) *3 + (&quot;subway_entances_proximity@1&quot; &gt; 2600 AND &quot;subway_entances_proximity@1&quot; &lt;= 3900) *2 + (&quot;subway_entances_proximity@1&quot; &gt; 3900)*1</code></pre>
+<p>In the following screenshot, you can see what continuous (on the left) and ranked (on the right) rasters may look like:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1439"></span>
+<img src="images/04/fig39.jpeg" alt="Field Calculator" width="70%" />
+<p class="caption">
+Figure 7.30: Field Calculator
+</p>
+</div>
+<p>In a similar way, you can preprocess other vector layers that should be analyzed from the proximity position, namely parks, bike_routes, athletic_facilities, and elementary schools. As a result, you will have a set of raster layers ranked with several categories according to the proximity of selected objects. The higher the rank, the closer the objects. As a general rule of thumb, apply the 400 m (or 1300 feet) value to rank the rasters properly.</p>
+</div>
+</div>
+<div id="step-5-overlay-the-data-and-interpret-the-results" class="section level3">
+<h3><span class="header-section-number">7.3.5</span> Step 5: Overlay the data and interpret the results</h3>
+<p>Now we have everything ready for overlaying the rasters and generating a cumulative suitability assessment. In the following figure, you can see the full list of layers, weighted by their importance for general suitability. Weights are simple coefficients within a range of 0 to 1, and they are used to modify the rank properly.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1440"></span>
+<img src="images/04/fig40.png" alt="list of layers weighted by their importance for general suitability" width="90%" />
+<p class="caption">
+Figure 7.31: list of layers weighted by their importance for general suitability
+</p>
+</div>
+<p>The expression to be used for our assessment of suitability can be constructed by several steps:</p>
+<ol style="list-style-type: decimal">
+<li>All the available factors that are represented by raster layers should be multiplied by their weight coefficients and summarized, like this:</li>
+</ol>
+<pre><code>(factor_1*weight + factor_2*weight + factor_3*weight + … factor_n*weight)</code></pre>
+<p>This kind of assessment gives gross suitability, which is difficult for interpretation because the obtained values are not calculated relatively to the possible minimum and maximum.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>For simplicity of interpretation, a gross suitability assessment can be divided into the sum of the maximum possible value. The extended formula will look like this:</li>
+</ol>
+<pre><code>(factor_1*weight + factor_2*weight + factor_3*weight + … factor_n*weight) / (factor_1_max*weight + factor_2_max*weight + factor_3_max*weight + … factor_n_max*weight)</code></pre>
+<p>As a result, the output value range will be from 0 to 1, where the maximum suitability values are close to 1.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Optionally, the result can be multiplied by 100. Then the output values will be a percentage of suitability.</li>
+</ol>
+<p>Go to <strong>Raster | Raster Calculator</strong> to perform an assessment:</p>
+<ul>
+<li><p>Set the path and name for Output layer</p></li>
+<li><p>Select a layer from the Raster bands list to set up Current layer extent, for example, <strong>hurricane_inundataion</strong></p></li>
+<li><p>In the Expression window, enter the following formula (if you are not sure about the values, check out the preceding table):</p></li>
+</ul>
+<pre><code>( ( &quot;athletic_facilities_proximity_ranks@1&quot; * 0.04 + &quot;bike_routes_proximity_ranks@1&quot; * 0.06+&quot;hurricane_evacuation_zones@1&quot; * 0.16+&quot;hurricane_inundation_zones@1&quot; * 0.16+&quot;museumart_ranked@1&quot; * 0.05+&quot;noise_ranked@1&quot; * 0.13+&quot;parks_proximity@1&quot; * 0.12+&quot;schools_proximity@1&quot; * 0.15+&quot;subway_entrances_proximity_ranks@1&quot; * 0.06+&quot;tree_ranked@1&quot;*0.07) / 4.63 ) *1000</code></pre>
+<p>After you have clicked on the OK button, the resulting layer will be added to the map canvas. The suitability raster value’s range varies from 42 to 96 percent. Thus, it can easily be classified and interpreted. Navigate to <strong>Layer properties | Style</strong> and adjust the rendering properties to those shown in the following screenshot:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1441"></span>
+<img src="images/04/fig41.jpeg" alt="Suitability layer" width="70%" />
+<p class="caption">
+Figure 7.32: Suitability layer
+</p>
+</div>
+<p>After applying these settings, the layer will look as follows:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1442"></span>
+<img src="images/04/fig42.jpeg" alt="Suitability map" width="70%" />
+<p class="caption">
+Figure 7.33: Suitability map
+</p>
+</div>
+<p>We can use this raster as a basis for a primary visual suitability assessment of the area of our interest, or go further and combine it with other layers to identify the exact blocks that match best the entire range of suitability criteria.</p>
+<p>In that case, we need to perform the inverse sequence of steps: select the most suitable areas, vectorize, and overlay the polygons of maximum suitability with residential living areas to identify the blocks and buildings that would be particularly suitable:</p>
+<ol style="list-style-type: decimal">
+<li><p>The initial suitability raster should be categorized into only two classes by a limit of 90 percent suitability. Go to <strong>Raster | Raster Calculator</strong> and define the path and name for the output raster (for example max_suitability). In the Expression window, enter “suitability, %<span class="citation">(<span class="citeproc-not-found" data-reference-id="1"><strong>???</strong></span>)</span>” &gt;= 90. On the next page, you can see that the resulting layer contains only two classes: suitable (the value is 1; assigned to areas with suitability greater than or equal to 90 percent), and unsuitable (the value is 0).</p></li>
+<li><p>Now we need to vectorize these areas to be able to query vector layers with them. Open the <strong>Polygonize (Raster to vector)</strong> dialog window by going to <strong>Raster | Conversion</strong> and adjust the following parameters:</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig1443"></span>
+<img src="images/04/fig43.jpeg" alt="Polygonize" width="70%" />
+<p class="caption">
+Figure 7.34: Polygonize
+</p>
+</div>
+<ul>
+<li><p>Select max_suitability as the raster to be polygonized from <strong>Input file (raster)</strong>.</p></li>
+<li><p>Provide the path and name of the output shapefile in <strong>Output file for polygons (shapefile)</strong>, for example, max_suitability_polygons.</p></li>
+<li><p>Activate the Field name toggle and accept the default DN value. This option is responsible for creating and populating field with class values from the initial raster.</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:fig1444"></span>
+<img src="images/04/fig44.jpeg" alt="Masking raster" width="70%" />
+<p class="caption">
+Figure 7.35: Masking raster
+</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>After you click on the OK button, the resulting shapefile will be added to the Layers panel. Originally, the layer contains polygons of all classes, whereas we are interested only in class 1. For the purpose of selecting and deleting unnecessary polygons, we will use the Select features using an expression option:</li>
+</ol>
+<ul>
+<li><p>Open the max_suitability attribute table by clicking on the button in the Attribute panel, or from the right-click Open Attribute Table layer shortcut.</p></li>
+<li><p>In the attribute table toolbar panel, click on the Select features using an expression button, , and enter the following expression: “DN” = 0. After clicking on OK, all the polygons that satisfy the condition will be highlighted in the attribute table and on the map canvas.</p></li>
+<li><p>As we don’t need these polygons for further analysis, we should delete them. In the attribute table toolbar panel, click on the button to toggle editing mode, or use the Ctrl + E keyboard shortcut. Now we can execute Delete selected features using the button, or just press Del from the keyboard.</p></li>
+<li><p>After deleting the unnecessary data, don’t forget to save your edits (using or Ctrl + S) and deactivate editing mode. In the following screenshot, you can see that the layer contains only those polygons that encompass the maximum suitability values, which are set to 90 percent:</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:fig1445"></span>
+<img src="images/04/fig45.jpeg" alt="Reclass maximum suitability" width="70%" />
+<p class="caption">
+Figure 7.36: Reclass maximum suitability
+</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>Now this layer can be used to overlay with other vector layers and analyze spatial relationships between objects, as was described in the Basics of suitability analysis section. For example, we can identify the zoning areas of primary residential living area that are of potential interest to us according to the suitability criteria:</li>
+</ol>
+<ul>
+<li>Open a dialog window by going to <strong>Vector | Research tools | Select by location</strong>. In this dialog, you should first select the layer from which objects are to be selected—residential_zoning from the <strong>Select features in</strong>: drop-down list—like this:</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:fig1446"></span>
+<img src="images/04/fig46.jpeg" alt="Select by location" width="60%" />
+<p class="caption">
+Figure 7.37: Select by location
+</p>
+</div>
+<ul>
+<li><p>the that intersect features in: drop-down list, select max_suitability_polygons, which will be used as a selector.</p></li>
+<li><p>There are several overlay selection options. Activate Include input features that intersect the selection features. Only those polygons that are within the query mask boundary or intersect it will be added to the selection. Click on the OK button. You will see the following result on the map canvas:</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:fig1447"></span>
+<img src="images/04/fig47.jpeg" alt="Selected maximum suitability" width="70%" />
+<p class="caption">
+Figure 7.38: Selected maximum suitability
+</p>
+</div>
+<p>Similarly, you can try another type of query and identify the exact buildings that satisfy a suitability condition. In that case, the dialog window will look as follows:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1448"></span>
+<img src="images/04/fig48.jpeg" alt="Exact buildings from selected maximum suitability" width="60%" />
+<p class="caption">
+Figure 7.39: Exact buildings from selected maximum suitability
+</p>
+</div>
+<p>After clicking on the OK button, you will see the following results on the map canvas:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig1449"></span>
+<img src="images/04/fig49.jpeg" alt="Final result" width="70%" />
+<p class="caption">
+Figure 7.40: Final result
+</p>
+</div>
+<p>Notice that this time, we have selected buildings that were completely within the maximum suitability areas. So, we are ready to provide a solid and specific answer to the question, “Which is the best place to live?”</p>
+<!-- ## Raster analysis -->
+<!-- ### Using the raster calculator -->
+<!-- ### Calculating NDVI -->
+<!-- ### Handling NULL values -->
+<!-- ### Setting extents with masks -->
+<!-- ### Sampling a raster layer -->
+<!-- ### Preparing elevation data -->
+<!-- ### Calculating a slope -->
+<!-- ### Calculating a hillshade layer -->
+<!-- ### Analyzing hydrology -->
+<!-- ### Calculating a topographic index -->
+<!-- ### Automating analyses tasks using the graphical modeler -->
+<!-- ## Vector analysis -->
+<!-- ### Selecting optimum sites -->
+<!-- ### Dasymetric mapping -->
+<!-- ### Calculating regional statistics -->
+<!-- ### Estimating density using heatmaps -->
+<!-- ### Estimating values based on samples -->
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hari-keenam.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Pelatihan untuk Analis SIG.pdf", "Pelatihan untuk Analis SIG.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

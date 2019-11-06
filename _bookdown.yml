@@ -2,6 +2,6 @@ book_filename: "Pelatihan untuk Analis SIG"
 chapter_name: ""
 repo: https://github.com/firmanhadi/training-for-gis-analyses
 output_dir: docs
-rmd_files: ["index.Rmd", "01-intro.Rmd", "02-Day-2.Rmd", "03-Day-3.Rmd", "04-Day-4.Rmd","05-Day-5.Rmd"]
+rmd_files: ["index.Rmd", "01-intro.Rmd", "02-Day-2.Rmd", "03-Day-3.Rmd", "04-Day-4.Rmd","05-Day-5.Rmd","06-Day-6.Rmd"]
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
