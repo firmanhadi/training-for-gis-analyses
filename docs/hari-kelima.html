@@ -107,6 +107,9 @@
 <li class="chapter" data-level="5.1" data-path="hari-kelima.html"><a href="hari-kelima.html#conceptual-framework"><i class="fa fa-check"></i><b>5.1</b> Conceptual framework</a></li>
 <li class="chapter" data-level="5.2" data-path="hari-kelima.html"><a href="hari-kelima.html#data"><i class="fa fa-check"></i><b>5.2</b> Data</a></li>
 <li class="chapter" data-level="5.3" data-path="hari-kelima.html"><a href="hari-kelima.html#final-regression-model"><i class="fa fa-check"></i><b>5.3</b> Final regression model</a></li>
+<li class="chapter" data-level="5.4" data-path="hari-kelima.html"><a href="hari-kelima.html#praktek-pemodelan-sig"><i class="fa fa-check"></i><b>5.4</b> Praktek Pemodelan SIG</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="hari-kelima.html"><a href="hari-kelima.html#menghitung-jumlah-rumah-di-sempadan-sungai"><i class="fa fa-check"></i><b>5.4.1</b> Menghitung jumlah rumah di sempadan sungai</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/firmanhadi/training-for-gis-analyses" target="blank">Published with bookdown</a></li>
@@ -147,7 +150,17 @@
 LTIME = +0.2663 * CARVOLUME + 0.6984 * LLENGTH + 0.0203 * LPOP + 0.0605 * TWOWAY + 0.1681 * SCHOOL + 0.0317 * RESIDENTIAL - 0.5497
 </p>
 </div>
+</div>
+<div id="praktek-pemodelan-sig" class="section level2">
+<h2><span class="header-section-number">5.4</span> Praktek Pemodelan SIG</h2>
+<div id="menghitung-jumlah-rumah-di-sempadan-sungai" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Menghitung jumlah rumah di sempadan sungai</h3>
+<p><img src="img/model.jpeg" />
+<span class="math display">\[\begin{align}
+Hasil dari Mbak Siti
+\end{align}\]</span></p>
 
+</div>
 </div>
 </div>
 
@@ -210,6 +223,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
