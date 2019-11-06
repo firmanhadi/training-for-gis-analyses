@@ -26,7 +26,7 @@ LTIME = +0.2663 * CARVOLUME + 0.6984 * LLENGTH + 0.0203 * LPOP + 0.0605 * TWOWAY
 
 
 ![](./img/gismodel4.png)
-
+  
 
 
 ![](./img/gismodel6.png) 
@@ -34,3 +34,26 @@ LTIME = +0.2663 * CARVOLUME + 0.6984 * LLENGTH + 0.0203 * LPOP + 0.0605 * TWOWAY
 
 ![](./img/gismodel7.png)
 
+## Analisis SIG Dasar
+
+- Digital Elevation Model 30m [https://firmanhadi.github.io/training-for-gis-analyses/img/dem.zip](https://firmanhadi.github.io/training-for-gis-analyses/img/dem.zip)
+
+### Overlay
+
+### Buffer
+
+### Menghitung jarak
+
+### Query by attribute
+
+### Clip
+
+### Intersect
+
+### Spatial query
+
+### Display Raster
+
+### Mosaik raster
+
+## Analisis SIG Lanjut
