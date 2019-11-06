@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Hari Keempat | Training for GIS Analyses</title>
+  <title>5 Hari Kelima | Training for GIS Analyses</title>
   <meta name="description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Hari Keempat | Training for GIS Analyses" />
+  <meta property="og:title" content="5 Hari Kelima | Training for GIS Analyses" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Hari Keempat | Training for GIS Analyses" />
+  <meta name="twitter:title" content="5 Hari Kelima | Training for GIS Analyses" />
   
   <meta name="twitter:description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="hari-ketiga.html"/>
-<link rel="next" href="hari-kelima.html"/>
+<link rel="prev" href="hari-keempat.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -128,113 +128,42 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hari-keempat" class="section level1">
-<h1><span class="header-section-number">4</span> Hari Keempat</h1>
-<p><strong>Topik</strong></p>
-<div id="service-area-analyses-di-qgis" class="section level2">
-<h2><span class="header-section-number">4.1</span> Service Area Analyses di QGIS</h2>
-<ol style="list-style-type: decimal">
-<li><p>Load layer jalan dan fasilitas kesehatan dalam format UTM (Zona 48N).</p></li>
-<li><p>Load raster kepadatan penduduk</p></li>
-<li><p>Melakukan analisis <strong><em>service area</em></strong></p></li>
-</ol>
-<ul>
-<li>Processing &gt; Network analyses &gt; Service area</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Create buffer from service area lines</p></li>
-<li><p>Calculate raster using vector</p></li>
-</ol>
-<ul>
-<li>Zonal statistics</li>
-</ul>
+<div id="hari-kelima" class="section level1">
+<h1><span class="header-section-number">5</span> Hari Kelima</h1>
+<p><strong>Referensi</strong></p>
+<p>“Geographic Information System (GIS) modeling approach to determine the fastest delivery routes”: <a href="https://www.sciencedirect.com/science/article/pii/S1319562X15001370">https://www.sciencedirect.com/science/article/pii/S1319562X15001370</a></p>
+<div id="conceptual-framework" class="section level2">
+<h2><span class="header-section-number">5.1</span> Conceptual framework</h2>
+<p><img src="img/gismodel1.png" /></p>
 </div>
-<div id="non-spatial-sql-queries" class="section level2">
-<h2><span class="header-section-number">4.2</span> Non-spatial SQL Queries</h2>
-<ol style="list-style-type: decimal">
-<li>Membuat tabel baru</li>
-</ol>
-<p>Tujuan : Membuat tabel baru dari tabel yang sudah ada dengan kolom terpilih</p>
-<pre><code>CREATE TABLE kelurahan as SELECT geom, giskemen_2, giskemen_4, giskemen18,giskemen19,giskemen20,giskemen21, giskemen27, giskemen28 FROM public.desa_batam</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Rename column</li>
-</ol>
-<p>Tujuan : Mengganti nama kolom tertentu</p>
-<pre><code>ALTER TABLE public.kelurahan RENAME COLUMN giskemen_2 TO nama_desa;</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>Mengubah Primary Key</li>
-</ol>
-<pre><code>ALTER TABLE desa_batam DROP CONSTRAINT id;</code></pre>
-<pre><code>ALTER TABLE desa_batam RENAME COLUMN giskemen_4 TO id;</code></pre>
-<pre><code>ALTER TABLE desa_batam ADD PRIMARY KEY (id);</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Menambah Kolom</li>
-</ol>
-<pre><code>ALTER TABLE public.kelurahan ADD COLUMN giskemen33 FROM public.desa WHERE giskemen_4.public.desa.id = giskemen_4.public.kelurahan.id</code></pre>
+<div id="data" class="section level2">
+<h2><span class="header-section-number">5.2</span> Data</h2>
+<p><img src="img/gismodel2.png" /></p>
 </div>
-<div id="spatial-sql-queries" class="section level2">
-<h2><span class="header-section-number">4.3</span> Spatial SQL Queries</h2>
-<div id="adjacent" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> Adjacent</h3>
-<ol style="list-style-type: decimal">
-<li>Create New Layer</li>
-</ol>
-<pre><code>SELECT * into qlayer FROM kelurahan WHERE st_touches(kelurahan.geometry, ( SELECT geometry FROM kelurahan WHERE nama_desa = &#39;SADAI&#39;))</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Create As View</li>
-</ol>
-<p><code>CREATE VIEW TestView AS  SELECT * FROM kelurahan WHERE st_touches(kelurahan.geom, ( SELECT geom FROM kelurahan WHERE nama_desa = 'SADAI'));</code></p>
+<div id="final-regression-model" class="section level2">
+<h2><span class="header-section-number">5.3</span> Final regression model</h2>
+<div class="BlackBold">
+<p>
+LTIME = +0.2663 * CARVOLUME + 0.6984 * LLENGTH + 0.0203 * LPOP + 0.0605 * TWOWAY + 0.1681 * SCHOOL + 0.0317 * RESIDENTIAL - 0.5497
+</p>
 </div>
-</div>
-<div id="routing" class="section level2">
-<h2><span class="header-section-number">4.4</span> Routing</h2>
-<ol style="list-style-type: decimal">
-<li>Menambahkan ekstensi pgrouting</li>
-</ol>
-<p><code>sudo apt-get install postgresql-10-pgrouting</code>
-atau
-<code>sudo apt-get install postgreql-12-pgrouting</code></p>
-<p><code>create extension pgrouting();</code></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Konversi data OSM ke route</li>
-</ol>
-<pre><code>import OSM data to pgrouting
-osm2pgrouting -f batam.osm --dbname batam -U postgres -W password</code></pre>
-</div>
-<div id="backup-dan-restore" class="section level2">
-<h2><span class="header-section-number">4.5</span> Backup dan Restore</h2>
-<ul>
-<li><p><strong>Presentasi :</strong>
-<a href="https://gitpitch.com/firmanhadi/lapan-okt-19/master/">https://gitpitch.com/firmanhadi/lapan-okt-19/master#/</a></p></li>
-<li><p><strong>Video Proof of Concept</strong></p>
-<ul>
-<li>Backup dengan pgBarman</li>
-</ul>
-<p><a href="https://www.dropbox.com/s/tk2g296cc0pv6dh/backup_poc_v1.mkv?dl=0">https://www.dropbox.com/s/tk2g296cc0pv6dh/backup_poc_v1.mkv?dl=0</a></p>
-<ul>
-<li>Pooling Mechanism</li>
-</ul>
-<p><a href="https://www.dropbox.com/s/nl3xa2bnlay6ppk/pooling_mechanism_poc_v1.mkv?dl=0">https://www.dropbox.com/s/nl3xa2bnlay6ppk/pooling_mechanism_poc_v1.mkv?dl=0</a></p>
-<p><a href="https://www.dropbox.com/s/dtugpqi6k8hcsc3/pooling_mechanism_poc_v2.mkv?dl=0">https://www.dropbox.com/s/dtugpqi6k8hcsc3/pooling_mechanism_poc_v2.mkv?dl=0</a></p>
-<ul>
-<li>Failover Mechanism</li>
-</ul>
-<p><a href="https://www.dropbox.com/s/j5f9ks21db18ebv/replication_failover_poc_v1.mkv?dl=0">https://www.dropbox.com/s/j5f9ks21db18ebv/replication_failover_poc_v1.mkv?dl=0</a></p></li>
-<li><p><strong>Software</strong></p>
-<ul>
-<li><a href="https://sqlbackupandftp.com/postgresql-backup">https://sqlbackupandftp.com/postgresql-backup</a></li>
-</ul></li>
-</ul>
 
 </div>
 </div>
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="hari-ketiga.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="hari-kelima.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="hari-keempat.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

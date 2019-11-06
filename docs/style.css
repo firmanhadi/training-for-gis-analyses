@@ -12,3 +12,13 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+div.RedBold {
+  font-weight: bold;
+  color: red;
+}
+
+div.BlackBold {
+  font-weight: bold;
+  color: black  ;
+}
