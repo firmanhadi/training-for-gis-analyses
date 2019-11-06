@@ -26,3 +26,11 @@ LTIME = +0.2663 * CARVOLUME + 0.6984 * LLENGTH + 0.0203 * LPOP + 0.0605 * TWOWAY
 
 
 ![](./img/gismodel4.png)
+
+
+
+![](./img/gismodel6.png) 
+
+
+![](./img/gismodel7.png)
+
