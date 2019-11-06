@@ -2,7 +2,7 @@
 
 **Data**
 
-Data dapat diunduh di tautan berikut [https://firmanhadi.github.io/training-for-gis-analyses/img/dem.zip](https://firmanhadi.github.io/training-for-gis-analyses/img/dem.zip)
+Data dapat diunduh di tautan berikut [https://firmanhadi.github.io/training-for-gis-analyses/img/Day6.zip](https://firmanhadi.github.io/training-for-gis-analyses/img/Day6.zip)
 
 Analisis spasial adalah sebuah proses untuk mengkaji lokasi, atribut dan hubungan antara fitur dari data spasial melalui cara overlay dan teknik analisis lainnya, dalam rangka menjawab pertanyaan atau mendapatkan pemahaman yang bermanfaat. Analisis spasial mengekstrak atau membuat informasi baru dari data spasial.
 
