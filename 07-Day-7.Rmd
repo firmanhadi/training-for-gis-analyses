@@ -1,0 +1,28 @@
+# Hari Ketujuh 
+
+## Konsep WebGIS
+
+```{r fig1424, fig.cap='Open Attribute Table',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("img/webgis/pic1.png")
+```
+
+## Instalasi
+
+**Tomcat**
+
+![Instalasi Tomcat](https://youtu.be/IC_wnPZYyYA)
+
+**GeoServer**
+![Download GeoServer](https://youtu.be/NxV6bIpkaGw)
+
+### 
+### Konfigurasi Tomcat
+
+
+## GeoServer
+
+
+
+
+
+
