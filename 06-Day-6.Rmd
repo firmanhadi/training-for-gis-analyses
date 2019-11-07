@@ -212,8 +212,8 @@ knitr::include_graphics("images/04/fig71.png")
 
 ### Kelerengan
 
-Kelerengan (Slope) merupakan salah satu parameter dasar yang dapat diturunkan dari DEM.
-Ia adalah turunan pertama dari DEM dan menggambarkan laju perubahan ketinggian. Slope dihitung dengan melakukan analisis ketinggian dari setiap piksel, membandingkannya dengan ketinggian dari piksel di sekelilingnya. Untuk menghitungnya di QGIS, silakan ikuti cara berikut : 
+Kelerengan (**Slope**) merupakan salah satu parameter dasar yang dapat diturunkan dari DEM.
+Ia adalah turunan pertama dari DEM dan menggambarkan laju perubahan ketinggian. **Slope** dihitung dengan melakukan analisis ketinggian dari setiap piksel, membandingkannya dengan ketinggian piksel di sekelilingnya. Untuk menghitungnya di QGIS, silakan ikuti cara berikut : 
 
 1. Pada opsi **Processing Toolbox** , pilih algoritma **Slope**, klik ganda untuk membukanya.
 
@@ -227,9 +227,9 @@ knitr::include_graphics("images/04/fig72.jpeg")
 
 ### Hillshade
 
-Layer hillshade umumunya digunakan untuk memperbagus tampilan peta dan tampilan topografi yang intuitif, dengan mensimulasikan sumber cahaya dan bayangan yang dibentuk oleh permukaan bumi. Hillshade dapat dihitung dengan cara sebagai berikut :
+Layer **hillshade** umumnya digunakan untuk memperbagus tampilan peta dan topografi yang intuitif, dengan mensimulasikan sumber cahaya dan bayangan yang dibentuk oleh permukaan bumi. **Hillshade** dapat dihitung dengan cara sebagai berikut :
 
-1. Pada opsi "Processing Toolbox", cari algoritma Hillshade dan klik-ganda untuk membuka menunya.
+1. Pada opsi **Processing Toolbox**, cari algoritma **Hillshade** dan klik-ganda untuk membuka menunya.
 
 ```{r fig1473, fig.cap='Calculating hillshade',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig73.jpeg")
@@ -242,40 +242,40 @@ knitr::include_graphics("images/04/fig73.jpeg")
 
 ## Density Analyses (Analisis Kepadatan)
 
-Seringkali kita harus bekerja dengan data besar dan padat fiturnya, yang membuat penampilan datanya lambat. Jumlahnya yang ribuan atau bahkan jutaan fitur seringkali sulit diinterpretasi, overlap antar fitur menyebabkan pendeteksian pola cluster atau distribusinya tidak mudah untuk dilakukan.   
+Seringkali kita harus bekerja dengan data besar dan padat fiturnya, yang membuat penampilan datanya lambat. Jumlahnya yang ribuan atau bahkan jutaan fitur seringkali sulit diinterpretasi, terjadi overlap antar fitur yang menyebabkan pendeteksian pola cluster atau distribusinya tidak mudah untuk dilakukan.   
 
-Pada bagian ini, kita akan belajar mengenai teknik yang memungkinkan visualisasi dataset semacam itu dalam bentuk yang lebih mudah dibaca dan dengan waktu pemuatan (loading) yang lebih cepat. Setelah melakukan praktek di bagian ini, Anda diharapkan mampu melakukan analisis kepadatan (density analyses) untuk data yang Anda miliki dan mengekstrak informasi dari peta kepadatan.
+Pada bagian ini, kita akan belajar mengenai teknik yang memungkinkan visualisasi dataset semacam itu dengan bentuk yang lebih mudah dibaca dan dengan waktu pemuatan (**loading**) yang lebih cepat. Setelah melakukan praktek di bagian ini, Anda diharapkan mampu melakukan analisis kepadatan (**density analyses**) untuk data yang Anda miliki dan mengekstrak informasi dari peta kepadatan.
 
 ### Konsep 
 
 Peta kepadatan memungkinkan estimasi visual konsentrasi objek atau peristiwa di area studi. Peta seperti itu sangat berguna untuk penilaian pola distribusi fitur di wilayah studi. Ketika kita cukup menambahkan lokasi fitur atau peristiwa (misalnya, sebagai titik) ke peta, kita tidak dapat melihat perubahan konsentrasi mereka di area yang berbeda. Analisis kepadatan memberi kita fungsionalitas seperti itu dengan menggunakan karakteristik area yang seragam, seperti jumlah fitur per hektar atau kilometer persegi.
 
-Peta kerapatan memberi kita kemampuan untuk memperkirakan konsentrasi beberapa fitur dalam suatu area. Ini membantu kita menemukan area di mana reaksi mendesak diperlukan atau yang cocok dengan kriteria Anda. Heatmaps juga membantu mengontrol kondisi dan perubahannya.
+Peta kepadatan memberi kita kemampuan untuk memperkirakan konsentrasi beberapa fitur dalam suatu area. Ini membantu kita menemukan area di mana reaksi mendesak diperlukan atau yang cocok dengan kriteria. **Heatmap** juga membantu mengontrol kondisi dan perubahannya.
 
 Peta kepadatan juga sangat berguna ketika wilayah yang dipetakan (misalnya, kabupaten) memiliki ukuran yang berbeda. Misalnya, jika kita ingin tahu berapa banyak orang yang tinggal di setiap kabupaten, kita hanya perlu peta ordinal dengan data populasi. Menurut peta ini, sebuah distrik besar mungkin memiliki populasi yang lebih tinggi daripada distrik yang lebih kecil. Tetapi jika kita ingin mengidentifikasi kabupaten dengan konsentrasi populasi yang lebih tinggi, maka kita membutuhkan peta kepadatan untuk melihat jumlah orang per kilometer persegi. Dan peta kepadatan akan menunjukkan kepada kita bahwa, pada kenyataannya, daerah kecil dengan kepadatan penduduk yang tinggi mungkin memiliki lebih banyak orang per kilometer persegi daripada kabupaten yang lebih besar.
 
 Secara umum, kita dapat menunjukkan pada peta distribusi kepadatan fitur itu sendiri (misalnya, sekolah), serta distribusi beberapa karakteristik numerik fitur ini (misalnya, jumlah siswa di sekolah). Hasilnya akan sangat berbeda dalam kasus ini. Peta kepadatan sekolah dapat membantu departemen pendidikan menemukan daerah-daerah di mana lebih banyak sekolah dibutuhkan, sementara peta kepadatan dibuat dari informasi tentang jumlah siswa di setiap sekolah dapat membantu perusahaan transportasi untuk merencanakan rute bus dan untuk memutuskan di mana menempatkan halte bus. .
 
-Kasus penggunaan yang paling umum adalah pembuatan peta kerapatan untuk menampilkan kerapatan fitur titik. Peta seperti ini sering disebut peta panas. Apa itu peta panas? Ini adalah layer raster. Setiap selnya berisi representasi kepadatan fitur di sekitarnya (misalnya, jumlah orang per kilometer persegi), yang tergantung pada jumlah fitur dalam beberapa area.
+Kasus penggunaan yang paling umum adalah pembuatan peta kepadatan untuk menampilkan kerapatan fitur titik. Peta seperti ini sering disebut **_heat map_**. Apa itu **heat map**? Ini adalah layer raster. Setiap pikselnya menggambarkan kepadatan fitur di sekitarnya (misalnya, jumlah orang per kilometer persegi), yang tergantung pada jumlah fitur dalam beberapa area.
 
-Untuk membuat peta panas, dalam kasus paling sederhana, GIS melihat fitur di sekitar pusat sel, menggunakan radius pencarian yang diberikan. Kemudian jumlah fitur yang termasuk dalam radius yang diberikan dihitung dan dibagi dengan luas wilayah. Nilai ini akan menjadi nilai sel. Kemudian sel selanjutnya akan dianalisis, dan seterusnya. Sebagai hasilnya, kita akan mendapatkan kombinasi nilai, yang menciptakan permukaan yang halus. Untuk memahami ini lebih baik, lihat diagram berikut:
+Untuk membuat **heat map**, dalam kasus paling sederhana, GIS melihat fitur di sekitar pusat piksel, menggunakan radius pencarian yang diberikan. Kemudian jumlah fitur yang termasuk dalam radius yang diberikan dihitung dan dibagi dengan luas wilayah. Nilai ini akan menjadi nilai piksel. Kemudian piksel selanjutnya akan dianalisis, dan seterusnya. Sebagai hasilnya, kita akan mendapatkan kombinasi nilai, yang menciptakan permukaan yang halus. Untuk memahami ini lebih baik, lihat diagram berikut:
 
 
 ```{r fig1400, fig.cap='General principle of creating heatmaps',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig0.jpeg")
 ```
 
-Diagram ini menunjukkan prinsip umum pembuatan **_heatmap_**. Titik-titik hijau menggambarkan fitur yang digunakan untuk pembuatan peta kerapatan, kotak biru adalah sel raster saat ini, dan lingkaran titik-titik merah menandai radius pencarian, misalnya, 1 km. Dalam hal ini, area yang dicakupi adalah sekitar 3,14 km persegi. Seperti yang dapat kita lihat pada diagram di sebelah kiri, empat fitur berada dalam radius pencarian. Jadi, sel raster akan mendapatkan nilai 4 / 3.14 = 1.27. Di sisi kanan, kita perhatikan bahwa sel berikutnya akan mendapatkan nilai 1,59 karena sekarang ada lima fitur di dalam radius pencarian.
+Diagram ini menunjukkan prinsip umum pembuatan **_heat map_**. Titik-titik hijau menggambarkan fitur yang digunakan untuk pembuatan peta kepadatan, kotak biru adalah sel raster saat ini, dan lingkaran titik-titik merah menandai radius pencarian, misalnya, 1 km. Dalam hal ini, area yang dicakupi adalah sekitar 3,14 km persegi. Seperti yang dapat kita lihat pada diagram di sebelah kiri, empat fitur berada dalam radius pencarian. Jadi, piksel raster akan mendapatkan nilai 4 / 3,14 = 1,27. Di sisi kanan, kita perhatikan bahwa piksel berikutnya akan mendapatkan nilai 1,59 karena sekarang ada lima fitur di dalam radius pencarian.
 
-Ini adalah pendekatan paling sederhana. Dalam aplikasi dunia nyata, algoritma yang lebih kompleks digunakan, di mana setiap titik memiliki dampak pada nilai-nilai sel tetangga, tergantung pada jaraknya dari sel-sel tersebut.
+Ini adalah pendekatan paling sederhana. Dalam aplikasi dunia nyata, algoritma yang lebih kompleks digunakan, di mana setiap titik memiliki dampak pada nilai-nilai piksel tetangga, tergantung pada jaraknya dari piksel-piksel tersebut.
 
 ### Membuat Heatmap dengan plugin QGIS
 
-Dengan bantuan plugin inti QGIS yang disebut Heatmap, kita dapat dengan mudah membuat **heat map** dari data titik vektor dan menggunakannya untuk analisis lebih lanjut. Pertama, kita perlu mengaktifkan plugin ini, jika belum diaktifkan. Setelah aktivasi, ia membuat submenu di bawah menu Raster dan menempatkan tombolnya pada bilah alat Raster .
+Dengan bantuan plugin inti QGIS yang disebut**Heatmap**, kita dapat dengan mudah membuat **heat map** dari data titik vektor dan menggunakannya untuk analisis lebih lanjut. Pertama, kita perlu mengaktifkan plugin ini, jika belum diaktifkan. Setelah aktivasi, ia membuat submenu di bawah menu Raster dan menempatkan tombolnya pada bilah alat Raster .
 
 Mari kita buat peta kepadatan untuk lapisan kebisingan , yang berisi informasi tentang keluhan tentang tingkat kebisingan yang tinggi. Lapisan ini berisi 44.397 fitur, dan sulit untuk mengetahui tempat mana yang berisik.
 
-Informasi tentang tempat-tempat seperti itu mungkin berguna bagi departemen kepolisian atau lembaga lain untuk merencanakan beberapa kegiatan untuk mengurangi kebisingan, atau bagi mereka yang mencari apartemen dan tidak ingin tetangga yang hobinya mendengarkan musik cadas .
+Informasi tentang tempat-tempat seperti itu mungkin berguna bagi departemen kepolisian atau lembaga lain untuk merencanakan beberapa kegiatan untuk mengurangi kebisingan, atau bagi mereka yang mencari apartemen dan tidak ingin hidup berdampingan dengan tetangga yang hobinya mendengarkan musik cadas! .
 
 1. Mulai plugin dengan klik tombol __Heatmap__ pada panel __Raster__, atau dengan melakukan navigasi __Raster | Heatmap | Heatmap....__
 
@@ -283,11 +283,11 @@ Informasi tentang tempat-tempat seperti itu mungkin berguna bagi departemen kepo
 knitr::include_graphics("images/04/fig7.jpeg")
 ```
 
-2. Pilih layer __noise__ dari kotak kombo __Input point layer__.
+2. Pilih layer __noise__ dari kotak centang __Input point layer__.
 
 3. Dengan memilih tombol **…** di bagian kanan dari kolom __Output raster__, tentukan direktori di mana Anda akan menyimpan peta **heat map**. Catatan, Anda tidak perlu menuliskan ekstensi berkasnya, ia akan dipilih secara otomatis.
 
-4. Gunakan kotak kombo __Output format__ untuk memilih format data yang diinginkan. Pilihan paling umum adalah __GeoTIFF__, namun untuk peta yang mencakup area luas, lebih baik gunakan format yang lain, misalnya __Erdas Imagine__.
+4. Gunakan kotak centang __Output format__ untuk memilih format data yang diinginkan. Pilihan paling umum adalah __GeoTIFF__, namun untuk peta yang mencakup area luas, lebih baik gunakan format yang lain, misalnya __Erdas Imagine__.
 
 5. Yang terakhir harus ditentukan adalah __Radius__. Nilai ini menentukan jarak dari setiap piksel di mana QGIS akan mencari fitur tetangganya dan mengikutsertakan keberadaan piksel tetangga ke dalam perhitungan. Secara umum, radius yang lebih besar akan memberikan hasil yang lebih umum (tergeneralisasi), karena jumlah fitur akan dibagi dengan area yang lebih besar. Radius lebih kecil akan memberikan hasil yang lebih presisi, namun apabila terlalu kecil maka kita tidak akan dapat melihat pola distribusinya. Radius pencarian dapat didefinisikan dalam meter atau unit peta.
 
@@ -303,22 +303,22 @@ Sebagai contoh, apabila kita ingin menghitung kepadatan per kilo meter persegi, 
 r = \sqrt{\frac{1 km^2}{\pi}} = \sqrt{\frac{1000000 m^2}{3.1415926}} \approx 564.2 m
 \end{equation*}
 
-Untuk mengatur hasil yang lebih baik, kita dapat memilih kotak__Advanced__ box dan menentukan beberapa parameter tambahan:
+Untuk mengatur hasil yang lebih baik, kita dapat memilih kotak **_Advanced_** dan menentukan beberapa parameter tambahan:
 
 
 - __Rows and Columns__: 
 
-Ini memungkinkan kita untuk mendefinisikan dimensi raster luaran. Dimensi yang lebih besar akan menghasilkan ukuran berkas luaran yang lebih besar, sedangkan dimensi yang lebih kecil akan menghasilkan luaran yang kasar dan kotak-kotak (pixelated). Kolom input ditautkan satu sama lain, sehingga mengubah nilai dalam bidang Baris (misalnya, membagi dua) juga akan menyebabkan perubahan yang sesuai dengan nilai di bidang Kolom, dan sebaliknya. Selanjutnya, nilai-nilai ini memiliki pengaruh langsung pada ukuran piksel (lihat poin berikutnya). Perlu ditekankan bahwa luas raster dipertahankan saat mengubah dimensi raster.
+Ini memungkinkan kita untuk mendefinisikan dimensi raster luaran. Dimensi yang lebih besar akan menghasilkan ukuran berkas luaran yang lebih besar, sedangkan dimensi yang lebih kecil akan menghasilkan luaran yang kasar dan kotak-kotak (*pixelated*). Kolom input ditautkan satu sama lain, sehingga mengubah nilai dalam bidang baris (misalnya, membagi dua) juga akan menyebabkan perubahan yang sesuai dengan nilai di bidang kolom, dan sebaliknya. Selanjutnya, nilai-nilai ini memiliki pengaruh langsung pada ukuran piksel (lihat poin berikutnya). Perlu ditekankan bahwa luas raster dipertahankan saat mengubah dimensi raster.
 
-- __Cell size X and Cell size Y__: 
+- __Upuran piksel X dan Y__: 
 
-Ukuran sel raster menentukan seberapa kasar atau terperinci tampilan pola distribusi. Ukuran sel yang lebih kecil akan memberikan hasil yang lebih halus, tetapi waktu pemrosesan dan memori yang diperlukan untuk analisis akan meningkat. Sel besar akan diproses lebih cepat, tetapi raster yang dihasilkan akan pixelated. Jika sel-selnya sangat besar, beberapa pola akan menjadi tidak terlihat, jadi Anda mungkin perlu menjalankan analisis beberapa kali, mencoba ukuran sel yang berbeda untuk mendapatkan hasil yang memenuhi kebutuhan Anda.
+Ukuran piksel raster menentukan seberapa kasar atau terperinci tampilan pola distribusi. Ukuran piksel yang lebih kecil akan memberikan hasil yang lebih halus, tetapi waktu pemrosesan dan memori yang diperlukan untuk analisis akan meningkat. Sel besar akan diproses lebih cepat, tetapi raster yang dihasilkan akan *pixelated*. Jika piksel-pikselnya sangat besar, beberapa pola akan menjadi tidak terlihat, jadi Anda mungkin perlu menjalankan analisis beberapa kali, mencoba ukuran sel yang berbeda untuk mendapatkan hasil yang memenuhi kebutuhan Anda.
 
-Ukuran sel tergantung pada dan terkait dengan dimensi raster. Menambahnya akan mengurangi jumlah baris dan kolom, dan sebaliknya.
+Ukuran piksel tergantung pada dan terkait dengan dimensi raster. Menambahnya akan mengurangi jumlah baris dan kolom, dan sebaliknya.
 
 - __Kernel shape__: 
 
-Ini mengontrol bagaimana titik memengaruhi perubahan dengan perubahan jarak dari titik ini. __Heatmap plugin__ QGIS saat ini mendukung kernel seperti berikut:
+Ini mengontrol bagaimana titik mempengaruhi perubahan dengan perubahan jarak dari titik ini. __Heatmap plugin__ QGIS saat ini mendukung kernel seperti berikut:
 
 -- quartic (dikenal juga dengan biweight)
 
@@ -336,19 +336,19 @@ knitr::include_graphics("images/04/fig8.jpeg")
 ```
 
 
-Bergantung pada bentuk kernel, kita akan mendapatkan peta panas yang lebih halus, atau hotspot yang lebih jelas. Misalnya, kernel triweight akan memberikan hotspot yang lebih jelas, lebih tajam daripada kernel Epanechnikov, karena kernel Epanechnikov memiliki pengaruh lebih rendah di dekat pusat hotspot. Juga, dalam bidang ilmiah yang berbeda, kernel yang berbeda lebih disukai; misalnya, dalam analisis kejahatan, kernel kuartik biasanya digunakan.
+Bergantung pada bentuk kernel, kita akan mendapatkan **heat map** yang lebih halus, atau hotspot yang lebih jelas. Misalnya, kernel triweight akan memberikan hotspot yang lebih jelas, lebih tajam daripada kernel Epanechnikov, karena kernel Epanechnikov memiliki pengaruh lebih rendah di dekat pusat hotspot. Juga, dalam bidang ilmiah yang berbeda, kernel yang berbeda lebih disukai; misalnya, dalam analisis kejahatan, kernel kuartik biasanya digunakan.
 
-Dimungkinkan juga untuk menggunakan jari-jari pencarian variabel untuk setiap titik dengan memilih kotak centang Gunakan jari-jari dari bidang dan memilih bidang atribut dengan nilai jari-jari dari kotak kombo. Jika Anda perlu menimbang poin (dengan kata lain, menambah atau mengurangi pengaruhnya) dengan beberapa atribut numerik, aktifkan kotak centang Gunakan bobot dari bidang dan pilih bidang yang sesuai. Dalam contoh kita, kita tidak akan menggunakan fungsi ini, tetapi Anda dapat mencobanya sendiri.
+Dimungkinkan juga untuk menggunakan jari-jari pencarian variabel untuk setiap titik dengan memilih kotak centang **Use radius from field** dan memilih bidang atribut dengan nilai jari-jari dari kotak centang. Jika Anda perlu membobot poin (dengan kata lain, menambah atau mengurangi pengaruhnya) dengan beberapa atribut numerik, aktifkan kotak centang **Use weight from field** dan pilih bobot yang sesuai. Dalam contoh kita, kita tidak akan menggunakan fungsi ini, tetapi Anda dapat mencobanya sendiri.
 
-Seperti yang kita katakan sebelumnya, ukuran sel memiliki pengaruh langsung pada kualitas peta panas yang dihasilkan, jadi penting untuk memilihnya dengan hati-hati. Dalam kebanyakan kasus, ukuran sel dipilih sedemikian rupa sehingga kita mendapatkan 10 hingga 100 sel per unit area (yang pada gilirannya ditentukan oleh radius pencarian). Untuk menghitung ukuran sel, kita perlu menyelaraskan unit area dengan unit jarak; misalnya, jika kita menghitung kepadatan menggunakan kilometer persegi dan menentukan radius pencarian dalam meter, maka perlu untuk mengubah kilometer persegi menjadi meter persegi. Langkah selanjutnya adalah membagi area dengan jumlah sel yang diinginkan. Akhirnya, karena ukuran sel ditentukan oleh lebar atau tingginya (karena sel raster biasanya memiliki bentuk persegi), kita perlu mengekstrak akar kuadrat dari nilai ini.
+Seperti yang dijelaskan sebelumnya, ukuran piksel memiliki pengaruh langsung pada kualitas **heat map** yang dihasilkan, jadi penting untuk memilihnya dengan hati-hati. Dalam kebanyakan kasus, ukuran sel dipilih sedemikian rupa sehingga kita mendapatkan 10 hingga 100 sel per unit area (yang pada gilirannya ditentukan oleh radius pencarian). Untuk menghitung ukuran piksel, kita perlu menyelaraskan unit area dengan unit jarak; misalnya, jika kita menghitung kepadatan menggunakan kilometer persegi dan menentukan radius pencarian dalam meter, maka perlu untuk mengubah kilometer persegi menjadi meter persegi. Langkah selanjutnya adalah membagi area dengan jumlah sel yang diinginkan. Akhirnya, karena ukuran piksel ditentukan oleh lebar atau tingginya (karena sel raster biasanya memiliki bentuk persegi), kita perlu mengekstrak akar kuadrat dari nilai ini.
 
-Dalam contoh kita, kita akan membuat peta panas dengan radius pencarian 1000 m, sehingga area pencarian akan sekitar 3,14 kilometer persegi. Saat dinyatakan dalam meter, ini akan menjadi sebagai berikut:
+Dalam contoh kita, kita akan membuat **heat map** dengan radius pencarian 1000 m, sehingga area pencarian akan sekitar 3,14 kilometer persegi. Saat dinyatakan dalam meter, ini akan menjadi sebagai berikut:
 
 \begin{equation*}
 3.14 km^2 = 3.14 . 1000 m . 1000 m = 3140000m^2
 \end{equation*}
 
-Karena kita ingin peta panas yang halus, kita akan menggunakan jumlah piksel yang relatif besar per satuan luas; katakanlah 100 piksel per 3,14 kilometer persegi. Jadi, kita membagi area dalam meter persegi dengan jumlah piksel yang diinginkan:
+Karena kita ingin **heat map** yang halus, kita akan menggunakan jumlah piksel yang relatif besar per satuan luas; katakanlah 100 piksel per 3,14 kilometer persegi. Jadi, kita membagi area dalam meter persegi dengan jumlah piksel yang diinginkan:
 
 \begin{equation*}
 \frac{3140000m^2}{100 cells} = 3140000m^2 per cell
@@ -360,44 +360,41 @@ Akhirnya, kita menghitung akar kuadrat dari nilai ini untuk mendapatkan ukuran y
 \sqrt{31400m^2} \approx 177.2 m
 \end{equation*}
 
-Tentu saja ini bukan aturan ketat tapi hanya rekomendasi. Anda dapat menggunakan ukuran sel lain dengan aman, tergantung pada data Anda dan hasil yang diinginkan. Hanya ingat bahwa nilai yang lebih kecil mengarah pada peta panas yang lebih halus, tetapi pada saat yang sama meningkatkan waktu analisis dan menghasilkan ukuran raster.
+Tentu saja ini bukan aturan yang kaku tapi hanya rekomendasi. Anda dapat menggunakan ukuran piksel lain dengan aman, tergantung datadan hasil yang Anda inginkan. Hanya ingat bahwa nilai yang lebih kecil mengarah pada **heat map** yang lebih halus, tetapi pada saat yang sama meningkatkan waktu analisis dan menghasilkan ukuran raster yang lebih besar.
 
-Ketika semua input dan parameter diatur, tekan tombol OK untuk memulai proses pembuatan peta panas. Kemajuan pembentukan peta panas akan ditampilkan dalam dialog progres kecil. Jika proses ini terlalu lama untuk diselesaikan, Anda dapat menghentikannya dengan menekan tombol Batalkan. Perhatikan bahwa setelah membatalkan pembuatan peta panas, Anda masih mendapatkan hasilnya, tetapi hasilnya tidak lengkap dan tidak berguna untuk analisis lebih lanjut.
+Ketika semua input dan parameter diatur, tekan tombol OK untuk memulai proses pembuatan *peta panas **heat map**. Proses pembentukan **heat map** akan ditampilkan dalam dialog progres kecil. Jika proses ini terlalu lama untuk diselesaikan, Anda dapat menghentikannya dengan menekan tombol **Cancel**. Perhatikan bahwa setelah membatalkan pembuatan **heat map**, Anda masih mendapatkan hasilnya, tetapi hasilnya tidak lengkap dan tidak berguna untuk analisis lebih lanjut.
 
-Ketika proses selesai, peta panas yang dihasilkan akan ditambahkan ke QGIS sebagai raster grayscale, di mana wilayah yang lebih terang sesuai dengan nilai kepadatan yang lebih tinggi dan daerah yang lebih gelap sesuai dengan nilai kepadatan yang lebih rendah, seperti ini:
+Ketika proses selesai, **heat map** yang dihasilkan akan ditambahkan ke QGIS sebagai raster grayscale, di mana wilayah yang lebih terang menggambarkan dengan nilai kepadatan yang lebih tinggi dan daerah yang lebih gelap berarti memiliki nilai kepadatan yang lebih rendah, seperti ini:
 
 ```{r fig1476, fig.cap='Heatmap result in greyscale',echo=FALSE, message=FALSE, warning=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig76.jpg")
 ```
 
 
-Untuk meningkatkan keterbacaan dan membuatnya terlihat seperti peta panas nyata, kita perlu mengubah gayanya. Untuk melakukan ini, ikuti langkah selanjutnya.
+Untuk meningkatkan keterbacaan dan membuatnya terlihat seperti **heat map** nyata, kita perlu mengubah gayanya. Untuk melakukan ini, ikuti langkah selanjutnya.
 
-1. Right-click on the __heatmap__ layer in the QGIS layer tree. In the context menu, select __Properties__.
+1. Klik kanan pada layer __heatmap__. Pada menu, pilih __Properties__.
 
-2. Go to the __Style__ tab and select __Singleband pseudocolor__ as __Render type__.
+2. Buka tab __Style__ dan pilih __Singleband pseudocolor__ untuk __Render type__.
 
-3. In the __Load min/max values__ group, activate the __Min/max__ options. Set __Extent to Full__ and __Accuracy to Actual (slower)__. Press the __Load__ button to get raster statistics. This will be used for further classification.
+3. Pada grup __Load min/max values__, aktifkan opsi __Min/max__. Pilih __Extent to Full__ dan __Accuracy to Actual (slower)__. Tekan tombol __Load__ untuk mendapatkan statistik layer. Hasilnya akan digunakan untuk klasifikasi nilai.
 
-4. Select a suitable color ramp in the __Generate new color map__ group, for example, __YlOrBr__ (which changes colors from yellow to orange and then brown), or __Red__s (which uses different shades of red). If necessary, change the number of classes and click on the __Classify__ button.
+4. Pilih pola warna (color ramp) pada grup __Generate new color map__, sebagai contoh, __YlOrBr__ (di mana warna berubah dari kuning ke jingga dan kemudian coklat), atau __Red__ (yang menggunakan gradasi warna merah). Jika dirasa perlu, ubah jumlah kelas dan tekan tombol __Classify__.
 
-5. Click on __OK__ to apply the changes and close the properties dialog.
-
-
-Sekarang kita dapat dengan mudah menemukan titik terpanas (ditampilkan dalam warna lebih dekat ke merah jika peta warna Merah digunakan), dan bahkan mengenali beberapa pola distribusi yang tidak terlihat ketika kita melihat lapisan titik asli:
+5. Klik __OK__ untuk menerapkan perubahan dan menutup dialog properties.
 
 ```{r fig1477, fig.cap='Heatmap result  pseudocolor',echo=FALSE, message=FALSE, warning=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig77.jpg")
 ```
 
-Sekarang kita dapat dengan mudah menemukan titik terpanas (ditampilkan dalam warna lebih dekat ke merah jika peta warna Merah digunakan), dan bahkan mengenali beberapa pola distribusi yang tidak terlihat ketika kita melihat lapisan titik asli. Juga, lapisan peta panas kita muncul jauh lebih cepat daripada vektor yang digunakan untuk membuat peta panas ini.
+Sekarang kita dapat dengan mudah menemukan titik terpanas (ditampilkan dalam warna lebih dekat ke merah jika peta warna Merah digunakan), dan bahkan mengenali beberapa pola distribusi yang tidak terlihat ketika kita melihat lapisan titik asli. Juga, lapisan **heat map** kita muncul jauh lebih cepat daripada vektor yang digunakan untuk membuat peta panas ini.
 
 
 __Mendeteksi wilayah terpanas ("hottest")__
 
-Terkadang, Anda tidak perlu peta panas itu sendiri, tetapi hanya ingin menemukan hotspot — area dengan kepadatan tertinggi — dan menggunakannya dalam analisis lebih lanjut. Sangat mudah untuk menemukan wilayah seperti itu di QGIS dan mengekstraknya dalam bentuk vektor.
+Terkadang, Anda tidak perlu **heat map** itu sendiri, tetapi hanya ingin menemukan hotspot — area dengan kepadatan tertinggi — dan menggunakannya dalam analisis lebih lanjut. Sangat mudah untuk menemukan wilayah seperti itu di QGIS dan mengekstraknya dalam bentuk vektor.
 
-Pertama, kita harus mendefinisikan nilai ambang, yang akan digunakan untuk mengenali hotspot. Sebagai nilai awal, kita dapat menggunakan nilai piksel maksimum dalam peta panas kita dan kemudian menyesuaikannya sesuai kebutuhan kita.
+Pertama, kita harus mendefinisikan nilai ambang, yang akan digunakan untuk mengenali hotspot. Sebagai nilai awal, kita dapat menggunakan nilai piksel maksimum dalam **heat map** kita dan kemudian menyesuaikannya dengan kebutuhan kita.
 
 Cara paling sederhana untuk menemukan nilai piksel maksimum adalah dengan menggunakan alat Identify Features . Pilih satu layer di pohon layer QGIS, aktifkan alat Identify Features , klik pada daerah yang paling “terpanas” secara visual, dan lihat nilai yang dilaporkan. Dengan peta panas kita, ini akan menjadi 540,32.
 
@@ -409,23 +406,23 @@ Sekarang, buka __Raster Calculator__ dari menu __Raster__, tentukan path di mana
 knitr::include_graphics("images/04/fig78.jpg")
 ```
 
-Formula ini digunakan untuk membuat topeng yang disebut. Jika nilai piksel dari lapisan input lebih besar atau sama dengan nilai ambang batas kita 200, maka nilai piksel output akan menjadi 1. Jika tidak, itu akan menjadi 0. Jadi, raster keluaran kita akan menjadi raster biner, dengan hanya dua piksel nilai — 0 dan 1 — yang sangat mudah dikonversi menjadi vektor.
+Formula ini digunakan untuk membuat apa yang disebut dengan ***mask*** (topeng) . Jika nilai piksel dari lapisan input lebih besar atau sama dengan nilai ambang batas kita 200, maka nilai piksel output akan menjadi 1. Jika tidak, itu akan menjadi 0. Jadi, raster luaran kita akan menjadi raster biner, dengan hanya dua piksel nilai — 0 dan 1 — yang sangat mudah dikonversi menjadi vektor.
 
-Biarkan semua nilai lainnya tidak berubah sehingga raster yang dihasilkan akan memiliki dimensi dan ukuran sel yang persis sama dengan yang dimasukkan. Tekan tombol OK untuk memulai perhitungan. Ketika selesai, layer raster hitam-putih baru akan ditambahkan ke kanvas QGIS, seperti yang ditunjukkan di sini:
+Biarkan semua nilai lainnya tetap tidak berubah, sehingga raster yang dihasilkan akan memiliki dimensi dan ukuran sel yang persis sama dengan yang dimasukkan. Tekan tombol **OK** untuk memulai perhitungan. Ketika selesai, layer raster hitam-putih baru akan ditambahkan ke kanvas QGIS, seperti yang ditunjukkan di sini:
 
 ```{r fig1479, fig.cap='Mask for heatmap',echo=FALSE, message=FALSE, warning=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig79.jpg")
 ```
 
-Untuk mengonversi topeng raster ke dalam format vektor, kita perlu membuat poligon dari semua piksel yang terhubung dengan nilai yang sama. Di sinilah alat Polygonize datang untuk membantu. Di kotak alat Pemrosesan, Anda dapat menemukan algoritma Polygonize dengan mengetik namanya di bidang filter di bagian atas kotak alat. Klik dua kali pada nama algoritma untuk membuka dialognya, dan Anda akan melihat sesuatu seperti ini:
+Untuk mengonversi topeng raster ke dalam format vektor, kita perlu membuat poligon dari semua piksel yang terhubung dengan nilai yang sama. Di sinilah tool **Polygonize** amat membantu. Di kotak alat **Processing Toolbox**, Anda dapat menemukan algoritma **Polygonize** dengan mengetik namanya di bidang filter di bagian atas kotak alat. Klik dua kali pada nama algoritma untuk membuka dialognya, dan Anda akan melihat sesuatu seperti ini:
 
 ```{r fig1480, fig.cap='Polygonized mask',echo=FALSE, message=FALSE, warning=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig80.jpg")
 ```
 
-Pilih layer mask yang sebelumnya dibuat sebagai layer Input , tentukan path tempat hasilnya akan disimpan menggunakan bidang layer Output , dan klik tombol Run untuk memulai algoritma. Setelah selesai, layer vektor baru akan ditambahkan ke QGIS. Lapisan ini memiliki atribut yang disebut DN (jika Anda tidak mengubahnya) yang menunjukkan nilai piksel setiap poligon dalam lapisan. Jadi, yang perlu kita lakukan adalah menghapus semua fitur yang memiliki nilai atribut sama dengan nol. Fitur yang tersisa adalah hotspot.
+Pilih layer mask yang sebelumnya dibuat sebagai layer Input , tentukan path tempat hasilnya akan disimpan menggunakan bidang layer Output , dan klik tombol **Run** untuk memulai algoritma. Setelah selesai, layer vektor baru akan ditambahkan ke QGIS. Lapisan ini memiliki atribut yang disebut DN (jika Anda tidak mengubahnya) yang menunjukkan nilai piksel setiap poligon dalam lapisan. Jadi, yang perlu kita lakukan adalah menghapus semua fitur yang memiliki nilai atribut sama dengan nol. Fitur yang tersisa adalah hotspot.
 
-Untuk menghapus fitur yang tidak perlu dari lapisan hotspot, pilih di pohon lapisan QGIS, klik kanan untuk membuka menu konteks, dan pilih Buka Tabel Atribut . Klik pada fitur Pilih menggunakan tombol ekspresi . Dalam dialog Pilih dengan ekspresi , masukkan “DN” = 0 (jika perlu, ganti DN dengan nama bidang Anda), klik tombol Pilih , dan tutup dialog. Mulai mengedit dengan mengklik Beralih mengedit tombol mode, atau tekan Ctrl + E . Untuk menghapus fitur yang dipilih, tekan tombol Hapus atau klik Hapus fitur yang dipilih . Terakhir, matikan mode pengeditan dengan menekan Ctrl + E atau mengklikBeralih mode edit lagi.
+Untuk menghapus fitur yang tidak perlu dari lapisan hotspot, pilih di **Layer Tree QGIS**, klik kanan untuk membuka menu konteks, dan pilih **Open Attribute** . Klik pada tombol **Select features using an expression**. Dalam dialog **Select by expression** , masukkan “DN” = 0 (jika perlu, ganti DN dengan nama kolom tertentu), klik tombol **Select** , dan tutup dialog. Mulai mengedit dengan mengklik tombol **Toggle editing mode**, atau tekan **Ctrl + E** . Untuk menghapus fitur yang dipilih, tekan tombol **Delete** atau klik **Delete selected features**. Terakhir, matikan mode pengeditan dengan menekan **Ctrl + E** atau klik kembali **Toggle editing mode**
 
 ```{r fig1481, fig.cap='Cleaned hotspot polygon',echo=FALSE, message=FALSE, warning=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig81.jpg")
@@ -433,25 +430,25 @@ knitr::include_graphics("images/04/fig81.jpg")
 
 Sekarang, lapisan hotspot hanya berisi poligon hotspot, yang dapat digunakan untuk analisis lebih lanjut. Misalnya, kita dapat menggabungkan kluster ini dengan informasi tentang bangunan terdekat dan jenis kebisingan untuk menemukan ketergantungan dan mengembangkan beberapa saran untuk mengurangi tingkat kebisingan di sana.
 
-__Looking for distribution patterns with contour lines__
+__Mengamati pola distribusi dengan garis kontur__
 
-Selain mendeteksi titik panas, peta panas juga dapat digunakan untuk mendeteksi perubahan intensitas atau memvisualisasikan arah perubahan nilai. Cara paling umum untuk melakukan kedua tugas ini adalah pembuatan garis kontur.
+Selain mendeteksi titik panas, **heatmap** juga dapat digunakan untuk mendeteksi perubahan intensitas atau memvisualisasikan arah perubahan nilai. Cara paling umum untuk melakukan kedua tugas ini adalah dengan membuat garis kontur.
 
-Untungnya, QGIS memiliki semua alat yang diperlukan untuk ini. kita akan menggunakan pemrosesan lagi, tetapi pembuatan garis kontur juga tersedia di plugin GDALTools (yang dapat ditemukan di menu Raster ). Di kotak alat Pemrosesan , Anda dapat menemukan algoritma Kontur dengan mengetik namanya di bidang filter di bagian atas kotak alat. Klik dua kali pada nama algoritma untuk membuka dialognya, yang terlihat seperti ini:
+Untungnya, QGIS memiliki semua alat yang diperlukan untuk ini. kita akan menggunakan **Processing Toolbox** lagi, tetapi pembuatan garis kontur juga tersedia di plugin **GDALTools** (yang dapat ditemukan di menu Raster ). Di kotak **Processing Toolbox**, Anda dapat menemukan algoritma **Contour** dengan mengetik kata tersebut di bidang filter di bagian atas kotak alat. Klik dua kali pada nama algoritma untuk membuka dialognya, yang terlihat seperti ini:
 
 ```{r fig1482, fig.cap='Creating Contour',echo=FALSE, message=FALSE, warning=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig82.jpg")
 ```
 
-Pilih heatmap lapisan raster sebagai masukan lapisan. Di bidang File output , tentukan jalur tempat hasil akan disimpan. Juga, perlu untuk menentukan Interval antara garis kontur . Tidak ada prinsip ketat tentang penentuan interval ini. Aturan umum adalah memilih interval yang mendeteksi pola di area dengan perubahan kepadatan halus. kita akan memilih interval 10.
+Pilih layer **heatmap** sebagai input. Di bagian **Output**, tentukan direktori di mana hasil akan disimpan. Juga, perlu untuk menentukan **Interval between contour lines**. Tidak ada prinsip yang kaku tentang penentuan interval ini. Aturan umum adalah memilih interval yang mendeteksi pola di area dengan perubahan kepadatan halus. Di sini kita akan memilih interval 10.
 
-Ketika semua informasi yang diperlukan telah ditentukan, klik Jalankan untuk memulai pembuatan garis kontur. Setelah beberapa waktu, layer vektor poligonal baru akan ditambahkan ke QGIS, dan kita dapat mulai menganalisisnya. Pertama, jika perlu, pindahkan layer kontur ke atas peta panas di pohon layer QGIS. Selain itu, lebih baik menyesuaikan simbologi kontur untuk membuatnya lebih mudah dikenali dari latar belakang peta panas.
+Ketika semua informasi yang diperlukan telah ditentukan, klik **Run** untuk memulai pembuatan garis kontur. Setelah beberapa waktu, layer vektor poligonal baru akan ditambahkan ke QGIS, dan kita dapat mulai menganalisisnya. Pertama, jika perlu, pindahkan layer kontur ke atas **heat map** di QGIS. Selain itu, lebih baik menyesuaikan simbologi kontur untuk membuatnya lebih mudah dikenali dari latar belakang **peta panas**.
 
 ```{r fig1483, fig.cap='Contour heatmap',echo=FALSE, message=FALSE, warning=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig83.jpg")
 ```
 
-Kontur yang lebih padat sesuai dengan perubahan kepadatan yang lebih intens. Selain itu, kita dapat mengidentifikasi arah perubahan kebisingan. Misalnya, dalam tangkapan layar sebelumnya, kita dapat melihat bahwa di beberapa tempat, distribusi kebisingan di sekitar pusat tidak sama; intensitas berkurang lebih cepat di tenggara daripada di barat laut. Jadi, kita dapat berasumsi bahwa ada beberapa hambatan untuk kebisingan di sana.
+Kontur yang lebih padat sesuai dengan perubahan kepadatan yang lebih intens. Selain itu, kita dapat mengidentifikasi arah perubahan kebisingan. Misalnya, dalam *screenshot* sebelumnya, kita dapat melihat bahwa di beberapa tempat, distribusi kebisingan di sekitar pusat tidak sama; intensitas berkurang lebih cepat di tenggara daripada di barat laut. Jadi, kita dapat berasumsi bahwa ada beberapa hambatan untuk kebisingan di sana.
 
 <!-- ### Mapping density with a hexagonal grid -->
 
@@ -562,7 +559,7 @@ Kontur yang lebih padat sesuai dengan perubahan kepadatan yang lebih intens. Sel
 
 ## Analisis kesesuaian
 
-Kita hidup di dunia yang penuh dengan berbagai hubungan yang dapat dianalisis dalam konteks fungsional, temporal, atau spasial. Hubungan spasial merupakan hal yang sangat menarik di bidang GIS, karena di sini objek ruang direpresentasikan dengan cara yang membantu penjelasan serta memperlihatkan hubungan geografis mereka. Analisis kesesuaian adalah bagian mendasar dari analisis GIS yang menjawab pertanyaan, "Di mana tempat terbaik untuk sesuatu yang akan ditemukan?" Dalam bab ini, Anda akan dihadapkan pada dasar-dasar analisis kesesuaian melalui pencarian tempat terbaik untuk tempat tinggal. Anda akan belajar cara:
+Kita hidup di dunia yang penuh dengan berbagai hubungan yang dapat dianalisis dalam konteks fungsional, temporal, atau spasial. Hubungan spasial merupakan hal yang sangat menarik di bidang GIS, karena di sini objek ruang direpresentasikan dengan cara yang membantu penjelasan serta memperlihatkan hubungan geografis mereka. Analisis kesesuaian adalah bagian mendasar dari analisis GIS yang menjawab pertanyaan, "Di mana tempat terbaik untuk menempatkan fasilitas baru?" Dalam bab ini, kita akan dihadapkan pada dasar-dasar analisis kesesuaian melalui pencarian tempat terbaik untuk tempat tinggal. Kita akan belajar cara:
 
 ```
 - menginterpretasikan relasi spasial antar obyek
@@ -576,15 +573,15 @@ Kita hidup di dunia yang penuh dengan berbagai hubungan yang dapat dianalisis da
 
 __Dasar Analisis Kesesuaian__
 
-Analisis kesesuaian diakui sebagai pendekatan dukungan keputusan multi-kriteria. Dengan kata lain, tujuan utamanya adalah untuk membagi bidang yang diminati menjadi dua kategori berdasarkan seperangkat kriteria yang telah ditentukan: sesuai untuk beberapa jenis penggunaan (hidup, bangunan, konservasi, dan sebagainya) dan tidak sesuai. Pendekatan umum yang digunakan untuk penilaian kesesuaian adalah overlay lapisan ganda yang mendukung keputusan multi-kriteria. Bergantung pada data yang mewakili kriteria kesesuaian dan overlay, ada dua pendekatan dasar yang tersedia:
+Analisis kesesuaian diakui sebagai pendekatan *multi-criteria decision support*. Dengan kata lain, tujuan utamanya adalah untuk membagi bidang yang diminati menjadi dua kategori berdasarkan seperangkat kriteria yang telah ditentukan: sesuai untuk beberapa jenis penggunaan (hidup, bangunan, konservasi, dan sebagainya) dan tidak sesuai. Pendekatan umum yang digunakan untuk penilaian kesesuaian adalah overlay lapisan ganda yang mendukung keputusan multi-kriteria. Bergantung pada data yang mewakili kriteria kesesuaian dan overlay, ada dua pendekatan dasar yang tersedia:
 
 1. Analisis kesesuaian dengan data vektor. 
 
-Ini terutama menggunakan operasi seperti buffering dan kombinasi berurutan mereka menggunakan operasi overlay vektor, seperti kliping, persimpangan, dan gabungan.
+Ini terutama menggunakan operasi seperti buffering dan kombinasi berurutan mereka menggunakan operasi overlay vektor, seperti **Clipping**, **Intersection**, dan **Union**.
 
-2. Suitability analysis with raster data. 
+2. Analisis kesesuaian dengan data raster. 
 
-Ini sangat bergantung pada aljabar raster, yang digunakan untuk mengklasifikasikan ulang cakupan raster awal dan kemudian menggabungkannya untuk menghasilkan raster kesesuaian biner atau peringkat. Pendekatan ini lebih fleksibel, karena memungkinkan untuk menghasilkan beberapa kelas kesesuaian dan mengubah bobot raster sesuai dengan pentingnya faktor yang diwakilinya. Akibatnya, pengguna dapat menghasilkan hasil majemuk, tetapi alur kerja membutuhkan lebih banyak upaya yang terhubung ke pengambilan data dan keputusan konsolidasi.
+Ini sangat bergantung pada aljabar raster, yang digunakan untuk mengklasifikasikan ulang cakupan raster awal dan kemudian menggabungkannya untuk menghasilkan raster kesesuaian biner atau peringkat. Pendekatan ini lebih fleksibel, karena memungkinkan untuk menghasilkan beberapa kelas kesesuaian dan mengubah bobot raster sesuai dengan pentingnya faktor yang diwakilinya. Dampaknya, pengguna dapat menghasilkan kombinasi hasil, tetapi alur kerja membutuhkan lebih banyak upaya yang terhubung ke pengambilan data dan keputusan.
 
 
 
@@ -611,7 +608,7 @@ __Limitations__
                                                 Usually provide binary assessment only    Workflow complexity
                                                 
                                                 
-Apa pun pendekatan yang akan Anda ikuti, alur kerja analisis kesesuaian umum melibatkan beberapa langkah umum. kita sekarang akan melihat lebih dekat pada mereka untuk memastikan pemahaman yang lebih baik tentang sistem analisis kesesuaian:
+Apa pun pendekatan yang akan diikuti, alur kerja analisis kesesuaian umum melibatkan beberapa langkah umum. kita sekarang akan melihat lebih dekat pada mereka untuk memastikan pemahaman yang lebih baik tentang sistem analisis kesesuaian:
 
 1. __Definisikan maksud dan tujuan dari analisis Anda__ 
 
@@ -619,21 +616,21 @@ Pertanyaan yang akan dipelajari dirumuskan secara umum, dan signifikansi terapan
 
 Beberapa aplikasi kesesuaian yang populer meliputi yang berikut:
 
-Pertanian : Kesesuaian area untuk budidaya tanaman tertentu dinilai.
+**Pertanian** : Penilaian kesesuaian area untuk budidaya tanaman tertentu.
 
-Ritel : Area dinilai dari calon pemasaran — apakah akan menarik pelanggan atau pembeli baru, atau tidak. Jenis analisis ini sangat diminati ketika memilih lokasi belanja yang disukai.
+**Ritel** : Area dinilai dari sudut pandang pemasaran — apakah akan menarik pelanggan atau pembeli baru, atau tidak. Jenis analisis ini sangat diminati ketika memilih lokasi belanja yang disukai.
 
-Energi terbarukan : Menilai kesesuaian lahan untuk lokasi tenaga angin atau stasiun tenaga surya adalah tren yang luar biasa di bidang perencanaan geospasial untuk keberlanjutan.
+**Energi terbarukan** : Menilai kesesuaian lahan untuk lokasi tenaga angin atau stasiun tenaga surya adalah tren yang luar biasa di bidang perencanaan geospasial untuk keberlanjutan.
 
-Konservasi alam : Kebutuhan konservasi diprioritaskan menggunakan pemodelan kesesuaian habitat, dan kawasan ini dibagi menjadi lokasi yang lebih atau kurang bernilai untuk kelangsungan hidup dan reproduksi spesies tertentu.
+**Konservasi alam** : Kebutuhan konservasi diprioritaskan menggunakan pemodelan kesesuaian habitat, dan kawasan ini dibagi menjadi lokasi yang lebih atau kurang bernilai untuk kelangsungan hidup dan reproduksi spesies tertentu.
 
 Secara umum, aplikasi utama dari analisis kesesuaian adalah di bidang perencanaan penggunaan lahan, yang bertujuan memprioritaskan berbagai jenis kegiatan manusia dalam ruang dan sumber daya alam yang terbatas.
 
-2. __Analyze the available data and define its relevance to the goals and objectives__
+2. __Lakukan analisis ketersediaan data dan tentukan relevansinya terhadap maksud dan tujuan__
 
-Relevansi data dengan tujuan dan sasaran didefinisikan. Ketersediaan data saat ini dan kebutuhan data masa depan dianalisis, terutama pengetahuan tentang apakah turunan data saat ini dapat digunakan untuk analisis atau tidak. Misalnya, jika kita harus menganalisis kesesuaian untuk kebutuhan pertanian, DEM dapat menjadi sumber yang bagus. Ini tidak hanya memberikan informasi dasar tentang bantuan, tetapi juga beberapa turunan yang bermanfaat, seperti kemiringan dan aspek. Hasil utama dari tahap ini adalah daftar sumber data primer dan turunan potensial mereka.
+Relevansi data dengan tujuan dan sasaran hendaknya ditentukan. Ketersediaan data saat ini dan kebutuhan data masa depan sebaiknya dianalisis, terutama pengetahuan tentang apakah turunan data saat ini dapat digunakan untuk analisis atau tidak. Misalnya, jika kita harus menganalisis kesesuaian untuk kebutuhan pertanian, DEM dapat menjadi sumber yang bagus. Ini tidak hanya memberikan informasi dasar tentang **relief**, tetapi juga beberapa turunan yang bermanfaat, seperti kemiringan dan aspek. Hasil utama dari tahap ini adalah daftar sumber data primer dan turunan potensial mereka.
 
-3. __Define the criteria of analysis__
+3. __Definisikan kriteria dari analisis__
 
 Ini adalah tahap yang paling penting, di mana tujuan analisis digambarkan sebagai kriteria numerik yang jelas berdasarkan data yang relevan. Tujuan deskriptif diterjemahkan ke dalam bahasa analisis SIG. Pada tahap ini, berbagai jenis hubungan spasial antara objek dianalisis, dan beberapa hubungan paling populer termasuk yang berikut:
 
@@ -707,9 +704,9 @@ knitr::include_graphics("images/04/fig5.jpeg")
 
 4. __Analisis primer dan penyiapan data__ 
 
-Data dianalisis sesuai dengan serangkaian kriteria yang ditentukan pada tahap sebelumnya. Operasi analisis umum melibatkan pemilihan berdasarkan lokasi, buffering, rasterisasi, kedekatan (jarak raster), dan sebagainya. Setelah semua lapisan yang diperlukan siap, mereka harus siap untuk overlay, yang melibatkan proyeksi ulang ke sistem referensi koordinat umum (jika perlu), menetapkan rentang untuk berbagai peringkat, dan klasifikasi ulang dalam sistem peringkat umum. Semua layer harus berisi nilai dalam unit yang seragam, jika tidak, overlaynya akan menjadi tidak berarti dan sulit untuk ditafsirkan.
+Data dianalisis sesuai dengan serangkaian kriteria yang ditentukan pada tahap sebelumnya. Operasi analisis umum melibatkan pemilihan berdasarkan lokasi, buffering, rasterisasi, *proximity* (jarak raster), dan sebagainya. Setelah semua lapisan yang diperlukan siap, data tersebut harus siap untuk di-overlay, yang melibatkan proyeksi ulang ke sistem referensi koordinat umum (jika perlu), menetapkan rentang untuk berbagai peringkat, dan klasifikasi ulang dalam sistem peringkat umum. Semua layer harus berisi nilai dalam unit yang seragam, jika tidak, overlaynya akan menjadi tidak berarti dan sulit untuk ditafsirkan.
 
-5. __Overlay the data and interpret the results__
+5. __Overlay data dan interpretasikan hasilnya__
 
 Lapisan yang disiapkan sebelumnya digabungkan menjadi satu cakupan yang didasarkan pada seperangkat aturan yang ditentukan pengguna. Bergantung pada data yang tersedia dan aturan yang diterapkan, penilaian kesesuaian berikut dimungkinkan:
 
@@ -719,35 +716,35 @@ Semua area dibagi ke dalam kategori yang sesuai dan tidak sesuai. Ini adalah tip
 
 - __Ranked suitability assessment__ 
 
-Tempat diberi peringkat dari yang paling tidak sesuai hingga yang paling tepat berdasarkan seluruh rentang kriteria yang telah ditentukan. Jenis penilaian ini dapat diturunkan dari data vektor dan raster. Ini memungkinkan Anda menghindari penilaian ya / tidak yang sederhana, yang tidak melekat pada kata aslinya. Keuntungan ini diimbangi oleh subjektivitas peringkat data dan kepentingan yang sama dari berbagai faktor. Namun demikian, di dunia nyata, kontribusi mereka terhadap penilaian keseluruhan dapat bervariasi.
+Tempat diberi peringkat dari yang paling tidak sesuai hingga yang paling sesuai berdasarkan seluruh rentang kriteria yang telah ditentukan. Jenis penilaian ini dapat diturunkan dari data vektor dan raster. Ini memungkinkan Anda menghindari penilaian ya / tidak yang sederhana, yang tidak melekat pada kata aslinya. Keuntungan ini diimbangi oleh subjektivitas peringkat data dan kepentingan yang sama dari berbagai faktor. Namun demikian, di dunia nyata, kontribusi mereka terhadap penilaian keseluruhan dapat bervariasi.
 
 - __Weighted suitability assessment__ 
 
 Ini serupa dengan jenis penilaian sebelumnya dan hanya memiliki satu perbedaan signifikan: berbagai faktor dapat diberi bobot berbeda sesuai dengan kepentingannya untuk jenis kegiatan tertentu. Jenis penilaian ini bergantung pada pendekatan aljabar raster dan dianggap inklusif, tetapi bukan tanpa subjektivitas, terutama ketika menyangkut faktor pembobotan dan menafsirkan hasil akhir.
 
-### Step 1: Define the goal and objectives
+### Tahap 1: Mendefinisikan maksud dan tujuan
 
-Sepanjang tutorial ini, kita akan menganggap bahwa kita bekerja atas nama pasangan muda dengan anak kecil. Mereka mencari tempat yang sempurna untuk tinggal di wilayah tertentu yang menarik perhatian mereka. Tujuan kita adalah menggunakan kekuatan metode analisis kesesuaian berbasis GIS dan memberikan jawaban yang objektif dan dapat diandalkan untuk pertanyaan mereka.
+Sepanjang tutorial ini, kita akan menganggap bahwa kita bekerja untuk satu pasangan muda dengan anak kecil. Mereka mencari tempat yang sempurna untuk tinggal di wilayah tertentu yang menarik perhatian mereka. Tujuan kita adalah menggunakan kekuatan metode analisis kesesuaian berbasis GIS dan memberikan jawaban yang objektif dan dapat diandalkan untuk pertanyaan mereka.
 
-Tujuan dari analisis ini adalah untuk menemukan area yang cocok untuk keluarga muda dengan anak, dengan pertimbangan tertentu. Banyak dari persyaratan mereka mirip dengan yang dimiliki oleh perusahaan pengembang perumahan tradisional. Misalnya, kedekatan dengan stasiun kereta bawah tanah, zona hijau, dan keselamatan publik harus dipertimbangkan. Ada juga beberapa persyaratan khusus keluarga yang harus dipertimbangkan. Seperti yang telah disebutkan, keluarga memiliki bayi kecil, yang berarti bahwa kita harus memperhitungkan keberadaan anak usia dini atau sekolah dasar di dekatnya. Juga, mereka tertarik pada olahraga, dan akan lebih bagus jika daerah tempat mereka akan tinggal memiliki infrastruktur istirahat yang berkembang dengan baik dan aktif. Setelah tinjauan semacam ini, kita dapat merumuskan beberapa persyaratan dan tujuan yang lebih spesifik:
+Tujuan dari analisis ini adalah untuk menemukan area yang cocok untuk keluarga muda dengan anak, dengan pertimbangan tertentu. Banyak dari persyaratan mereka mirip dengan yang dimiliki oleh perusahaan pengembang perumahan tradisional. Misalnya, kedekatan dengan stasiun kereta bawah tanah, zona hijau, dan keselamatan publik harus dipertimbangkan. Ada juga beberapa persyaratan khusus keluarga yang harus dipertimbangkan. Seperti yang telah disebutkan, keluarga memiliki anak kecil, yang berarti bahwa kita harus memperhitungkan keberadaan anak usia dini atau sekolah dasar di dekatnya. Juga, mereka tertarik pada olahraga, dan akan lebih bagus jika daerah tempat mereka akan tinggal memiliki infrastruktur istirahat yang berkembang dengan baik dan aktif. Setelah tinjauan semacam ini, kita dapat merumuskan beberapa persyaratan dan tujuan yang lebih spesifik:
 
-- __Keselamatan__: Area tidak boleh terkena berbagai bahaya alam dan kejahatan
+- __Keselamatan__: Area tidak boleh terkena atau memiliki resiko tinggi terhadap ragam bahaya alam dan kejahatan
 
-- __Konektivitas__: Ini harus terhubung dengan baik ke jaringan transportasi kota
+- __Konektivitas__: Harus terhubung dengan baik ke jaringan transportasi kota
 
-- __Greenness and openness__: Itu harus dekat dengan taman atau area hijau lainnya
+- __Greenness and openness__: Harus dekat dengan taman atau area hijau lainnya
 
-- __Educational potential__: Anak usia dini atau sekolah dasar harus berlokasi di lingkungan tersebut
+- __Educational potential__: Ada lokasi pendidikan anak usia dini atau sekolah dasar di lingkungan tersebut
 
-- __Active rest opportunities__:  Ini termasuk jaringan bersepeda dan fasilitas atletik
+- __Active rest opportunities__:  Termasuk jaringan bersepeda dan fasilitas atletik
 
-- __Cultural life__: Galeri seni dan museum dapat dikenali sebagai tanda umum pemukulan denyut budaya
+- __Cultural life__: Galeri seni dan museum dapat dikenali sebagai tanda umum hidupnya budaya
 
 Sekarang setelah tujuan dan persyaratan utama telah diklarifikasi, kita dapat melanjutkan ke langkah berikutnya dan mempelajari semua data yang tersedia untuk menilai relevansinya dengan contoh kita.
 
-### Step 2: Analyze the available data and define its relevance
+### Tahap 2 : Analisis ketersediaan data dan definisikan relevansi
 
-Segera setelah kita menetapkan persyaratan dasar, kita perlu menjelajahi lapisan data potensial untuk digunakan dan relevan untuk analisis. Dataset pelatihan berisi sejumlah besar dataset, dan yang paling relevan di antaranya tercantum dalam daftar berikut:
+Segera setelah kita menetapkan persyaratan dasar, kita perlu melakukan eksplorasi data yang mungkin untuk digunakan dan relevan untuk analisis. Dataset pelatihan berisi sejumlah besar dataset, dan yang paling relevan di antaranya tercantum dalam daftar berikut:
 
 #### Keselamatan
 
@@ -761,19 +758,19 @@ Zona genangan badai adalah area genangan badai terburuk.
 
 - Layer noise_heatmap :
 
-Raster yang dibuat di bagian Membuat peta panas dengan bagian plugin Heatmap, Menjawab Pertanyaan dengan Analisis Densitas, yang menunjukkan kerapatan spasial pengaduan kebisingan yang terdaftar mungkin berguna untuk penilaian potensial untuk keselamatan publik.
+Raster yang dibuat di bagian membuat *Heat map*, yang menunjukkan kepadatan spasial pengaduan kebisingan yang terdaftar mungkin berguna untuk penilaian potensial untuk keselamatan publik.
 
-#### Connectivity
+#### Konektivitas
 
 - Layer subway_entrances :
 
 Lokasi pintu masuk kereta bawah tanah.
 
-#### Greenness and openness
+#### Greenness dan openness
 
 - Layer parks :
 
-Lapisan yang berisi fitur ruang terbuka, seperti lapangan, trek, taman, dan sebagainya.
+Lapisan yang berisi informasi ruang terbuka hijau, seperti lapangan, trek, taman, dan sebagainya.
 
 - Layer tree_density :
 
@@ -802,24 +799,24 @@ Lapisan ini berisi fasilitas atletik dan beberapa informasi dasar tentangnya, te
  
 - Layer musemart :
 
-Locations of museums and art galleries.
+Lokasi museum dan galeri seni.
 
 
 
 
 
-### Step 3: Define the criteria of analyses
+### Tahap 3 : Definisikan kriteria analisis 
 
-Menurut uraian hurricane_evacuation_zones, ada enam zona, yang diperingkat dalam zona bidang atribut berdasarkan risiko dampak gelombang badai, dengan zona 1 menjadi wilayah yang kemungkinan besar akan banjir. Jika terjadi badai atau badai tropis, penghuni di zona ini dapat diperintahkan untuk mengungsi. Daerah dengan nilai zona X tidak berada dalam zona evakuasi. Area dengan nilai zona 0 adalah salah satu dari yang berikut: air, dermaga kecil, atau pulau-pulau tak berpenghuni. Untuk keperluan analisis, lapisan ini harus dirasterisasi dan diberi peringkat sesuai dengan risiko dampak badai, dengan nilai peringkat turun dari area yang tidak berada dalam zona evakuasi ke yang paling mungkin terkena banjir.
+Pada layer hurricane_evacuation_zones, ada enam zona, yang diperingkat dalam zona bidang atribut berdasarkan risiko dampak gelombang badai, dengan zona 1 menjadi wilayah yang kemungkinan besar akan banjir. Jika terjadi badai atau badai tropis, penghuni di zona ini harus mengungsi. Daerah dengan nilai zona X tidak berada dalam zona evakuasi. Area dengan nilai zona 0 adalah salah satu dari yang berikut: air, dermaga kecil, atau pulau-pulau tak berpenghuni. Untuk keperluan analisis, lapisan ini harus dirasterisasi dan diberi peringkat sesuai dengan risiko dampak badai, dengan nilai peringkat turun dari area yang tidak berada dalam zona evakuasi ke yang paling mungkin terkena banjir.
 
-Lapisan poligon hurricane_inundation_zones berisi informasi tentang risiko genangan lonjakan badai di bidang atribut kategori, di mana nilainya adalah ketinggian lonjakan kaki. Area yang kemungkinan besar akan tergenang diberi nilai 1, dan area yang dikecualikan dari pemodelan inundasi diberi nilai 5. Lapisan ini harus dirasterisasi dan diberi peringkat dengan nilai kesesuaian potensial tertinggi untuk area yang dikecualikan, dan yang terendah untuk bidang kategori 1.
+Lapisan poligon hurricane_inundation_zones berisi informasi tentang risiko genangan akibat badai, ditulis di kolom atribut, di mana nilainya adalah ketinggian lonjakan (dalam feet). Area yang kemungkinan besar akan tergenang diberi nilai 1, dan area yang dikecualikan dari pemodelan inundasi diberi nilai 5. Lapisan ini harus dirasterisasi dan diberi peringkat dengan nilai kesesuaian potensial tertinggi untuk area yang dikecualikan, dan yang terendah untuk bidang kategori 1.
 
 Layer raster noise_heatmap adalah raster yang harus diberi peringkat menggunakan beberapa kategori, dengan nilai kesesuaian terendah untuk tempat paling berisik dan sebaliknya. Hal yang baik di sini adalah kita tidak perlu meraster layer ini, seperti yang kita lakukan pada layer sebelumnya. Pada saat yang sama, menetapkan jumlah dan kisaran untuk peringkat membawa subjektivitas ke dalam penilaian kita. Lapisan tree_density, yang juga merupakan raster kepadatan, harus dianalisis dengan cara yang sama.
 
-Lapisan yang dipilih lainnya harus dianalisis terlebih dahulu untuk kedekatannya. Untuk tujuan ini, pertama-tama kita akan merasterisasi mereka, kemudian membuat raster proximity terus menerus, dan akhirnya peringkat mereka di bawah beberapa kategori sesuai dengan nilai proximity (semakin dekat suatu objek, semakin tinggi nilai kesesuaian). Sekali lagi, dalam hal peringkat pengguna, kita tidak akan dapat menghindari beberapa subjektivitas dalam penilaian kita. Selain itu, raster kedekatan akhir dapat ditimbang menurut kepentingannya dalam penilaian kesesuaian keseluruhan.
+Lapisan yang dipilih lainnya harus dianalisis terlebih dahulu untuk kedekatannya. Untuk tujuan ini, pertama-tama kita akan merasterisasi mereka, kemudian membuat *continuous raster proximity*, dan akhirnya peringkat mereka di bawah beberapa kategori sesuai dengan nilai *proximity* (semakin dekat suatu objek, semakin tinggi nilai kesesuaian). Sekali lagi, dalam hal peringkat pengguna, kita tidak akan dapat menghindari beberapa subjektivitas dalam penilaian kita. Selain itu, raster kedekatan akhir dapat ditimbang menurut kepentingannya dalam penilaian kesesuaian keseluruhan.
 
 
-### Step 4: Analyze and prepare the data
+### Tahap 4 : Analisis dan persiapan data
 
 Ada tiga pendekatan utama untuk analisis data primer. Ini tergantung pada tipe data awal dan atribut yang tersedia:
 
@@ -827,54 +824,54 @@ Ada tiga pendekatan utama untuk analisis data primer. Ini tergantung pada tipe d
 
 Ini adalah layer yang sudah mengandung semua nilai yang diperlukan, dan pada tahap persiapan, semuanya harus dirasterisasi ke tingkat dan resolusi yang sama. Selain itu, kategorinya harus diberi peringkat dengan benar, dengan nilai tertinggi untuk area yang paling cocok dan sebaliknya. Contoh dari lapisan ini adalah hurricane_evacuation_zones, hurricane_inundation_zones, dan sebagainya.
 
-- **Raster kepadatan peringkat** 
+- **Raster peringkat kepadatan** 
 
-Ini adalah peta panas raster yang harus dikonversi dari cakupan terus-menerus ke nilai yang dikategorikan di mana nilai tertinggi melambangkan area yang paling tepat, dan yang terendah terkait dengan area yang paling tidak cocok. Contoh dari layer ini adalah noise_heatmap dan tree_density.
+Ini adalah raster **heat map**yang harus dikonversi dari *continuous coverage* ke nilai yang dikategorikan di mana nilai tertinggi melambangkan area yang paling tepat, dan yang terendah terkait dengan area yang paling tidak cocok. Contoh dari layer ini adalah noise_heatmap dan tree_density.
 
-- **Menghasilkan dan menentukan peringkat raster proximity**
+- **Menghasilkan dan menentukan peringkat proximity raster**
 
-Ini adalah alur kerja yang paling membosankan. Lapisan vektor harus diraster terlebih dahulu, dan kemudian raster proximity harus dibuat dan diberi peringkat dengan benar. Kategori ini mencakup lapisan vektor berikut: subway_entrances, taman, public_schools, bike_routes, athletic_facilities, dan museumart.
+Ini adalah alur kerja yang paling membosankan. Lapisan vektor harus diraster terlebih dahulu, dan kemudian *proximity raster* harus dibuat dan diberi peringkat dengan benar. Kategori ini mencakup lapisan vektor berikut: subway_entrances, taman, public_schools, bike_routes, athletic_facilities, dan museumart.
 
 Perhatikan bahwa untuk hasil akhir, kita akan selalu memiliki peringkat raster nilai unik, dengan nilai tertinggi menunjukkan area yang paling cocok. Juga, penting bahwa semua raster keluaran berbagi tingkat yang sama, yang diperlukan untuk overlay yang tepat dengan kalkulator raster dan penilaian kesesuaian keseluruhan.
 
 Di bagian mendatang, kita akan melalui alur kerja yang disebutkan sebelumnya untuk contoh lapisan raster. Segera setelah Anda memahami prinsipnya, Anda akan dapat menyiapkan lapisan lain secara mandiri.
 
-#### Rasterizing and ranking categorized vector layers###
+#### Rasterisasi dan pemeringkatan layer vektor kategori###
 
-Dalam contoh ini, kita akan mengerjakan lapisan hurricane_evacuation_zones. Atribut yang sangat kita minati adalah zona. Ini karena dengan atribut ini, daerah diprioritaskan untuk evakuasi. Daerah dengan nilai terendah, 1, kemungkinan besar akan dievakuasi, dan sebaliknya. Dalam hal ini, kita dapat menggunakan nilai-nilai ini secara langsung untuk memberi peringkat raster.
+Dalam contoh ini, kita akan mengerjakan lapisan hurricane_evacuation_zones. Atribut yang sangat kita minati adalah zona, yang menggambarkan daerah diprioritaskan untuk evakuasi. Daerah dengan nilai terendah, 1, kemungkinan besar akan dievakuasi, dan sebaliknya. Dalam hal ini, kita dapat menggunakan nilai-nilai ini secara langsung untuk memberi peringkat raster.
 
-Satu hal yang mencegah kita melakukan rasterisasi secara langsung adalah bahwa bidang atribut yang digunakan untuk rasterisasi harus berupa angka. Jika Anda memeriksa bidang atribut di bagian Bidang di bawah Properti, Anda akan melihat bahwa zona bidang memiliki Tipe QString, dan nilainya yang berisi angka 1-6 dan huruf (X) ditafsirkan bukan sebagai angka tetapi sebagai urutan simbol atau string. Itu sebabnya bidang ini tidak tersedia untuk rasterisasi dan pertama-tama harus dikonversi menjadi angka. Ini dapat dilakukan dengan mudah dengan kalkulator Bidang:
+Satu hal yang perlu diperhatikan ketika kita melakukan rasterisasi adalah kolom atribut yang digunakan untuk rasterisasi harus berupa angka. Jika Anda memeriksa kolom atribut di bagian **Field** di bawah **Properties**, Anda akan melihat bahwa zona bidang memiliki Tipe QString, dan nilainya yang berisi angka 1-6 dan huruf (X) ditafsirkan bukan sebagai angka tetapi sebagai urutan simbol atau string. Itu sebabnya kolom ini tidak tersedia untuk rasterisasi dan pertama-tama harus dikonversi menjadi angka. Ini dapat dilakukan dengan mudah dengan **Field calculator**:
 
-1. Buka tabel atribut lapisan menggunakan klik kanan Open Shortcut Tabel Atribut, atau tekan tombol relatif dari toolbar Atribut. Di bilah alat tabel atribut, klik tombol Kalkulator bidang terbuka atau gunakan pintasan keyboard Ctrl + I.
+1. Buka tabel atribut lapisan menggunakan klik kanan **Open Attribute Table**, atau tekan tombol relatif dari toolbar **Attribute**. Di bilah alat tabel atribut, klik tombol **Open field calculator** atau gunakan pintasan keyboard Ctrl + I.
 
-2. Pertama-tama, kita harus menyingkirkan nilai X yang tidak dapat diartikan sebagai angka dan tidak dapat dikonversi ke dalamnya. Karena kita hanya memiliki satu baris yang berisi nilai X, kita cukup beralih mode pengeditan dengan mengklik tombol di toolbar tabel atribut. Klik dua kali pada sel dan masukkan nilai baru 7. secara manual. Jika Anda memiliki beberapa nilai untuk diubah, Anda dapat menggunakan ekspresi berikut di Kalkulator bidang untuk mengubah beberapa nilai bidang zona: KASUS KAPAN “zona” = 'X' KEMUDIAN ' 7 'ELSE "zone" END.
+2. Pertama-tama, kita harus membuang nilai X yang tidak dapat diartikan sebagai angka dan tidak dapat dikonversi ke dalamnya. Karena kita hanya memiliki satu baris yang berisi nilai X, kita cukup beralih mode pengeditan dengan mengklik tombol di toolbar tabel atribut. Klik dua kali pada sel dan masukkan nilai baru 7. secara manual. Jika Anda memiliki beberapa nilai untuk diubah, Anda dapat menggunakan ekspresi berikut di Kalkulator bidang untuk mengubah beberapa nilai bidang zona: CASE WHEN “zone” = 'X' THEN ' 7 'ELSE "zone" END.
 
-3. Klik pada tombol untuk membuka jendela dialog Field calculator seperti yang ditunjukkan pada tangkapan layar berikut, dan lakukan penyesuaian berikut:
+3. Klik pada tombol untuk membuka jendela dialog **Field calculator** seperti yang ditunjukkan pada gambar berikut, dan lakukan penyesuaian berikut:
 
-- Pastikan bahwa sakelar bidang buat baru diaktifkan.
+- Pastikan bahwa sakelar **Create a new field** diaktifkan.
 
-- Ketikkan nama bidang Output secara manual, misalnya, peringkat.
+- Ketikkan nama kolom **Output** secara manual, misalnya, peringkat.
 
-- Pilih Whole number (integer) dari daftar tipe field Output, karena kita akan menggunakan integer pendek untuk peringkat.
+- Pilih **Whole number (integer)** dari daftar tipe field Output, karena kita akan menggunakan integer pendek untuk peringkat.
 
-- Kurangi lebar bidang Output ke 1. Ini karena nilai peringkat tidak melebihi 10 dan kita tidak ingin membuat data berlebih dengan menghasilkan bidang panjang yang melebihi nilai data aktual.
+- Kurangi lebar bidang Output ke 1. Ini karena nilai peringkat tidak melebihi 10 dan kita tidak ingin membuat data berlebih dengan menghasilkan kolom panjang yang melebihi nilai data aktual.
 
-- Di bidang Ekspresi, kita perlu mengetik fungsi yang akan digunakan untuk membuat nilai-nilai dari bidang baru. Dalam daftar Fungsi, perluas item Konversi dan klik dua kali pada fungsi toint. Menurut deskripsinya, ini mengonversi string ke angka integer. Tidak ada yang berubah jika nilai tidak dapat dikonversi ke integer (misalnya, 123asd tidak valid). Setelah mengklik dua kali, fungsi akan ditambahkan ke ekspresi dengan braket terbuka, setelah itu Anda harus mengetik (atau mengklik dua kali untuk menambahkan item dari Bidang dan Nilai) nama bidang yang akan dikonversi dalam tanda kutip ganda, dan tutup kurung. Dalam kasus kita, ekspresi yang dihasilkan adalah toint ("zone").
+- Di kolom **Expression**, kita perlu mengetik fungsi yang akan digunakan untuk membuat nilai-nilai dari bidang baru. Dalam daftar **Function**, perluas item **Conversions** dan klik dua kali pada fungsi toint. Menurut deskripsinya, ini mengonversi string ke angka integer. Tidak ada yang berubah jika nilai tidak dapat dikonversi ke integer (misalnya, 123asd tidak valid). Setelah mengklik dua kali, fungsi akan ditambahkan ke ekspresi dengan braket terbuka, setelah itu Anda harus mengetik (atau mengklik dua kali untuk menambahkan item dari **Field and Valuues**) nama kolom yang akan dikonversi dalam tanda kutip ganda, dan tutup kurung. Dalam kasus kita, ekspresi yang dihasilkan adalah toint ("zone").
 
-- Setelah mengklik tombol OK, bidang baru akan muncul di akhir tabel. Nonaktifkan mode pengeditan, konfirmasi penyimpanan hasil edit, dan keluar dari jendela tabel atribut.
+- Setelah mengklik tombol OK, kolom baru akan muncul di akhir tabel. Nonaktifkan mode pengeditan, konfirmasi penyimpanan hasil edit, dan keluar dari jendela tabel atribut.
 
 
 ```{r fig1433, fig.cap='Field Calculator',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig33.jpeg")
 ```
 
-Lapisan siap untuk rasterisasi. Buka jendela dialog dengan pergi ke Raster | Konversi | Rasterize (Vektor ke Raster) . Di jendela dialog ini seperti yang ditunjukkan pada tangkapan layar berikut, sesuaikan pengaturan berikut:
+Lapisan siap untuk rasterisasi. Buka jendela dialog dengan pergi ke **Raster | Conversion | Rasterize (Vektor to Raster)**. Di jendela dialog ini seperti yang ditunjukkan pada gambar berikut, sesuaikan pengaturan berikut:
 
 1.Dari daftar drop-down File input (shapefile), pilih hurricane_evacuation_zones.
 
-2. Dari daftar turun bawah Atribut, pilih peringkat.
+2. Dari daftar **Attribute**, pilih peringkat.
 
-3. Dalam file Output untuk vektor raster (raster), klik tombol Select. Arahkan ke direktori kerja Anda, dan ketik hurricane_evacuation_zones.tif sebagai nama layer baru. Pesan ini akan ditampilkan: File output tidak ada. Anda harus mengatur ukuran atau resolusi output untuk membuatnya. Klik OK dan lanjutkan ke tahap berikutnya.
+3. Dalam **Output file for rasterized vectors** (raster), klik tombol **Select**. Arahkan ke direktori kerja Anda, dan ketik hurricane_evacuation_zones.tif sebagai nama layer baru. Pesan ini akan ditampilkan: **The output file doesn't exist**. Anda harus mengatur ukuran atau resolusi output untuk membuatnya. Klik OK dan lanjutkan ke tahap berikutnya.
 
 4. Pada langkah sebelumnya, Anda menetapkan beberapa opsi utama. Untuk kenyamanan, kita akan membuat raster dalam tutorial ini dengan tingkat dan resolusi yang sama menggunakan lidar_dem.tif sebagai template. Klik pada tombol untuk membuat parameter baris perintah gdal_rasterize dapat diedit. Setelah modifikasi, garis harus terlihat mirip dengan contoh berikut:
 
@@ -885,8 +882,6 @@ gdal_rasterize -a rank -l hurricane_evacuation_zones –a_nodata 0 -te 982199.30
 Ini berarti bahwa raster keluaran akan berisi nilai raster dari bidang atribut peringkat. Area di luar layer poligon akan diberi nilai 0, yang akan ditafsirkan sebagai nodata. Tipe data output adalah bilangan bulat unsigned 16-bit.
 
 5. Klik pada tombol OK. Hasil rasterisasi akan muncul di panel Layers.
-
-
 
 ```{r fig1434, fig.cap='Rasterize',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig34.jpeg")
@@ -900,19 +895,19 @@ gdal_rasterize -a category -l hurricane_inundation_zones -a_nodata 0 -te 982199.
 
 Ketika dikombinasikan, lapisan-lapisan ini dapat memberikan penilaian kumulatif kesesuaian berdasarkan keparahan risiko dari bahaya alam.
 
-#### Ranking density rasters
+#### Mengurutkan raster kepadatan
 
-Dalam kasus raster kepadatan, kita dapat menggunakan ready noise_heatamp.tif dan membuat layer tree_density.tif sendiri. Pertama, kita akan menyiapkan noise_heatmap.tif yang awalnya jauh lebih besar daripada bidang minat yang kita kerjakan dalam bab ini. Untuk klip layer raster pergi ke Raster | Ekstraksi | Clipper :
+Dalam kasus raster kepadatan, kita dapat menggunakan peta noise_heatamp.tif dan membuat layer tree_density.tif sendiri. Pertama, kita akan menyiapkan noise_heatmap.tif yang awalnya jauh lebih besar daripada bidang minat yang kita kerjakan dalam bab ini. Untuk klip layer raster, gunakan menu berikut **Raster | Extraction | Clipper** :
 
-Dari daftar drop-down File input (raster) pilih noise-heatmap, yang merupakan raster yang akan dipotong.
+1. Dari daftar drop-down File input (raster) pilih noise-heatmap, yang merupakan raster yang akan dipotong.
 
-Dalam file Output, klik tombol Pilih untuk mengatur jalur dan nama untuk file output, misalnya, noise_heatmap_clip.tif.
+2. Dalam file **Output**, klik **Select button**untuk mengatur direktori dan nama untuk file output, misalnya, noise_heatmap_clip.tif.
 
-Di bagian Mode kliping, ada dua mode yang mungkin:
+3. Di bagian **Clipping mode**, ada dua mode yang dapat dipilih:
 
-Extent adalah tempat Anda dapat memasukkan koordinat kotak pembatas secara manual atau dengan menyeret kanvas peta. Gunakan pendekatan ini untuk mengatur sejauh mana file output Anda. Ingat saja bahwa luasnya harus melebihi batas bidang minat yang ditetapkan oleh zipcode_bound shapefile.
+- Extent adalah tempat Anda dapat memasukkan koordinat kotak pembatas secara manual atau dengan menyeret kanvas peta. Gunakan pendekatan ini untuk mengatur sejauh mana file output Anda. Ingat saja bahwa luasnya harus melebihi batas bidang minat yang ditetapkan oleh zipcode_bound shapefile.
 
-Jika layer Mask aktif, Anda dapat memilih bentuk poligonal, dan itu akan digunakan sebagai batas kliping.
+- Jika **Mask layer** aktif, Anda dapat memilih bentuk poligonal, dan itu akan digunakan sebagai batas kliping.
 
 Setelah Anda mengklik tombol OK, layer akan dimuat ke kanvas peta.
 
@@ -923,7 +918,7 @@ knitr::include_graphics("images/04/fig35.jpeg")
 
 Langkah-langkah berikut harus dilakukan untuk menilai rentang nilainya, membaginya ke dalam kategori, dan memberi peringkat:
 
-Klik dua kali pada layer noise_heatmap_clip untuk membuka jendela Layer Properties . Di jendela ini, buka bagian Metadata . Jelajahi jendela Properties di bagian bawah dialog sampai Anda menemukan garis yang disorot Band 1 dengan statistik raster dasar, seperti yang ditunjukkan di sini:
+1. Klik dua kali pada layer noise_heatmap_clip untuk membuka jendela Layer Properties . Di jendela ini, buka bagian Metadata . Jelajahi jendela Properties di bagian bawah dialog sampai Anda menemukan garis yang disorot Band 1 dengan statistik raster dasar, seperti yang ditunjukkan di sini:
 
 
 ```{r fig1436, fig.cap='Band 1 Metadata',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
@@ -940,13 +935,13 @@ Category        Value range       Suitability rank
 4               150 to 200        2
 5               Greater than 200  1
 
-For the rankings, go to __Raster | Raster Calculator__ and adjust the following options in its dialog window:
+Untuk pemeringkatan, gunakan menu __Raster | Raster Calculator__ dan ubah suaikan opsi berikut dalam dialog:
 
-- Enter the __Output__ layer path and name, for example, __noise_ranked__
+- Pilih direktori dan nama layer __Output__, sebagai contoh, __noise_ranked__
 
-- Select the __noise_heatmap_clip @1__ raster band and click on the __Current layer extent__ button to make sure that the output layer will have the same resolution and extent
+- Pilih band raster __noise_heatmap_clip @1__ dan klik pada tombol __Current layer extent__ untuk memastikan layer luaran memiliki resolusi dan extent yang sama.
 
-- In the __Raster Calculator__ expression window, enter the following expression:
+- Pada window ekspresi __Raster Calculator__, masukkan ekspresi berikut:
 
 ```
 ("noise_heatmap_clip@1" <= 50) *5 + ("noise_heatmap_clip@1" > 50 AND"noise_heatmap_clip@1" <= 100) *4 + ("noise_heatmap_clip@1" > 100 AND "noise_heatmap_clip@1" <= 150) *3 + ("noise_heatmap_clip@1" > 150 AND "noise_heatmap_clip@1" <= 200) *2+ ("noise_heatmap_clip@1" > 200)*1
@@ -963,7 +958,7 @@ Perhatikan hal ini: karena peringkat, peta panas terbalik; yaitu, hotspot paling
 
 Dengan cara yang sama, kita dapat membuat dan memberi peringkat peta panas untuk objek titik lain yang menarik dalam analisis kesesuaian kita, yaitu pohon dan museumart .
 
-#### Generating and ranking proximity rasters
+#### Pembuatan dan pengurutan proximity rasters
 
 Alur kerja akan dijelaskan dalam contoh lapisan vektor titik subway_entrances:
 
@@ -1017,7 +1012,7 @@ knitr::include_graphics("images/04/fig39.jpeg")
 
 Dengan cara yang sama, Anda dapat memproses ulang layer vektor lain yang harus dianalisis dari posisi kedekatan, yaitu taman, bike_routes, athletic_facilities, dan sekolah dasar. Sebagai hasilnya, Anda akan memiliki seperangkat lapisan raster yang diberi peringkat dengan beberapa kategori sesuai dengan kedekatan objek yang dipilih. Semakin tinggi pangkat, semakin dekat objek. Sebagai pedoman umum, terapkan nilai 400 m (atau 1300 kaki) untuk memberi peringkat pada raster dengan benar.
 
-### Step 5: Overlay the data and interpret the results
+### Tahap 5 :  Overlay data dan interpretasi hasil
 
 Sekarang kita memiliki segalanya siap untuk menutupi raster dan menghasilkan penilaian kesesuaian kumulatif. Pada gambar berikut, Anda dapat melihat daftar lengkap lapisan, ditimbang oleh kepentingannya untuk kesesuaian umum. Bobot adalah koefisien sederhana dalam kisaran 0 hingga 1, dan mereka digunakan untuk memodifikasi peringkat dengan benar.
 
