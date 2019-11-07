@@ -271,7 +271,7 @@ Ini adalah pendekatan paling sederhana. Dalam aplikasi dunia nyata, algoritma ya
 
 ### Membuat Heatmap dengan plugin QGIS
 
-Dengan bantuan plugin inti QGIS yang disebut**Heatmap**, kita dapat dengan mudah membuat **heat map** dari data titik vektor dan menggunakannya untuk analisis lebih lanjut. Pertama, kita perlu mengaktifkan plugin ini, jika belum diaktifkan. Setelah aktivasi, ia membuat submenu di bawah menu Raster dan menempatkan tombolnya pada bilah alat Raster .
+Dengan bantuan plugin inti QGIS yang disebut **Heatmap**, kita dapat dengan mudah membuat **heat map** dari data titik vektor dan menggunakannya untuk analisis lebih lanjut. Pertama, kita perlu mengaktifkan plugin ini, jika belum diaktifkan. Setelah aktivasi, ia membuat submenu di bawah menu Raster dan menempatkan tombolnya pada bilah alat Raster .
 
 Mari kita buat peta kepadatan untuk lapisan kebisingan , yang berisi informasi tentang keluhan tentang tingkat kebisingan yang tinggi. Lapisan ini berisi 44.397 fitur, dan sulit untuk mengetahui tempat mana yang berisik.
 
@@ -310,7 +310,7 @@ Untuk mengatur hasil yang lebih baik, kita dapat memilih kotak **_Advanced_** da
 
 Ini memungkinkan kita untuk mendefinisikan dimensi raster luaran. Dimensi yang lebih besar akan menghasilkan ukuran berkas luaran yang lebih besar, sedangkan dimensi yang lebih kecil akan menghasilkan luaran yang kasar dan kotak-kotak (*pixelated*). Kolom input ditautkan satu sama lain, sehingga mengubah nilai dalam bidang baris (misalnya, membagi dua) juga akan menyebabkan perubahan yang sesuai dengan nilai di bidang kolom, dan sebaliknya. Selanjutnya, nilai-nilai ini memiliki pengaruh langsung pada ukuran piksel (lihat poin berikutnya). Perlu ditekankan bahwa luas raster dipertahankan saat mengubah dimensi raster.
 
-- __Upuran piksel X dan Y__: 
+- __Ukuran piksel X dan Y__: 
 
 Ukuran piksel raster menentukan seberapa kasar atau terperinci tampilan pola distribusi. Ukuran piksel yang lebih kecil akan memberikan hasil yang lebih halus, tetapi waktu pemrosesan dan memori yang diperlukan untuk analisis akan meningkat. Sel besar akan diproses lebih cepat, tetapi raster yang dihasilkan akan *pixelated*. Jika piksel-pikselnya sangat besar, beberapa pola akan menjadi tidak terlihat, jadi Anda mungkin perlu menjalankan analisis beberapa kali, mencoba ukuran sel yang berbeda untuk mendapatkan hasil yang memenuhi kebutuhan Anda.
 
@@ -748,11 +748,11 @@ Segera setelah kita menetapkan persyaratan dasar, kita perlu melakukan eksploras
 
 #### Keselamatan
 
-- Layer hurricane_evacuation_zones : 
+- Layer *hurricane_evacuation_zones* : 
 
 Zona evakuasi badai adalah area kota yang mungkin perlu dievakuasi karena ancaman yang terkait dengan keselamatan dan kehidupan dari badai topan.
 
-- Layer hurricane_inundation_zones :
+- Layer *hurricane_inundation_zones* :
 
 Zona genangan badai adalah area genangan badai terburuk.
 
@@ -772,7 +772,7 @@ Lokasi pintu masuk kereta bawah tanah.
 
 Lapisan yang berisi informasi ruang terbuka hijau, seperti lapangan, trek, taman, dan sebagainya.
 
-- Layer tree_density :
+- Layer *tree_density* :
 
 Ini adalah layer raster yang dibuat dari data sensus pohon.
 
@@ -802,16 +802,13 @@ Lapisan ini berisi fasilitas atletik dan beberapa informasi dasar tentangnya, te
 Lokasi museum dan galeri seni.
 
 
-
-
-
 ### Tahap 3 : Definisikan kriteria analisis 
 
-Pada layer hurricane_evacuation_zones, ada enam zona, yang diperingkat dalam zona bidang atribut berdasarkan risiko dampak gelombang badai, dengan zona 1 menjadi wilayah yang kemungkinan besar akan banjir. Jika terjadi badai atau badai tropis, penghuni di zona ini harus mengungsi. Daerah dengan nilai zona X tidak berada dalam zona evakuasi. Area dengan nilai zona 0 adalah salah satu dari yang berikut: air, dermaga kecil, atau pulau-pulau tak berpenghuni. Untuk keperluan analisis, lapisan ini harus dirasterisasi dan diberi peringkat sesuai dengan risiko dampak badai, dengan nilai peringkat turun dari area yang tidak berada dalam zona evakuasi ke yang paling mungkin terkena banjir.
+Pada layer *hurricane_evacuation_zones*, ada enam zona, yang diperingkat dalam zona bidang atribut berdasarkan risiko dampak gelombang badai, dengan zona 1 menjadi wilayah yang kemungkinan besar akan banjir. Jika terjadi badai atau badai tropis, penghuni di zona ini harus mengungsi. Daerah dengan nilai zona X tidak berada dalam zona evakuasi. Area dengan nilai zona 0 adalah salah satu dari yang berikut: air, dermaga kecil, atau pulau-pulau tak berpenghuni. Untuk keperluan analisis, lapisan ini harus dirasterisasi dan diberi peringkat sesuai dengan risiko dampak badai, dengan nilai peringkat turun dari area yang tidak berada dalam zona evakuasi ke yang paling mungkin terkena banjir.
 
-Lapisan poligon hurricane_inundation_zones berisi informasi tentang risiko genangan akibat badai, ditulis di kolom atribut, di mana nilainya adalah ketinggian lonjakan (dalam feet). Area yang kemungkinan besar akan tergenang diberi nilai 1, dan area yang dikecualikan dari pemodelan inundasi diberi nilai 5. Lapisan ini harus dirasterisasi dan diberi peringkat dengan nilai kesesuaian potensial tertinggi untuk area yang dikecualikan, dan yang terendah untuk bidang kategori 1.
+Lapisan poligon *hurricane_inundation_zones* berisi informasi tentang risiko genangan akibat badai, ditulis di kolom atribut, di mana nilainya adalah ketinggian lonjakan (dalam feet). Area yang kemungkinan besar akan tergenang diberi nilai 1, dan area yang dikecualikan dari pemodelan inundasi diberi nilai 5. Lapisan ini harus dirasterisasi dan diberi peringkat dengan nilai kesesuaian potensial tertinggi untuk area yang dikecualikan, dan yang terendah untuk bidang kategori 1.
 
-Layer raster noise_heatmap adalah raster yang harus diberi peringkat menggunakan beberapa kategori, dengan nilai kesesuaian terendah untuk tempat paling berisik dan sebaliknya. Hal yang baik di sini adalah kita tidak perlu meraster layer ini, seperti yang kita lakukan pada layer sebelumnya. Pada saat yang sama, menetapkan jumlah dan kisaran untuk peringkat membawa subjektivitas ke dalam penilaian kita. Lapisan tree_density, yang juga merupakan raster kepadatan, harus dianalisis dengan cara yang sama.
+Layer raster *noise_heatmap* adalah raster yang harus diberi peringkat menggunakan beberapa kategori, dengan nilai kesesuaian terendah untuk tempat paling berisik dan sebaliknya. Hal yang baik di sini adalah kita tidak perlu melakukan rasterisasi layer ini, seperti yang kita lakukan pada layer sebelumnya. Pada saat yang sama, menetapkan jumlah dan kisaran untuk peringkat membawa subjektivitas ke dalam penilaian kita. Layer *tree_density*, yang juga merupakan raster kepadatan, harus dianalisis dengan cara yang sama.
 
 Lapisan yang dipilih lainnya harus dianalisis terlebih dahulu untuk kedekatannya. Untuk tujuan ini, pertama-tama kita akan merasterisasi mereka, kemudian membuat *continuous raster proximity*, dan akhirnya peringkat mereka di bawah beberapa kategori sesuai dengan nilai *proximity* (semakin dekat suatu objek, semakin tinggi nilai kesesuaian). Sekali lagi, dalam hal peringkat pengguna, kita tidak akan dapat menghindari beberapa subjektivitas dalam penilaian kita. Selain itu, raster kedekatan akhir dapat ditimbang menurut kepentingannya dalam penilaian kesesuaian keseluruhan.
 
@@ -867,27 +864,27 @@ knitr::include_graphics("images/04/fig33.jpeg")
 
 Lapisan siap untuk rasterisasi. Buka jendela dialog dengan pergi ke **Raster | Conversion | Rasterize (Vektor to Raster)**. Di jendela dialog ini seperti yang ditunjukkan pada gambar berikut, sesuaikan pengaturan berikut:
 
-1.Dari daftar drop-down File input (shapefile), pilih hurricane_evacuation_zones.
+1.Dari daftar drop-down File input (shapefile), pilih *hurricane_evacuation_zones*.
 
 2. Dari daftar **Attribute**, pilih peringkat.
 
 3. Dalam **Output file for rasterized vectors** (raster), klik tombol **Select**. Arahkan ke direktori kerja Anda, dan ketik hurricane_evacuation_zones.tif sebagai nama layer baru. Pesan ini akan ditampilkan: **The output file doesn't exist**. Anda harus mengatur ukuran atau resolusi output untuk membuatnya. Klik OK dan lanjutkan ke tahap berikutnya.
 
-4. Pada langkah sebelumnya, Anda menetapkan beberapa opsi utama. Untuk kenyamanan, kita akan membuat raster dalam tutorial ini dengan tingkat dan resolusi yang sama menggunakan lidar_dem.tif sebagai template. Klik pada tombol untuk membuat parameter baris perintah gdal_rasterize dapat diedit. Setelah modifikasi, garis harus terlihat mirip dengan contoh berikut:
+4. Pada langkah sebelumnya, Anda menetapkan beberapa opsi utama. Untuk kenyamanan, kita akan membuat raster dalam tutorial ini dengan tingkat dan resolusi yang sama menggunakan lidar_dem.tif sebagai template. Klik pada tombol untuk membuat parameter baris perintah *gdal_rasterize* dapat diedit. Setelah modifikasi, garis harus terlihat mirip dengan contoh berikut:
 
 ```
 gdal_rasterize -a rank -l hurricane_evacuation_zones –a_nodata 0 -te 982199.3000000000465661 188224.6749999999883585 991709.3000000000465661 196484.6749999999883585 -tr 10 10 -ot UInt16 fullpath/hurricane_evacuation_zones.shp fullpath/hurricane_evacuation_zones.tif
 ```
 
-Ini berarti bahwa raster keluaran akan berisi nilai raster dari bidang atribut peringkat. Area di luar layer poligon akan diberi nilai 0, yang akan ditafsirkan sebagai nodata. Tipe data output adalah bilangan bulat unsigned 16-bit.
+Ini berarti bahwa raster luaran akan berisi nilai raster dari bidang atribut peringkat. Area di luar layer poligon akan diberi nilai 0, yang akan ditafsirkan sebagai nodata. Tipe data output adalah bilangan bulat *unsigned 16-bit*.
 
-5. Klik pada tombol OK. Hasil rasterisasi akan muncul di panel Layers.
+5. Klik pada tombol **OK**. Hasil rasterisasi akan muncul di panel Layers.
 
 ```{r fig1434, fig.cap='Rasterize',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig34.jpeg")
 ```
 
-Lapisan hurricane_inundation_zones harus diproses sebelumnya dengan cara yang sama. Lapisan berisi beberapa nomor zona. Ini dapat diartikan sebagai tingkat keparahan risiko genangan; yaitu, semakin tinggi angkanya, semakin rendah risikonya. Ini berarti bahwa kita dapat menggunakan nilai-nilai ini secara langsung untuk peringkat. Dalam hal lapisan ini, parameter baris perintah gdal_rasterize akan terlihat sebagai berikut:
+Layer *hurricane_inundation_zones* harus diproses sebelumnya dengan cara yang sama. Lapisan berisi beberapa nomor zona. Ini dapat diartikan sebagai tingkat keparahan risiko genangan; yaitu, semakin tinggi angkanya, semakin rendah risikonya. Ini berarti bahwa kita dapat menggunakan nilai-nilai ini secara langsung untuk peringkat. Dalam hal lapisan ini, parameter baris perintah *gdal_rasterize* akan terlihat sebagai berikut:
 
 ```
 gdal_rasterize -a category -l hurricane_inundation_zones -a_nodata 0 -te 982199.3000000000465661 188224.6749999999883585 991709.3000000000465661 196484.6749999999883585 -tr 10 10 -ot UInt16 fullpath/hurricane_inundation_zones.shp fullpath/hurricane_inundation_zones.tif
@@ -899,17 +896,17 @@ Ketika dikombinasikan, lapisan-lapisan ini dapat memberikan penilaian kumulatif 
 
 Dalam kasus raster kepadatan, kita dapat menggunakan peta noise_heatamp.tif dan membuat layer tree_density.tif sendiri. Pertama, kita akan menyiapkan noise_heatmap.tif yang awalnya jauh lebih besar daripada bidang minat yang kita kerjakan dalam bab ini. Untuk klip layer raster, gunakan menu berikut **Raster | Extraction | Clipper** :
 
-1. Dari daftar drop-down File input (raster) pilih noise-heatmap, yang merupakan raster yang akan dipotong.
+1. Dari daftar drop-down **File input** (raster) pilih *noise-heatmap*, yang merupakan raster yang akan dipotong.
 
-2. Dalam file **Output**, klik **Select button**untuk mengatur direktori dan nama untuk file output, misalnya, noise_heatmap_clip.tif.
+2. Dalam file **Output**, klik **Select button**untuk mengatur direktori dan nama untuk file output, misalnya, **noise_heatmap_clip.tif**.
 
 3. Di bagian **Clipping mode**, ada dua mode yang dapat dipilih:
 
-- Extent adalah tempat Anda dapat memasukkan koordinat kotak pembatas secara manual atau dengan menyeret kanvas peta. Gunakan pendekatan ini untuk mengatur sejauh mana file output Anda. Ingat saja bahwa luasnya harus melebihi batas bidang minat yang ditetapkan oleh zipcode_bound shapefile.
+- *Extent* adalah tempat Anda dapat memasukkan koordinat kotak pembatas secara manual atau dengan menyeret kanvas peta. Gunakan pendekatan ini untuk mengatur sejauh mana file output Anda. Ingat saja bahwa luasnya harus melebihi batas bidang minat yang ditetapkan oleh zipcode_bound shapefile.
 
 - Jika **Mask layer** aktif, Anda dapat memilih bentuk poligonal, dan itu akan digunakan sebagai batas kliping.
 
-Setelah Anda mengklik tombol OK, layer akan dimuat ke kanvas peta.
+Setelah Anda mengklik tombol **OK**, layer akan dimuat ke kanvas peta.
 
 
 ```{r fig1435, fig.cap='Clipper',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
@@ -918,7 +915,7 @@ knitr::include_graphics("images/04/fig35.jpeg")
 
 Langkah-langkah berikut harus dilakukan untuk menilai rentang nilainya, membaginya ke dalam kategori, dan memberi peringkat:
 
-1. Klik dua kali pada layer noise_heatmap_clip untuk membuka jendela Layer Properties . Di jendela ini, buka bagian Metadata . Jelajahi jendela Properties di bagian bawah dialog sampai Anda menemukan garis yang disorot Band 1 dengan statistik raster dasar, seperti yang ditunjukkan di sini:
+1. Klik dua kali pada layer *noise_heatmap_clip* untuk membuka jendela **Layer Properties** . Di jendela ini, buka bagian Metadata . Jelajahi jendela Properties di bagian bawah dialog sampai Anda menemukan garis yang disorot Band 1 dengan statistik raster dasar, seperti yang ditunjukkan di sini:
 
 
 ```{r fig1436, fig.cap='Band 1 Metadata',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
@@ -1127,7 +1124,7 @@ Demikian pula, Anda dapat mencoba jenis kueri lain dan mengidentifikasi bangunan
 knitr::include_graphics("images/04/fig48.jpeg")
 ```
 
-Setelah mengklik tombol OK, Anda akan melihat hasil berikut di kanvas peta:
+Setelah mengklik tombol **OK**, Anda akan melihat hasil berikut di kanvas peta:
 
 ```{r fig1449, fig.cap='Final result',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/04/fig49.jpeg")
