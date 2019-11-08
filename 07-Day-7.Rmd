@@ -1,25 +1,37 @@
 # Hari Ketujuh 
 
-## Konsep WebGIS
+<!-- ## Konsep WebGIS -->
 
-```{r fig1424, fig.cap='Open Attribute Table',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("img/webgis/pic1.png")
-```
+<!-- ```{r fig1424, fig.cap='Open Attribute Table',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'} -->
+<!-- knitr::include_graphics("img/webgis/pic1.png") -->
+<!-- ``` -->
 
 ## Instalasi
 
 **Tomcat**
 
-![Instalasi Tomcat](https://youtu.be/IC_wnPZYyYA)
+
+```{r embed1, out.extra='style="border: none;"', out.width='99%', fig.cap="Instalasi Tomcat", echo = FALSE}
+knitr::include_url("https://www.youtube.com/embed/IC_wnPZYyYA")
+```
 
 **GeoServer**
-![Download GeoServer](https://youtu.be/NxV6bIpkaGw)
 
-### 
-### Konfigurasi Tomcat
+```{r embed2, out.extra='style="border: none;"', out.width='99%', fig.cap="Download GeoServer", echo = FALSE}
+knitr::include_url("https://www.youtube.com/embed/NxV6bIpkaGw")
+```
+
+
 
 
 ## GeoServer
+
+
+```{r embed3, out.extra='style="border: none;"', out.width='99%', fig.cap="Start GeoServer", echo = FALSE}
+knitr::include_url("https://www.youtube.com/embed/BGBthqeqmrs")
+```
+
+
 
 
 
