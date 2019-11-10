@@ -1,7 +1,16 @@
 book_filename: "Pelatihan untuk Analis SIG"
-chapter_name: ""
+chapter_name: "Bab "
 repo: https://github.com/firmanhadi/training-for-gis-analyses
 output_dir: docs
-rmd_files: ["index.Rmd", "01-intro.Rmd", "02-Day-2.Rmd", "03-Day-3.Rmd", "04-Day-4.Rmd","05-Day-5.Rmd","06-Day-6.Rmd","07-Day-7.Rmd"]
+rmd_files: ["index.Rmd", "02-Day-2.Rmd", "03-Day-3.Rmd", "04-Day-4.Rmd","05-Day-5.Rmd","06-Day-6.Rmd","07-Day-7.Rmd","08-Day-8.Rmd","09-Day-9.Rmd"]
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
+
+language:
+  label:
+    fig: 'Gambar '
+    tab: 'Tabel '
+    eq: 'Rumus '
+  ui:
+    edit: Edit
+    chapter_name: ''

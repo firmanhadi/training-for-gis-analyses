@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Bab 6 GeoServer | Training for GIS Analyses</title>
+  <meta name="description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Bab 6 GeoServer | Training for GIS Analyses" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bab 6 GeoServer | Training for GIS Analyses" />
+  
+  <meta name="twitter:description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
+  
+
+<meta name="author" content="Firman Hadi" />
+
+
+<meta name="date" content="2019-11-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="hari-keenam.html"/>
+<link rel="next" href="hari-kedelapann.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Training for GIS Analyses</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pengantar</a></li>
+<li class="part"><span><b>I Basis Data</b></span></li>
+<li class="chapter" data-level="1" data-path="day2.html"><a href="day2.html"><i class="fa fa-check"></i><b>1</b> Basis Data</a><ul>
+<li class="chapter" data-level="1.1" data-path="day2.html"><a href="day2.html#perancangan-basis-data"><i class="fa fa-check"></i><b>1.1</b> Perancangan Basis Data</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="day2.html"><a href="day2.html#rumusan-dasar"><i class="fa fa-check"></i><b>1.1.1</b> Rumusan Dasar</a></li>
+<li class="chapter" data-level="1.1.2" data-path="day2.html"><a href="day2.html#normalisasi"><i class="fa fa-check"></i><b>1.1.2</b> Normalisasi</a></li>
+<li class="chapter" data-level="1.1.3" data-path="day2.html"><a href="day2.html#pemodelan-data"><i class="fa fa-check"></i><b>1.1.3</b> Pemodelan Data</a></li>
+<li class="chapter" data-level="1.1.4" data-path="day2.html"><a href="day2.html#sample-application"><i class="fa fa-check"></i><b>1.1.4</b> Sample application</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="day2.html"><a href="day2.html#pembuatan-basis-data-dengan-postgis"><i class="fa fa-check"></i><b>1.2</b> Pembuatan Basis Data dengan PostGIS</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="day2.html"><a href="day2.html#membuat-skema-baru-dengan-pgadmin-4"><i class="fa fa-check"></i><b>1.2.1</b> Membuat Skema Baru dengan pgAdmin 4</a></li>
+<li class="chapter" data-level="1.2.2" data-path="day2.html"><a href="day2.html#postgis-shapefile-and-dbf-loaderexporter"><i class="fa fa-check"></i><b>1.2.2</b> PostGIS Shapefile and DBF Loader/Exporter</a></li>
+<li class="chapter" data-level="1.2.3" data-path="day2.html"><a href="day2.html#download-data"><i class="fa fa-check"></i><b>1.2.3</b> Download Data</a></li>
+<li class="chapter" data-level="1.2.4" data-path="day2.html"><a href="day2.html#impor-data"><i class="fa fa-check"></i><b>1.2.4</b> Impor Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="studi-kasus-pembangunan-basis-data-untuk-analisis-wilayah-layanan.html"><a href="studi-kasus-pembangunan-basis-data-untuk-analisis-wilayah-layanan.html"><i class="fa fa-check"></i><b>2</b> Studi Kasus : Pembangunan Basis Data untuk Analisis Wilayah Layanan</a><ul>
+<li class="chapter" data-level="2.1" data-path="studi-kasus-pembangunan-basis-data-untuk-analisis-wilayah-layanan.html"><a href="studi-kasus-pembangunan-basis-data-untuk-analisis-wilayah-layanan.html#praktek-perancangan-basis-data"><i class="fa fa-check"></i><b>2.1</b> Praktek Perancangan Basis Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basis-data-lanjut.html"><a href="basis-data-lanjut.html"><i class="fa fa-check"></i><b>3</b> Basis Data Lanjut</a><ul>
+<li class="chapter" data-level="3.1" data-path="basis-data-lanjut.html"><a href="basis-data-lanjut.html#non-spatial-sql-queries"><i class="fa fa-check"></i><b>3.1</b> Non-spatial SQL Queries</a></li>
+<li class="chapter" data-level="3.2" data-path="basis-data-lanjut.html"><a href="basis-data-lanjut.html#spatial-sql-queries"><i class="fa fa-check"></i><b>3.2</b> Spatial SQL Queries</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="basis-data-lanjut.html"><a href="basis-data-lanjut.html#adjacent"><i class="fa fa-check"></i><b>3.2.1</b> Adjacent</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="basis-data-lanjut.html"><a href="basis-data-lanjut.html#backup-dan-restore"><i class="fa fa-check"></i><b>3.3</b> Backup dan Restore</a></li>
+</ul></li>
+<li class="part"><span><b>II Sistem Informasi Geografis</b></span></li>
+<li class="chapter" data-level="4" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html"><i class="fa fa-check"></i><b>4</b> Pemodelan Sistem Informasi Geografis</a><ul>
+<li class="chapter" data-level="4.1" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#conceptual-framework"><i class="fa fa-check"></i><b>4.1</b> Conceptual framework</a></li>
+<li class="chapter" data-level="4.2" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#data"><i class="fa fa-check"></i><b>4.2</b> Data</a></li>
+<li class="chapter" data-level="4.3" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#final-regression-model"><i class="fa fa-check"></i><b>4.3</b> Final regression model</a></li>
+<li class="chapter" data-level="4.4" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#studi-kasus-pemodelan-sig"><i class="fa fa-check"></i><b>4.4</b> Studi Kasus : Pemodelan SIG</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#analisis-wilayah-layanan-service-area-analyses"><i class="fa fa-check"></i><b>4.4.1</b> Analisis Wilayah Layanan (Service Area Analyses)</a></li>
+<li class="chapter" data-level="4.4.2" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#menghitung-jumlah-rumah-di-sempadan-sungai"><i class="fa fa-check"></i><b>4.4.2</b> Menghitung jumlah rumah di sempadan sungai</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="hari-keenam.html"><a href="hari-keenam.html"><i class="fa fa-check"></i><b>5</b> Analisis Sistem Informasi Geografis</a><ul>
+<li class="chapter" data-level="5.1" data-path="hari-keenam.html"><a href="hari-keenam.html#basic-geoprocessing"><i class="fa fa-check"></i><b>5.1</b> Basic Geoprocessing</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="hari-keenam.html"><a href="hari-keenam.html#penapisan-data"><i class="fa fa-check"></i><b>5.1.1</b> Penapisan data</a></li>
+<li class="chapter" data-level="5.1.2" data-path="hari-keenam.html"><a href="hari-keenam.html#dissolve"><i class="fa fa-check"></i><b>5.1.2</b> Dissolve</a></li>
+<li class="chapter" data-level="5.1.3" data-path="hari-keenam.html"><a href="hari-keenam.html#polygon-dari-layer-extent"><i class="fa fa-check"></i><b>5.1.3</b> Polygon dari layer extent</a></li>
+<li class="chapter" data-level="5.1.4" data-path="hari-keenam.html"><a href="hari-keenam.html#reklasifikasi"><i class="fa fa-check"></i><b>5.1.4</b> Reklasifikasi</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="hari-keenam.html"><a href="hari-keenam.html#terrain-analyses"><i class="fa fa-check"></i><b>5.2</b> Terrain analyses</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="hari-keenam.html"><a href="hari-keenam.html#persiapan"><i class="fa fa-check"></i><b>5.2.1</b> Persiapan</a></li>
+<li class="chapter" data-level="5.2.2" data-path="hari-keenam.html"><a href="hari-keenam.html#kelerengan"><i class="fa fa-check"></i><b>5.2.2</b> Kelerengan</a></li>
+<li class="chapter" data-level="5.2.3" data-path="hari-keenam.html"><a href="hari-keenam.html#hillshade"><i class="fa fa-check"></i><b>5.2.3</b> Hillshade</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="hari-keenam.html"><a href="hari-keenam.html#density-analyses-analisis-kepadatan"><i class="fa fa-check"></i><b>5.3</b> Density Analyses (Analisis Kepadatan)</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="hari-keenam.html"><a href="hari-keenam.html#konsep"><i class="fa fa-check"></i><b>5.3.1</b> Konsep</a></li>
+<li class="chapter" data-level="5.3.2" data-path="hari-keenam.html"><a href="hari-keenam.html#membuat-heatmap-dengan-plugin-qgis"><i class="fa fa-check"></i><b>5.3.2</b> Membuat Heatmap dengan plugin QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="hari-keenam.html"><a href="hari-keenam.html#analisis-kesesuaian"><i class="fa fa-check"></i><b>5.4</b> Analisis kesesuaian</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-1-mendefinisikan-maksud-dan-tujuan"><i class="fa fa-check"></i><b>5.4.1</b> Tahap 1: Mendefinisikan maksud dan tujuan</a></li>
+<li class="chapter" data-level="5.4.2" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-2-analisis-ketersediaan-data-dan-definisikan-relevansi"><i class="fa fa-check"></i><b>5.4.2</b> Tahap 2 : Analisis ketersediaan data dan definisikan relevansi</a></li>
+<li class="chapter" data-level="5.4.3" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-3-definisikan-kriteria-analisis"><i class="fa fa-check"></i><b>5.4.3</b> Tahap 3 : Definisikan kriteria analisis</a></li>
+<li class="chapter" data-level="5.4.4" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-4-analisis-dan-persiapan-data"><i class="fa fa-check"></i><b>5.4.4</b> Tahap 4 : Analisis dan persiapan data</a></li>
+<li class="chapter" data-level="5.4.5" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-5-overlay-data-dan-interpretasi-hasil"><i class="fa fa-check"></i><b>5.4.5</b> Tahap 5 : Overlay data dan interpretasi hasil</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III WebGIS</b></span></li>
+<li class="chapter" data-level="6" data-path="geoserver.html"><a href="geoserver.html"><i class="fa fa-check"></i><b>6</b> GeoServer</a><ul>
+<li class="chapter" data-level="6.1" data-path="geoserver.html"><a href="geoserver.html#pendahuluan"><i class="fa fa-check"></i><b>6.1</b> Pendahuluan</a></li>
+<li class="chapter" data-level="6.2" data-path="geoserver.html"><a href="geoserver.html#komponen-yang-diperlukan"><i class="fa fa-check"></i><b>6.2</b> Komponen yang diperlukan</a></li>
+<li class="chapter" data-level="6.3" data-path="geoserver.html"><a href="geoserver.html#geoserver-1"><i class="fa fa-check"></i><b>6.3</b> GeoServer</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="hari-kedelapann.html"><a href="hari-kedelapann.html"><i class="fa fa-check"></i><b>7</b> MapStore2</a><ul>
+<li class="chapter" data-level="7.1" data-path="hari-kedelapann.html"><a href="hari-kedelapann.html#quick-start"><i class="fa fa-check"></i><b>7.1</b> Quick Start</a></li>
+</ul></li>
+<li class="part"><span><b>IV Visualisasi dan Penyajian Data</b></span></li>
+<li class="chapter" data-level="8" data-path="visualisasi-data.html"><a href="visualisasi-data.html"><i class="fa fa-check"></i><b>8</b> Visualisasi Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="visualisasi-data.html"><a href="visualisasi-data.html#grouping-dan-ordering"><i class="fa fa-check"></i><b>8.1</b> Grouping dan Ordering</a></li>
+<li class="chapter" data-level="8.2" data-path="visualisasi-data.html"><a href="visualisasi-data.html#styling"><i class="fa fa-check"></i><b>8.2</b> Styling</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="visualisasi-data.html"><a href="visualisasi-data.html#vektor"><i class="fa fa-check"></i><b>8.2.1</b> Vektor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="penyajian-data.html"><a href="penyajian-data.html"><i class="fa fa-check"></i><b>9</b> Penyajian Data</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/firmanhadi/training-for-gis-analyses" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Training for GIS Analyses</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="geoserver" class="section level1">
+<h1><span class="header-section-number">Bab 6</span> GeoServer</h1>
+<div id="pendahuluan" class="section level2">
+<h2><span class="header-section-number">6.1</span> Pendahuluan</h2>
+<p><strong>Concept of webgis</strong></p>
+<p>Internet-based GIS has been widely recognized in both
+public and private organizations as a fundamental tool for
+storage and distribution of data to targeted audiences
+(Brovelli et al. 2016).
+The GIS-based Web portals provide a centralized and
+uniform interface to access the distributed and heteroge-
+neous resources and data services (Karnatak et al. 2007).
+According to (Peng 2001), Internet GIS refers to a
+network-centric GIS tool that uses the Internet as a primary
+means of providing access to distributed data and other
+information, disseminating spatial information, and con-
+ducting GIS analysis.</p>
+<p><strong>GIS Web service</strong></p>
+<p>GIS Web services provide direct access to data, eliminating
+the need to download a dataset and import it into your
+desktop application, instead using a simple HTTP interface
+(URL) to access the data. The department uses a variety of
+service protocols including Web Map Service (WMS), Web
+Map Tile Service (WMTS), and Web Feature Service (WFS) provided by the Open Geospatial Consortium
+(OGC) and ESRI Web mapping services.</p>
+<p><strong>Web Services for Spatial Data</strong></p>
+<p>Web services for spatial data enable using data from servers
+directly with desktop GIS software, without downloading
+first data as files to the own computer. In such a way, it is
+possible to use always up-to-date data easily. All most
+common commercial and open-source GIS desktop software
+products support Web standards (MapInfo, ArcGIS, QGIS,
+and GRASS). Web services are used so that the user con-
+nects to the service using a special menu. For connection,
+user needs to know the server’s URL. After connecting to
+the server, the user gets a list of available map layers. Web
+services are also easy to use in map applications on Web.
+Data may be requested also directly with a HTTP GET or
+POST request.
+Most common Web service standards of Open Geospatial
+Consortium’s (OGC) are: Web Map Service (WMS), Web
+Map Tile Service (WMTS), Web Feature Service (WFS),
+and Web Coverage Service (WCS).
+WMS and WMTS return map image in raster format,
+WFS data in vector format, and WCS data in raster format.
+In WMTS, maps are available only in pre-defined scales and
+size. In WMS, scale and map size can be set without
+restrictions. WMTS, are faster, because often the map tiles
+are already ready at the server. For requesting only part of
+data different filters may be used, for example, BBOX
+defines the area of interest.</p>
+<p><strong>GIS Web Services</strong></p>
+<p>The main challenges of geospatial (Shengru and Abdelguerfi
+2006) data are:
+Geospatial data are in bulk in size; loading the data and map
+into the client is complex; reload of map and data takes time;
+geospatial data is highly heterogeneous, and complex
+geospatial problems need large quantities of geospatial data
+from multiple sources and locations.</p>
+<p><strong>Web GIS components</strong></p>
+<p>The major components of the whole portal are categorized
+into navigation tools, legend tools, search tools, and other
+tools such as WMS layer adding tool, layer manager. Fea-
+tures on the map can be identifying using map identify tool.
+Distance measuring tool of map also has been included as
+part of spatial map analysis tool. Results of map query or
+area of interest can be printed out along with detail legend
+using print tool. The size, font type, and map output can be
+customized using this tool. The map can be produced in
+various file formats such as PNG, JPEG, GIF, or PDF.
+Region-specific zoom is made possible using quick zoom
+tool.
+Searching of non-spatial attributes could also be per-
+formed by the users. To do this, user first selects a layer and
+then, fill a from its listed fields/columns. An attribute to be
+searched is entered in the textbox. Clicking the “Search by
+Value” will create a pop-up window listing the attribute table
+matching the search criteria and subsequent zooming in the
+map and highlighted.
+The automatic identification of map on mouse cursor
+moves is made possible using “Auto Identify” widget. The
+user selects a layer and its corresponding attribute(s), once
+applied; the user sees the attributes corresponding to the map
+location when mouse cursor moves.
+The addition of WMS layers is also possible on this
+WebGIS portal. First we host the layers having similar
+projection through the GeoServer (Kamel and Honda 2006)
+(Fig. 3.1).
+<!-- ## Konsep WebGIS --></p>
+<!-- ```{r fig1424, fig.cap='Open Attribute Table',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'} -->
+<!-- knitr::include_graphics("img/webgis/pic1.png") -->
+<!-- ``` -->
+</div>
+<div id="komponen-yang-diperlukan" class="section level2">
+<h2><span class="header-section-number">6.2</span> Komponen yang diperlukan</h2>
+<p>Sebelum Anda dapat menggunakan GeoServer, Anda perlu menginstal beberapa perangkat lunak yang dibutuhkan. GeoServer merupakan aplikasi Java. Salah satu hal penting yang paling
+Anda pastikan adalah virtual Java bekerja pada mesin Anda.</p>
+<p>Ada dua paket utama Java. Tergantung pada apa yang Anda berencana untuk melakukan dengan Java, Anda mungkin
+ingin menginstal sebuah JDK (Java Development Kit) atau JRE
+( Java Runtime Environment).</p>
+<p>JDK memungkinkan Anda untuk mengkompilasi kode Java, sedangkan JRE cukup memenuhi syarat
+untuk menjalankan sebagian besar aplikasi Java. Mulai dari rilis 2.0, GeoServer tidak perlu instalasi JDK penuh, dan Anda
+dapat memilih JRE. JDK hanya diperlukan jika Anda berencana untuk menulis dan mengkompilasi kode
+Java. Hal ini dilakukan jika Anda ingin memodifikasi kode sumber GeoServer, untuk memperbaiki kode, atau menambahkan
+fungsionalitas.</p>
+<p>Versi saat ini dari GeoServer membutuhkan Java 8. Perlu diingat bahwa Java 9 tidak didukung, mungkin Anda dapat menginstal Geoserver. Hanya saja Anda tidak akan mendapatkan
+dukungan untuk setiap masalah yang Anda temukan saat menggunakan Geoserver dengan Java 9.</p>
+<p>Untuk melakukan pemeriksaan apakah sistem Anda memiliki Java JRE 8, silahkan ikuti langkah berikut :</p>
+<ol style="list-style-type: decimal">
+<li><p>Dari menu Start, pilih Control Panel.</p></li>
+<li><p>Pilih Programs. Jika sistem anda memiliki JRE / JDK, Anda akan melihat ikon dengan
+logo Java, seperti yang ditunjukkan pada gambar berikut. Ini adalah cara pintas ke panel kontrol Java:</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:fig71"></span>
+<img src="images/07/fig71.png" alt="Cek Java" width="60%" />
+<p class="caption">
+Gambar 6.1: Cek Java
+</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li><h2 id="instalasi"><span class="header-section-number">6.2</span> Instalasi</h2></li>
+</ol>
+<p><strong>Tomcat</strong></p>
+<div class="figure"><span id="fig:embed1"></span>
+<iframe src="https://www.youtube.com/embed/IC_wnPZYyYA" width="99%" height="400px" style="border: none;">
+</iframe>
+<p class="caption">
+Gambar 6.2: Instalasi Tomcat
+</p>
+</div>
+<p><strong>GeoServer</strong></p>
+<div class="figure"><span id="fig:embed2"></span>
+<iframe src="https://www.youtube.com/embed/NxV6bIpkaGw" width="99%" height="400px" style="border: none;">
+</iframe>
+<p class="caption">
+Gambar 6.3: Download GeoServer
+</p>
+</div>
+</div>
+<div id="geoserver-1" class="section level2">
+<h2><span class="header-section-number">6.3</span> GeoServer</h2>
+<div class="figure"><span id="fig:embed3"></span>
+<iframe src="https://www.youtube.com/embed/BGBthqeqmrs" width="99%" height="400px" style="border: none;">
+</iframe>
+<p class="caption">
+Gambar 6.4: Start GeoServer
+</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hari-keenam.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hari-kedelapann.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Pelatihan untuk Analis SIG.pdf", "Pelatihan untuk Analis SIG.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

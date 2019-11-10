@@ -1,22 +1,8 @@
-# Hari Keempat
+# Basis Data Lanjut
 
 **Topik**
 
-## Service Area Analyses di QGIS
 
-1. Load layer jalan dan fasilitas kesehatan dalam format UTM (Zona 48N).
-
-2. Load raster kepadatan penduduk
-
-3. Melakukan analisis ***service area***
-
-- Processing > Network analyses > Service area
-
-4. Create buffer from service area lines
-
-5. Calculate raster using vector
-
-- Zonal statistics
 
 
 ## Non-spatial SQL Queries 
@@ -73,23 +59,23 @@ SELECT * into qlayer FROM kelurahan WHERE st_touches(kelurahan.geometry, ( SELEC
 ```CREATE VIEW TestView AS  SELECT * FROM kelurahan WHERE st_touches(kelurahan.geom, ( SELECT geom FROM kelurahan WHERE nama_desa = 'SADAI'));```
 
 
-## Routing 
+<!-- ## Routing  -->
 
-1. Menambahkan ekstensi pgrouting 
+<!-- 1. Menambahkan ekstensi pgrouting  -->
 
-```
-sudo apt-get install postgresql-10-pgrouting```
-atau 
-```sudo apt-get install postgreql-12-pgrouting```
+<!-- ``` -->
+<!-- sudo apt-get install postgresql-10-pgrouting``` -->
+<!-- atau  -->
+<!-- ```sudo apt-get install postgreql-12-pgrouting``` -->
 
-```create extension pgrouting();```
+<!-- ```create extension pgrouting();``` -->
 
-2. Konversi data OSM ke route
+<!-- 2. Konversi data OSM ke route -->
 
-```
-import OSM data to pgrouting
-osm2pgrouting -f batam.osm --dbname batam -U postgres -W password
-```
+<!-- ``` -->
+<!-- import OSM data to pgrouting -->
+<!-- osm2pgrouting -f batam.osm --dbname batam -U postgres -W password -->
+<!-- ``` -->
 ## Backup dan Restore
 
 - **Presentasi :** 

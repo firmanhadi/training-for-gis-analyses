@@ -1,0 +1,68 @@
+# (PART) Visualisasi dan Penyajian Data{-}
+# Visualisasi Data
+
+Mengumpulkan dan mengatur data dari sumber yang berbeda hanya setengah dari pekerjaan. Langkah selanjutnya adalah mempresentasikannya di peta, mengungkapkan konten dan fitur tematik secara akurat. Untuk tujuan ini, berbagai teknik desain visual, atau lapisan penataan berdasarkan atributnya, digunakan dalam GIS. QGIS memiliki kemampuan visualisasi kartografi dan penataan data yang luas dan fleksibel.
+
+Di bagian ini, kita akan membahas topik dan keterampilan berikut:
+
+```
+- Good practices with respect to data organization within a single working document (project)
+
+- Visual representation of data, revealing its thematic and spatial features
+
+- Layer labeling, which is done to enhance data readability
+
+- Control over styles
+
+- Base maps used to provide spatial context and a background for your data
+```
+
+Hasil utama dari bagian ini adalah proyek, yang dirancang sesuai dengan persyaratan dasar visualisasi kartografi.
+
+## Grouping dan Ordering
+
+Secara default, layer dimuat dalam urutan abjad (terbalik jika Anda menambahkannya dari panel browser). Setiap layer baru diletakkan di atas layer sebelumnya dan menutupinya. Semua lapisan dihidupkan secara default, ditata dengan simbol seragam sederhana, dan diberi warna acak. Ini adalah alasan ketika orang yang berbeda memvisualisasikan data yang sama, mereka akan melihat warna yang berbeda. Urutan lapisan dapat diubah hanya dengan menyeret dan menjatuhkannya ke atas dan ke bawah legenda. Juga disarankan untuk memesan dan mengatur lapisan dalam beberapa kelompok logis, karena menyederhanakan navigasi dan pemahaman data. Khususnya dalam istilah GIS, lapisan bawah akan berupa fitur raster atau poligon. Di atas poligon akan ada fitur garis dan kemudian arahkan fitur di atas.
+
+Untuk mengelola dan mengatur ulang layer dan mempertahankan visibilitasnya, gunakan Layer toolbar di panel Layers , yang diperlihatkan dalam screenshot berikut dan berisi tombol-tombol yang dijelaskan sesudahnya (sesuai urutan tampilan dari kiri ke kanan):
+
+```{r fig91, fig.cap='Layter Toolbar',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig91.jpeg")
+```
+
+
+Tambah Grup : Ini membuat grup lapisan kosong.
+
+Kelola Visibilitas Lapisan : Ini memungkinkan kami untuk dengan cepat menampilkan dan menyembunyikan lapisan dan juga menyesuaikan visibilitasnya dengan kombinasi lapisan yang telah ditentukan — yang disebut preset.
+
+Filter Legenda Menurut Konten Peta : Jika filter aktif, legenda lapisan hanya menunjukkan item-item yang benar-benar terlihat di dalam kanvas peta. Semua simbol lainnya disembunyikan dari legenda.
+
+Rentangkan Semua / Tutup Semua : Tombol digunakan untuk membuka atau menutup lapisan, legenda simbologi, dan grup lapisan, jika ada.
+
+Remove Layer / Group : Ini menghapus entri legenda yang dipilih.
+
+Ada dua cara membuat grup layer:
+
+Klik pada ikon tombol Tambah Grup , dari Layers toolbar. Grup baru akan muncul di bagian bawah daftar lapisan. Ketikkan nama yang sesuai lalu seret dan letakkan lapisan ke dalam grup. Hati-hati jika Anda menyorot grup tertentu, itu akan membuat Sub-grup baru di bawah grup yang aktif. Jika ini terjadi, Anda dapat menyeret sub-grup untuk menjadikannya sebagai grup.
+
+Pilih beberapa layer sambil menahan tombol Ctrl, dan gunakan pintasan kontekstual klik kanan Kelompok yang Dipilih untuk menempatkannya dalam satu grup.
+
+Dimungkinkan untuk mengembangkan hierarki bertingkat dengan subkelompok dengan memilih grup dan menerapkan Add Group . Item apa pun dari legenda lapisan, apakah itu layer tunggal atau grup, dapat diganti namanya dengan nama pendek klik kanan. Mengganti nama tidak memengaruhi dataset itu sendiri, tetapi memungkinkan kami menerapkan padanya nama yang tepat dan bermakna dalam suatu proyek. Sekarang coba atur sendiri layer-layer itu menjadi beberapa grup yang bermakna, dan beri nama dengan tepat.
+
+## Styling
+
+Dalam QGIS , gaya adalah cara visualisasi kartografi yang memperhitungkan fitur individu dan tematik layer. Ini mencakup karakteristik dasar simbologi, seperti warna dan keberadaan isian, parameter garis besar, penggunaan marker, rendering skala-tergantung, transparansi lapisan, interaksi dengan lapisan lain, dan label.
+
+Gaya yang dipilih dengan baik sangat menyederhanakan persepsi dan keterbacaan data, sehingga penting untuk mempelajari cara bekerja dengan gaya agar dapat mewakili data Anda dengan cara terbaik. Dalam istilah sederhana, pelajari cara membuat peta, “eye-catching”. Pada bagian ini, kita akan membahas layer vektor dan raster secara terpisah, karena stilisasi mereka memiliki beberapa fitur unik.
+
+
+### Vektor
+
+The Style menu dari Lapisan Properti dialog menyediakan Anda dengan semua alat yang diperlukan untuk melambangkan dan gaya data Anda. Untuk membukanya, klik dua kali pada nama layer di panel Layers , atau gunakan Properties klik kanan kontekstual, dan pilih bagian Style . Anda akan melihat sesuatu yang mirip dengan \@ref(fig:fig92).
+
+```{r fig92, fig.cap='Layer Property',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig92.png")
+```
+
+
+
+# Penyajian Data
