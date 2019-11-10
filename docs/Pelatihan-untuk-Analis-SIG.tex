@@ -118,8 +118,8 @@ Repositori ini berisi kumpulan materi untuk Pelatihan Persiapan Uji Kompetensi A
 \hypertarget{perancangan-basis-data}{%
 \section[Perancangan Basis Data ]{\texorpdfstring{Perancangan Basis Data \footnote{Sumber: \url{https://www.e-education.psu.edu/spatialdb/l2_p4.html}}}{Perancangan Basis Data }}\label{perancangan-basis-data}}
 
-\hypertarget{konsep}{%
-\subsection{Konsep}\label{konsep}}
+\hypertarget{rumusan-dasar}{%
+\subsection{Rumusan Dasar}\label{rumusan-dasar}}
 
 Dalam membangun basis data relasional dari awal, adalah penting untuk memberikan waktu lebih dalam memikirkan \textbf{\emph{business process}} yang terjadi. Basis data yang tidak dirancang dengan baik akan memberikan masalah bagi pengguna, termasuk :
 
@@ -190,8 +190,7 @@ Dalam banyak kasus, normalisasi basis data hingga tingkatan 3NF sudah cukup. Per
 
 Singkatnya, semakin tinggi tingkatan normalisasi, maka akan semakin banyak jumlah tabel yang ada dalam basis data. Semakin banyak jumlah tabel, usaha untuk menggabungkan data dengan cara \emph{\textbf{joins}} juga akan semakin sulit, dalam arti semakin tinggi level keahlian yang diperlukan untuk membuat queri dan dalam meningkatkan performa basis data. Proses normalisasi kadang-kadang menghasilkan desain yang terlalu sulit untuk diimplementasikan atau kalaupun dapat dibuat, ia memiliki performa yang buruk (baca: lambat). Pada dasarnya, perancangan basis data adalah menyeimbangkan antara kebutuhan yang terkait dengan integritas data dan efisiensi penyimpanan data dengan kebutuhan yang terkait dengan penggunaannya (insert, update, query).
 
-\hypertarget{contoh}{%
-\subsection{Contoh}\label{contoh}}
+\textbf{Contoh}
 
 Untuk memahami proses normalisasi basis data, contoh berikut memperlihatkan bagaimana aturan-aturan yang telah dijelaskan dapat diterapkan untuk menghasilkan sebuah basis data yang efisien. Pengusaha Jen dan Barry mengembangkan usaha es krim dan membutuhkan sebuah basis data untuk menjejak pesanan (order). Ketika menerima pesanan, mereka mencatat nama pelanggannya, detil pesanan seperti rasa (flavors) dan jumlah es krim yang dibutuhkan, tanggal pesanan dan alamat pengiriman pesanan. Basis data ini diharapkan dapat membantu mereka dalam menjawab dua penting sebagai berikut :
 
@@ -237,11 +236,128 @@ Apabila mereka hendak mengimplementasikan desain seperti di atas dalam MS-Access
 
 Pemodelan data dimulai dengan analisis kebutuhan, dapat dilakukan secara formal atau informal, tergantung dari skala proyeknya. Salah satu perangkat umum yang biasa digunakan dalam proses pemodelan adalah diagram entity-relationship (ER). Diagram ER mengilustrasikan kategori data yang harus disimpan (entitas), juga hubungan (relasi) antara entitas-entitas yang didefinisikan.
 
-Artikel model Entity-relationship dapat dibaca di Wikipedia {[}\url{http://en.wikipedia.org/wiki/Entity-relationship_model}{]}
+Data models describe real-world entities such as customer, service, products, and the relation between these entities. Data models provide an abstraction for the relations in the database. Data models aid the developers in modeling business requirements and translating business requirements to relations. They are also used for the exchange of information between the developers and business owners.
+
+In the enterprise, data models play a very important role in achieving data consistency across interacting systems. For example, if an entity is not defined, or is poorly defined, then this will lead to inconsistent and misinterpreted data across the enterprise. For instance, if the semantics of the customer entity are not defined clearly, and different business departments use different names for the same entity such as customer and client, this may lead to confusion in the operational departments.
+
+Data model perspectives are defined by ANSI as follows:
+
+\begin{itemize}
+\tightlist
+\item
+  Conceptual data model:
+\end{itemize}
+
+Describes the domain semantics, and is used to communicate the main business rules, actors, and concepts. It describes the business requirements at a high level and is often called a high-level data model.
+
+\begin{itemize}
+\tightlist
+\item
+  Logical data model:
+\end{itemize}
+
+Describes the semantics for a certain technology, for example, the UML class diagram for object-oriented languages.
+
+\begin{itemize}
+\tightlist
+\item
+  Physical data model:
+\end{itemize}
+
+Describes how data is actually stored and manipulated at the hardware level, such as storage area network, table space, CPUs, and so on.
+
+According to ANSI, this abstraction allows changing one part of the three perspectives without amending the other parts. One could change both the logical and the physical data models without changing the conceptual model. To explain, sorting data using bubble or quick sort is not of interest for the conceptual data model. Also, changing the structure of the relations could be transparent to the conceptual model. One could split one relation into many relations after applying normalization rules, or by using enum data types in order to model the lookup tables.
+
+The entity-relation model
+The entity-relation (ER) model falls into the conceptual data model category. It captures and represents the data model for both business users and developers. The ER model can be transformed into the relational model by following certain techniques.
+
+Conceptual modeling is a part of the software development life cycle (SDLC). It is normally done after the functional and data requirement-gathering stage. At this point, the developer is able to make the first draft of the ER diagram as well as describe functional requirements using data flow diagrams, sequence diagrams, user stories, and many other techniques.
+
+During the design phase, the database developer should give great attention to the design, run a benchmark stack to ensure performance, and validate user requirements. Developers modeling simple systems could start coding directly. However, care should be taken when making the design, since data modeling involves not only algorithms in modeling the application but also data. The change in design might lead to a lot of complexities in the future such as data migration from one data structure to another.
+
+While designing a database schema, avoiding design pitfalls is not enough. There are alternative designs where one could be chosen. The following pitfalls should be avoided:
+
+Data redundancy: Bad database designs elicit redundant data. Redundant data can cause several other problems, including data inconsistency and performance degradation. When updating a tuple that contains redundant data, the changes on the redundant data should be reflected in all the tuples that contain this data.
+Null saturation: By nature, some applications have sparse data, such as medical applications. Imagine a relation called diagnostics, which has hundreds of attributes for symptoms such as fever, headache, sneezing, and so on. Most of them are not valid for certain diagnostics, but they are valid in general. This could be modeled by utilizing complex data types such as JSON.
+Tight coupling: In some cases, tight coupling leads to complex and difficult-to-change data structures. Since business requirements change with time, some requirements might become obsolete. Modeling generalization and specialization (for example, a part-time student is a student) in a tightly coupled way may cause problems.
 
 Sebuah diagram ER pada dasarnya adalah cetak biru dari satu struktur basis data. Beberapa RDBMS menyediakan perangkat untuk menggambar diagram ER (contohnya Oracle Designer, MySQL workbench, PostgreSQL pgModeler) dan juga kadang menyediakan kemampuan untuk membuat struktur tabel yang telah dikonsepkan dalam bentuk diagram ke basis data.
 
 Dalam konteks GIS, ESRI menyediakan sebuah perangkat yang memungkinkan kita membuat geodatabase baru berdasarkan diagram dengan CASE (Computer-Aided Software Engineering) tools. Untuk lebih lanjutnya, Anda dapat membaca blog ini yang menyelaskan secara detil penggunaan CASE, Using Case tools in Arc GIS 10, {[}\url{http://blogs.esri.com/esri/arcgis/2010/08/05/using-case-tools-in-arcgis} -10/{]}.
+
+\hypertarget{sample-application}{%
+\subsection{Sample application}\label{sample-application}}
+
+In order to explain the basics of the ER model, an online web portal to buy and sell cars will be modeled. The requirements of this sample application are as follows, and an ER model will be developed step by step:
+
+The portal provides the facility to register users online and provides different services for users based on their categories.
+Users might be sellers or normal users. The sellers can create new car advertisements; other users can explore and search for cars.
+All users should provide their full name and a valid email address during registration. The email address will be used for logging in.
+The seller should also provide an address.
+The user can rate the advertisement and the seller's service quality.
+All users' search history should be maintained for later use.
+The sellers have ranks and this affects the advertisement search; the rank is determined by the number of posted advertisements and the user's rank.
+The car advertisement has a date and the car can have many attributes such as color, number of doors, number of previous owners, registration number, pictures, and so on.
+Entities, attributes, and keys
+The ER diagram represents entities, attributes, and relationships. An entity is a representation of a real-world object such as a car or a user. An attribute is a property of an object and describes it. A relationship represents an association between two or more entities.
+
+The attributes might be composite or simple (atomic). Composite attributes can be divided into smaller subparts. A subpart of a composite attribute provides incomplete information that is semantically not useful by itself. For example, the address is composed of a street name, building number, and postal code. Any one of them isn't useful alone, without its counterparts.
+
+Attributes could also be single-valued or multi-valued. The color of a bird is an example of a multi-valued attribute. It can be red and black, or a combination of any other colors. A multi-valued attribute can have a lower and upper bound to constrain the number of values allowed. In addition, some attributes can be derived from other attributes. Age can be derived from the birth date. In our example, the final rank of a seller is derived from the number of advertisements and the user ratings.
+
+Key attributes can identify an entity in the real world. A key attribute should be marked as a unique attribute, but not necessarily as a primary key, when physically modeling the relation. Finally, several attribute types could be grouped together to form a complex attribute:
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{img/01/db_model1} 
+
+}
+
+\caption{Simbol Entitas }\label{fig:fig11}
+\end{figure}
+
+Entities should have a name and a set of attributes. They are classified into the following:
+
+Weak entity: Does not have key attributes of its own
+Strong entity/regular entity: Has a key attribute
+A weak entity is usually related to a strong entity. This strong entity is called the identifying entity. Weak entities have a partial key, also known as a discriminator, which is an attribute that can uniquely identify the weak entity, and it is related to the identifying entity. In our example, if we assume that the search key is distinct each time the user searches for cars, then the search key is the partial key. The weak entity symbol is distinguished by surrounding the entity box with a double line.
+
+The following diagram shows the preliminary design of a car portal application. The user entity has several attributes. The name attribute is a composite attribute, and email is a key attribute. The seller entity is a specialization of the user entity. The total rank is a derived attribute calculated by aggregating the user ratings and the number of advertisements. The color attribute of the car is multi-valued. The seller can be rated by the users for certain advertisements; this relation is a ternary relation, because the rating involves three entities, which are car, seller, and user.
+
+The car picture is a subpart attribute of the advertisement. The following diagram shows that the car can be advertised more than once by different sellers. In the real world, this makes sense, because one could ask more than one seller to sell his car:
+
+\begin{center}\includegraphics[width=0.7\linewidth]{img/01/db_model2} \end{center}
+
+When an attribute of one entity refers to another entity, some relationships exist. In the ER model, these references should not be modeled as attributes but as relationships or weak entities. Similar to entities, there are two classes of relationships: weak and strong. Weak relationships associate the weak entities with other entities. Relationships can have attributes as entities. In our example, the car is advertised by the seller; the advertisement date is a property of the relationship.
+
+Relationships have cardinality constraints to limit the possible combinations of entities that participate in a relationship. The cardinality constraint of car and seller is 1:N; the car is advertised by one seller, and the seller can advertise many cars. The participation between seller and user is called total participation, and is denoted by a double line. This means that a seller cannot exist alone, and he must be a user.
+
+Note
+The many-to-many relationship cardinality constraint is denoted by N:M to emphasize the different participation by the entities.
+
+\begin{center}\includegraphics[width=0.7\linewidth]{img/01/db_model3} \end{center}
+
+Up until now, only the basic concepts of ER diagrams have been covered. Some concepts, such as (min, max) cardinality notation, ternary/n-ary relationships, generalization, specialization, and enhanced entity relation(EER) diagrams, have not been discussed.
+
+Mapping ER to relations
+The rules to map an ER diagram to a set of relations (that is, the database schema) are almost straightforward, but not rigid. One could model an entity as an attribute, and then refine it to a relationship. An attribute that belongs to several entities can be promoted to be an independent entity. The most common rules are as follows (note that only basic rules have been covered, and the list is not exhaustive):
+
+Map regular entities to relations. If entities have composite attributes, then include all the subparts of the attributes. Pick one of the key attributes as a primary key.
+Map weak entities to relations. Include simple attributes and the subparts of the composite attributes. Add a foreign key to reference the identifying entity. The primary key is normally the combination of the partial key and the foreign key.
+If a relationship has an attribute and the relation cardinality is 1:1, then the relation attribute can be assigned to one of the participating entities.
+If a relationship has an attribute and the relation cardinality is 1:N, then the relation attribute can be assigned to the participating entity on the N side.
+Map many-to-many relationships, also known as N:M, to a new relation. Add foreign keys to reference the participating entities. The primary key is the composition of foreign keys.
+Map a multi-valued attribute to a relation. Add a foreign key to reference the entity that owns the multi-valued attribute. The primary key is the composition of the foreign key and the multi-valued attribute.
+UML class diagrams
+Unified Modeling Language (UML) is a standard developed by the Object Management Group (OMG). UML diagrams are widely used in modeling software solutions, and there are several types of UML diagrams for different modeling purposes including class, use case, activity, and implementation diagrams.
+
+A class diagram can represent several types of associations, that is, the relationship between classes. They can depict attributes as well as methods. An ER diagram can be easily translated into a UML class diagram. UML class diagrams also have the following advantages:
+
+Code reverse-engineering: The database schema can be easily reversed to generate a UML class diagram.
+Modeling extended relational database objects: Modern relational databases have several object types such as sequences, views, indexes, functions, and stored procedures. UML class diagrams have the capability to represent these object types.
+The following class diagram is generated from reverse-engineering the SQL code of a car\_portaldatabase:
+
+\begin{center}\includegraphics[width=0.9\linewidth]{img/01/db_model4} \end{center}
 
 \hypertarget{pembuatan-basis-data-dengan-postgis}{%
 \section[Pembuatan Basis Data dengan PostGIS ]{\texorpdfstring{Pembuatan Basis Data dengan PostGIS \footnote{Sumber: \url{https://github.com/andyprasetya/webmap-development-server}}}{Pembuatan Basis Data dengan PostGIS }}\label{pembuatan-basis-data-dengan-postgis}}
@@ -539,8 +655,8 @@ Service Kemendagri
 \hypertarget{impor-data}{%
 \subsection{Impor Data}\label{impor-data}}
 
-\hypertarget{praktek-pembuatan-basis-data}{%
-\chapter{Praktek Pembuatan Basis Data}\label{praktek-pembuatan-basis-data}}
+\hypertarget{studi-kasus-pembangunan-basis-data-untuk-analisis-wilayah-layanan}{%
+\chapter{Studi Kasus : Pembangunan Basis Data untuk Analisis Wilayah Layanan}\label{studi-kasus-pembangunan-basis-data-untuk-analisis-wilayah-layanan}}
 
 \textbf{Topik}
 
@@ -742,35 +858,6 @@ SELECT * into qlayer FROM kelurahan WHERE st_touches(kelurahan.geometry, ( SELEC
 
 \texttt{CREATE\ VIEW\ TestView\ AS\ \ SELECT\ *\ FROM\ kelurahan\ WHERE\ st\_touches(kelurahan.geom,\ (\ SELECT\ geom\ FROM\ kelurahan\ WHERE\ nama\_desa\ =\ \textquotesingle{}SADAI\textquotesingle{}));}
 
-\hypertarget{routing}{%
-\section{Routing}\label{routing}}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Menambahkan ekstensi pgrouting
-\end{enumerate}
-
-\texttt{sudo\ apt-get\ install\ postgresql-10-pgrouting}
-atau
-\texttt{sudo\ apt-get\ install\ postgreql-12-pgrouting}
-
-\texttt{create\ extension\ pgrouting();}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Konversi data OSM ke route
-\end{enumerate}
-
-\begin{verbatim}
-import OSM data to pgrouting
-osm2pgrouting -f batam.osm --dbname batam -U postgres -W password
-\end{verbatim}
-
 \hypertarget{backup-dan-restore}{%
 \section{Backup dan Restore}\label{backup-dan-restore}}
 
@@ -841,11 +928,11 @@ osm2pgrouting -f batam.osm --dbname batam -U postgres -W password
 
 LTIME = +0.2663 * CARVOLUME + 0.6984 * LLENGTH + 0.0203 * LPOP + 0.0605 * TWOWAY + 0.1681 * SCHOOL + 0.0317 * RESIDENTIAL - 0.5497
 
-\hypertarget{praktek-pemodelan-sig}{%
-\section{Praktek Pemodelan SIG}\label{praktek-pemodelan-sig}}
+\hypertarget{studi-kasus-pemodelan-sig}{%
+\section{Studi Kasus : Pemodelan SIG}\label{studi-kasus-pemodelan-sig}}
 
-\hypertarget{service-area-analyses-di-qgis}{%
-\section{Service Area Analyses di QGIS}\label{service-area-analyses-di-qgis}}
+\hypertarget{analisis-wilayah-layanan-service-area-analyses}{%
+\subsection{Analisis Wilayah Layanan (Service Area Analyses)}\label{analisis-wilayah-layanan-service-area-analyses}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1286,8 +1373,8 @@ Seringkali kita harus bekerja dengan data besar dan padat fiturnya, yang membuat
 
 Pada bagian ini, kita akan belajar mengenai teknik yang memungkinkan visualisasi dataset semacam itu dengan bentuk yang lebih mudah dibaca dan dengan waktu pemuatan (\textbf{loading}) yang lebih cepat. Setelah melakukan praktek di bagian ini, Anda diharapkan mampu melakukan analisis kepadatan (\textbf{density analyses}) untuk data yang Anda miliki dan mengekstrak informasi dari peta kepadatan.
 
-\hypertarget{konsep-1}{%
-\subsection{Konsep}\label{konsep-1}}
+\hypertarget{konsep}{%
+\subsection{Konsep}\label{konsep}}
 
 Peta kepadatan memungkinkan estimasi visual konsentrasi objek atau peristiwa di area studi. Peta seperti itu sangat berguna untuk penilaian pola distribusi fitur di wilayah studi. Ketika kita cukup menambahkan lokasi fitur atau peristiwa (misalnya, sebagai titik) ke peta, kita tidak dapat melihat perubahan konsentrasi mereka di area yang berbeda. Analisis kepadatan memberi kita fungsionalitas seperti itu dengan menggunakan karakteristik area yang seragam, seperti jumlah fitur per hektar atau kilometer persegi.
 
@@ -2621,7 +2708,12 @@ Untuk melakukan pemeriksaan apakah sistem Anda memiliki Java JRE 8, silahkan iku
   \section{Instalasi}\label{instalasi}}
 \end{enumerate}
 
-\textbf{Tomcat}
+\hypertarget{tomcat}{%
+\subsection{Tomcat}\label{tomcat}}
+
+Paket Tomcat yang digunakan dalam pelatihan ini adalah paket yang disediakan oleh Bitnami. Paket tersebut dapat diunduh di tautan berikut :
+
+Tahapan instalasi Bitnami Tomcat dapat dilihat pada video berikut :
 
 \begin{verbatim}
 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
@@ -2629,14 +2721,154 @@ Untuk melakukan pemeriksaan apakah sistem Anda memiliki Java JRE 8, silahkan iku
 
 \label{fig:embed1}Instalasi Tomcat
 
-\textbf{GeoServer}
+\hypertarget{geoserver-1}{%
+\subsection{GeoServer}\label{geoserver-1}}
+
+Pergi ke GeoServerunduh halaman seperti yang ditunjukkan pada tangkapan layar berikut ( \url{http://geoserver.org/download/} ) dan pilihlah tipe instalasi yang tersedia. Anda akan menemukan beberapa paket berbeda untuk GeoServer. Kita akan menggunakan versi Arsip Web:
+
+\begin{center}\includegraphics[width=0.6\linewidth]{images/07/fig72} \end{center}
+
+Anda dapat memilih rilis dari dua cabang yang berbeda - Stable dan Maintenance. Keduanya dibangun untuk keperluan produksi, sehingga Anda dapat memilih apa pun yang Anda inginkan; juga, kami sarankan Anda memilih rilis terbaru karena berisi semua fitur baru yang baru saja dirilis oleh tim pengembang.
+
+Terlepas dari Production tab, Anda mungkin telah mencatat ada dua bagian lainnya - Development dan Archived. Di dalam bagian Development, Anda akan menemukan Night Build, rilis ini tidak cocok untuk produksi karena mereka rentan terhadap bug, tetapi berisi semua perubahan yang dilakukan pengembang pada kode sumber, sehingga Anda dapat menggunakannya untuk menguji perbaikan bug yang Anda temukan:
+
+\begin{center}\includegraphics[width=0.6\linewidth]{images/07/fig73} \end{center}
+
+Archived berisi rilis yang lebih lama. Ini mungkin berguna jika Anda menggunakan rilis GeoServer lama dan perlu memutakhirkannya ke yang lebih baru, tetapi Anda tidak ingin melompat ke yang terakhir. Kasus penggunaan lain mungkin jika Anda menggunakan GeoServer di lingkungan di mana versi JRE lama, 7.x atau 6.x, tersedia dan Anda tidak dapat memutakhirkannya.
+
+Di bagian berikut, kami akan menyebarkan arsip web di Apache Tomcat. Seperti yang mungkin sudah Anda duga, menggunakan server aplikasi Java hampir sama pada sistem operasi apa pun. Bagian selanjutnya adalah umum untuk Linux dan Windows, karena menggunakan Tomcat memerlukan langkah yang sama pada kedua sistem operasi. Selama Anda menggunakan GeoServer yang digunakan di Tomcat, Anda tidak akan memiliki perbedaan dengan contoh-contoh yang dijelaskan dalam buku ini, sistem operasi apa pun yang Anda gunakan.
+
+Tahapan pengunduhan GeoServer dapat dilihat pada video berikut :
 
 \label{fig:embed2}Download GeoServer
 
-\hypertarget{geoserver-1}{%
-\section{GeoServer}\label{geoserver-1}}
+Untuk melakukan instalasi
+
+\hypertarget{menjalankan-geoserver}{%
+\section{Menjalankan GeoServer}\label{menjalankan-geoserver}}
 
 \label{fig:embed3}Start GeoServer
+
+\hypertarget{administrasi-geoserver}{%
+\section{Administrasi GeoServer}\label{administrasi-geoserver}}
+
+Dalam bab ini, kita akan menjelajahi antarmuka administrasi GeoServer. Ini adalah konsol utama tempat Anda dapat mengontrol hampir semua pengaturan instalasi GeoServer Anda. Dalam rilis pertama, itu sedikit rumit, tetapi karena seri 2.x, nama menu dan ikon konsisten di setiap bagian. Ada juga antarmuka yang ditingkatkan untuk GeoWebCache terintegrasi, di mana Anda dapat melakukan hampir semua konfigurasi caching dari antarmuka GeoServer. Kabar baiknya adalah bahwa kita akan menggunakan mouse lebih banyak di sini daripada bab lain, sehingga keyboard akan mendapatkan istirahat.
+
+Dalam bab ini, kita akan membahas semua bagian dari Antarmuka Administrasi Web. Secara khusus, kami akan mengeksplorasi topik berikut secara rinci:
+
+Memeriksa status GeoServer Anda dan mencatat konten file
+Mempratinjau data Anda
+Pengaturan tuninguntuk Layanan Peta Web ( WMS ), Layanan Fitur Web ( WFS ), dan Layanan Cakupan Web ( WCS )
+Tuning global pengaturan
+Melakukan permintaan melalui antarmuka demo
+
+\hypertarget{dashboard}{%
+\subsection{Dashboard}\label{dashboard}}
+
+Mengakses antarmuka hanya membutuhkanAnda untuk membuka browser dan arahkan ke http: // localhost: 8080 / geoserver / web . Jika Anda telah membaca bab sebelumnya dan menjalankan contoh-contohnya, Anda harus mengubah kata sandi default untuk pengguna admin.
+
+Anda bisa menggunakan yang baru untuk login lagi di GeoServer; kita sekarang akan memusatkan perhatian kita pada tata letak antarmuka.
+
+Pertimbangkan tangkapan layar berikut. Anda dapat mengenali tiga area utama di antarmuka web GeoServer:
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/07/fig74} 
+
+}
+
+\caption{Dashboard GeoServer}\label{fig:fig74}
+\end{figure}
+
+Area pusat menunjukkan Anda beberapa informasi tentang status GeoServer - elemen di dalamnya berubah sesuai dengan operasi yang Anda lakukan. Tepat setelah Anda masuk, ini menunjukkan kepada Anda detail singkat dari data yang dikonfigurasi, dan peringatan atau kesalahan yang harus Anda koreksi. Baris terakhir menunjukkan nomor rilis dan ada tautan ke kotak surat administrator; ini default ke ahli geografi kuno yang terkenal sampai Anda memasukkan data Anda.
+
+Di sisi kanan, ada daftar yang menunjukkan kemampuan GeoServer kepada Anda. Akronim yang tercantum mengacu pada protokol OGC standar; kita akan membicarakan beberapa dari mereka secara terperinci dalam buku ini, dan masing-masing dari mereka memiliki setidaknya satu rilis yang didukung. Angka-angka adalah tautan ke dokumen XML yang secara tepat menggambarkan data dan operasi yang didukung oleh setiap protokol. Mereka adalah sumber daya yang sangat berharga bagi klien yang mau menggunakan layanan Anda.
+
+Cobalah untuk membuka WMS 1.1.1tautan dan buka hasilnya dalam editor teks. Anda dapat dengan mudah memahami beberapa bagian. Pertimbangkan yang berikut ini:
+
+Yang pertama berisi deskripsi layanan yang dibuka:
+
+\begin{verbatim}
+<Service> 
+<Name>OGC:WMS</Name> 
+<Title>GeoServer Web Map Service</Title>
+\end{verbatim}
+
+Kemudian Anda dapat menemukan beberapa informasi tentang administrator:
+
+\begin{verbatim}
+<ContactInformation> 
+       <ContactPersonPrimary> 
+         <ContactPerson>Stefano Iacovella</ContactPerson> 
+         <ContactOrganization>Packt Publishing  
+            Ltd.</ContactOrganization> 
+       </ContactPersonPrimary> 
+<ContactPosition>Chief geographer</ContactPosition
+\end{verbatim}
+
+Daftar operasi yang didukung dan URL dasar untuk permintaan adalah sebagai berikut:
+
+\begin{verbatim}
+<Request> 
+       <GetCapabilities> 
+       <Format>application/vnd.ogc.wms_xml</Format> 
+       <DCPType> 
+       <HTTP> 
+         <Get> 
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+               xlink:type="simple"xlink:href="http://localhost:8080
+                 /geoserver/wms?SERVICE=WMS&amp;"/> 
+         </Get> 
+        <Post> 
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"   
+             xlink:type="simple" xlink:href="http://localhost:8080
+                /geoserver/wms?SERVICE=WMS&amp;"/> 
+        </Post> 
+       </HTTP> 
+       ... 
+       </GetCapabilities> 
+       <GetMap> 
+        ... 
+       </GetMap> 
+       <GetFeatureInfo> 
+        ... 
+       </GetFeatureInfo> 
+       <DescribeLayer> 
+        ... 
+       </DescribeLayer> 
+       <GetLegendGraphic> 
+        ... 
+       </GetLegendGraphic> 
+       <GetStyles> 
+        ... 
+       </GetStyles> 
+       </Request> 
+\end{verbatim}
+
+\hypertarget{about-dan-status}{%
+\subsection{About dan Status}\label{about-dan-status}}
+
+\hypertarget{data-1}{%
+\subsection{Data}\label{data-1}}
+
+Bagian ini berisi tautanke mesin konfigurasi data. Seperti yang Anda duga, untuk menerbitkan peta di internet dengan GeoServer, Anda perlu menambahkan data spasial ke dalamnya. Pertimbangkan tangkapan layar berikut:
+
+Di area ini, Anda dapat mengonfigurasi akses data dan cara aksesnya ke klien:
+
+Layer Preview
+
+membuka formulir termasuk setiap lapisan yang diterbitkan di GeoServer. Selain itu, jika Anda belum menambahkan data ke instalasi GeoServer Anda, Anda akan menemukan beberapa lapisan sampel sudah terdaftar. Mengklik pada OpenLayerstautan, yang ditempatkan di sebelah kanan nama lapisan, Anda dapat membuka contoh aplikasi web untuk melihat seperti apa data Anda terlihat. Suka.
+
+The Keyhole Markup Language ( KML ) link membiarkan Anda men-download data dalam format yang sesuai untuk pratinjau di Google Earth. Ada juga beberapa format lain yang tersedia, tercantum dalam kotak drop-down di ujung kanan baris. Pertimbangkan tangkapan layar berikut:
+
+\hypertarget{menambahkan-data}{%
+\section{Menambahkan Data}\label{menambahkan-data}}
+
+\hypertarget{mengakses-layer}{%
+\section{Mengakses Layer}\label{mengakses-layer}}
+
+\hypertarget{section}{%
+\section{}\label{section}}
 
 \hypertarget{hari_kedelapann}{%
 \chapter{MapStore2}\label{hari_kedelapann}}
@@ -2726,168 +2958,90 @@ Gunakan kredensial default (admin / admin) untuk masuk dan mulai membuat peta An
 \hypertarget{visualisasi-data}{%
 \chapter{Visualisasi Data}\label{visualisasi-data}}
 
-\textbf{Concept of webgis}
-Internet-based GIS has been widely recognized in both
-public and private organizations as a fundamental tool for
-storage and distribution of data to targeted audiences
-(Brovelli et al.~2016).
-The GIS-based Web portals provide a centralized and
-uniform interface to access the distributed and heteroge-
-neous resources and data services (Karnatak et al.~2007).
-According to (Peng 2001), Internet GIS refers to a
-network-centric GIS tool that uses the Internet as a primary
-means of providing access to distributed data and other
-information, disseminating spatial information, and con-
-ducting GIS analysis.
+\hypertarget{qgis}{%
+\section{QGIS}\label{qgis}}
 
-\textbf{GIS Web service}
-GIS Web services provide direct access to data, eliminating
-the need to download a dataset and import it into your
-desktop application, instead using a simple HTTP interface
-(URL) to access the data. The department uses a variety of
-service protocols including Web Map Service (WMS), Web
-Map Tile Service (WMTS), and Web Feature Service (WFS) provided by the Open Geospatial Consortium
-(OGC) and ESRI Web mapping services.
+Mengumpulkan dan mengatur data dari sumber yang berbeda hanya setengah dari pekerjaan. Langkah selanjutnya adalah mempresentasikannya di peta, mengungkapkan konten dan fitur tematik secara akurat. Untuk tujuan ini, berbagai teknik desain visual, atau lapisan penataan berdasarkan atributnya, digunakan dalam GIS. QGIS memiliki kemampuan visualisasi kartografi dan penataan data yang luas dan fleksibel.
 
-\textbf{Web Services for Spatial Data}
+Di bagian ini, kita akan membahas topik dan keterampilan berikut:
 
-Web services for spatial data enable using data from servers
-directly with desktop GIS software, without downloading
-first data as files to the own computer. In such a way, it is
-possible to use always up-to-date data easily. All most
-common commercial and open-source GIS desktop software
-products support Web standards (MapInfo, ArcGIS, QGIS,
-and GRASS). Web services are used so that the user con-
-nects to the service using a special menu. For connection,
-user needs to know the server's URL. After connecting to
-the server, the user gets a list of available map layers. Web
-services are also easy to use in map applications on Web.
-Data may be requested also directly with a HTTP GET or
-POST request.
-Most common Web service standards of Open Geospatial
-Consortium's (OGC) are: Web Map Service (WMS), Web
-Map Tile Service (WMTS), Web Feature Service (WFS),
-and Web Coverage Service (WCS).
-WMS and WMTS return map image in raster format,
-WFS data in vector format, and WCS data in raster format.
-In WMTS, maps are available only in pre-defined scales and
-size. In WMS, scale and map size can be set without
-restrictions. WMTS, are faster, because often the map tiles
-are already ready at the server. For requesting only part of
-data different filters may be used, for example, BBOX
-defines the area of interest.
+\begin{verbatim}
+- Good practices with respect to data organization within a single working document (project)
 
-\textbf{GIS Web Services}
+- Visual representation of data, revealing its thematic and spatial features
 
-The main challenges of geospatial (Shengru and Abdelguerfi
-2006) data are:
-Geospatial data are in bulk in size; loading the data and map
-into the client is complex; reload of map and data takes time;
-geospatial data is highly heterogeneous, and complex
-geospatial problems need large quantities of geospatial data
-from multiple sources and locations.
+- Layer labeling, which is done to enhance data readability
 
-\textbf{Web GIS components}
+- Control over styles
 
-The major components of the whole portal are categorized
-into navigation tools, legend tools, search tools, and other
-tools such as WMS layer adding tool, layer manager. Fea-
-tures on the map can be identifying using map identify tool.
-Distance measuring tool of map also has been included as
-part of spatial map analysis tool. Results of map query or
-area of interest can be printed out along with detail legend
-using print tool. The size, font type, and map output can be
-customized using this tool. The map can be produced in
-various file formats such as PNG, JPEG, GIF, or PDF.
-Region-specific zoom is made possible using quick zoom
-tool.
-Searching of non-spatial attributes could also be per-
-formed by the users. To do this, user first selects a layer and
-then, fill a from its listed fields/columns. An attribute to be
-searched is entered in the textbox. Clicking the ``Search by
-Value'' will create a pop-up window listing the attribute table
-matching the search criteria and subsequent zooming in the
-map and highlighted.
-The automatic identification of map on mouse cursor
-moves is made possible using ``Auto Identify'' widget. The
-user selects a layer and its corresponding attribute(s), once
-applied; the user sees the attributes corresponding to the map
-location when mouse cursor moves.
-The addition of WMS layers is also possible on this
-WebGIS portal. First we host the layers having similar
-projection through the GeoServer (Kamel and Honda 2006)
-(Fig. 3.1).
+- Base maps used to provide spatial context and a background for your data
+\end{verbatim}
 
-\#MapStore2
+Hasil utama dari bagian ini adalah proyek, yang dirancang sesuai dengan persyaratan dasar visualisasi kartografi.
 
-\hypertarget{quick-start-1}{%
-\section{Quick Start}\label{quick-start-1}}
+\hypertarget{grouping-dan-ordering}{%
+\subsection{Grouping dan Ordering}\label{grouping-dan-ordering}}
 
-Anda dapat memilih untuk mengunduh paket biner mandiri atau file WAR untuk menggunakan MapStore.
+Secara default, layer dimuat dalam urutan abjad (terbalik jika Anda menambahkannya dari panel browser). Setiap layer baru diletakkan di atas layer sebelumnya dan menutupinya. Semua lapisan dihidupkan secara default, ditata dengan simbol seragam sederhana, dan diberi warna acak. Ini adalah alasan ketika orang yang berbeda memvisualisasikan data yang sama, mereka akan melihat warna yang berbeda. Urutan lapisan dapat diubah hanya dengan menyeret dan menjatuhkannya ke atas dan ke bawah legenda. Juga disarankan untuk memesan dan mengatur lapisan dalam beberapa kelompok logis, karena menyederhanakan navigasi dan pemahaman data. Khususnya dalam istilah GIS, lapisan bawah akan berupa fitur raster atau poligon. Di atas poligon akan ada fitur garis dan kemudian arahkan fitur di atas.
 
-\textbf{Paket biner}
-Cara termudah untuk mencoba MapStore adalah dengan mengunduh dan mengekstrak paket biner yang tersedia di halaman rilis MapStore . Di sini Anda dapat menemukan beberapa peta yang telah dikonfigurasikan sebelumnya serta pengguna dan grup. Tujuan dari paket ini adalah untuk memudahkan semua persyaratan yang diperlukan agar Anda mengambil MapStore untuk test-drive.
+Untuk mengelola dan mengatur ulang layer dan mempertahankan visibilitasnya, gunakan Layer toolbar di panel Layers , yang diperlihatkan dalam screenshot berikut dan berisi tombol-tombol yang dijelaskan sesudahnya (sesuai urutan tampilan dari kiri ke kanan):
 
-\textbf{Bagaimana cara menjalankannya}
+\begin{figure}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Buka lokasi tempat Anda menyimpan file zip, unzip kontennya dan jalankan:
-\end{enumerate}
+{\centering \includegraphics[width=0.3\linewidth]{images/09/fig91} 
 
-\begin{itemize}
-\item
-  Windows: mapstore2\_startup.bat
-\item
-  Linux: ./mapstore2\_startup.sh
-\end{itemize}
+}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\item
-  Arahkan browser Anda ke: \url{http://localhost:8082/mapstore}
-\item
-  Untuk menghentikan MapStore cukup lakukan:
-\end{enumerate}
+\caption{Layter Toolbar}\label{fig:fig91}
+\end{figure}
 
-\begin{itemize}
-\item
-  Windows: mapstore2\_shutdown.bat
-\item
-  Linux: ./mapstore2\_shutdown.sh
-\end{itemize}
+Tambah Grup : Ini membuat grup lapisan kosong.
 
-Isi Paket
-MapStore
-Tomcat7
-Java JRE (Win dan Linux)
-Demo Demo
-Aerial Imagery - Demo peta sederhana yang menunjukkan beberapa data citra udara
-WFS Query Map - Peta demo yang dikonfigurasikan dengan kemampuan bawaan MapStore untuk menanyakan fitur melalui WFS
-User Map dan User1 Map - Peta masing-masing hanya dapat dilihat oleh pengguna dan user1 , untuk menunjukkan kemampuan MapStore pada manajemen dan izin pengguna / grup.
-Akun / grup demo
-Pengguna Grup
-admin / admin MyGroupAdmin, semuanya
-tamu semua orang
-pengguna / pengguna semua orang
-user1 / user1 semuanya, MyGroup
-File PERANG
-Unduh file PERANG dari rilis terbaru di sini .
+Kelola Visibilitas Lapisan : Ini memungkinkan kami untuk dengan cepat menampilkan dan menyembunyikan lapisan dan juga menyesuaikan visibilitasnya dengan kombinasi lapisan yang telah ditentukan --- yang disebut preset.
 
-Semua rilis
+Filter Legenda Menurut Konten Peta : Jika filter aktif, legenda lapisan hanya menunjukkan item-item yang benar-benar terlihat di dalam kanvas peta. Semua simbol lainnya disembunyikan dari legenda.
 
-Setelah mengunduh file perang MapStore, instal dalam wadah web java Anda (mis. Tomcat), dengan prosedur biasa untuk wadah tersebut (biasanya Anda hanya perlu menyalin file perang di subfolder webapps).
+Rentangkan Semua / Tutup Semua : Tombol digunakan untuk membuka atau menutup lapisan, legenda simbologi, dan grup lapisan, jika ada.
 
-Jika Anda tidak memiliki wadah web java, Anda dapat mengunduh Apache Tomcat dari sini dan menginstalnya. Anda juga akan membutuhkan Java7 JRE .
+Remove Layer / Group : Ini menghapus entri legenda yang dipilih.
 
-Kemudian Anda dapat mengakses MapStore menggunakan URL berikut (dengan asumsi wadah web pada port 8080 standar):
+Ada dua cara membuat grup layer:
 
-http: // localhost: 8080 / mapstore
+Klik pada ikon tombol Tambah Grup , dari Layers toolbar. Grup baru akan muncul di bagian bawah daftar lapisan. Ketikkan nama yang sesuai lalu seret dan letakkan lapisan ke dalam grup. Hati-hati jika Anda menyorot grup tertentu, itu akan membuat Sub-grup baru di bawah grup yang aktif. Jika ini terjadi, Anda dapat menyeret sub-grup untuk menjadikannya sebagai grup.
 
-Gunakan kredensial default (admin / admin) untuk masuk dan mulai membuat peta Anda!
+Pilih beberapa layer sambil menahan tombol Ctrl, dan gunakan pintasan kontekstual klik kanan Kelompok yang Dipilih untuk menempatkannya dalam satu grup.
+
+Dimungkinkan untuk mengembangkan hierarki bertingkat dengan subkelompok dengan memilih grup dan menerapkan Add Group . Item apa pun dari legenda lapisan, apakah itu layer tunggal atau grup, dapat diganti namanya dengan nama pendek klik kanan. Mengganti nama tidak memengaruhi dataset itu sendiri, tetapi memungkinkan kami menerapkan padanya nama yang tepat dan bermakna dalam suatu proyek. Sekarang coba atur sendiri layer-layer itu menjadi beberapa grup yang bermakna, dan beri nama dengan tepat.
+
+\hypertarget{styling}{%
+\subsection{Styling}\label{styling}}
+
+Dalam QGIS , gaya adalah cara visualisasi kartografi yang memperhitungkan fitur individu dan tematik layer. Ini mencakup karakteristik dasar simbologi, seperti warna dan keberadaan isian, parameter garis besar, penggunaan marker, rendering skala-tergantung, transparansi lapisan, interaksi dengan lapisan lain, dan label.
+
+Gaya yang dipilih dengan baik sangat menyederhanakan persepsi dan keterbacaan data, sehingga penting untuk mempelajari cara bekerja dengan gaya agar dapat mewakili data Anda dengan cara terbaik. Dalam istilah sederhana, pelajari cara membuat peta, ``eye-catching''. Pada bagian ini, kita akan membahas layer vektor dan raster secara terpisah, karena stilisasi mereka memiliki beberapa fitur unik.
+
+\hypertarget{vektor}{%
+\subsection{Vektor}\label{vektor}}
+
+The Style menu dari Lapisan Properti dialog menyediakan Anda dengan semua alat yang diperlukan untuk melambangkan dan gaya data Anda. Untuk membukanya, klik dua kali pada nama layer di panel Layers , atau gunakan Properties klik kanan kontekstual, dan pilih bagian Style . Anda akan melihat sesuatu yang mirip dengan \ref{fig:fig92}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\linewidth]{images/09/fig92} 
+
+}
+
+\caption{Layer Property}\label{fig:fig92}
+\end{figure}
+
+\hypertarget{geoserver-2}{%
+\section{GeoServer}\label{geoserver-2}}
+
+\hypertarget{styling-1}{%
+\subsection{Styling}\label{styling-1}}
+
+\hypertarget{menggunakan-sld}{%
+\subsection{Menggunakan SLD}\label{menggunakan-sld}}
 
 \hypertarget{penyajian-data}{%
 \chapter{Penyajian Data}\label{penyajian-data}}

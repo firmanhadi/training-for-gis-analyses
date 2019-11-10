@@ -136,23 +136,53 @@ knitr::include_graphics("images/07/fig71.png")
 3.
 ## Instalasi
 
-**Tomcat**
+### Tomcat
 
+Paket Tomcat yang digunakan dalam pelatihan ini adalah paket yang disediakan oleh Bitnami. Paket tersebut dapat diunduh di tautan berikut :
+
+
+Tahapan instalasi Bitnami Tomcat dapat dilihat pada video berikut :
 
 ```{r embed1, out.extra='style="border: none;"', out.width='99%', fig.cap="Instalasi Tomcat", echo = FALSE}
 knitr::include_url("https://www.youtube.com/embed/IC_wnPZYyYA")
 ```
 
-**GeoServer**
+### GeoServer
+
+Pergi ke GeoServerunduh halaman seperti yang ditunjukkan pada tangkapan layar berikut ( http://geoserver.org/download/ ) dan pilihlah tipe instalasi yang tersedia. Anda akan menemukan beberapa paket berbeda untuk GeoServer. Kita akan menggunakan versi Arsip Web:
+
+```{r fig72,echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/07/fig72.png")
+```
+
+
+
+
+Anda dapat memilih rilis dari dua cabang yang berbeda - Stable dan Maintenance. Keduanya dibangun untuk keperluan produksi, sehingga Anda dapat memilih apa pun yang Anda inginkan; juga, kami sarankan Anda memilih rilis terbaru karena berisi semua fitur baru yang baru saja dirilis oleh tim pengembang.
+
+Terlepas dari Production tab, Anda mungkin telah mencatat ada dua bagian lainnya - Development dan Archived. Di dalam bagian Development, Anda akan menemukan Night Build, rilis ini tidak cocok untuk produksi karena mereka rentan terhadap bug, tetapi berisi semua perubahan yang dilakukan pengembang pada kode sumber, sehingga Anda dapat menggunakannya untuk menguji perbaikan bug yang Anda temukan:
+
+```{r fig73,echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/07/fig73.png")
+```
+
+Archived berisi rilis yang lebih lama. Ini mungkin berguna jika Anda menggunakan rilis GeoServer lama dan perlu memutakhirkannya ke yang lebih baru, tetapi Anda tidak ingin melompat ke yang terakhir. Kasus penggunaan lain mungkin jika Anda menggunakan GeoServer di lingkungan di mana versi JRE lama, 7.x atau 6.x, tersedia dan Anda tidak dapat memutakhirkannya.
+
+Di bagian berikut, kami akan menyebarkan arsip web di Apache Tomcat. Seperti yang mungkin sudah Anda duga, menggunakan server aplikasi Java hampir sama pada sistem operasi apa pun. Bagian selanjutnya adalah umum untuk Linux dan Windows, karena menggunakan Tomcat memerlukan langkah yang sama pada kedua sistem operasi. Selama Anda menggunakan GeoServer yang digunakan di Tomcat, Anda tidak akan memiliki perbedaan dengan contoh-contoh yang dijelaskan dalam buku ini, sistem operasi apa pun yang Anda gunakan.
+
+Tahapan pengunduhan GeoServer dapat dilihat pada video berikut :
 
 ```{r embed2, out.extra='style="border: none;"', out.width='99%', fig.cap="Download GeoServer", echo = FALSE}
 knitr::include_url("https://www.youtube.com/embed/NxV6bIpkaGw")
 ```
 
 
+Untuk melakukan instalasi 
 
 
-## GeoServer
+
+
+## Menjalankan GeoServer
 
 
 ```{r embed3, out.extra='style="border: none;"', out.width='99%', fig.cap="Start GeoServer", echo = FALSE}
@@ -160,9 +190,119 @@ knitr::include_url("https://www.youtube.com/embed/BGBthqeqmrs")
 ```
 
 
+## Administrasi GeoServer
+
+
+Dalam bab ini, kita akan menjelajahi antarmuka administrasi GeoServer. Ini adalah konsol utama tempat Anda dapat mengontrol hampir semua pengaturan instalasi GeoServer Anda. Dalam rilis pertama, itu sedikit rumit, tetapi karena seri 2.x, nama menu dan ikon konsisten di setiap bagian. Ada juga antarmuka yang ditingkatkan untuk GeoWebCache terintegrasi, di mana Anda dapat melakukan hampir semua konfigurasi caching dari antarmuka GeoServer. Kabar baiknya adalah bahwa kita akan menggunakan mouse lebih banyak di sini daripada bab lain, sehingga keyboard akan mendapatkan istirahat.
+
+Dalam bab ini, kita akan membahas semua bagian dari Antarmuka Administrasi Web. Secara khusus, kami akan mengeksplorasi topik berikut secara rinci:
+
+Memeriksa status GeoServer Anda dan mencatat konten file
+Mempratinjau data Anda
+Pengaturan tuninguntuk Layanan Peta Web ( WMS ), Layanan Fitur Web ( WFS ), dan Layanan Cakupan Web ( WCS )
+Tuning global pengaturan
+Melakukan permintaan melalui antarmuka demo
+
+### Dashboard 
+
+Mengakses antarmuka hanya membutuhkanAnda untuk membuka browser dan arahkan ke http: // localhost: 8080 / geoserver / web . Jika Anda telah membaca bab sebelumnya dan menjalankan contoh-contohnya, Anda harus mengubah kata sandi default untuk pengguna admin.
+
+Anda bisa menggunakan yang baru untuk login lagi di GeoServer; kita sekarang akan memusatkan perhatian kita pada tata letak antarmuka.
+
+Pertimbangkan tangkapan layar berikut. Anda dapat mengenali tiga area utama di antarmuka web GeoServer:
+
+
+```{r fig74,fig.cap = 'Dashboard GeoServer',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/07/fig74.png")
+```
+
+
+Area pusat menunjukkan Anda beberapa informasi tentang status GeoServer - elemen di dalamnya berubah sesuai dengan operasi yang Anda lakukan. Tepat setelah Anda masuk, ini menunjukkan kepada Anda detail singkat dari data yang dikonfigurasi, dan peringatan atau kesalahan yang harus Anda koreksi. Baris terakhir menunjukkan nomor rilis dan ada tautan ke kotak surat administrator; ini default ke ahli geografi kuno yang terkenal sampai Anda memasukkan data Anda.
+
+Di sisi kanan, ada daftar yang menunjukkan kemampuan GeoServer kepada Anda. Akronim yang tercantum mengacu pada protokol OGC standar; kita akan membicarakan beberapa dari mereka secara terperinci dalam buku ini, dan masing-masing dari mereka memiliki setidaknya satu rilis yang didukung. Angka-angka adalah tautan ke dokumen XML yang secara tepat menggambarkan data dan operasi yang didukung oleh setiap protokol. Mereka adalah sumber daya yang sangat berharga bagi klien yang mau menggunakan layanan Anda.
+
+Cobalah untuk membuka WMS 1.1.1tautan dan buka hasilnya dalam editor teks. Anda dapat dengan mudah memahami beberapa bagian. Pertimbangkan yang berikut ini:
+
+Yang pertama berisi deskripsi layanan yang dibuka:
+
+```
+<Service> 
+<Name>OGC:WMS</Name> 
+<Title>GeoServer Web Map Service</Title>
+```
+
+Kemudian Anda dapat menemukan beberapa informasi tentang administrator:
+
+```
+<ContactInformation> 
+       <ContactPersonPrimary> 
+         <ContactPerson>Stefano Iacovella</ContactPerson> 
+         <ContactOrganization>Packt Publishing  
+            Ltd.</ContactOrganization> 
+       </ContactPersonPrimary> 
+<ContactPosition>Chief geographer</ContactPosition
+```       
+       
+       
+Daftar operasi yang didukung dan URL dasar untuk permintaan adalah sebagai berikut:
+
+```
+<Request> 
+       <GetCapabilities> 
+       <Format>application/vnd.ogc.wms_xml</Format> 
+       <DCPType> 
+       <HTTP> 
+         <Get> 
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+               xlink:type="simple"xlink:href="http://localhost:8080
+                 /geoserver/wms?SERVICE=WMS&amp;"/> 
+         </Get> 
+        <Post> 
+          <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"   
+             xlink:type="simple" xlink:href="http://localhost:8080
+                /geoserver/wms?SERVICE=WMS&amp;"/> 
+        </Post> 
+       </HTTP> 
+       ... 
+       </GetCapabilities> 
+       <GetMap> 
+        ... 
+       </GetMap> 
+       <GetFeatureInfo> 
+        ... 
+       </GetFeatureInfo> 
+       <DescribeLayer> 
+        ... 
+       </DescribeLayer> 
+       <GetLegendGraphic> 
+        ... 
+       </GetLegendGraphic> 
+       <GetStyles> 
+        ... 
+       </GetStyles> 
+       </Request> 
+```
+
+### About dan Status
+
+### Data
+
+Bagian ini berisi tautanke mesin konfigurasi data. Seperti yang Anda duga, untuk menerbitkan peta di internet dengan GeoServer, Anda perlu menambahkan data spasial ke dalamnya. Pertimbangkan tangkapan layar berikut:
+
+Di area ini, Anda dapat mengonfigurasi akses data dan cara aksesnya ke klien:
+
+Layer Preview
+
+membuka formulir termasuk setiap lapisan yang diterbitkan di GeoServer. Selain itu, jika Anda belum menambahkan data ke instalasi GeoServer Anda, Anda akan menemukan beberapa lapisan sampel sudah terdaftar. Mengklik pada OpenLayerstautan, yang ditempatkan di sebelah kanan nama lapisan, Anda dapat membuka contoh aplikasi web untuk melihat seperti apa data Anda terlihat. Suka.
+
+The Keyhole Markup Language ( KML ) link membiarkan Anda men-download data dalam format yang sesuai untuk pratinjau di Google Earth. Ada juga beberapa format lain yang tersedia, tercantum dalam kotak drop-down di ujung kanan baris. Pertimbangkan tangkapan layar berikut:
 
 
 
+## Menambahkan Data
 
 
+## Mengakses Layer
+
+## 
 

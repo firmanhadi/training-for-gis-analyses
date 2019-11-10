@@ -1,5 +1,7 @@
 # (PART) Visualisasi dan Penyajian Data{-}
-# Visualisasi Data
+# Visualisasi Data 
+
+## QGIS
 
 Mengumpulkan dan mengatur data dari sumber yang berbeda hanya setengah dari pekerjaan. Langkah selanjutnya adalah mempresentasikannya di peta, mengungkapkan konten dan fitur tematik secara akurat. Untuk tujuan ini, berbagai teknik desain visual, atau lapisan penataan berdasarkan atributnya, digunakan dalam GIS. QGIS memiliki kemampuan visualisasi kartografi dan penataan data yang luas dan fleksibel.
 
@@ -19,7 +21,7 @@ Di bagian ini, kita akan membahas topik dan keterampilan berikut:
 
 Hasil utama dari bagian ini adalah proyek, yang dirancang sesuai dengan persyaratan dasar visualisasi kartografi.
 
-## Grouping dan Ordering
+### Grouping dan Ordering
 
 Secara default, layer dimuat dalam urutan abjad (terbalik jika Anda menambahkannya dari panel browser). Setiap layer baru diletakkan di atas layer sebelumnya dan menutupinya. Semua lapisan dihidupkan secara default, ditata dengan simbol seragam sederhana, dan diberi warna acak. Ini adalah alasan ketika orang yang berbeda memvisualisasikan data yang sama, mereka akan melihat warna yang berbeda. Urutan lapisan dapat diubah hanya dengan menyeret dan menjatuhkannya ke atas dan ke bawah legenda. Juga disarankan untuk memesan dan mengatur lapisan dalam beberapa kelompok logis, karena menyederhanakan navigasi dan pemahaman data. Khususnya dalam istilah GIS, lapisan bawah akan berupa fitur raster atau poligon. Di atas poligon akan ada fitur garis dan kemudian arahkan fitur di atas.
 
@@ -48,7 +50,7 @@ Pilih beberapa layer sambil menahan tombol Ctrl, dan gunakan pintasan kontekstua
 
 Dimungkinkan untuk mengembangkan hierarki bertingkat dengan subkelompok dengan memilih grup dan menerapkan Add Group . Item apa pun dari legenda lapisan, apakah itu layer tunggal atau grup, dapat diganti namanya dengan nama pendek klik kanan. Mengganti nama tidak memengaruhi dataset itu sendiri, tetapi memungkinkan kami menerapkan padanya nama yang tepat dan bermakna dalam suatu proyek. Sekarang coba atur sendiri layer-layer itu menjadi beberapa grup yang bermakna, dan beri nama dengan tepat.
 
-## Styling
+### Styling
 
 Dalam QGIS , gaya adalah cara visualisasi kartografi yang memperhitungkan fitur individu dan tematik layer. Ini mencakup karakteristik dasar simbologi, seperti warna dan keberadaan isian, parameter garis besar, penggunaan marker, rendering skala-tergantung, transparansi lapisan, interaksi dengan lapisan lain, dan label.
 
@@ -62,6 +64,15 @@ The Style menu dari Lapisan Properti dialog menyediakan Anda dengan semua alat y
 ```{r fig92, fig.cap='Layer Property',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("images/09/fig92.png")
 ```
+
+## GeoServer
+
+### Styling
+
+### Menggunakan SLD 
+
+
+
 
 
 
