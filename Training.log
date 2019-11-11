@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.10)  11 NOV 2019 07:15
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.10)  11 NOV 2019 10:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1486,17 +1486,11 @@ File: images/04/fig49.jpeg Graphic file (type bmp)
 Bab 6.
 [105
 
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[106]
+] [106]
 File: images/07/fig71.png Graphic file (type bmp)
 <images/07/fig71.png>
-
-Underfull \vbox (badness 7832) has occurred while \output is active []
-
 [107]
-Overfull \hbox (573.75pt too wide) in paragraph at lines 2717--2717
+Overfull \hbox (573.75pt too wide) in paragraph at lines 2649--2649
 []\TU/lmtt/m/n/10 ## PhantomJS not found. You can install it with webshot::inst
 all_phantomjs(). If it is installed, please make sure the phantomjs executable 
 can be found via the PATH variable.[] 
@@ -1506,12 +1500,9 @@ File: images/07/fig72.png Graphic file (type bmp)
 <images/07/fig72.png>
 File: images/07/fig73.png Graphic file (type bmp)
 <images/07/fig73.png>
-
-Underfull \vbox (badness 3058) has occurred while \output is active []
-
 [108]
 
-LaTeX Warning: Reference `fig:gs44' on page 109 undefined on input line 2747.
+LaTeX Warning: Reference `fig:gs44' on page 109 undefined on input line 2679.
 
 [109]
 File: images/08/gs111.png Graphic file (type bmp)
@@ -1527,25 +1518,25 @@ Underfull \vbox (badness 1895) has occurred while \output is active []
 File: images/08/gs3.png Graphic file (type bmp)
 <images/08/gs3.png>
 [111]
-Overfull \hbox (22.5pt too wide) in paragraph at lines 2925--2925
+Overfull \hbox (22.5pt too wide) in paragraph at lines 2857--2857
 []            \TU/lmtt/m/n/10 <OnlineResource xmlns:xlink="http://www.w3.org/19
 99/xlink"[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 2925--2925
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2857--2857
 []               \TU/lmtt/m/n/10 xlink:type="simple"xlink:href="http://localhos
 t:8080[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 2925--2925
+Overfull \hbox (12.0pt too wide) in paragraph at lines 2857--2857
 []          \TU/lmtt/m/n/10 <OnlineResource xmlns:xlink="http://www.w3.org/1999
 /xlink"[] 
  []
 
 [112]
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2925--2925
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2857--2857
 []             \TU/lmtt/m/n/10 xlink:type="simple" xlink:href="http://localhost
 :8080[] 
  []
@@ -1572,7 +1563,7 @@ File: images/08/gs1.png Graphic file (type bmp)
 File: images/08/gs8.png Graphic file (type bmp)
 <images/08/gs8.png>
 
-LaTeX Warning: Reference `gs2' on page 116 undefined on input line 3038.
+LaTeX Warning: Reference `gs2' on page 116 undefined on input line 2970.
 
 File: images/08/gs2.png Graphic file (type bmp)
 <images/08/gs2.png>
@@ -1606,19 +1597,19 @@ File: images/08/ms3.png Graphic file (type bmp)
 ] [126]
 Bab 8.
 
-Overfull \hbox (143.25pt too wide) in paragraph at lines 3329--3329
+Overfull \hbox (143.25pt too wide) in paragraph at lines 3261--3261
 []\TU/lmtt/m/n/10 - Good practices with respect to data organization within a s
 ingle working document (project)[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 3329--3329
+Overfull \hbox (54.0pt too wide) in paragraph at lines 3261--3261
 []\TU/lmtt/m/n/10 - Visual representation of data, revealing its thematic and s
 patial features[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 3329--3329
+Overfull \hbox (43.5pt too wide) in paragraph at lines 3261--3261
 []\TU/lmtt/m/n/10 - Base maps used to provide spatial context and a background 
 for your data[] 
  []
@@ -1645,12 +1636,12 @@ Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3403.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3335.
 [133]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3403.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3335.
 (./Training.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3403.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3403.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3335.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3335.
 
 LaTeX Warning: There were undefined references.
 

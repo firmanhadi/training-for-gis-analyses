@@ -197,90 +197,20 @@
 <h1><span class="header-section-number">Bab 6</span> GeoServer</h1>
 <div id="pendahuluan" class="section level2">
 <h2><span class="header-section-number">6.1</span> Pendahuluan</h2>
-<p><strong>Concept of webgis</strong></p>
-<p>Internet-based GIS has been widely recognized in both
-public and private organizations as a fundamental tool for
-storage and distribution of data to targeted audiences
-(Brovelli et al. 2016).
-The GIS-based Web portals provide a centralized and
-uniform interface to access the distributed and heteroge-
-neous resources and data services (Karnatak et al. 2007).
-According to (Peng 2001), Internet GIS refers to a
-network-centric GIS tool that uses the Internet as a primary
-means of providing access to distributed data and other
-information, disseminating spatial information, and con-
-ducting GIS analysis.</p>
-<p><strong>GIS Web service</strong></p>
-<p>GIS Web services provide direct access to data, eliminating
-the need to download a dataset and import it into your
-desktop application, instead using a simple HTTP interface
-(URL) to access the data. The department uses a variety of
-service protocols including Web Map Service (WMS), Web
-Map Tile Service (WMTS), and Web Feature Service (WFS) provided by the Open Geospatial Consortium
-(OGC) and ESRI Web mapping services.</p>
-<p><strong>Web Services for Spatial Data</strong></p>
-<p>Web services for spatial data enable using data from servers
-directly with desktop GIS software, without downloading
-first data as files to the own computer. In such a way, it is
-possible to use always up-to-date data easily. All most
-common commercial and open-source GIS desktop software
-products support Web standards (MapInfo, ArcGIS, QGIS,
-and GRASS). Web services are used so that the user con-
-nects to the service using a special menu. For connection,
-user needs to know the server’s URL. After connecting to
-the server, the user gets a list of available map layers. Web
-services are also easy to use in map applications on Web.
-Data may be requested also directly with a HTTP GET or
-POST request.
-Most common Web service standards of Open Geospatial
-Consortium’s (OGC) are: Web Map Service (WMS), Web
-Map Tile Service (WMTS), Web Feature Service (WFS),
-and Web Coverage Service (WCS).
-WMS and WMTS return map image in raster format,
-WFS data in vector format, and WCS data in raster format.
-In WMTS, maps are available only in pre-defined scales and
-size. In WMS, scale and map size can be set without
-restrictions. WMTS, are faster, because often the map tiles
-are already ready at the server. For requesting only part of
-data different filters may be used, for example, BBOX
-defines the area of interest.</p>
-<p><strong>GIS Web Services</strong></p>
-<p>The main challenges of geospatial (Shengru and Abdelguerfi
-2006) data are:
-Geospatial data are in bulk in size; loading the data and map
-into the client is complex; reload of map and data takes time;
-geospatial data is highly heterogeneous, and complex
-geospatial problems need large quantities of geospatial data
-from multiple sources and locations.</p>
-<p><strong>Web GIS components</strong></p>
-<p>The major components of the whole portal are categorized
-into navigation tools, legend tools, search tools, and other
-tools such as WMS layer adding tool, layer manager. Fea-
-tures on the map can be identifying using map identify tool.
-Distance measuring tool of map also has been included as
-part of spatial map analysis tool. Results of map query or
-area of interest can be printed out along with detail legend
-using print tool. The size, font type, and map output can be
-customized using this tool. The map can be produced in
-various file formats such as PNG, JPEG, GIF, or PDF.
-Region-specific zoom is made possible using quick zoom
-tool.</p>
-<p>Searching of non-spatial attributes could also be per-
-formed by the users. To do this, user first selects a layer and
-then, fill a from its listed fields/columns. An attribute to be
-searched is entered in the textbox. Clicking the “Search by
-Value” will create a pop-up window listing the attribute table
-matching the search criteria and subsequent zooming in the
-map and highlighted.</p>
-<p>The automatic identification of map on mouse cursor
-moves is made possible using “Auto Identify” widget. The
-user selects a layer and its corresponding attribute(s), once
-applied; the user sees the attributes corresponding to the map
-location when mouse cursor moves.
-The addition of WMS layers is also possible on this
-WebGIS portal. First we host the layers having similar
-projection through the GeoServer (Kamel and Honda 2006)
-(Fig. 3.1).
+<p><strong>Konsep WebGIS</strong></p>
+<p>GIS berbasis internet telah dikenal luas baik dalam organisasi publik maupun swasta sebagai alat mendasar untuk penyimpanan dan distribusi data ke audiens yang ditargetkan (Brovelli et al. 2016). Portal Web berbasis GIS menyediakan antarmuka terpusat dan seragam untuk mengakses sumber daya yang terdistribusi dan beragam dan layanan data (Karnatak et al. 2007). Menurut (Peng 2001), GIS Internet mengacu pada alat GIS berbasis jaringan yang menggunakan Internet sebagai sarana utama untuk menyediakan akses ke data yang didistribusikan dan informasi lainnya, menyebarkan informasi spasial, dan melakukan analisis GIS.</p>
+<p><strong>GIS Web Service</strong></p>
+<p>Layanan Web GIS menyediakan akses langsung ke data, menghilangkan kebutuhan untuk mengunduh dataset dan mengimpornya ke aplikasi desktop Anda, sebagai gantinya menggunakan antarmuka HTTP sederhana (URL) untuk mengakses data. Departemen ini menggunakan berbagai protokol layanan termasuk Web Map Service (WMS), Web Map Tile Service (WMTS), dan Web Feature Service (WFS) yang disediakan oleh Open Geospatial Consortium (OGC) dan layanan pemetaan Web ESRI.</p>
+<p><strong>Layanan Web untuk Data Spasial</strong></p>
+<p>Layanan web untuk data spasial memungkinkan menggunakan data dari server secara langsung dengan perangkat lunak GIS desktop, tanpa mengunduh data pertama sebagai file ke komputer sendiri. Sedemikian rupa, dimungkinkan untuk menggunakan data yang selalu terbaru dengan mudah. Semua produk perangkat lunak desktop GIS komersial dan open-source yang paling umum mendukung standar Web (MapInfo, ArcGIS, QGIS, dan GRASS).</p>
+<p>Layanan web digunakan sehingga pengguna terhubung ke layanan menggunakan menu khusus. Untuk koneksi, pengguna perlu mengetahui URL server. Setelah terhubung ke server, pengguna mendapat daftar lapisan peta yang tersedia. Layanan web juga mudah digunakan dalam aplikasi peta di Web. Data dapat diminta juga secara langsung dengan HTTP GET atau permintaan POST.</p>
+<p>Standar layanan Web yang paling umum dari Open Geospatial Consortium’s (OGC) adalah: Layanan Web Map (WMS), Layanan Web Map Tile (WMTS), Layanan Fitur Web (WFS), dan Layanan Cakupan Web (WCS). WMS dan WMTS mengembalikan gambar peta dalam format raster, data WFS dalam format vektor, dan data WCS dalam format raster. Dalam WMTS, peta hanya tersedia dalam skala dan ukuran yang ditentukan sebelumnya. Dalam WMS, skala dan ukuran peta dapat diatur tanpa batasan. WMTS, lebih cepat, karena seringkali petak peta sudah siap di server. Untuk meminta hanya sebagian data filter yang berbeda dapat digunakan, misalnya, BBOX menentukan bidang yang diminati.</p>
+<p><strong>Servise WebGIS</strong></p>
+<p>Tantangan utama data geospasial (Shengru dan Abdelguerfi, 2006) adalah: Data geospasial berukuran besar; rumitnya pemuatan dan pemetaan data ke klien ; memuat ulang peta dan data membutuhkan waktu; data geospasial sangat heterogen, dan masalah geospasial yang kompleks membutuhkan sejumlah besar data geospasial dari berbagai sumber dan lokasi.</p>
+<p><strong>Komponen WebGIS</strong></p>
+<p>Komponen utama dari WebGIS dikategorikan ke dalam alat navigasi, alat legenda, alat pencarian, dan alat lainnya seperti alat menambahkan lapisan WMS, manajer lapisan. Fitur pada peta dapat diidentifikasi menggunakan alat identifikasi peta (Identifier). Alat ukur jarak dari peta juga telah dimasukkan sebagai bagian dari alat analisis peta spasial. Hasil permintaan peta atau bidang yang diinginkan dapat dicetak bersama dengan legenda detail memakai alat cetak. Ukuran, jenis font, dan output peta dapat dikustomisasi menggunakan alat ini. Peta dapat diproduksi dalam berbagai format file seperti PNG, JPEG, GIF, atau PDF. Zoom khusus kawasan dimungkinkan dengan menggunakan alat zoom cepat.</p>
+<p>Pencarian atribut non-spasial juga dapat dilakukan oleh pengguna. Untuk melakukan ini, pengguna pertama-tama memilih layer dan kemudian, mengisi dari bidang / kolom yang terdaftar. Atribut yang akan dicari dimasukkan dalam kotak teks. Mengklik “Cari berdasarkan Nilai” akan membuat jendela sembulan yang mencantumkan tabel atribut yang cocok dengan kriteria pencarian dan selanjutnya memperbesar peta dan disorot.</p>
+<p>Identifikasi otomatis peta pada pergerakan kursor mouse menggunakan widget “Identifikasi Otomatis”. Pengguna memilih layer dan atributnya yang sesuai, setelah diterapkan; pengguna melihat atribut yang sesuai dengan lokasi peta ketika kursor mouse bergerak. Penambahan lapisan WMS juga dimungkinkan di portal WebGIS ini. Pertama-tama kita meng-host lapisan yang memiliki proyeksi serupa melalui GeoServer (Kamel dan Honda 2006).
 <!-- ## Konsep WebGIS --></p>
 <!-- ```{r fig1424, fig.cap='Open Attribute Table',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'} -->
 <!-- knitr::include_graphics("img/webgis/pic1.png") -->
@@ -352,7 +282,7 @@ Gambar 6.3: Download GeoServer
 <li><p>Klik Deploy.</p></li>
 </ol>
 <ul>
-<li><p>Apabila proses ini gagal dengan pesan kesalahan yang menunjukkan bahwa ukuran berkas melebihi yang ditentukan, edit berkas web.xml yang ada di direktori <strong><em>C:-7.0.96-0-tomcat-INF</em></strong></p></li>
+<li><p>Apabila proses ini gagal dengan pesan kesalahan yang menunjukkan bahwa ukuran berkas melebihi yang ditentukan, edit berkas web.xml yang ada di direktori <strong><em>C:/Bitnami/tomcatstack-7.0.96-0/apache-tomcat/webapps/manager/WEB-INF</em></strong></p></li>
 <li><p>Ubah ukuran max-file-size dan max-request agar lebih besar dari 100 MB, dengan menambahkan angka 1 di depan angka 8, sehingga menjadi 183886080.</p></li>
 </ul>
 <pre><code>&lt;multipart-config&gt;
