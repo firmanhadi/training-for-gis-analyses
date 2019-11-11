@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.10)  10 NOV 2019 20:08
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.10)  11 NOV 2019 07:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1486,11 +1486,17 @@ File: images/04/fig49.jpeg Graphic file (type bmp)
 Bab 6.
 [105
 
-] [106]
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[106]
 File: images/07/fig71.png Graphic file (type bmp)
 <images/07/fig71.png>
+
+Underfull \vbox (badness 7832) has occurred while \output is active []
+
 [107]
-Overfull \hbox (573.75pt too wide) in paragraph at lines 2720--2720
+Overfull \hbox (573.75pt too wide) in paragraph at lines 2717--2717
 []\TU/lmtt/m/n/10 ## PhantomJS not found. You can install it with webshot::inst
 all_phantomjs(). If it is installed, please make sure the phantomjs executable 
 can be found via the PATH variable.[] 
@@ -1500,72 +1506,136 @@ File: images/07/fig72.png Graphic file (type bmp)
 <images/07/fig72.png>
 File: images/07/fig73.png Graphic file (type bmp)
 <images/07/fig73.png>
-[108] [109]
-File: images/07/fig74.png Graphic file (type bmp)
-<images/07/fig74.png>
+
+Underfull \vbox (badness 3058) has occurred while \output is active []
+
+[108]
+
+LaTeX Warning: Reference `fig:gs44' on page 109 undefined on input line 2747.
+
+[109]
+File: images/08/gs111.png Graphic file (type bmp)
+<images/08/gs111.png>
+File: images/08/gs112.png Graphic file (type bmp)
+<images/08/gs112.png>
+File: images/08/gs39.png Graphic file (type bmp)
+<images/08/gs39.png>
+
+Underfull \vbox (badness 1895) has occurred while \output is active []
+
 [110]
-Overfull \hbox (22.5pt too wide) in paragraph at lines 2846--2846
+File: images/08/gs3.png Graphic file (type bmp)
+<images/08/gs3.png>
+[111]
+Overfull \hbox (22.5pt too wide) in paragraph at lines 2925--2925
 []            \TU/lmtt/m/n/10 <OnlineResource xmlns:xlink="http://www.w3.org/19
 99/xlink"[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 2846--2846
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2925--2925
 []               \TU/lmtt/m/n/10 xlink:type="simple"xlink:href="http://localhos
 t:8080[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 2846--2846
+Overfull \hbox (12.0pt too wide) in paragraph at lines 2925--2925
 []          \TU/lmtt/m/n/10 <OnlineResource xmlns:xlink="http://www.w3.org/1999
 /xlink"[] 
  []
 
-
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2846--2846
+[112]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2925--2925
 []             \TU/lmtt/m/n/10 xlink:type="simple" xlink:href="http://localhost
 :8080[] 
  []
 
-[111] [112]
+File: images/08/gs4.png Graphic file (type bmp)
+<images/08/gs4.png>
+File: images/08/gs5.png Graphic file (type bmp)
+<images/08/gs5.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[113]
+File: images/08/gs6.png Graphic file (type bmp)
+<images/08/gs6.png>
+
+Underfull \vbox (badness 1515) has occurred while \output is active []
+
+[114]
+File: images/08/gs7.png Graphic file (type bmp)
+<images/08/gs7.png>
+File: images/08/gs1.png Graphic file (type bmp)
+<images/08/gs1.png>
+[115]
+File: images/08/gs8.png Graphic file (type bmp)
+<images/08/gs8.png>
+
+LaTeX Warning: Reference `gs2' on page 116 undefined on input line 3038.
+
+File: images/08/gs2.png Graphic file (type bmp)
+<images/08/gs2.png>
+[116]
+File: images/08/gs14.png Graphic file (type bmp)
+<images/08/gs14.png>
+[117]
+File: images/08/gs15.png Graphic file (type bmp)
+<images/08/gs15.png>
+File: images/08/gs16.png Graphic file (type bmp)
+<images/08/gs16.png>
+File: images/08/gs17a.png Graphic file (type bmp)
+<images/08/gs17a.png>
+File: images/08/gs17b.png Graphic file (type bmp)
+<images/08/gs17b.png>
+File: images/08/gs17c.png Graphic file (type bmp)
+<images/08/gs17c.png>
+[118] [119] [120]
 Bab 7.
-[113
+[121
 
-] [114] [115] [116
+] [122]
+File: images/08/ms1.png Graphic file (type bmp)
+<images/08/ms1.png>
+File: images/08/ms2.png Graphic file (type bmp)
+<images/08/ms2.png>
+File: images/08/ms3.png Graphic file (type bmp)
+<images/08/ms3.png>
+[123] [124] [125
 
-] [117] [118]
+] [126]
 Bab 8.
 
-Overfull \hbox (143.25pt too wide) in paragraph at lines 2978--2978
+Overfull \hbox (143.25pt too wide) in paragraph at lines 3329--3329
 []\TU/lmtt/m/n/10 - Good practices with respect to data organization within a s
 ingle working document (project)[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2978--2978
+Overfull \hbox (54.0pt too wide) in paragraph at lines 3329--3329
 []\TU/lmtt/m/n/10 - Visual representation of data, revealing its thematic and s
 patial features[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 2978--2978
+Overfull \hbox (43.5pt too wide) in paragraph at lines 3329--3329
 []\TU/lmtt/m/n/10 - Base maps used to provide spatial context and a background 
 for your data[] 
  []
 
-[119
+[127
 
 ]
 File: images/09/fig91.png Graphic file (type bmp)
 <images/09/fig91.png>
-[120]
+[128]
 File: images/09/fig92.png Graphic file (type bmp)
 <images/09/fig92.png>
-[121] [122]
+[129] [130]
 Bab 9.
-(./Training.bbl [123
+(./Training.bbl [131
 
-] [124
+] [132
 
 ]
 
@@ -1575,20 +1645,23 @@ Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3052.
-[125]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3052.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3403.
+[133]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3403.
 (./Training.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3052.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3052.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3403.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3403.
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 23039 strings out of 493007
- 430709 string characters out of 6136718
- 563754 words of memory out of 5000000
- 26653 multiletter control sequences out of 15000+600000
+ 23153 strings out of 493007
+ 432531 string characters out of 6136718
+ 565389 words of memory out of 5000000
+ 26746 multiletter control sequences out of 15000+600000
  555051 words of font info for 70 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  45i,8n,54p,10449b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Training.pdf (125 pages).
+Output written on Training.pdf (133 pages).

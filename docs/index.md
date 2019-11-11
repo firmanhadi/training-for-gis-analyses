@@ -1,13 +1,15 @@
 --- 
 title: "Training for GIS Analyses"
 author: "Firman Hadi"
-date: "2019-11-10"
+date: "2019-11-11"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 description: "Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ."
+cover-image: cover.png
+
 ---
 
 # Pengantar{-}

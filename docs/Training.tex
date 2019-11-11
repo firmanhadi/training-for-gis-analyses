@@ -84,7 +84,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-11-10}
+    \date{2019-11-11}
 
 \usepackage{booktabs}
 \usepackage[utf8]{inputenc}
@@ -2644,6 +2644,7 @@ customized using this tool. The map can be produced in
 various file formats such as PNG, JPEG, GIF, or PDF.
 Region-specific zoom is made possible using quick zoom
 tool.
+
 Searching of non-spatial attributes could also be per-
 formed by the users. To do this, user first selects a layer and
 then, fill a from its listed fields/columns. An attribute to be
@@ -2651,6 +2652,7 @@ searched is entered in the textbox. Clicking the ``Search by
 Value'' will create a pop-up window listing the attribute table
 matching the search criteria and subsequent zooming in the
 map and highlighted.
+
 The automatic identification of map on mouse cursor
 moves is made possible using ``Auto Identify'' widget. The
 user selects a layer and its corresponding attribute(s), once
@@ -2700,18 +2702,13 @@ Untuk melakukan pemeriksaan apakah sistem Anda memiliki Java JRE 8, silahkan iku
 \caption{Cek Java}\label{fig:fig71}
 \end{figure}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\item ~
-  \hypertarget{instalasi}{%
-  \section{Instalasi}\label{instalasi}}
-\end{enumerate}
+\hypertarget{instalasi}{%
+\section{Instalasi}\label{instalasi}}
 
 \hypertarget{tomcat}{%
 \subsection{Tomcat}\label{tomcat}}
 
-Paket Tomcat yang digunakan dalam pelatihan ini adalah paket yang disediakan oleh Bitnami. Paket tersebut dapat diunduh di tautan berikut :
+Paket Tomcat yang digunakan dalam pelatihan ini adalah paket yang disediakan oleh Bitnami. Paket Bitnami Tomcat versi MS Windows tersebut dapat diunduh di tautan berikut \url{https://bitnami.com/redirect/to/654730/bitnami-tomcatstack-7.0.96-0-windows-x64-installer.exe}
 
 Tahapan instalasi Bitnami Tomcat dapat dilihat pada video berikut :
 
@@ -2724,25 +2721,107 @@ Tahapan instalasi Bitnami Tomcat dapat dilihat pada video berikut :
 \hypertarget{geoserver-1}{%
 \subsection{GeoServer}\label{geoserver-1}}
 
-Pergi ke GeoServerunduh halaman seperti yang ditunjukkan pada tangkapan layar berikut ( \url{http://geoserver.org/download/} ) dan pilihlah tipe instalasi yang tersedia. Anda akan menemukan beberapa paket berbeda untuk GeoServer. Kita akan menggunakan versi Arsip Web:
+GeoServer dapat diunduh di halaman tautan berikut \url{http://geoserver.org/download/} dan pilihlah tipe instalasi yang tersedia. Anda akan menemukan beberapa paket berbeda untuk GeoServer. Kita akan menggunakan versi Arsip Web (.war):
 
 \begin{center}\includegraphics[width=0.6\linewidth]{images/07/fig72} \end{center}
 
-Anda dapat memilih rilis dari dua cabang yang berbeda - Stable dan Maintenance. Keduanya dibangun untuk keperluan produksi, sehingga Anda dapat memilih apa pun yang Anda inginkan; juga, kami sarankan Anda memilih rilis terbaru karena berisi semua fitur baru yang baru saja dirilis oleh tim pengembang.
+Anda dapat memilih rilis dari dua cabang yang berbeda - \textbf{Stable} dan \textbf{Maintenance}. Keduanya dibangun untuk keperluan produksi, sehingga Anda dapat memilih apa pun yang Anda inginkan. Kami sarankan Anda memilih rilis terbaru karena berisi semua fitur baru yang baru saja dirilis oleh tim pengembang.
 
-Terlepas dari Production tab, Anda mungkin telah mencatat ada dua bagian lainnya - Development dan Archived. Di dalam bagian Development, Anda akan menemukan Night Build, rilis ini tidak cocok untuk produksi karena mereka rentan terhadap bug, tetapi berisi semua perubahan yang dilakukan pengembang pada kode sumber, sehingga Anda dapat menggunakannya untuk menguji perbaikan bug yang Anda temukan:
+Terlepas dari Production tab, Anda dapat memilih dua cabang lainnya - \textbf{Development} dan \textbf{Archived}. Di dalam bagian Development, Anda akan menemukan \textbf{Night Build}, rilis ini tidak cocok untuk produksi karena rentan terhadap \emph{bug}, tetapi berisi semua perubahan yang dilakukan pengembang pada kode sumber, sehingga Anda dapat menggunakannya untuk menguji perbaikan bug yang Anda temukan:
 
 \begin{center}\includegraphics[width=0.6\linewidth]{images/07/fig73} \end{center}
 
-Archived berisi rilis yang lebih lama. Ini mungkin berguna jika Anda menggunakan rilis GeoServer lama dan perlu memutakhirkannya ke yang lebih baru, tetapi Anda tidak ingin melompat ke yang terakhir. Kasus penggunaan lain mungkin jika Anda menggunakan GeoServer di lingkungan di mana versi JRE lama, 7.x atau 6.x, tersedia dan Anda tidak dapat memutakhirkannya.
-
-Di bagian berikut, kami akan menyebarkan arsip web di Apache Tomcat. Seperti yang mungkin sudah Anda duga, menggunakan server aplikasi Java hampir sama pada sistem operasi apa pun. Bagian selanjutnya adalah umum untuk Linux dan Windows, karena menggunakan Tomcat memerlukan langkah yang sama pada kedua sistem operasi. Selama Anda menggunakan GeoServer yang digunakan di Tomcat, Anda tidak akan memiliki perbedaan dengan contoh-contoh yang dijelaskan dalam buku ini, sistem operasi apa pun yang Anda gunakan.
+\textbf{Archived} berisi rilis yang lebih lama. Ini mungkin berguna jika Anda menggunakan rilis GeoServer lama dan perlu memutakhirkannya ke yang lebih baru, tetapi Anda tidak ingin melompat ke yang terakhir. Kasus penggunaan lain mungkin jika Anda menggunakan GeoServer di lingkungan di mana versi JRE lama, 7.x atau 6.x, tersedia dan Anda tidak dapat memutakhirkannya.
 
 Tahapan pengunduhan GeoServer dapat dilihat pada video berikut :
 
 \label{fig:embed2}Download GeoServer
 
-Untuk melakukan instalasi
+Di bagian berikutnya, kita akan melakukan instalasi GeoServer dengan cara men-\emph{deploy} arsip web di Apache Tomcat. Server aplikasi Java hampir dapat dijalankan pada sistem operasi apa pun dengan cara yang sama. Begitu pula dengan GeoServer yang di-\textbf{deploy} pada Tomcat.
+
+Proses instalasi GeoServer adalah sebagai berikut:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Pastikan bahwa Tomcat Server berjalan dengan membuka tautan \url{http://localhost/index.jsp}. Apabila isi dari halaman tersebut seperti pada Gambar \ref{fig:gs44}, maka kita dapat melanjutkan ke proses berikutnya.
+\item
+  Buka tautan \textbf{Manager App}. Ketikkan username dan password seperti yang dibuat ketika instalasi.
+\item
+  Unggah berkas geoserver.war di bagian WAR file to deploy.
+\item
+  Klik Deploy.
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Apabila proses ini gagal dengan pesan kesalahan yang menunjukkan bahwa ukuran berkas melebihi yang ditentukan, edit berkas web.xml yang ada di direktori \textbf{\emph{C:/Bitnami/tomcatstack-7.0.96-0/apache-tomcat/webapps/manager/WEB-INF}}
+\item
+  Ubah ukuran max-file-size dan max-request agar lebih besar dari 100 MB, dengan menambahkan angka 1 di depan angka 8, sehingga menjadi 183886080.
+\end{itemize}
+
+\begin{verbatim}
+<multipart-config>
+      <!-- 50MB max -->
+      <max-file-size>83886080</max-file-size>
+      <max-request-size>83886080</max-request-size>
+      <file-size-threshold>0</file-size-threshold>
+</multipart-config>
+\end{verbatim}
+
+\begin{itemize}
+\item
+  Simpan berkas web.xml
+\item
+  Stop Tomcat Server
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.4\linewidth]{images/08/gs111} 
+
+}
+
+\caption{Stop Tomcat Server}\label{fig:fig111}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Jalankan ulang Tomcat Server.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.4\linewidth]{images/08/gs112} 
+
+}
+
+\caption{Start Tomcat Server}\label{fig:fig112}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Ulangi kembali proses Deploy.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Apabila proses Deploy Geoserver berhasil, maka menu Manager App akan terlihat \textbf{/geoserver} di dalam daftar aplikasi Tomcat.
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.4\linewidth]{images/08/gs39} 
+
+}
+
+\caption{Folder aplikasi GeoServer}\label{fig:fig39}
+\end{figure}
 
 \hypertarget{menjalankan-geoserver}{%
 \section{Menjalankan GeoServer}\label{menjalankan-geoserver}}
@@ -2773,7 +2852,7 @@ Pertimbangkan tangkapan layar berikut. Anda dapat mengenali tiga area utama di a
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{images/07/fig74} 
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs3} 
 
 }
 
@@ -2848,6 +2927,30 @@ Daftar operasi yang didukung dan URL dasar untuk permintaan adalah sebagai berik
 \hypertarget{about-dan-status}{%
 \subsection{About dan Status}\label{about-dan-status}}
 
+\hypertarget{server-status}{%
+\subsubsection{Server Status}\label{server-status}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs4} 
+
+}
+
+\caption{Status server}\label{fig:gs4}
+\end{figure}
+
+\hypertarget{logs}{%
+\subsubsection{Logs}\label{logs}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs5} 
+
+}
+
+\caption{Status server}\label{fig:gs5}
+\end{figure}
+
 \hypertarget{data-1}{%
 \subsection{Data}\label{data-1}}
 
@@ -2855,40 +2958,245 @@ Bagian ini berisi tautanke mesin konfigurasi data. Seperti yang Anda duga, untuk
 
 Di area ini, Anda dapat mengonfigurasi akses data dan cara aksesnya ke klien:
 
-Layer Preview
+\#\#\#\#Layer Preview
 
 membuka formulir termasuk setiap lapisan yang diterbitkan di GeoServer. Selain itu, jika Anda belum menambahkan data ke instalasi GeoServer Anda, Anda akan menemukan beberapa lapisan sampel sudah terdaftar. Mengklik pada OpenLayerstautan, yang ditempatkan di sebelah kanan nama lapisan, Anda dapat membuka contoh aplikasi web untuk melihat seperti apa data Anda terlihat. Suka.
 
 The Keyhole Markup Language ( KML ) link membiarkan Anda men-download data dalam format yang sesuai untuk pratinjau di Google Earth. Ada juga beberapa format lain yang tersedia, tercantum dalam kotak drop-down di ujung kanan baris. Pertimbangkan tangkapan layar berikut:
 
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs6} 
+
+}
+
+\caption{Layer preview}\label{fig:gs6}
+\end{figure}
+
+\hypertarget{layanan}{%
+\subsection{Layanan}\label{layanan}}
+
+\hypertarget{pengaturan}{%
+\subsection{Pengaturan}\label{pengaturan}}
+
+\hypertarget{tile-caching}{%
+\subsection{Tile Caching}\label{tile-caching}}
+
+\hypertarget{security}{%
+\subsection{Security}\label{security}}
+
 \hypertarget{menambahkan-data}{%
 \section{Menambahkan Data}\label{menambahkan-data}}
+
+Anda akan mempelajari tipe data apa yang dapat Anda gunakan dengan GeoServer. Kami akan mengambil ikhtisar singkat tentang format yang didukung, baik bawaan maupun melalui ekstensi, dan cara menambahkannya ke konfigurasi Anda. Lebih khusus lagi, kami akan memuat data dari shapefile, tabel PostGIS, dan tabel Oracle menggunakan data sensus AS.
+
+\hypertarget{pengaturan-data}{%
+\subsection{Pengaturan Data}\label{pengaturan-data}}
+
+\hypertarget{workspace}{%
+\subsubsection{Workspace}\label{workspace}}
+
+Bagian ini menjelaskan cara melihat dan mengkonfigurasi \textbf{\emph{workspace}}. Dianalogikan dengan \textbf{\emph{namespace}}, \textbf{\emph{workspace}} adalah wadah yang mengatur item lainnya. Di GeoServer, \textbf{\emph{workspace}} sering digunakan untuk mengelompokkan layer yang sama. Layer dapat dirujuk dengan nama ruang kerja mereka, titik dua, nama lapisan (misalnya sf:archsites). Dua layer yang berbeda dapat memiliki nama yang sama selama mereka memiliki \textbf{\emph{workspace}} yang berbeda (misalnya sf:states dan topp:states).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs7} 
+
+}
+
+\caption{Workspaces}\label{fig:gs7}
+\end{figure}
+
+Untuk melihat atau mengedit workspace, klik nama workspace. Halaman konfigurasi workspace akan ditampilkan pada Gambar \ref{fig:gs1}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/08/gs1} 
+
+}
+
+\caption{Edit Workspace}\label{fig:gs1}
+\end{figure}
+
+Workspace didefinisikan oleh nama dan URI Namespace (Uniform Resource Identifier). Nama workspace terbatas hingga sepuluh karakter dan tidak boleh memiliki spasi. URI mirip dengan URL, kecuali URI tidak perlu menunjuk ke lokasi aktual di web, dan hanya perlu menjadi pengidentifikasi unik. Untuk URI Workspace, kami sarankan menggunakan URL yang terkait dengan proyek Anda, dengan pengidentifikasi jejak yang berbeda. Misalnya, \url{http://localhost/batam_pg} adalah URI untuk ruang kerja ``batam\_pg''.
+
+\hypertarget{store}{%
+\subsubsection{Store}\label{store}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs8} 
+
+}
+
+\caption{Store}\label{fig:gs8}
+\end{figure}
+
+\hypertarget{penambahan-data}{%
+\subsection{Penambahan Data}\label{penambahan-data}}
+
+Data yang dapat diunggah ke dalam GeoServer dapat bermacam-macam, di antaranya adalah direktori Shapefiles, GeoPackage, PostGIS, GeoTIFF, WMS dan lainnya seperti disajikan pada Gambar \ref{gs2}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs2} 
+
+}
+
+\caption{Workspaces}\label{fig:gs2}
+\end{figure}
+
+\hypertarget{direktori-shapefiles}{%
+\subsubsection{Direktori Shapefiles}\label{direktori-shapefiles}}
+
+Untuk menambah data ke dalam GeoServer, lakukan tahapan berikut
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Buatlah workspace baru.
+\end{enumerate}
+
+Kita akan menambahkan workspace berdasarkan data sampel GeoServer yaitu San Fransisco. Isikan \textbf{\emph{sf}} sebagai nama workspace baru dan \textbf{\emph{san\_fransisco}} untuk Namespace\_URI. Jangan lupa untuk klik \textbf{Submit} untuk membuat workspace.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs14} 
+
+}
+
+\caption{Workspaces}\label{fig:gs14}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Tambahkan Stores baru.
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Klik Stores di panel sebelah kiri, dan klik tautan \textbf{Add new Store}. Pilih \textbf{\emph{workspace}} sf dan isikan \textbf{\emph{sf\_shp}} untuk \textbf{Data Source Name}.
+\item
+  Untuk \textbf{Connection Parameters} klik Browse untuk memilih direktori di mana vektor shapefiles tersimpan. Untuk kasus ini, klik direktori \textbf{\emph{data/data/sf}}.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs15} 
+
+}
+
+\caption{Sumber data vektor}\label{fig:gs15}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Klik Save.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Pilih Layer yang akan diunggah dengan mengklik tautan \textbf{Publish}, sebagai contoh \textbf{\emph{archsites}}.
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs16} 
+
+}
+
+\caption{Memilih Layer baru}\label{fig:gs16}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Definisikan data layer dan publikasinya.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Isikan nama layer, misalnya \textbf{\emph{archsites}}.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs17a} 
+
+}
+
+\caption{Edit layer name}\label{fig:gs17a}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Klik \textbf{\emph{Compute from data}} untuk mengisikan \textbf{Bounding Boxes}, dan klik \textbf{\emph{Compute from native bounds}} untuk \textbf{Lat/Lon Bounding Box}.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs17b} 
+
+}
+
+\caption{Parameter Bounding Boxes}\label{fig:gs17b}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Klik \textbf{Save} untuk menyimpan data.
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/08/gs17c} 
+
+}
+
+\caption{Klik Save}\label{fig:gs17c}
+\end{figure}
+
+\hypertarget{postgis}{%
+\subsubsection{PostGIS}\label{postgis}}
+
+\hypertarget{raster}{%
+\subsubsection{Raster}\label{raster}}
 
 \hypertarget{mengakses-layer}{%
 \section{Mengakses Layer}\label{mengakses-layer}}
 
-\hypertarget{section}{%
-\section{}\label{section}}
+\hypertarget{hari_kedelapan}{%
+\chapter{MapStore2}\label{hari_kedelapan}}
 
-\hypertarget{hari_kedelapann}{%
-\chapter{MapStore2}\label{hari_kedelapann}}
+MapStore adalah kerangka kerja webgis open source yang sangat modular, dikembangkan oleh GeoSolutions untuk membuat, mengelola, dan berbagi peta dan mashup secara aman. Kerangka kerja yang sederhana dan intuitif ini menggabungkan konten yang disajikan dari server seperti Google Maps, OpenStreetMap, Bing atau dari server lain yang mengikuti standar OGC seperti WFS, CSW, WMS, WMTS, dan TMS. MapStore2 diinstal dan dikonfigurasi pada server aplikasi Web, memungkinkan banyak pengguna mengakses situs menggunakan peramban web. MapStore2 digunakan untuk mencari, memvisualisasikan, dan melakukan kueri data geospasial yang diterbitkan dan untuk mengintegrasikan berbagai sumber ke dalam tampilan peta terintegrasi yang dapat dengan mudah dinavigasi. Selain itu, dengan merilis versi baru, perangkat lunak ini memungkinkan pengguna untuk membuat dasbor untuk hosting widget seperti peta mini, grafik statistik, tabel dan banyak lagi.
 
-\#MapStore2
+MapStore2 bertujuan untuk menjadi kerangka kerja produk dan webgis. Sebagai produk geoportal standar, MapStore2 adalah produk berbasis web untuk visualisasi dan analisis peta yang memungkinkan Anda membangun situs web interaktif geospasial atau layanan web. MapStore2 memungkinkan akses langsung dan real-time ke penyimpanan data geospasial dari semua format yang didukung. Ini juga menyediakan semua fungsi analisis spasial. Anda dapat menggunakannya untuk membangun situs web yang memberikan kepada pengguna, dengan tidak lebih dari browser web, aplikasi geospasial yang kuat, dinamis, dan terbuka, yang sebelumnya hanya tersedia dalam aplikasi desktop. MapStore2 juga merupakan \textbf{\emph{framework}} dalam arti dapat digunakan sebagai titik awal untuk membangun aplikasi geospasial yang canggih.Ia tidak bergantung secara eksplisit pada \emph{Engine Map} tertentu, tetapi ia dapat bekerja dengan OpenLayers , LeafletJS dan Cesium 3D viewer, yang memastikan fleksibilitas terbesar ketika seseorang ingin menggunakannya sebagai \textbf{\emph{framework}}.
 
-MapStore adalah kerangka kerja webgis open source yang sangat modular, dikembangkan oleh GeoSolutions untuk membuat, mengelola, dan berbagi peta dan mashup secara aman. Kerangka kerja yang sederhana dan intuitif ini menggabungkan konten yang disajikan dari server seperti Google Maps, OpenStreetMap, Bing atau dari server lain yang mengikuti standar OGC seperti WFS, CSW, WMS, WMTS, dan TMS. MapStore2 diinstal dan dikonfigurasi pada server aplikasi Web, memungkinkan banyak pengguna mengakses situs menggunakan peramban laman web. MapStore2 digunakan untuk mencari, memvisualisasikan, dan meminta data geospasial yang diterbitkan dan untuk mengintegrasikan berbagai sumber ke dalam tampilan peta tunggal yang dapat dengan mudah dinavigasi. Selain itu, dengan merilis versi baru, perangkat lunak ini memungkinkan pengguna untuk membuat dasbor untuk hosting widget seperti peta mini, grafik statistik, tabel dan banyak lagi.
+MapStore2 telah dirancang sejak awal untuk memberi pengguna pengalaman yang koheren dan komprehensif di berbagai perangkat, oleh karena itu ia harus secara otomatis beradaptasi dengan ukuran layar yang berbeda seperti yang ditunjukkan nanti.
 
-MapStore bertujuan untuk menjadi kerangka kerja produk dan webgis. Sebagai produk geoportal standar, ini adalah produk berbasis web untuk visualisasi dan analisis peta yang memungkinkan Anda membangun situs web interaktif geospasial atau layanan web. Ini menyediakan akses langsung dan real-time ke gudang data geospasial dari semua format geospasial yang didukung. Ini juga menyediakan semua fungsi analisis spasial. Ini berarti Anda dapat menggunakannya untuk membangun situs web yang memberikan kepada klien tipis, dengan tidak lebih dari browser web, aplikasi geospasial yang kuat, dinamis, dan terbuka, yang sebelumnya hanya tersedia dalam aplikasi desktop. Ini juga merupakan kerangka kerja dalam arti dapat digunakan sebagai titik awal untuk membangun aplikasi geospasial yang canggih. Itu tidak bergantung secara eksplisit pada mesin pemetaan tetapi ia dapat bekerja denganOpenLayers , LeafletJS dan Cesium 3D viewer memastikan fleksibilitas terbesar ketika seseorang ingin menggunakannya sebagai kerangka kerja.
-
-MapStore telah dirancang sejak awal untuk memberi pengguna pengalaman yang koheren dan komprehensif di berbagai perangkat, oleh karena itu ia harus secara otomatis beradaptasi dengan ukuran layar yang berbeda seperti yang ditunjukkan nanti.
-
-MapStore didasarkan pada OpenLayers, Leaflet dan ReactJS, dan dilisensikan di bawah lisensi BSD Sederhana.
+MapStore2 dikembangkan dengan basis teknologi pada OpenLayers, Leaflet dan ReactJS, dan dilisensikan di bawah lisensi Simplified BSD.
 
 \hypertarget{quick-start}{%
 \section{Quick Start}\label{quick-start}}
 
 Anda dapat memilih untuk mengunduh paket biner mandiri atau file WAR untuk menggunakan MapStore.
 
-\textbf{Paket biner}
+\hypertarget{paket-biner}{%
+\subsection{Paket Biner}\label{paket-biner}}
+
 Cara termudah untuk mencoba MapStore adalah dengan mengunduh dan mengekstrak paket biner yang tersedia di halaman rilis MapStore . Di sini Anda dapat menemukan beberapa peta yang telah dikonfigurasikan sebelumnya serta pengguna dan grup. Tujuan dari paket ini adalah untuk memudahkan semua persyaratan yang diperlukan agar Anda mengambil MapStore untuk test-drive.
 
 \textbf{Bagaimana cara menjalankannya}
@@ -2923,34 +3231,77 @@ Cara termudah untuk mencoba MapStore adalah dengan mengunduh dan mengekstrak pak
   Linux: ./mapstore2\_shutdown.sh
 \end{itemize}
 
-Isi Paket
-MapStore
-Tomcat7
-Java JRE (Win dan Linux)
-Demo Demo
-Aerial Imagery - Demo peta sederhana yang menunjukkan beberapa data citra udara
-WFS Query Map - Peta demo yang dikonfigurasikan dengan kemampuan bawaan MapStore untuk menanyakan fitur melalui WFS
-User Map dan User1 Map - Peta masing-masing hanya dapat dilihat oleh pengguna dan user1 , untuk menunjukkan kemampuan MapStore pada manajemen dan izin pengguna / grup.
-Akun / grup demo
-Pengguna Grup
-admin / admin MyGroupAdmin, semuanya
-tamu semua orang
-pengguna / pengguna semua orang
-user1 / user1 semuanya, MyGroup
-File PERANG
-Unduh file PERANG dari rilis terbaru di sini .
+\hypertarget{arsip-web-war}{%
+\subsection{Arsip Web (WAR)}\label{arsip-web-war}}
 
-Semua rilis
-
-Setelah mengunduh file perang MapStore, instal dalam wadah web java Anda (mis. Tomcat), dengan prosedur biasa untuk wadah tersebut (biasanya Anda hanya perlu menyalin file perang di subfolder webapps).
+Setelah mengunduh file war MapStore, instal dalam wadah web java Anda (mis. Tomcat), dengan prosedur biasa untuk wadah tersebut (biasanya Anda hanya perlu menyalin file war di subfolder webapps).
 
 Jika Anda tidak memiliki wadah web java, Anda dapat mengunduh Apache Tomcat dari sini dan menginstalnya. Anda juga akan membutuhkan Java7 JRE .
 
 Kemudian Anda dapat mengakses MapStore menggunakan URL berikut (dengan asumsi wadah web pada port 8080 standar):
 
+\begin{verbatim}
 http: // localhost: 8080 / mapstore
+\end{verbatim}
 
 Gunakan kredensial default (admin / admin) untuk masuk dan mulai membuat peta Anda!
+
+\hypertarget{menggunakan-mapstore2}{%
+\section{Menggunakan MapStore2}\label{menggunakan-mapstore2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Login
+\end{enumerate}
+
+Untuk login ke dalam MapStore2 yang terinstal dalam komputer Anda, gunakan tautan berikut \url{http://localhost/mapstore/}. Untuk menggunakan web SIGRO, silakan kunjungi \url{https://map.sigro.org/mapstore}. Gunakan kredensial `poltek' untuk login.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/08/ms1} 
+
+}
+
+\caption{Open Attribute Table}\label{fig:fig181}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Tampilan awal MapStore2
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/08/ms2} 
+
+}
+
+\caption{Open Attribute Table}\label{fig:fig182}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Informasi Pengguna
+\end{enumerate}
+
+Klik ikon di bagian kanan atas dasbor untuk mengetahui informasi pengguna.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/08/ms3} 
+
+}
+
+\caption{Open Attribute Table}\label{fig:fig183}
+\end{figure}
 
 \hypertarget{part-visualisasi-dan-penyajian-data}{%
 \part{Visualisasi dan Penyajian Data}\label{part-visualisasi-dan-penyajian-data}}
