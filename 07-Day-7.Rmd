@@ -271,7 +271,7 @@ Bagian ini berisi tautanke mesin konfigurasi data. Seperti yang Anda duga, untuk
 
 Di area ini, Anda dapat mengonfigurasi akses data dan cara aksesnya ke klien:
 
-####Layer Preview
+#### Layer Preview
 
 membuka formulir termasuk setiap lapisan yang diterbitkan di GeoServer. Selain itu, jika Anda belum menambahkan data ke instalasi GeoServer Anda, Anda akan menemukan beberapa lapisan sampel sudah terdaftar. Mengklik pada OpenLayerstautan, yang ditempatkan di sebelah kanan nama lapisan, Anda dapat membuka contoh aplikasi web untuk melihat seperti apa data Anda terlihat. Suka.
 
@@ -386,6 +386,31 @@ knitr::include_graphics("images/08/gs17b.png")
 knitr::include_graphics("images/08/gs17c.png")
 ```
 
+- Untuk mengetahui apakah layer telah tersimpan, gunakan menu Layer preview. Klik tautan **OpenLayers**
+
+```{r gs18,fig.cap = 'Layer preview',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/08/gs18.png")
+```
+
+```{r gs19,fig.cap = 'Peta archsites dalam menu OpenLayers',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/08/gs19.png")
+```
+
+```{r gs20,fig.cap = 'Layer preview',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/08/gs20.png")
+```
+
+- Lakukan cara yang sama untuk berkas shapefiles lain yang ada di dalam direktori. Sebagai contoh, Gambar \@ref(fig:gs21) memperlihatkan layer roads.
+
+```{r gs21,fig.cap = 'Layer preview',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/08/gs21.png")
+```
+
+
+```{r gs22,fig.cap = 'Layer preview',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/08/gs22.png")
+```
+
 
 #### PostGIS
 
@@ -393,6 +418,34 @@ knitr::include_graphics("images/08/gs17c.png")
 
 
 ## Mengakses Layer
+
+### Layer Group
+
+
+```{r gs23,fig.cap = 'Layer preview',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/08/gs23.png")
+```
+
+```{r gs24,fig.cap = 'Layer preview',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/08/gs24.png")
+```
+
+```{r gs25,fig.cap = 'Layer preview',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/08/gs25.png")
+```
+
+```{r gs26,fig.cap = 'Layer preview',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/08/gs26.png")
+```
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 --- 
 title: "Training for GIS Analyses"
 author: "Firman Hadi"
-date: "2019-11-11"
+date: "2019-11-12"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

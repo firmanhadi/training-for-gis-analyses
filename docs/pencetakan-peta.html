@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Bab 9 Pencetakan Peta | Training for GIS Analyses</title>
+  <meta name="description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Bab 9 Pencetakan Peta | Training for GIS Analyses" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="cover.png" />
+  <meta property="og:description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bab 9 Pencetakan Peta | Training for GIS Analyses" />
+  
+  <meta name="twitter:description" content="Dokumen ini adalah materi pelatihan persiapan uji kompetensi untuk level GIS Analyst ." />
+  <meta name="twitter:image" content="cover.png" />
+
+<meta name="author" content="Firman Hadi" />
+
+
+<meta name="date" content="2019-11-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="visualisasi-data.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Training for GIS Analyses</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pengantar</a></li>
+<li class="part"><span><b>I Basis Data</b></span></li>
+<li class="chapter" data-level="1" data-path="day2.html"><a href="day2.html"><i class="fa fa-check"></i><b>1</b> Basis Data</a><ul>
+<li class="chapter" data-level="1.1" data-path="day2.html"><a href="day2.html#perancangan-basis-data"><i class="fa fa-check"></i><b>1.1</b> Perancangan Basis Data</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="day2.html"><a href="day2.html#rumusan-dasar"><i class="fa fa-check"></i><b>1.1.1</b> Rumusan Dasar</a></li>
+<li class="chapter" data-level="1.1.2" data-path="day2.html"><a href="day2.html#normalisasi"><i class="fa fa-check"></i><b>1.1.2</b> Normalisasi</a></li>
+<li class="chapter" data-level="1.1.3" data-path="day2.html"><a href="day2.html#pemodelan-data"><i class="fa fa-check"></i><b>1.1.3</b> Pemodelan Data</a></li>
+<li class="chapter" data-level="1.1.4" data-path="day2.html"><a href="day2.html#sample-application"><i class="fa fa-check"></i><b>1.1.4</b> Sample application</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="day2.html"><a href="day2.html#pembuatan-basis-data-dengan-postgis"><i class="fa fa-check"></i><b>1.2</b> Pembuatan Basis Data dengan PostGIS</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="day2.html"><a href="day2.html#membuat-skema-baru-dengan-pgadmin-4"><i class="fa fa-check"></i><b>1.2.1</b> Membuat Skema Baru dengan pgAdmin 4</a></li>
+<li class="chapter" data-level="1.2.2" data-path="day2.html"><a href="day2.html#postgis-shapefile-and-dbf-loaderexporter"><i class="fa fa-check"></i><b>1.2.2</b> PostGIS Shapefile and DBF Loader/Exporter</a></li>
+<li class="chapter" data-level="1.2.3" data-path="day2.html"><a href="day2.html#download-data"><i class="fa fa-check"></i><b>1.2.3</b> Download Data</a></li>
+<li class="chapter" data-level="1.2.4" data-path="day2.html"><a href="day2.html#impor-data"><i class="fa fa-check"></i><b>1.2.4</b> Impor Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="studi-kasus-pembangunan-basis-data-untuk-analisis-wilayah-layanan.html"><a href="studi-kasus-pembangunan-basis-data-untuk-analisis-wilayah-layanan.html"><i class="fa fa-check"></i><b>2</b> Studi Kasus : Pembangunan Basis Data untuk Analisis Wilayah Layanan</a><ul>
+<li class="chapter" data-level="2.1" data-path="studi-kasus-pembangunan-basis-data-untuk-analisis-wilayah-layanan.html"><a href="studi-kasus-pembangunan-basis-data-untuk-analisis-wilayah-layanan.html#praktek-perancangan-basis-data"><i class="fa fa-check"></i><b>2.1</b> Praktek Perancangan Basis Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basis-data-lanjut.html"><a href="basis-data-lanjut.html"><i class="fa fa-check"></i><b>3</b> Basis Data Lanjut</a><ul>
+<li class="chapter" data-level="3.1" data-path="basis-data-lanjut.html"><a href="basis-data-lanjut.html#non-spatial-sql-queries"><i class="fa fa-check"></i><b>3.1</b> Non-spatial SQL Queries</a></li>
+<li class="chapter" data-level="3.2" data-path="basis-data-lanjut.html"><a href="basis-data-lanjut.html#spatial-sql-queries"><i class="fa fa-check"></i><b>3.2</b> Spatial SQL Queries</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="basis-data-lanjut.html"><a href="basis-data-lanjut.html#adjacent"><i class="fa fa-check"></i><b>3.2.1</b> Adjacent</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="basis-data-lanjut.html"><a href="basis-data-lanjut.html#backup-dan-restore"><i class="fa fa-check"></i><b>3.3</b> Backup dan Restore</a></li>
+</ul></li>
+<li class="part"><span><b>II Sistem Informasi Geografis</b></span></li>
+<li class="chapter" data-level="4" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html"><i class="fa fa-check"></i><b>4</b> Pemodelan Sistem Informasi Geografis</a><ul>
+<li class="chapter" data-level="4.1" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#conceptual-framework"><i class="fa fa-check"></i><b>4.1</b> Conceptual framework</a></li>
+<li class="chapter" data-level="4.2" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#data"><i class="fa fa-check"></i><b>4.2</b> Data</a></li>
+<li class="chapter" data-level="4.3" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#final-regression-model"><i class="fa fa-check"></i><b>4.3</b> Final regression model</a></li>
+<li class="chapter" data-level="4.4" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#studi-kasus-pemodelan-sig"><i class="fa fa-check"></i><b>4.4</b> Studi Kasus : Pemodelan SIG</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#analisis-wilayah-layanan-service-area-analyses"><i class="fa fa-check"></i><b>4.4.1</b> Analisis Wilayah Layanan (Service Area Analyses)</a></li>
+<li class="chapter" data-level="4.4.2" data-path="pemodelan-sistem-informasi-geografis.html"><a href="pemodelan-sistem-informasi-geografis.html#menghitung-jumlah-rumah-di-sempadan-sungai"><i class="fa fa-check"></i><b>4.4.2</b> Menghitung jumlah rumah di sempadan sungai</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="hari-keenam.html"><a href="hari-keenam.html"><i class="fa fa-check"></i><b>5</b> Analisis Sistem Informasi Geografis</a><ul>
+<li class="chapter" data-level="5.1" data-path="hari-keenam.html"><a href="hari-keenam.html#basic-geoprocessing"><i class="fa fa-check"></i><b>5.1</b> Basic Geoprocessing</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="hari-keenam.html"><a href="hari-keenam.html#penapisan-data"><i class="fa fa-check"></i><b>5.1.1</b> Penapisan data</a></li>
+<li class="chapter" data-level="5.1.2" data-path="hari-keenam.html"><a href="hari-keenam.html#dissolve"><i class="fa fa-check"></i><b>5.1.2</b> Dissolve</a></li>
+<li class="chapter" data-level="5.1.3" data-path="hari-keenam.html"><a href="hari-keenam.html#polygon-dari-layer-extent"><i class="fa fa-check"></i><b>5.1.3</b> Polygon dari layer extent</a></li>
+<li class="chapter" data-level="5.1.4" data-path="hari-keenam.html"><a href="hari-keenam.html#reklasifikasi"><i class="fa fa-check"></i><b>5.1.4</b> Reklasifikasi</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="hari-keenam.html"><a href="hari-keenam.html#terrain-analyses"><i class="fa fa-check"></i><b>5.2</b> Terrain analyses</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="hari-keenam.html"><a href="hari-keenam.html#persiapan"><i class="fa fa-check"></i><b>5.2.1</b> Persiapan</a></li>
+<li class="chapter" data-level="5.2.2" data-path="hari-keenam.html"><a href="hari-keenam.html#kelerengan"><i class="fa fa-check"></i><b>5.2.2</b> Kelerengan</a></li>
+<li class="chapter" data-level="5.2.3" data-path="hari-keenam.html"><a href="hari-keenam.html#hillshade"><i class="fa fa-check"></i><b>5.2.3</b> Hillshade</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="hari-keenam.html"><a href="hari-keenam.html#density-analyses-analisis-kepadatan"><i class="fa fa-check"></i><b>5.3</b> Density Analyses (Analisis Kepadatan)</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="hari-keenam.html"><a href="hari-keenam.html#konsep"><i class="fa fa-check"></i><b>5.3.1</b> Konsep</a></li>
+<li class="chapter" data-level="5.3.2" data-path="hari-keenam.html"><a href="hari-keenam.html#membuat-heatmap-dengan-plugin-qgis"><i class="fa fa-check"></i><b>5.3.2</b> Membuat Heatmap dengan plugin QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="hari-keenam.html"><a href="hari-keenam.html#analisis-kesesuaian"><i class="fa fa-check"></i><b>5.4</b> Analisis kesesuaian</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-1-mendefinisikan-maksud-dan-tujuan"><i class="fa fa-check"></i><b>5.4.1</b> Tahap 1: Mendefinisikan maksud dan tujuan</a></li>
+<li class="chapter" data-level="5.4.2" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-2-analisis-ketersediaan-data-dan-definisikan-relevansi"><i class="fa fa-check"></i><b>5.4.2</b> Tahap 2 : Analisis ketersediaan data dan definisikan relevansi</a></li>
+<li class="chapter" data-level="5.4.3" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-3-definisikan-kriteria-analisis"><i class="fa fa-check"></i><b>5.4.3</b> Tahap 3 : Definisikan kriteria analisis</a></li>
+<li class="chapter" data-level="5.4.4" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-4-analisis-dan-persiapan-data"><i class="fa fa-check"></i><b>5.4.4</b> Tahap 4 : Analisis dan persiapan data</a></li>
+<li class="chapter" data-level="5.4.5" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-5-overlay-data-dan-interpretasi-hasil"><i class="fa fa-check"></i><b>5.4.5</b> Tahap 5 : Overlay data dan interpretasi hasil</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III WebGIS</b></span></li>
+<li class="chapter" data-level="6" data-path="geoserver.html"><a href="geoserver.html"><i class="fa fa-check"></i><b>6</b> GeoServer</a><ul>
+<li class="chapter" data-level="6.1" data-path="geoserver.html"><a href="geoserver.html#pendahuluan"><i class="fa fa-check"></i><b>6.1</b> Pendahuluan</a></li>
+<li class="chapter" data-level="6.2" data-path="geoserver.html"><a href="geoserver.html#komponen-yang-diperlukan"><i class="fa fa-check"></i><b>6.2</b> Komponen yang diperlukan</a></li>
+<li class="chapter" data-level="6.3" data-path="geoserver.html"><a href="geoserver.html#instalasi"><i class="fa fa-check"></i><b>6.3</b> Instalasi</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="geoserver.html"><a href="geoserver.html#tomcat"><i class="fa fa-check"></i><b>6.3.1</b> Tomcat</a></li>
+<li class="chapter" data-level="6.3.2" data-path="geoserver.html"><a href="geoserver.html#geoserver-1"><i class="fa fa-check"></i><b>6.3.2</b> GeoServer</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="geoserver.html"><a href="geoserver.html#menjalankan-geoserver"><i class="fa fa-check"></i><b>6.4</b> Menjalankan GeoServer</a></li>
+<li class="chapter" data-level="6.5" data-path="geoserver.html"><a href="geoserver.html#administrasi-geoserver"><i class="fa fa-check"></i><b>6.5</b> Administrasi GeoServer</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="geoserver.html"><a href="geoserver.html#dashboard"><i class="fa fa-check"></i><b>6.5.1</b> Dashboard</a></li>
+<li class="chapter" data-level="6.5.2" data-path="geoserver.html"><a href="geoserver.html#about-dan-status"><i class="fa fa-check"></i><b>6.5.2</b> About dan Status</a></li>
+<li class="chapter" data-level="6.5.3" data-path="geoserver.html"><a href="geoserver.html#data-1"><i class="fa fa-check"></i><b>6.5.3</b> Data</a></li>
+<li class="chapter" data-level="6.5.4" data-path="geoserver.html"><a href="geoserver.html#layanan"><i class="fa fa-check"></i><b>6.5.4</b> Layanan</a></li>
+<li class="chapter" data-level="6.5.5" data-path="geoserver.html"><a href="geoserver.html#pengaturan"><i class="fa fa-check"></i><b>6.5.5</b> Pengaturan</a></li>
+<li class="chapter" data-level="6.5.6" data-path="geoserver.html"><a href="geoserver.html#tile-caching"><i class="fa fa-check"></i><b>6.5.6</b> Tile Caching</a></li>
+<li class="chapter" data-level="6.5.7" data-path="geoserver.html"><a href="geoserver.html#security"><i class="fa fa-check"></i><b>6.5.7</b> Security</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="geoserver.html"><a href="geoserver.html#menambahkan-data"><i class="fa fa-check"></i><b>6.6</b> Menambahkan Data</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="geoserver.html"><a href="geoserver.html#pengaturan-data"><i class="fa fa-check"></i><b>6.6.1</b> Pengaturan Data</a></li>
+<li class="chapter" data-level="6.6.2" data-path="geoserver.html"><a href="geoserver.html#penambahan-data"><i class="fa fa-check"></i><b>6.6.2</b> Penambahan Data</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="geoserver.html"><a href="geoserver.html#mengakses-layer"><i class="fa fa-check"></i><b>6.7</b> Mengakses Layer</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="geoserver.html"><a href="geoserver.html#layer-group"><i class="fa fa-check"></i><b>6.7.1</b> Layer Group</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="hari-kedelapan.html"><a href="hari-kedelapan.html"><i class="fa fa-check"></i><b>7</b> MapStore2</a><ul>
+<li class="chapter" data-level="7.1" data-path="hari-kedelapan.html"><a href="hari-kedelapan.html#quick-start"><i class="fa fa-check"></i><b>7.1</b> Quick Start</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="hari-kedelapan.html"><a href="hari-kedelapan.html#paket-biner"><i class="fa fa-check"></i><b>7.1.1</b> Paket Biner</a></li>
+<li class="chapter" data-level="7.1.2" data-path="hari-kedelapan.html"><a href="hari-kedelapan.html#arsip-web-war"><i class="fa fa-check"></i><b>7.1.2</b> Arsip Web (WAR)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="hari-kedelapan.html"><a href="hari-kedelapan.html#menggunakan-mapstore2"><i class="fa fa-check"></i><b>7.2</b> Menggunakan MapStore2</a></li>
+</ul></li>
+<li class="part"><span><b>IV Visualisasi dan Penyajian Data</b></span></li>
+<li class="chapter" data-level="8" data-path="visualisasi-data.html"><a href="visualisasi-data.html"><i class="fa fa-check"></i><b>8</b> Visualisasi Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="visualisasi-data.html"><a href="visualisasi-data.html#qgis"><i class="fa fa-check"></i><b>8.1</b> QGIS</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="visualisasi-data.html"><a href="visualisasi-data.html#grouping-dan-ordering"><i class="fa fa-check"></i><b>8.1.1</b> Grouping dan Ordering</a></li>
+<li class="chapter" data-level="8.1.2" data-path="visualisasi-data.html"><a href="visualisasi-data.html#styling"><i class="fa fa-check"></i><b>8.1.2</b> Styling</a></li>
+<li class="chapter" data-level="8.1.3" data-path="visualisasi-data.html"><a href="visualisasi-data.html#pelabelan"><i class="fa fa-check"></i><b>8.1.3</b> Pelabelan</a></li>
+<li class="chapter" data-level="8.1.4" data-path="visualisasi-data.html"><a href="visualisasi-data.html#mengelola-style"><i class="fa fa-check"></i><b>8.1.4</b> Mengelola style</a></li>
+<li class="chapter" data-level="8.1.5" data-path="visualisasi-data.html"><a href="visualisasi-data.html#menambahkan-peta-dasar"><i class="fa fa-check"></i><b>8.1.5</b> Menambahkan peta dasar</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="visualisasi-data.html"><a href="visualisasi-data.html#geoserver-2"><i class="fa fa-check"></i><b>8.2</b> GeoServer</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="visualisasi-data.html"><a href="visualisasi-data.html#styling-1"><i class="fa fa-check"></i><b>8.2.1</b> Styling</a></li>
+<li class="chapter" data-level="8.2.2" data-path="visualisasi-data.html"><a href="visualisasi-data.html#menggunakan-sld"><i class="fa fa-check"></i><b>8.2.2</b> Menggunakan SLD</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html"><i class="fa fa-check"></i><b>9</b> Pencetakan Peta</a><ul>
+<li class="chapter" data-level="9.1" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#composer-peta"><i class="fa fa-check"></i><b>9.1</b> Composer Peta</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#halaman-pengaturan-awal"><i class="fa fa-check"></i><b>9.1.1</b> Halaman pengaturan awal</a></li>
+<li class="chapter" data-level="9.1.2" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#menambahkan-dan-mengkustomisasi-peta"><i class="fa fa-check"></i><b>9.1.2</b> Menambahkan dan mengkustomisasi peta</a></li>
+<li class="chapter" data-level="9.1.3" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#menambahkan-dan-menyesuaikan-legenda"><i class="fa fa-check"></i><b>9.1.3</b> Menambahkan dan menyesuaikan legenda</a></li>
+<li class="chapter" data-level="9.1.4" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#mengelola-komposer-cetak"><i class="fa fa-check"></i><b>9.1.4</b> Mengelola komposer cetak</a></li>
+<li class="chapter" data-level="9.1.5" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#video"><i class="fa fa-check"></i><b>9.1.5</b> Video</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#kartografi-di-r"><i class="fa fa-check"></i><b>9.2</b> Kartografi di R</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#fitur"><i class="fa fa-check"></i><b>9.2.1</b> Fitur</a></li>
+<li class="chapter" data-level="9.2.2" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#contoh"><i class="fa fa-check"></i><b>9.2.2</b> Contoh</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/firmanhadi/training-for-gis-analyses" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Training for GIS Analyses</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pencetakan-peta" class="section level1">
+<h1><span class="header-section-number">Bab 9</span> Pencetakan Peta</h1>
+<p>Cetak peta adalah alat yang hebat untuk berbagi informasi spasial Anda karena mereka dapat dimasukkan dalam presentasi, publikasi, dan laporan sebagai grafik berkualitas tinggi atau dicetak dengan cara konvensional. QGIS memiliki kemampuan yang kuat untuk membuat peta satu halaman atau multipage (disebut atlases) yang dapat Anda ekspor dalam banyak, mudah didistribusikan, dan mencetak format grafis (misalnya, .pdf, .png, .svg, dan sebagainya di).</p>
+<p>Dalam bab ini, Anda akan melihat alat utama QGIS untuk membuat peta cetak, yang disebut komposer cetak, dan akan belajar bagaimana menggunakannya untuk mendapatkan hasil yang luar biasa.</p>
+<div id="composer-peta" class="section level2">
+<h2><span class="header-section-number">9.1</span> Composer Peta</h2>
+<p>Dengan komposer cetak, perancangan peta menjadi mudah dan intuitif, karena memungkinkan Anda untuk mengatur tata letak dan menambahkan peta dan elemen-elemen yang diperlukan, seperti label teks, legenda, bilah skala, dan panah utara. Selain itu, Anda dapat secara signifikan memperbesar peta Anda dengan menggabungkan beberapa ikhtisar, gambar, gambar, dan label HTML. Untuk menyederhanakan pembuatan peta dan menghemat waktu Anda, Anda dapat menggunakan templat peta dan fungsionalitas generator atlas.</p>
+<p>Untuk masuk ke mode komposer cetak, masuk ke Project | Cetak Komposer Baru dari menu, klik tombol pada bilah alat File, atau cukup gunakan pintasan keyboard Ctrl + P. Di jendela dialog Judul penyusun, Anda akan diminta untuk memberikan judul pada peta Anda. Klik pada tombol OK untuk judul yang akan dihasilkan secara otomatis (Komposer 1, Komposer 2, Komposer 3, dan seterusnya; Anda akan dapat mengubah nama mereka nanti jika Anda mau).</p>
+<p>Di baris atas jendela komposer cetak, ada menu tarik-turun yang menyediakan akses ke opsi dan fungsinya. Baris atas toolbar menyediakan tombol akses cepat untuk fungsi yang sama. Perhatikan bahwa bilah alat Item Komposer, secara default, ditempatkan secara terpisah di sisi kiri jendela karena menyediakan akses cepat ke semua elemen yang biasanya diperlukan untuk membentuk peta, misalnya, kanvas peta, legenda, bilah skala , label, anotasi, dan sebagainya. Di bagian tengah jendela, Anda dapat melihat halaman kosong yang mewakili kanvas komposer yang tersedia untuk pengaturan item, seperti yang ditunjukkan di sini:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig971"></span>
+<img src="images/09/fig97.jpeg" alt="Memilih simbol" width="60%" />
+<p class="caption">
+Gambar 9.1: Memilih simbol
+</p>
+</div>
+<p>Di bagian kanan jendela komposer cetak, ada dua panel dengan tab. Panel atas memegang tab berikut:</p>
+<p>Item :
+Ini menampilkan daftar item peta yang ditambahkan ke peta. Ini memungkinkan Anda untuk menentukan visibilitas mereka, mengubah nama, menyusun ulang, dan menguncinya untuk perubahan.</p>
+<p>Sejarah perintah :
+Ini menampilkan daftar perintah yang digunakan. Dengan histori, Anda dapat dengan mudah mengembalikan perubahan dan memiliki kontrol yang lebih baik atas proses pembuatan peta.</p>
+<p>Panel bawah memegang tiga tab, sebagai berikut:</p>
+<p>Komposisi :
+Ini bertanggung jawab untuk Kertas dan kualitas (ukuran halaman, jumlah, dan resolusi) dan Panduan dan Kisi (toleransi jarak dan gertakan) untuk menyederhanakan penempatan item peta.</p>
+<p>Properti barang :
+Ini adalah tab dinamis yang isinya berubah secara otomatis, tergantung pada item peta yang saat ini dipilih.</p>
+<p>Generasi Atlas :
+Setelah Hasilkan atlas toggle aktif, Anda dapat mengatur dan memodifikasi parameternya.</p>
+<p>Anda bisa mendapatkan kontrol tambahan atas pengaturan komposer dari menu Opsi Komposer , yang dapat ditemukan di bawah Pengaturan . Misalnya, Anda mungkin ingin mengubah font Default yang akan digunakan untuk legenda dan label teks. Untuk pekerjaan lebih lanjut di bagian Tampilan kisi , kami mengatur style Kisi ke Solid dan membiarkan Grid dan memandu default tidak berubah , karena kami akan mengonfigurasinya nanti.</p>
+<div id="halaman-pengaturan-awal" class="section level3">
+<h3><span class="header-section-number">9.1.1</span> Halaman pengaturan awal</h3>
+<p>Sebelum membuat peta, kita harus mengatur ruang kerja kita, yang terutama ditentukan oleh pengaturan halaman. Semua opsi yang diperlukan ada di bawah tab Komposisi . Mari kita lihat lebih dekat bagian Kertas dan kualitas . Ukuran halaman default dalam daftar drop-down Preset adalah A4 , tetapi Anda dapat memilih di antara 23 ukuran lainnya. Kami akan membuat halaman kami sendiri dengan melakukan langkah-langkah berikut:</p>
+<p>Pilih Kustom dari daftar.</p>
+<p>Bidang Lebar dan Tinggi akan diaktifkan. Masukkan nilai 200 untuk keduanya (ini berarti kami akan membuat halaman persegi untuk komposisi peta). Nilai tergantung pada unit yang dipilih di Unit, dan secara default, ini diatur ke mm (milimeter).</p>
+<p>Karena kami hanya akan membuat satu peta, kami meninggalkan Jumlah halaman sebagai 1, tetapi Anda selalu dapat memasukkan lebih banyak jika Anda akan menggabungkan beberapa halaman menjadi satu dokumen. Ini karena Anda dapat memiliki beberapa peta dalam komposisi satu halaman. Seperti ditunjukkan dalam contoh, kami menggunakan halaman persegi. Jadi, tidak masalah apakah itu memiliki orientasi halaman Portrait atau Landscape . Latar belakang halaman adalah item yang sangat penting karena memungkinkan Anda untuk mencapai efek visualisasi kartografi yang keren. Dengan mengklik tombol Ubah , Anda dapat melihat bahwa, secara default, diatur ke Pengisian sederhanadengan warna putih (yang akan kita gunakan). Namun, Anda dapat mengubahnya dan memilih dari antara beberapa opsi pengisian untuk membuat pola pengisian asli.</p>
+<p>Resolusi ekspor menentukan kualitas peta yang diekspor dalam satuan dpi. Semakin tinggi nilai ini, semakin baik peta. Namun, file yang dihasilkan juga akan lebih besar. Untuk tujuan umum, seperti publikasi, laporan, dan grafik presentasi, 300 dpi sudah cukup. Ketika sakelar Cetak sebagai raster aktif, seluruh komposisi diubah menjadi raster sebelum diekspor ke .pdf. File Dunia pada sakelar memungkinkan Anda untuk melampirkan file .wld yang berisi informasi tentang referensi geografis ke output ekspor gambar. Ini berarti bahwa peta Anda tidak hanya dapat dilihat dalam perangkat lunak grafis atau pratinjau, tetapi juga dapat dibuka dan disejajarkan dengan benar secara langsung dalam perangkat lunak GIS.</p>
+<p>Sekarang, kami akan menyesuaikan kisi yang akan digunakan untuk menyelaraskan item peta dalam tata letak peta:</p>
+<p>Di bagian Panduan dan Kotak , masukkan 5 mm sebagai nilai spasi Grid untuk membuatnya lebih padat, dan atur Toleransi snap hingga 10 piksel (semakin tinggi nilainya, semakin kuat gertakan).</p>
+<p>Untuk menampilkan kisi, aktifkan tombol Tampilkan kisi , yang di bawah Lihat , atau gunakan pintasan keyboard Ctrl + ’ .</p>
+<p>Beralih Snap ke kisi , yang di bawah Lihat , atau menekan Ctrl + Shift + ’ mengaktifkan gertakan.</p>
+</div>
+<div id="menambahkan-dan-mengkustomisasi-peta" class="section level3">
+<h3><span class="header-section-number">9.1.2</span> Menambahkan dan mengkustomisasi peta</h3>
+<p>Di bagian ini, kita akan membuat peta populasi wilayah Brooklyn. Pastikan bahwa di jendela utama, lapisan berikut aktif: Batas wilayah borough Brooklyn , kode pos (dengan style populasi), Batas wilayah borough NY , dan area perairan .</p>
+<p>Untuk menambahkan peta ke tata letak cetak Anda, klik tombol Tambahkan peta baru di bilah alat Komposer , dan seret panah mouse secara diagonal ke halaman sambil menahan tombol kiri mouse. Anda akan melihat persegi panjang yang digambar di halaman dan peta di dalamnya.</p>
+<p>Bingkai peta dapat dipindahkan atau diubah ukurannya dengan menyeret penanda kuadrat khusus di pusat dan sudut perbatasan. Jika Anda tidak melihat bingkai dan spidol, itu berarti bahwa item saat ini tidak aktif. Untuk mengaktifkannya, klik tombol Pilih / Pindahkan item di bilah alat Komposer . Jika Anda ingin memindahkan peta di dalam bingkai, gunakan tombol Pindahkan konten konten,, di bilah alat Komposer . Juga, selama tombol ini aktif, Anda dapat memperbesar peta dengan roda mouse (atau dengan Ctrl dan roda mouse ). Dengan menggunakan spidol, perluas peta sedemikian rupa sehingga menutupi seluruh halaman.</p>
+<p>Setelah menempatkan peta dengan benar, kita dapat melanjutkan ke opsi lanjutan pada tab Properti item. Tab menyatukan beberapa bagian yang dapat diperluas atau diciutkan dengan mengklik simbol di sebelahnya.</p>
+<p>Bagian Properti utama memungkinkan Anda memilih dari mode pratinjau peta berikut:</p>
+<p>Cache : Ini membuat peta dalam resolusi layar saat ini, yang tidak akan berubah saat memperbesar / memperkecil, tetapi gambar itu sendiri akan diskalakan dengan benar.</p>
+<p>Render : Resolusi peta akan disesuaikan dengan nilai maksimum saat melakukan zoom. Mode ini memberikan gambar pratinjau yang lebih baik, tetapi lebih lambat dibandingkan dengan Cache.</p>
+<p>Kotak : Alih-alih peta, Peta akan dicetak di sini pesan akan ditampilkan dalam kotak kosong.</p>
+<p>Saat Anda memasukkan beberapa nilai di bidang Skala , luas peta berubah secara dinamis. Tetapkan nilainya ke 100000 dan gunakan tombol Pindahkan konten konten untuk menemukan peta di dalam bingkai dengan benar. Tangkapan layar berikut ini menunjukkan kepada Anda bagaimana tampilan properti Item tab pada tahap ini:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig981"></span>
+<img src="images/09/fig98.jpeg" alt="Memilih simbol" width="60%" />
+<p class="caption">
+Gambar 9.2: Memilih simbol
+</p>
+</div>
+<p>Dengan bidang rotasi Peta, Anda dapat menentukan sudut dalam derajat untuk memutar peta searah jarum jam di dalam bingkainya. Perhatikan bahwa sudut rotasi akan diterapkan secara otomatis ke garis kisi untuk menyesuaikannya dengan benar sehubungan dengan konten peta. Ada tiga matikan dan mereka menyediakan opsi berikut:</p>
+<p>Ketika sakelar Gambar item kanvas peta diaktifkan, anotasi yang ada dari jendela kanvas peta utama akan ditambahkan ke peta.</p>
+<p>Opsi Kunci lapisan untuk item peta sangat berguna jika Anda tidak ingin peta cetak mencerminkan perubahan yang dibuat di jendela kanvas peta utama. Jadi, lapisan akan tetap sama, tetapi penataan dan pelabelannya akan berubah sesuai dengan jendela utama. Kami mengaktifkan opsi ini karena kami tidak ingin komposisi lapisan diubah.</p>
+<p>Kunci style lapisan untuk item peta memblokir item peta dari perubahan style yang dibuat di jendela kanvas peta utama. Aktifkan opsi ini juga. Bersama diterapkan dengan opsi sebelumnya, ini memungkinkan kita untuk memblokir peta komposer dari perubahan yang dibuat di jendela kanvas peta utama (yaitu, style dan komposisi lapisan ’).</p>
+<p>Di sisi kanan matikan, ada daftar layer Set dari tombol preset visibilitas . Tombol ini memungkinkan kita untuk dengan cepat menentukan konten item peta dari preset visibilitas pada bilah alat panel Layers . Untuk memuat preset, klik panah segitiga kecil di sudut kanan bawah tombol, dan pilih preset yang ingin Anda tampilkan di peta. Konten peta akan diubah sesuai dengan pengaturan awal dan lapisan akan dikunci secara otomatis.</p>
+<p>Bagian Extents menyediakan berbagai opsi untuk menentukan dan menyesuaikan tingkat item peta:</p>
+<p>Definisi manual, dengan memasukkan nilai X dan Y di bidang koresponden.</p>
+<p>Setel untuk memetakan batas kanvas : Luas peta saat ini akan menjadi sama dengan luas jendela kanvas peta utama.</p>
+<p>Lihat luasnya di kanvas peta : Ini persis kebalikan dari tombol sebelumnya. Ini mengubah luas kanvas peta di jendela utama sesuai dengan luas item peta saat ini.</p>
+<p>Bagian Controlled by atlas akan dibahas nanti, ketika kita berbicara tentang pembuatan atlas di bagian Creating atlases.</p>
+<p>Bagian Grid memungkinkan Anda untuk menambahkan koordinat grid dan frame ke bingkai peta. Untuk menambahkan kisi baru, klik tombol dan sesuaikan sifat utamanya, seperti jenis Kisi , Interval , bingkai Kisi , Koordinat , dan sebagainya.</p>
+<p>Bagian Gambaran Umum memungkinkan Anda untuk menggabungkan beberapa ikhtisar dalam berbagai skala menjadi satu komposisi peta. Ini akan dibahas nanti, di bagian Bekerja dengan ikhtisar peta.</p>
+<p>Bagian berikut ini umum untuk berbagai item peta:</p>
+<p>Bagian Posisi dan ukuran memungkinkan Anda untuk menentukan ukuran bingkai item dalam unit halaman. Titik referensi menentukan sudut item mana yang ditentukan oleh posisi X dan Y.</p>
+<p>Nilai bidang Rotasi mengatur sudut rotasi item dalam derajat.</p>
+<p>The Bingkai beralih memungkinkan frame sekitar item, dan menyediakan akses ke pilihan, seperti Bingkai warna, ketebalan, dan Gabung style.</p>
+<p>Latar belakang bertanggung jawab atas warna isi bingkai.</p>
+<p>ID Item dapat digunakan dengan klien web untuk membuat tautan antara item peta, dan juga untuk memudahkan identifikasi item tertentu dalam panel Item.</p>
+<p>Rendering memberikan akses ke mode Blending dan opsi Transparansi yang memungkinkan kita untuk menerapkan efek grafik profesional.</p>
+</div>
+<div id="menambahkan-dan-menyesuaikan-legenda" class="section level3">
+<h3><span class="header-section-number">9.1.3</span> Menambahkan dan menyesuaikan legenda</h3>
+<p>Legenda adalah elemen penting dalam peta apa pun. Ini memberikan penjelasan tentang simbologi layer dan membantu kita membaca dan memahami peta. Untuk menambahkan legenda, klik pada tombol Tambahkan legenda baru di bilah alat Komposer , dan seret panah mouse secara diagonal ke atas halaman sambil menahan tombol kiri mouse. Anda akan melihat persegi panjang digambar di halaman dan legenda di dalamnya. Secara default, semua layer dalam proyek akan dimasukkan dalam legenda, sehingga mungkin terlihat terlalu besar untuk disesuaikan dengan tata letak. Dengan item legenda dipilih, Anda dapat menggunakan tab Properti item untuk menyesuaikan konten dan penampilannya. Ada beberapa bagian legenda spesifik yang harus dibahas.</p>
+<p>Bagian Properti utama memungkinkan Anda untuk menyesuaikan opsi berikut:</p>
+<p>Judul : Secara default, judul Legenda digunakan, tetapi Anda dapat mengetik teks lain di sini, atau membiarkan bidang kosong untuk menghapus judul.</p>
+<p>Perataan judul : Ini dapat menyelaraskan judul ke Kiri, Tengah, atau Kanan.</p>
+<p>Peta : Secara default, hanya ada Peta 0 yang tersedia, tetapi jika Anda menggabungkan beberapa peta dalam tata letak satu halaman, Anda dapat memutuskan peta mana yang akan menjadi referensi legenda tersebut.</p>
+<p>Bungkus teks : Ketikkan di sini simbol yang akan digunakan untuk memisahkan garis panjang menjadi potongan teks yang lebih pendek. Kemudian, Anda dapat mengedit teks dalam item legenda dan menyisipkan simbol ini di mana pun diperlukan untuk secara paksa memulai baris baru.</p>
+<p>Bagian item Legenda bertanggung jawab atas konten legenda. Secara default, mode Pembaruan otomatis aktif, dan semua lapisan yang tersedia dimuat ke legenda. Matikan mode Pembaruan otomatis dan tombol-tombol di bawah pohon konten legenda akan diaktifkan, memberikan opsi berikut (dari kiri ke kanan):</p>
+<p>Tombol ke bawah dan ke atas digunakan untuk memindahkan item dan mengubah urutannya. Jika tidak, Anda cukup menarik dan melepas item di posisi baru. Setelah perubahan konten konten legenda segera diperbarui.</p>
+<p>Tombol tambah grup memungkinkan Anda menambahkan grup dan subkelompok baru untuk mengembangkan hierarki legenda.</p>
+<p>Tombol plus dan minus bertanggung jawab untuk menambah dan menghapus item apa pun, apakah itu grup atau layer. Perhatikan bahwa hanya lapisan yang aktif di jendela kanvas peta utama yang tersedia untuk ditambahkan.</p>
+<p>Tombol edit memungkinkan kita untuk mengubah teks untuk setiap item yang dipilih (grup, subkelompok, layer, atau label simbologi). Misalnya, jika Anda ingin garis panjang dibungkus, masukkan simbol teks yang ditentukan di bagian Properti utama. Perubahan ini hanya diterapkan dalam item legenda komposer cetak dan tidak memengaruhi item peta di jendela utama.</p>
+<p>Tombol penjumlahan menunjukkan jumlah fitur untuk setiap kelas lapisan vektor.</p>
+<p>Tombol filter menyaring legenda berdasarkan konten peta; yaitu, hanya item legenda (layer dan kelas) yang ditampilkan dalam item peta akan dimasukkan dalam legenda.</p>
+<p>Di bagian Font , Anda dapat menentukan warna umum dan font yang berbeda untuk judul, subkelompok, grup, dan item untuk meningkatkan keterbacaan legenda. Jika legenda berisi banyak item dan terlalu panjang untuk ditampilkan dalam satu kolom, itu dapat dibagi di bagian Kolom . Di sini, Anda dapat menentukan jumlah kolom di bidang Hitung . Secara default, lebar kolom disesuaikan menurut konten. Jika Anda ingin disetel sama untuk semua kolom, aktifkan sakelar Lebar kolom yang sama. Jika lapisan Splitmode aktif, item simbologi layer yang dikategorikan akan dialokasikan secara merata di antara kolom; jika tidak, kategori tidak boleh dipindahkan ke kolom lain. Di tangkapan layar berikut, Anda dapat melihat cara kerjanya. Di bagian atas, ada legenda di mana pemisahan lapisan dilarang, dan di bagian bawah, kategori dibagi sama rata antara tiga kolom.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig991"></span>
+<img src="images/09/fig99.jpeg" alt="Memilih simbol" width="60%" />
+<p class="caption">
+Gambar 9.3: Memilih simbol
+</p>
+</div>
+<p>Di bagian Simbol , nilai Lebar dan Tinggi default dapat dimodifikasi secara manual. WMS Legend Graphic digunakan untuk menambahkan legenda untuk lapisan WMS , tetapi ini jika didukung dan disediakan oleh server WMS . Di jendela dialog, Anda dapat mengubah ukuran lebar dan tinggi legenda yang disediakan sebagai gambar raster. Bagian Spasi memungkinkan Anda untuk memperbaiki tata letak dan keterbacaan legenda dengan menyesuaikan spasi di antara berbagai item: judul, grup, subkelompok, simbol, label ikon, kotak pembatas, dan kolom.</p>
+<p>Bagian lain, seperti Posisi dan Ukuran , Rotasi , Bingkai , Latar Belakang , ID Item , dan Rendering , memberikan opsi yang sama dengan item peta.</p>
+<p>2.4.5 Item peta lainnya
+Untuk saat ini, peta kami berisi dua item yang diperlukan: peta itu sendiri dan legenda yang menjelaskan kontennya. Namun, ada lebih banyak item yang dapat digunakan untuk meningkatkan tampilan estetika dan keterbacaan geografisnya, seperti bilah skala, panah utara, label teks, dan sebagainya.</p>
+<p>Bilah skala</p>
+<p>Sebelum menambahkan item bar skala, pastikan bahwa kanvas peta Anda menggunakan sistem referensi koordinat yang diproyeksikan dalam unit pengukuran linier (meter dan kaki). Untuk menambahkan bilah skala, klik tombol Tambahkan batang skal baru di bilah alat Komposer , dan seret panah mouse ke atas halaman sambil menahan tombol kiri mouse. Anda akan melihat persegi panjang digambar di halaman dan bilah skala di dalamnya. Dengan item bar skala dipilih, gunakan tab Properti item untuk menyesuaikan tampilannya.</p>
+<p>Di bagian Properti utama , pilih peta untuk mengaitkan bilah skala dengan. Karena Anda hanya akan bekerja dengan satu peta, Peta 0 akan ditetapkan secara default. Daftar tarik-turun style menentukan tampilan bilah skala:</p>
+<p>Kotak tunggal atau ganda bertanggung jawab atas penampilan scalebar sebagai kotak zebra tunggal atau ganda</p>
+<p>Kutu Garis Tengah , Bawah , atau Atas menghasilkan garis horizontal sederhana dengan tanda centang di atasnya untuk memasang unit skala</p>
+<p>Numerik menampilkan skala sebagai rasio numerik</p>
+<p>Untuk keperluan tutorial ini, pilih style Kotak Ganda . Bagian Unit bertanggung jawab untuk representasi yang tepat dari unit pengukuran:</p>
+<p>Dari daftar tarik-turun, pilih unit pengukuran proyeksi Kaki . Bilah skala akan dikonversi menjadi bilah yang mengukur mil. Demikian pula, konversi didukung oleh Meter dan Mil Laut . Unit peta dapat menggunakan unit peta asli, tetapi Anda harus menentukannya.</p>
+<p>Di bidang Label , ketikkan mi untuk menggunakan singkatan unit pengukuran (mil, dalam kasus kami).</p>
+<p>Unit peta per unit batang mewakili rasio unit peta dengan unit batang. Masukkan nilai sebagai 5280 di sini, karena kita tahu bahwa 1 mil sama dengan 5.280 kaki.</p>
+<p>Jangan khawatir tentang penampilan bilah skala Anda yang aneh dan runtuh; kami akan memperbaikinya di bagian Segmen seperti yang dijelaskan:</p>
+<p>Di bagian Ukuran , Anda harus memasukkan nilai untuk menentukan berapa panjang segmen. Jika Anda ingin panjangnya 1 mil, masukkan 5280; untuk membuatnya sepanjang 2 mil, masukkan 10560 (5.280 × 2); dan seterusnya. Prinsipnya sederhana — cukup gunakan rasio unit Peta per batang unit yang Anda masukkan di bagian Properti utama dan kalikan dengan jumlah unit batang skala yang harus di satu segmen. Untuk tujuan tutorial ini, kami akan membuat satu segmen sama dengan 1 mil dan memasukkan nilai 5280.</p>
+<p>Di Segmen , masukkan nilai 2 untuk kiri dan 1 untuk kanan.</p>
+<p>Tingkatkan nilai Tinggi bar skala menjadi 5 mm.</p>
+<p>Di bagian Tampilan , Anda dapat menyesuaikan properti bilah skala berikut:</p>
+<p>Box margin : Semakin besar nilai ini, semakin jauh jarak antara isi item bar skala dan batas kotak pembatasnya.</p>
+<p>Label margin : Ini mendefinisikan ruang antara bar skala dan label teks.</p>
+<p>Lebar garis : Ini menentukan lebar garis bilah skala.</p>
+<p>Gabung style : Ini menentukan tampilan sudut bilah skala. Ini hanya tersedia untuk bilah skala jenis kotak.</p>
+<p>style topi : Ini menentukan tampilan akhir garis. Ini tersedia hanya untuk bilah skala jenis garis.</p>
+<p>Alignment : Ini menyelaraskan bar skala dan labelnya di dalam kotak pembatas. Ini hanya tersedia untuk jenis skala numerik.</p>
+<p>Bagian Font dan warna menyediakan akses ke fungsi eponymous. Untuk mengubah font atau warna, klik tombol dan pilih item yang diperlukan dari jendela dialog. Perhatikan bahwa Fill color dan color fill sekunder hanya berfungsi dengan bilah skala jenis kotak. Di tangkapan layar berikut, Anda dapat melihat contoh bilah skala Kotak Ganda sederhana dengan dua segmen di sisi kiri dan satu di sisi kanan:</p>
+<div class="figure" style="text-align: center"><span id="fig:fig910"></span>
+<img src="images/09/fig910.jpeg" alt="Memilih simbol" width="30%" />
+<p class="caption">
+Gambar 9.4: Memilih simbol
+</p>
+</div>
+<p>Bagian-bagian seperti Posisi dan Ukuran , Rotasi , Bingkai , Latar Belakang , Item ID , dan Rendering memberikan opsi yang sama seperti yang dicakup untuk item peta.</p>
+<p>Panah utara</p>
+<p>Untuk menambahkan panah utara, klik tombol Tambahkan gambar di bilah alat Komposer , dan seret panah mouse ke atas halaman sambil menahan tombol kiri mouse. Anda akan melihat kotak kosong yang tergambar di halaman. Dengan Item gambar dipilih, gunakan tab Properti item untuk menyesuaikan tampilannya.</p>
+<p>Pertama-tama, Anda harus menavigasi ke file sumber gambar yang ingin Anda gunakan:</p>
+<p>Luaskan bagian Pencarian direktori. Di bagian ini, Anda dapat mengatur jalur pencarian gambar. Anda selalu dapat mendefinisikan ulang jalur dengan tombol Hapus dan Tambah , dan dapatkan akses ke gambar Anda sendiri.</p>
+<p>Di jendela Memuat pratinjau …, Anda akan melihat gambar mini dari gambar yang tersedia seperti yang ditunjukkan pada tangkapan layar berikut. Mengkliknya secara otomatis memuatnya ke dalam bingkai item gambar. Untuk keperluan tutorial ini, kami memilih NorthArrow_02.svg.</p>
+<p>Sekarang Anda telah memilih panah utara, Anda dapat menyesuaikan beberapa properti utamanya . Mode Ubah Ukuran mendefinisikan pendekatan untuk penyesuaian gambar dalam bingkai:</p>
+<p>Zoom : Gambar akan disesuaikan dengan bingkai dan proporsinya akan disimpan.</p>
+<p>Regang : Gambar akan direntangkan dalam bingkai, mengabaikan proporsinya.</p>
+<p>Klip : Gambar akan diubah ukurannya ke ukuran aslinya, dan bingkai akan digunakan untuk klip gambar, sehingga hanya bagian dari itu yang akan terlihat. Mode ini hanya sesuai untuk gambar raster.</p>
+<p>Zoom dan ubah ukuran frame : Baik gambar maupun bingkai akan diubah ukurannya agar pas satu sama lain. Pertama, gambar akan disesuaikan secara proporsional agar sesuai dengan bingkai, dan kemudian bingkai akan disesuaikan untuk mencakup gambar.</p>
+<p>Ubah ukuran bingkai ke ukuran gambar : Bingkai akan disesuaikan dengan ukuran gambar asli.</p>
+<p>Untuk tujuan tutorial ini, kami akan menggunakan mode Zoom dan mengubah ukuran bingkai . Dalam mode ini, opsi Penempatan tidak aktif, tetapi Anda dapat menggunakannya saat memilih mode Zoom dan Klip untuk memposisikan gambar dalam bingkai. Demikian pula, Rotasi gambar juga tersedia untuk Zoom dan Zoom dan mengubah ukuran mode bingkai . Aktifkan toggle Sinkronkan dengan peta jika Anda ingin memutar panah utara secara sinkron dengan peta.</p>
+<p>Bagian lain, seperti Posisi dan Ukuran , Rotasi , Bingkai , Latar Belakang , ID Item , dan Rendering , memberikan opsi yang sama seperti yang tercakup untuk item peta.</p>
+<p>Ketika semuanya sudah siap, Anda dapat mengekspor peta Anda dari menu, dengan menavigasi ke Composer | Ekspor sebagai Gambar atau Ekspor sebagai SVG atau Ekspor sebagai PDF , atau dengan mengklik tombol yang relevan di bilah alat Penggubah , yang bertanggung jawab untuk ekspor gambar, untuk ekspor sebagai SVG, dan untuk ekspor sebagai PDF.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig911"></span>
+<img src="images/09/fig911.jpeg" alt="Memilih simbol" width="60%" />
+<p class="caption">
+Gambar 9.5: Memilih simbol
+</p>
+</div>
+</div>
+<div id="mengelola-komposer-cetak" class="section level3">
+<h3><span class="header-section-number">9.1.4</span> Mengelola komposer cetak</h3>
+<p>Para pemula biasanya lupa untuk menerapkan opsi penguncian peta dan sering membuat setiap peta dari awal. Akibatnya, mereka kelebihan beban dengan beberapa komposer peta yang memiliki peta yang berubah secara permanen. Jika Anda ingin menghemat waktu, maka sebaiknya gunakan layer Lock untuk item peta dan style layer Lock untuk item peta untuk memblokir perubahan yang tidak diinginkan pada peta Anda.</p>
+<p>Anda dapat memiliki banyak peta dan atlas yang disimpan dalam satu proyek, dan dapatkan aksesnya dengan masuk ke Project | Print Composers . Opsi lanjutan tersedia di Print Composer Manager , yang berada di bawah Project .</p>
+<div class="figure" style="text-align: center"><span id="fig:fig912"></span>
+<img src="images/09/fig912.jpeg" alt="Memilih simbol" width="30%" />
+<p class="caption">
+Gambar 9.6: Memilih simbol
+</p>
+</div>
+</div>
+<div id="video" class="section level3">
+<h3><span class="header-section-number">9.1.5</span> Video</h3>
+<p>Berikut adalah video yang menggambarkan bagaimana melakukan layout dan pencetakan di QGIS untuk membuat peta lokasi penelitian</p>
+<div class="figure"><span id="fig:embed11"></span>
+<iframe src="https://www.youtube.com/watch?v=pkSZQY450yI" width="99%" height="400px" style="border: none;">
+</iframe>
+<p class="caption">
+Gambar 9.7: Pembuatan peta lokasi penelitian menggunakan QGIS
+</p>
+</div>
+</div>
+</div>
+<div id="kartografi-di-r" class="section level2">
+<h2><span class="header-section-number">9.2</span> Kartografi di R</h2>
+<p>Tujuan <em>cartography</em> adalah untuk mendapatkan peta tematik dengan kualitas visual yang dibuat dengan pemetaan klasik atau perangkat lunak GIS.</p>
+<p>Pengguna paket bisa menjadi salah satu dari dua kategori: kartografer yang bersedia menggunakan R atau pengguna R yang ingin membuat peta. Oleh karena itu, fungsinya harus intuitif untuk kartografer dan memastikan kompatibilitas dengan alur kerja R yang umum.</p>
+<p>cartography menggunakan obyek <em>sf</em> atau <em>sp</em> untuk menghasilkan grafik <em>base</em>grafik*. Karena sebagian besar paket internal bergantung pada fungsi sf, format yang disukai untuk obyek spasial.</p>
+<div id="fitur" class="section level3">
+<h3><span class="header-section-number">9.2.1</span> Fitur</h3>
+<p>Fungsi pustaka cartography dapat dibagi dalam kategori berikut:</p>
+<ul>
+<li>Simbologi</li>
+</ul>
+<p>Setiap fungsi berfokus pada representasi kartografi tunggal (mis. Simbol proporsional atau representasi choropleth) dan menampilkannya pada plot georeferensi. Solusi ini memungkinkan untuk mempertimbangkan setiap representasi sebagai layer dan untuk overlay banyak representasi pada peta yang sama.</p>
+<p>Setiap fungsi memiliki dua argumen utama yaitu:</p>
+<ul>
+<li><em>x</em>, objek spasial (lebih disukai obyek <em>sf</em>),</li>
+<li><em>var</em>, nama variabel yang akan dipetakan.</li>
+</ul>
+<p>Obyek <em>sp</em> yang ditangani oleh argumen <em>spdf</em> jika variabel yang terkandung dalam **Spatial*DataFrame** dan melalui <em>spdf</em>, <em>spdfid</em>, <em>df</em>, <em>dfid</em> jika variabel adalah di terpisah data.framebahwa kebutuhan akan bergabung ke Spatial*DataFrame.</p>
+<p>Banyak parameter yang tersedia untuk menyempurnakan representasi kartografi. Parameter ini adalah yang umum ditemukan dalam GIS dan alat kartografi otomatis (misalnya klasifikasi dan palet warna yang digunakan dalam peta choropleth, ukuran simbol yang digunakan dalam peta simbol proporsional …).</p>
+<ul>
+<li>Transformasi</li>
+</ul>
+<p>Seperangkat fungsi didedikasikan untuk penciptaan atau transformasi objek spasial (misalnya ekstraksi batas, grid, atau pembuatan tautan). Fungsi-fungsi ini disediakan untuk memudahkan pembuatan beberapa peta yang lebih maju yang biasanya membutuhkan geo-processing.</p>
+<ul>
+<li>Tata Letak Peta</li>
+</ul>
+<p>Bersama dengan fungsi kartografi, beberapa fungsi lain didedikasikan untuk desain tata letak (misalnya blok skala yang dapat disesuaikan, panah utara, judul, sumber, atau informasi penulis …).</p>
+<ul>
+<li>Palet Warna</li>
+</ul>
+<p>16 palet warna asli dikirimkan dalam paket. Palet-palet itu dapat dikustomisasi dan dikombinasikan.</p>
+<ul>
+<li>Legenda</li>
+</ul>
+<p>Legends ditampilkan secara default di sepanjang lapisan kartografi, tetapi lebih banyak parameter tersedia melalui legend*()fungsi.</p>
+<ul>
+<li>Klasifikasi</li>
+</ul>
+<p>getBreaks() memberikan akses ke sebagian besar metode klasifikasi yang digunakan untuk binning data.</p>
+</div>
+<div id="contoh" class="section level3">
+<h3><span class="header-section-number">9.2.2</span> Contoh</h3>
+<div id="openstreetmap-basemap-dan-proportional-symbols" class="section level4">
+<h4><span class="header-section-number">9.2.2.1</span> OpenStreetMap Basemap dan Proportional Symbols</h4>
+<pre><code>library(sf)
+library(cartography)
+# path to the geopackage file embedded in cartography
+path_to_gpkg &lt;- system.file(&quot;gpkg/mtq.gpkg&quot;, package=&quot;cartography&quot;)
+# import to an sf object
+mtq &lt;- st_read(dsn = path_to_gpkg, quiet = TRUE)
+# download osm tiles
+mtq.osm &lt;- getTiles(
+  x = mtq, 
+  type = &quot;osm&quot;, 
+  zoom = 11, 
+  crop = TRUE
+)
+## Data and map tiles sources:
+## © OpenStreetMap contributors. Tiles style under CC BY-SA, www.openstreetmap.org/copyright.
+# plot osm tiles
+tilesLayer(x = mtq.osm)
+# plot municipalities (only borders are plotted)
+plot(st_geometry(mtq), col = NA, border = &quot;grey&quot;, add=TRUE)
+# plot population
+propSymbolsLayer(
+  x = mtq, 
+  var = &quot;POP&quot;, 
+  inches = 0.4, 
+  col = &quot;brown4&quot;,
+  legend.pos = &quot;topright&quot;,  
+  legend.title.txt = &quot;Total population&quot;
+)
+# layout
+layoutLayer(title = &quot;Population Distribution in Martinique&quot;,
+            sources = &quot;Sources: Insee and IGN, 2018\n© OpenStreetMap contributors.\nTiles style under CC BY-SA, www.openstreetmap.org/copyright.&quot;,
+            author = paste0(&quot;cartography &quot;, packageVersion(&quot;cartography&quot;)),
+            frame = FALSE, north = FALSE, tabtitle = TRUE)
+# north arrow
+north(pos = &quot;topleft&quot;)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:carto1"></span>
+<img src="images/09/carto1.png" alt="Memilih simbol" width="80%" />
+<p class="caption">
+Gambar 9.8: Memilih simbol
+</p>
+</div>
+</div>
+<div id="choropleth-map" class="section level4">
+<h4><span class="header-section-number">9.2.2.2</span> Choropleth Map</h4>
+<pre><code>library(sf)
+library(cartography)
+# path to the geopackage file embedded in cartography
+path_to_gpkg &lt;- system.file(&quot;gpkg/mtq.gpkg&quot;, package=&quot;cartography&quot;)
+# import to an sf object
+mtq &lt;- st_read(dsn = path_to_gpkg, quiet = TRUE)
+# population density (inhab./km2) using sf::st_area()
+mtq$POPDENS &lt;- 1e6 * mtq$POP / st_area(mtq)
+# plot municipalities (only the backgroung color is plotted)
+plot(st_geometry(mtq), col = NA, border = NA, bg = &quot;#aadaff&quot;)
+# plot population density
+choroLayer(
+  x = mtq, 
+  var = &quot;POPDENS&quot;,
+  method = &quot;geom&quot;,
+  nclass=5,
+  col = carto.pal(pal1 = &quot;sand.pal&quot;, n1 = 5),
+  border = &quot;white&quot;, 
+  lwd = 0.5,
+  legend.pos = &quot;topright&quot;, 
+  legend.title.txt = &quot;Population Density\n(people per km2)&quot;,
+  add = TRUE
+) 
+# layout
+layoutLayer(title = &quot;Population Distribution in Martinique&quot;, 
+            sources = &quot;Sources: Insee and IGN, 2018&quot;,
+            author = paste0(&quot;cartography &quot;, packageVersion(&quot;cartography&quot;)), 
+            frame = FALSE, north = FALSE, tabtitle = TRUE, theme= &quot;sand.pal&quot;) 
+# north arrow
+north(pos = &quot;topleft&quot;)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:carto2"></span>
+<img src="images/09/carto2.png" alt="Memilih simbol" width="80%" />
+<p class="caption">
+Gambar 9.9: Memilih simbol
+</p>
+</div>
+</div>
+<div id="pensil-warna" class="section level4">
+<h4><span class="header-section-number">9.2.2.3</span> Pensil Warna</h4>
+<pre><code>library(sf)
+library(cartography)
+# path to the geopackage file embedded in cartography
+path_to_gpkg &lt;- system.file(&quot;gpkg/mtq.gpkg&quot;, package=&quot;cartography&quot;)
+# import to an sf object
+mtq &lt;- st_read(dsn = path_to_gpkg, quiet = TRUE)
+# transform municipality multipolygons to (multi)linestrings
+mtq_pencil &lt;- getPencilLayer(
+  x = mtq, 
+  size = 400, 
+  lefthanded = F
+)
+# plot municipalities (only the backgroung color is plotted)
+plot(st_geometry(mtq), col = &quot;white&quot;, border = NA, bg = &quot;lightblue1&quot;)
+# plot administrative status
+typoLayer(
+  x = mtq_pencil, 
+  var=&quot;STATUS&quot;,  
+  col = c(&quot;aquamarine4&quot;, &quot;yellow3&quot;,&quot;wheat&quot;), 
+  lwd = .7,
+  legend.values.order = c(&quot;Prefecture&quot;,
+                          &quot;Sub-prefecture&quot;, 
+                          &quot;Simple municipality&quot;),
+  legend.pos = &quot;topright&quot;,
+  legend.title.txt = &quot;&quot;, 
+  add = TRUE
+)
+#  plot municipalities
+plot(st_geometry(mtq), lwd = 0.5, border = &quot;grey20&quot;, add = TRUE, lty = 3)
+# labels for a few  municipalities
+labelLayer(x = mtq[mtq$STATUS != &quot;Simple municipality&quot;,], txt = &quot;LIBGEO&quot;, 
+           cex = 0.9, halo = TRUE, r = 0.15)
+# title, source, author
+layoutLayer(title = &quot;Administrative Status&quot;,
+            sources = &quot;Sources: Insee and IGN, 2018&quot;, 
+            author = paste0(&quot;cartography &quot;, packageVersion(&quot;cartography&quot;)), 
+            north = FALSE, tabtitle = TRUE, postitle = &quot;right&quot;, 
+            col = &quot;white&quot;, coltitle = &quot;black&quot;) 
+# north arrow
+north(pos = &quot;topleft&quot;)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:carto3"></span>
+<img src="images/09/carto3.png" alt="Memilih simbol" width="80%" />
+<p class="caption">
+Gambar 9.10: Memilih simbol
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualisasi-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Training.pdf", "Training.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
