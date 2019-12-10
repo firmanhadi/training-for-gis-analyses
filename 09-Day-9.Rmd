@@ -760,7 +760,7 @@ knitr::include_graphics("images/09/fig912.jpeg")
 Berikut adalah video yang menggambarkan bagaimana melakukan layout dan pencetakan di QGIS untuk membuat peta lokasi penelitian
 
 ```{r embed11, out.extra='style="border: none;"', out.width='99%', fig.cap="Pembuatan peta lokasi penelitian menggunakan QGIS", echo = FALSE}
-knitr::include_url("https://www.youtube.com/watch?v=pkSZQY450yI")
+knitr::include_url("https://www.youtube.com/embed/pkSZQY450yI")
 ```
 
 ## Kartografi di R
