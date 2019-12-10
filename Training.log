@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.10)  10 DEC 2019 23:06
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.11.10)  10 DEC 2019 23:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -986,62 +986,45 @@ File: ./img/tab7_order.png Graphic file (type bmp)
 [13]
 File: ./img/tab8_order.png Graphic file (type bmp)
 <./img/tab8_order.png>
-[14] [15]
-Underfull \hbox (badness 4673) in paragraph at lines 286--287
-[]\TU/lmr/m/n/10 Dalam konteks GIS, ESRI menyediakan sebuah perangkat yang me-
+[14]
+Underfull \hbox (badness 3364) in paragraph at lines 273--274
+[]\TU/lmr/m/n/10 Pemodelan konseptual adalah bagian dari siklus hidup pengemban
+gan
  []
 
 
-Underfull \hbox (badness 3049) in paragraph at lines 286--287
-\TU/lmr/m/n/10 mungkinkan kita membuat geodatabase baru berdasarkan diagram de-
-
+Underfull \hbox (badness 1484) in paragraph at lines 273--274
+\TU/lmr/m/n/10 draf pertama diagram ER serta mendeskripsikan persyaratan fungsi
+onal
  []
 
-
-Underfull \hbox (badness 6859) in paragraph at lines 286--287
-\TU/lmr/m/n/10 ngan CASE (Computer-Aided Software Engineering) tools. Untuk
- []
-
-
-Underfull \hbox (badness 2564) in paragraph at lines 286--287
-\TU/lmr/m/n/10 lebih lanjutnya, Anda dapat membaca blog ini yang menyelaskan se
--
- []
-
-
-Underfull \hbox (badness 1365) in paragraph at lines 286--287
-\TU/lmr/m/n/10 cara detil penggunaan CASE, Using Case tools in Arc GIS 10, [[]$
-[][][][] []
- []
-
-[16]
+[15] [16]
 File: img/01/db_model1.png Graphic file (type bmp)
 <img/01/db_model1.png>
 [17]
 File: img/01/db_model2.png Graphic file (type bmp)
 <img/01/db_model2.png>
+[18]
 File: img/01/db_model3.png Graphic file (type bmp)
 <img/01/db_model3.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[18] [19]
+[19]
 File: img/01/db_model4.png Graphic file (type bmp)
 <img/01/db_model4.png>
+[20]
 File: ./img/pgadmin4-master-password.jpg Graphic file (type bmp)
 <./img/pgadmin4-master-password.jpg>
 File: ./img/pgadmin4-create.jpg Graphic file (type bmp)
 <./img/pgadmin4-create.jpg>
 File: ./img/pgadmin4-create-general.jpg Graphic file (type bmp)
 <./img/pgadmin4-create-general.jpg>
-[20]
-Underfull \hbox (badness 5417) in paragraph at lines 392--393
+
+Underfull \hbox (badness 5417) in paragraph at lines 375--376
 []\TU/lmr/m/n/10 Pindah ke \TU/lmr/m/it/10 tab \TU/lmr/bx/n/10 Connection\TU/lm
 r/m/n/10 , kita isi \TU/lmr/bx/n/10 Host name/address \TU/lmr/m/n/10 dengan
  []
 
 
-Underfull \hbox (badness 3895) in paragraph at lines 392--393
+Underfull \hbox (badness 3895) in paragraph at lines 375--376
 \TU/lmr/bx/n/10 192.168.1.23 \TU/lmr/m/n/10 (IP server PostgreSQL-nya), \TU/lmr
 /bx/n/10 Port\TU/lmr/m/n/10 : \TU/lmr/bx/n/10 5432\TU/lmr/m/n/10 , \TU/lmr/bx/n
 /10 Username\TU/lmr/m/n/10 :
@@ -1051,6 +1034,7 @@ File: ./img/pgadmin4-create-connection.jpg Graphic file (type bmp)
 <./img/pgadmin4-create-connection.jpg>
 File: ./img/pgadmin4-connection-created.jpg Graphic file (type bmp)
 <./img/pgadmin4-connection-created.jpg>
+[21] [22] [23]
 File: ./img/pgadmin4-connection-collapsed.jpg Graphic file (type bmp)
 <./img/pgadmin4-connection-collapsed.jpg>
 File: ./img/pgadmin4-collapsed-show-db.jpg Graphic file (type bmp)
@@ -1060,65 +1044,64 @@ File: ./img/pgadmin4-show-tables.jpg Graphic file (type bmp)
 File: ./img/pgadmin4-right-click-on-table.jpg Graphic file (type bmp)
 <./img/pgadmin4-right-click-on-table.jpg>
 
-Underfull \hbox (badness 1810) in paragraph at lines 440--441
+Underfull \hbox (badness 1810) in paragraph at lines 423--424
 []\TU/lmr/m/n/10 Maka selanjutnya pada bagian kanan (tampilan utama) dari PgAdm
 in
  []
 
 File: ./img/pgadmin4-show-all-entries.jpg Graphic file (type bmp)
 <./img/pgadmin4-show-all-entries.jpg>
-[21] [22] [23] [24] [25]
 File: ./img/pgadmin4-geometry-viewer-button.jpg Graphic file (type bmp)
 <./img/pgadmin4-geometry-viewer-button.jpg>
 File: ./img/pgadmin4-geometry-viewer-map.jpg Graphic file (type bmp)
 <./img/pgadmin4-geometry-viewer-map.jpg>
 
-Package hyperref Warning: Suppressing link with empty target on input line 464.
+Package hyperref Warning: Suppressing link with empty target on input line 447.
 
 
-[26] [27]
+[24] [25] [26] [27]
 File: ./img/stack-builder-start.jpg Graphic file (type bmp)
 <./img/stack-builder-start.jpg>
 File: ./img/stack-builder-select-server.jpg Graphic file (type bmp)
 <./img/stack-builder-select-server.jpg>
 File: ./img/stack-builder-select-app.jpg Graphic file (type bmp)
 <./img/stack-builder-select-app.jpg>
+[28] [29]
 File: ./img/stack-builder-db-driver.jpg Graphic file (type bmp)
 <./img/stack-builder-db-driver.jpg>
 File: ./img/stack-builder-postgis.jpg Graphic file (type bmp)
 <./img/stack-builder-postgis.jpg>
 File: ./img/postgis-loader-start.jpg Graphic file (type bmp)
 <./img/postgis-loader-start.jpg>
-[28] [29] [30]
 File: ./img/postgis-loader-connect-box.jpg Graphic file (type bmp)
 <./img/postgis-loader-connect-box.jpg>
 File: ./img/postgis-loader-connection-success.jpg Graphic file (type bmp)
 <./img/postgis-loader-connection-success.jpg>
-[31] [32]
+[30] [31] [32]
 File: ./img/postgis-loader-select-shapefile-box.jpg Graphic file (type bmp)
 <./img/postgis-loader-select-shapefile-box.jpg>
 File: ./img/postgis-loader-srid-column.jpg Graphic file (type bmp)
 <./img/postgis-loader-srid-column.jpg>
+[33] [34] [35]
 File: ./img/postgis-loader-4326.jpg Graphic file (type bmp)
 <./img/postgis-loader-4326.jpg>
 File: ./img/postgis-loader-import-completed.jpg Graphic file (type bmp)
 <./img/postgis-loader-import-completed.jpg>
-[33] [34] [35] [36] [37] [38]
 File: ./img/qgis-open-dsm.jpg Graphic file (type bmp)
 <./img/qgis-open-dsm.jpg>
+[36] [37] [38]
 File: ./img/qgis-dsm-dialog.jpg Graphic file (type bmp)
 <./img/qgis-dsm-dialog.jpg>
 File: ./img/qgis-create-connection.jpg Graphic file (type bmp)
 <./img/qgis-create-connection.jpg>
 
-LaTeX Warning: Float too large for page by 10.80397pt on input line 613.
+LaTeX Warning: Float too large for page by 10.80397pt on input line 596.
 
-[39] [40]
 File: ./img/qgis-select-layers.jpg Graphic file (type bmp)
 <./img/qgis-select-layers.jpg>
 File: ./img/qgis-postgis-layer-loaded.jpg Graphic file (type bmp)
 <./img/qgis-postgis-layer-loaded.jpg>
-[41] [42]
+[39] [40] [41] [42]
 Bab 2.
 [43
 
@@ -1131,20 +1114,20 @@ UNTUK ANALISIS WILAYAH LAYANAN
 [44]
 Bab 3.
 
-Overfull \hbox (458.25pt too wide) in paragraph at lines 786--786
+Overfull \hbox (458.25pt too wide) in paragraph at lines 769--769
 []\TU/lmtt/m/n/10 CREATE TABLE kelurahan as SELECT geom, giskemen_2, giskemen_4
 , giskemen18,giskemen19,giskemen20,giskemen21, giskemen27, giskemen28 FROM publ
 ic.desa_batam[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 800--800
+Overfull \hbox (6.75pt too wide) in paragraph at lines 783--783
 []\TU/lmtt/m/n/10 ALTER TABLE public.kelurahan RENAME COLUMN giskemen_2 TO nama
 _desa;[] 
  []
 
 
-Overfull \hbox (348.0pt too wide) in paragraph at lines 832--832
+Overfull \hbox (348.0pt too wide) in paragraph at lines 815--815
 []\TU/lmtt/m/n/10 ALTER TABLE public.kelurahan ADD COLUMN giskemen33 FROM publi
 c.desa WHERE giskemen_4.public.desa.id = giskemen_4.public.kelurahan.id[] 
  []
@@ -1152,37 +1135,37 @@ c.desa WHERE giskemen_4.public.desa.id = giskemen_4.public.kelurahan.id[]
 [45
 
 ]
-Overfull \hbox (353.25pt too wide) in paragraph at lines 849--849
+Overfull \hbox (353.25pt too wide) in paragraph at lines 832--832
 []\TU/lmtt/m/n/10 SELECT * into qlayer FROM kelurahan WHERE st_touches(keluraha
 n.geometry, ( SELECT geometry FROM kelurahan WHERE nama_desa = []SADAI[]))[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 859--860
+Overfull \hbox (80.25pt too wide) in paragraph at lines 842--843
 []\TU/lmtt/m/n/10 CREATE VIEW TestView AS  SELECT * FROM kelurahan WHERE st_tou
 ches(kelurahan.geom,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 877--878
+Underfull \hbox (badness 10000) in paragraph at lines 860--861
 [][]$[][][][][] [] [] [] [][][] [] [][][][][][][] [] [][][] [] [] [] [][][][][]
 [][][][][][][][][][] [] [][][][][][] [] [][][] [] [][] [] [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 885--886
+Underfull \hbox (badness 10000) in paragraph at lines 868--869
 [][]$[][][][][] [] [] [] [][][] [] [][][][][][][] [] [][][] [] [] [] [][][][][]
 [][][][][][][][][][] [] [][][][][][][] [] [][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 887--888
+Underfull \hbox (badness 10000) in paragraph at lines 870--871
 [][]$[][][][][] [] [] [] [][][] [] [][][][][][][] [] [][][] [] [] [] [][][][][]
 [][][][][][][][][][] [] [][][][][][][] [] [][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 895--897
+Underfull \hbox (badness 10000) in paragraph at lines 878--880
 [][]$[][][][][] [] [] [] [][][] [] [][][][][][][] [] [][][] [] [] [] [][][][][]
 [][][][][][][][][][] [] [][][][][][][][][][][] [] [][][][][][][][] []
  []
@@ -1192,7 +1175,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 895--897
 ] [48]
 Bab 4.
 
-Underfull \hbox (badness 1072) in paragraph at lines 914--915
+Underfull \hbox (badness 1072) in paragraph at lines 897--898
 \TU/lmr/m/n/10 fastest delivery routes”: []$[][][][][] [] [] [] [][][] [] [][][
 ][][][][][][][][][][] [] [][][] [] [][][][][][][] [] [][][][][][][] [] [][][] [
 ]
@@ -1224,7 +1207,7 @@ File: ./img/gismodel7.png Graphic file (type bmp)
 ]
 Bab 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 982--983
+Underfull \hbox (badness 10000) in paragraph at lines 965--966
 []\TU/lmr/m/n/10 Data dapat diunduh di tautan berikut []$[][][][][] [] [] [] []
 [][][][][][][][][] [] [][][][][][] [] [][] []
  []
@@ -1267,7 +1250,7 @@ File: images/04/fig71.png Graphic file (type bmp)
 File: images/04/fig72.jpeg Graphic file (type bmp)
 <images/04/fig72.jpeg>
 
-Overfull \hbox (0.46535pt too wide) in paragraph at lines 1348--1349
+Overfull \hbox (0.46535pt too wide) in paragraph at lines 1331--1332
 []\TU/lmr/m/n/10 Pada opsi \TU/lmr/bx/n/10 Processing Toolbox\TU/lmr/m/n/10 , c
 ari algoritma \TU/lmr/bx/n/10 Hillshade \TU/lmr/m/n/10 dan klik-ganda
  []
@@ -1306,18 +1289,18 @@ File: images/04/fig82.jpg Graphic file (type bmp)
 File: images/04/fig83.jpg Graphic file (type bmp)
 <images/04/fig83.jpg>
 [78] [79]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1670--1670
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1653--1653
 []\TU/lmtt/m/n/10 - menganalisis data spasial sesuai serangkaian kriteria yang 
 ditentukan[] 
  []
 
 [80]
-Overfull \hbox (165.45006pt too wide) in alignment at lines 1697--1701
+Overfull \hbox (165.45006pt too wide) in alignment at lines 1680--1684
  [] [] [] 
  []
 
 
-Overfull \hbox (165.45006pt too wide) in alignment at lines 1701--1719
+Overfull \hbox (165.45006pt too wide) in alignment at lines 1684--1702
  [] [] [] 
  []
 
@@ -1337,19 +1320,19 @@ File: images/04/fig5.jpeg Graphic file (type bmp)
 File: images/04/fig33.jpeg Graphic file (type bmp)
 <images/04/fig33.jpeg>
 
-Overfull \hbox (4.82204pt too wide) in paragraph at lines 2127--2128
+Overfull \hbox (4.82204pt too wide) in paragraph at lines 2110--2111
 []\TU/lmr/m/n/10 1.Dari daftar drop-down File input (shapefile), pilih \TU/lmr/
 m/it/10 hurricane_evacuation_zones\TU/lmr/m/n/10 . 
  []
 
 
-Underfull \hbox (badness 2213) in paragraph at lines 2135--2137
+Underfull \hbox (badness 2213) in paragraph at lines 2118--2120
 []\TU/lmr/m/n/10 Dalam \TU/lmr/bx/n/10 Output file for rasterized vectors \TU/l
 mr/m/n/10 (raster), klik tom-
  []
 
 [90]
-Overfull \hbox (1046.25pt too wide) in paragraph at lines 2142--2142
+Overfull \hbox (1046.25pt too wide) in paragraph at lines 2125--2125
 []\TU/lmtt/m/n/10 gdal_rasterize -a rank -l hurricane_evacuation_zones –a_nodat
 a 0 -te 982199.3000000000465661 188224.6749999999883585 991709.3000000000465661
  196484.6749999999883585 -tr 10 10 -ot UInt16 fullpath/hurricane_evacuation_zon
@@ -1359,7 +1342,7 @@ es.shp fullpath/hurricane_evacuation_zones.tif[]
 File: images/04/fig34.jpeg Graphic file (type bmp)
 <images/04/fig34.jpeg>
 
-Overfull \hbox (1067.25pt too wide) in paragraph at lines 2167--2167
+Overfull \hbox (1067.25pt too wide) in paragraph at lines 2150--2150
 []\TU/lmtt/m/n/10 gdal_rasterize -a category -l hurricane_inundation_zones -a_n
 odata 0 -te 982199.3000000000465661 188224.6749999999883585 991709.300000000046
 5661 196484.6749999999883585 -tr 10 10 -ot UInt16 fullpath/hurricane_inundation
@@ -1376,11 +1359,11 @@ File: images/04/fig36.jpeg Graphic file (type bmp)
 <images/04/fig36.jpeg>
 [92]
 
-Package natbib Warning: Citation `1__' on page 93 undefined on input line 2243.
+Package natbib Warning: Citation `1__' on page 93 undefined on input line 2226.
 
 
 
-Overfull \hbox (1098.75pt too wide) in paragraph at lines 2250--2250
+Overfull \hbox (1098.75pt too wide) in paragraph at lines 2233--2233
 []\TU/lmtt/m/n/10 ("noise_heatmap_clip@1" <= 50) *5 + ("noise_heatmap_clip@1" >
  50 AND"noise_heatmap_clip@1" <= 100) *4 + ("noise_heatmap_clip@1" > 100 AND "n
 oise_heatmap_clip@1" <= 150) *3 + ("noise_heatmap_clip@1" > 150 AND "noise_heat
@@ -1393,7 +1376,7 @@ File: images/04/fig37.jpeg Graphic file (type bmp)
 Overfull \vbox (111.55267pt too high) has occurred while \output is active []
 
 [93]
-Overfull \hbox (873.0pt too wide) in paragraph at lines 2281--2281
+Overfull \hbox (873.0pt too wide) in paragraph at lines 2264--2264
 []\TU/lmtt/m/n/10 gdal_rasterize -l subway_entrances -burn 1 -a_nodata 0 -te 98
 2199.3000000000465661 188224.6749999999883585 991709.3000000000465661 196484.67
 49999999883585 -tr 10 10 -ot Byte fullpath/subway_entrances.shp fullpath/subway
@@ -1401,7 +1384,7 @@ _entances.tif[]
  []
 
 
-Overfull \hbox (237.75pt too wide) in paragraph at lines 2302--2302
+Overfull \hbox (237.75pt too wide) in paragraph at lines 2285--2285
 []\TU/lmtt/m/n/10 gdal_proximity.bat fullpath/subway_entances.tif fullpath/subw
 ay_entances_proximity.tif -distunits GEO -of GTiff[] 
  []
@@ -1409,7 +1392,7 @@ ay_entances_proximity.tif -distunits GEO -of GTiff[]
 File: images/04/fig38.jpeg Graphic file (type bmp)
 <images/04/fig38.jpeg>
 [94]
-Overfull \hbox (1004.25pt too wide) in paragraph at lines 2337--2337
+Overfull \hbox (1004.25pt too wide) in paragraph at lines 2320--2320
 []\TU/lmtt/m/n/10 ("subway_entances_proximity@1" <= 1300) *4 + ("subway_entance
 s_proximity@1" > 1300 AND "subway_entances_proximity@1" <= 2600) *3 + ("subway_
 entances_proximity@1" > 2600 AND "subway_entances_proximity@1" <= 3900) *2 + ("
@@ -1424,20 +1407,20 @@ File: images/04/fig40.png Graphic file (type bmp)
 Overfull \vbox (112.53406pt too high) has occurred while \output is active []
 
 [95] [96]
-Overfull \hbox (38.25pt too wide) in paragraph at lines 2377--2377
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2360--2360
 []\TU/lmtt/m/n/10 (factor_1*weight + factor_2*weight + factor_3*weight + … fact
 or_n*weight)[] 
  []
 
 
-Overfull \hbox (521.25pt too wide) in paragraph at lines 2391--2391
+Overfull \hbox (521.25pt too wide) in paragraph at lines 2374--2374
 []\TU/lmtt/m/n/10 (factor_1*weight + factor_2*weight + factor_3*weight + … fact
 or_n*weight) / (factor_1_max*weight + factor_2_max*weight + factor_3_max*weight
  + … factor_n_max*weight)[] 
  []
 
 
-Overfull \hbox (1524.0pt too wide) in paragraph at lines 2413--2413
+Overfull \hbox (1524.0pt too wide) in paragraph at lines 2396--2396
 []\TU/lmtt/m/n/10 ( ( "athletic_facilities_proximity_ranks@1" * 0.04 + "bike_ro
 utes_proximity_ranks@1" * 0.06+"hurricane_evacuation_zones@1" * 0.16+"hurricane
 _inundation_zones@1" * 0.16+"museumart_ranked@1" * 0.05+"noise_ranked@1" * 0.13
@@ -1460,7 +1443,7 @@ File: images/04/fig45.jpeg Graphic file (type bmp)
 File: images/04/fig46.jpeg Graphic file (type bmp)
 <images/04/fig46.jpeg>
 
-Overfull \hbox (15.54704pt too wide) in paragraph at lines 2523--2524
+Overfull \hbox (15.54704pt too wide) in paragraph at lines 2506--2507
 []\TU/lmr/m/n/10 fitur yang berpotongan di: daftar drop-down, pilih max_suitabi
 lity_polygons,
  []
@@ -1482,7 +1465,7 @@ Bab 6.
 File: images/07/fig71.png Graphic file (type bmp)
 <images/07/fig71.png>
 [107]
-Overfull \hbox (573.75pt too wide) in paragraph at lines 2649--2649
+Overfull \hbox (573.75pt too wide) in paragraph at lines 2632--2632
 []\TU/lmtt/m/n/10 ## PhantomJS not found. You can install it with webshot::inst
 all_phantomjs(). If it is installed, please make sure the phantomjs executable 
 can be found via the PATH variable.[] 
@@ -1494,7 +1477,7 @@ File: images/07/fig73.png Graphic file (type bmp)
 <images/07/fig73.png>
 [108]
 
-LaTeX Warning: Reference `fig:gs44' on page 109 undefined on input line 2679.
+LaTeX Warning: Reference `fig:gs44' on page 109 undefined on input line 2662.
 
 [109]
 File: images/08/gs111.png Graphic file (type bmp)
@@ -1510,25 +1493,25 @@ Underfull \vbox (badness 1895) has occurred while \output is active []
 File: images/08/gs3.png Graphic file (type bmp)
 <images/08/gs3.png>
 [111]
-Overfull \hbox (22.5pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (22.5pt too wide) in paragraph at lines 2840--2840
 []            \TU/lmtt/m/n/10 <OnlineResource xmlns:xlink="http://www.w3.org/19
 99/xlink"[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2840--2840
 []               \TU/lmtt/m/n/10 xlink:type="simple"xlink:href="http://localhos
 t:8080[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (12.0pt too wide) in paragraph at lines 2840--2840
 []          \TU/lmtt/m/n/10 <OnlineResource xmlns:xlink="http://www.w3.org/1999
 /xlink"[] 
  []
 
 [112]
-Overfull \hbox (1.5pt too wide) in paragraph at lines 2857--2857
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2840--2840
 []             \TU/lmtt/m/n/10 xlink:type="simple" xlink:href="http://localhost
 :8080[] 
  []
@@ -1552,7 +1535,7 @@ File: images/08/gs1.png Graphic file (type bmp)
 File: images/08/gs8.png Graphic file (type bmp)
 <images/08/gs8.png>
 
-LaTeX Warning: Reference `gs2' on page 116 undefined on input line 2971.
+LaTeX Warning: Reference `gs2' on page 116 undefined on input line 2954.
 
 File: images/08/gs2.png Graphic file (type bmp)
 <images/08/gs2.png>
@@ -1605,25 +1588,25 @@ File: images/08/ms3.png Graphic file (type bmp)
 ] [130]
 Bab 8.
 
-Overfull \hbox (117.0pt too wide) in paragraph at lines 3358--3358
+Overfull \hbox (117.0pt too wide) in paragraph at lines 3341--3341
 []\TU/lmtt/m/n/10 - Contoh-contoh bagus dalam organisasi data dalam sebuah doku
 men kerja tunggal (project)[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 3358--3358
+Overfull \hbox (48.75pt too wide) in paragraph at lines 3341--3341
 []\TU/lmtt/m/n/10 - Representasi visual dari data, menggambarkan fitur tematik 
 dan spasialnya[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 3358--3358
+Overfull \hbox (17.25pt too wide) in paragraph at lines 3341--3341
 []\TU/lmtt/m/n/10 - Pelabelan layer, yang dilakukan untuk meningkatkan keterbac
 aan data[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 3358--3358
+Overfull \hbox (90.75pt too wide) in paragraph at lines 3341--3341
 []\TU/lmtt/m/n/10 - Peta dasar untuk menyediakan konteks spasial dan sebagai la
 tar belakang data Anda[] 
  []
@@ -1675,13 +1658,13 @@ File: images/09/fig93.png Graphic file (type bmp)
 File: images/09/fig94.png Graphic file (type bmp)
 <images/09/fig94.png>
 [148]
-Underfull \hbox (badness 4792) in paragraph at lines 3870--3871
+Underfull \hbox (badness 4792) in paragraph at lines 3853--3854
 []\TU/lmr/m/n/10 style Anita Graser untuk database SpatiaLite di []$[][][][][] 
 [] [] [] [][][][][][] [] [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3872--3873
+Underfull \hbox (badness 10000) in paragraph at lines 3855--3856
 [][][][][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][] [] [][][][] [] [][][][][][] [] [][][] [] [][][][][][][] []
  []
@@ -1713,33 +1696,33 @@ File: images/09/fig911.jpg Graphic file (type bmp)
 File: images/09/fig912.jpg Graphic file (type bmp)
 <images/09/fig912.jpg>
 
-Overfull \hbox (573.75pt too wide) in paragraph at lines 4255--4255
+Overfull \hbox (573.75pt too wide) in paragraph at lines 4238--4238
 []\TU/lmtt/m/n/10 ## PhantomJS not found. You can install it with webshot::inst
 all_phantomjs(). If it is installed, please make sure the phantomjs executable 
 can be found via the PATH variable.[] 
  []
 
 [164] [165]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4377--4377
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4360--4360
 []\TU/lmtt/m/n/10 path_to_gpkg <- system.file("gpkg/mtq.gpkg", package="cartogr
 aphy")[] 
  []
 
 
-Overfull \hbox (143.25pt too wide) in paragraph at lines 4377--4377
+Overfull \hbox (143.25pt too wide) in paragraph at lines 4360--4360
 []\TU/lmtt/m/n/10 ## © OpenStreetMap contributors. Tiles style under CC BY-SA, 
 www.openstreetmap.org/copyright.[] 
  []
 
 
-Overfull \hbox (421.5pt too wide) in paragraph at lines 4377--4377
+Overfull \hbox (421.5pt too wide) in paragraph at lines 4360--4360
 []            \TU/lmtt/m/n/10 sources = "Sources: Insee and IGN, 2018\n© OpenSt
 reetMap contributors.\nTiles style under CC BY-SA, www.openstreetmap.org/copyri
 ght.",[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 4377--4377
+Overfull \hbox (48.75pt too wide) in paragraph at lines 4360--4360
 []            \TU/lmtt/m/n/10 author = paste0("cartography ", packageVersion("c
 artography")),[] 
  []
@@ -1748,19 +1731,19 @@ artography")),[]
 File: images/09/carto1.png Graphic file (type bmp)
 <images/09/carto1.png>
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4422--4422
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4405--4405
 []\TU/lmtt/m/n/10 path_to_gpkg <- system.file("gpkg/mtq.gpkg", package="cartogr
 aphy")[] 
  []
 
 [167]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 4422--4422
+Overfull \hbox (48.75pt too wide) in paragraph at lines 4405--4405
 []            \TU/lmtt/m/n/10 author = paste0("cartography ", packageVersion("c
 artography")),[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 4422--4422
+Overfull \hbox (59.25pt too wide) in paragraph at lines 4405--4405
 []            \TU/lmtt/m/n/10 frame = FALSE, north = FALSE, tabtitle = TRUE, th
 eme= "sand.pal")[] 
  []
@@ -1768,31 +1751,31 @@ eme= "sand.pal")[]
 File: images/09/carto2.png Graphic file (type bmp)
 <images/09/carto2.png>
 [168]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4477--4477
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4460--4460
 []\TU/lmtt/m/n/10 path_to_gpkg <- system.file("gpkg/mtq.gpkg", package="cartogr
 aphy")[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 4477--4477
+Overfull \hbox (17.25pt too wide) in paragraph at lines 4460--4460
 []\TU/lmtt/m/n/10 plot(st_geometry(mtq), col = "white", border = NA, bg = "ligh
 tblue1")[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4477--4477
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4460--4460
 []\TU/lmtt/m/n/10 plot(st_geometry(mtq), lwd = 0.5, border = "grey20", add = TR
 UE, lty = 3)[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4477--4477
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4460--4460
 []\TU/lmtt/m/n/10 labelLayer(x = mtq[mtq$STATUS != "Simple municipality",], txt
  = "LIBGEO",[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 4477--4477
+Overfull \hbox (48.75pt too wide) in paragraph at lines 4460--4460
 []            \TU/lmtt/m/n/10 author = paste0("cartography ", packageVersion("c
 artography")),[] 
  []
@@ -1807,22 +1790,22 @@ Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4491.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4474.
 [171
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4491.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4474.
 (./Training.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4491.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4491.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4474.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4474.
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
  23303 strings out of 493007
- 435221 string characters out of 6136718
- 568073 words of memory out of 5000000
+ 435218 string characters out of 6136718
+ 569070 words of memory out of 5000000
  26872 multiletter control sequences out of 15000+600000
  555051 words of font info for 70 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

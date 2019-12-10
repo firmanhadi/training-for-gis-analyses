@@ -236,76 +236,64 @@ Apabila mereka hendak mengimplementasikan desain seperti di atas dalam MS-Access
 
 Pemodelan data dimulai dengan analisis kebutuhan, dapat dilakukan secara formal atau informal, tergantung dari skala proyeknya. Salah satu perangkat umum yang biasa digunakan dalam proses pemodelan adalah diagram entity-relationship (ER). Diagram ER mengilustrasikan kategori data yang harus disimpan (entitas), juga hubungan (relasi) antara entitas-entitas yang didefinisikan.
 
-Data models describe real-world entities such as customer, service, products, and the relation between these entities. Data models provide an abstraction for the relations in the database. Data models aid the developers in modeling business requirements and translating business requirements to relations. They are also used for the exchange of information between the developers and business owners.
+Model data menggambarkan entitas dunia nyata seperti pelanggan, layanan, produk, dan hubungan antara entitas ini. Model data menyediakan abstraksi untuk relasi dalam basis data. Model data membantu pengembang memodelkan persyaratan bisnis dan menerjemahkan persyaratan bisnis ke dalam relasi hubungan. Mereka juga digunakan untuk pertukaran informasi antara pengembang dan pemilik bisnis.
 
-In the enterprise, data models play a very important role in achieving data consistency across interacting systems. For example, if an entity is not defined, or is poorly defined, then this will lead to inconsistent and misinterpreted data across the enterprise. For instance, if the semantics of the customer entity are not defined clearly, and different business departments use different names for the same entity such as customer and client, this may lead to confusion in the operational departments.
+Di perusahaan, model data memainkan peran yang sangat penting dalam mencapai konsistensi data di seluruh sistem yang berinteraksi. Misalnya, jika suatu entitas tidak didefinisikan, atau tidak didefinisikan dengan baik, maka ini akan menyebabkan data yang tidak konsisten dan salah tafsir di seluruh perusahaan. Misalnya, jika semantik entitas pelanggan tidak didefinisikan dengan jelas, dan departemen bisnis yang berbeda menggunakan nama yang berbeda untuk entitas yang sama seperti pelanggan dan klien, ini dapat menyebabkan kebingungan di departemen operasional.
 
-Data model perspectives are defined by ANSI as follows:
-
-\begin{itemize}
-\tightlist
-\item
-  Conceptual data model:
-\end{itemize}
-
-Describes the domain semantics, and is used to communicate the main business rules, actors, and concepts. It describes the business requirements at a high level and is often called a high-level data model.
+Perspektif model data didefinisikan oleh ANSI sebagai berikut:
 
 \begin{itemize}
 \tightlist
 \item
-  Logical data model:
+  Model data konseptual:
 \end{itemize}
 
-Describes the semantics for a certain technology, for example, the UML class diagram for object-oriented languages.
+Menjelaskan domain semantik, dan digunakan untuk mengkomunikasikan aturan utama dalam bisnis, aktor yang berperan, dan konsepnya. Ini menggambarkan persyaratan bisnis di tingkat tinggi dan sering disebut model data tingkat tinggi.
 
 \begin{itemize}
 \tightlist
 \item
-  Physical data model:
+  Model data logis:
 \end{itemize}
 
-Describes how data is actually stored and manipulated at the hardware level, such as storage area network, table space, CPUs, and so on.
+Menjelaskan semantik untuk teknologi tertentu, misalnya, diagram kelas UML untuk bahasa berorientasi objek.
 
-According to ANSI, this abstraction allows changing one part of the three perspectives without amending the other parts. One could change both the logical and the physical data models without changing the conceptual model. To explain, sorting data using bubble or quick sort is not of interest for the conceptual data model. Also, changing the structure of the relations could be transparent to the conceptual model. One could split one relation into many relations after applying normalization rules, or by using enum data types in order to model the lookup tables.
+\begin{itemize}
+\tightlist
+\item
+  Model data fisik:
+\end{itemize}
 
-The entity-relation model
-The entity-relation (ER) model falls into the conceptual data model category. It captures and represents the data model for both business users and developers. The ER model can be transformed into the relational model by following certain techniques.
+Menjelaskan bagaimana data sebenarnya disimpan dan dimanipulasi pada tingkat perangkat keras, seperti jaringan area penyimpanan, ruang tabel, CPU, dan sebagainya.
 
-Conceptual modeling is a part of the software development life cycle (SDLC). It is normally done after the functional and data requirement-gathering stage. At this point, the developer is able to make the first draft of the ER diagram as well as describe functional requirements using data flow diagrams, sequence diagrams, user stories, and many other techniques.
+Menurut ANSI, abstraksi ini memungkinkan mengubah satu bagian dari tiga perspektif tanpa mengubah bagian lainnya. Seseorang dapat mengubah model data logis dan fisik tanpa mengubah model konseptual. Untuk menjelaskan, pengurutan data menggunakan gelembung atau pengurutan cepat tidak menarik untuk model data konseptual. Juga, mengubah struktur hubungan bisa transparan ke model konseptual. Seseorang dapat membagi satu relasi menjadi banyak relasi setelah menerapkan aturan normalisasi, atau dengan menggunakan tipe data enum untuk memodelkan tabel pencarian.
 
-During the design phase, the database developer should give great attention to the design, run a benchmark stack to ensure performance, and validate user requirements. Developers modeling simple systems could start coding directly. However, care should be taken when making the design, since data modeling involves not only algorithms in modeling the application but also data. The change in design might lead to a lot of complexities in the future such as data migration from one data structure to another.
+Model entitas-hubungan Model entitas-hubungan (ER) jatuh ke dalam kategori model data konseptual. Ini menangkap dan mewakili model data untuk pengguna bisnis dan pengembang. Model ER dapat ditransformasikan menjadi model relasional dengan mengikuti teknik-teknik tertentu.
 
-While designing a database schema, avoiding design pitfalls is not enough. There are alternative designs where one could be chosen. The following pitfalls should be avoided:
+Pemodelan konseptual adalah bagian dari siklus hidup pengembangan perangkat lunak (SDLC). Ini biasanya dilakukan setelah tahap pengumpulan-kebutuhan fungsional dan data. Pada titik ini, pengembang dapat membuat draf pertama diagram ER serta mendeskripsikan persyaratan fungsional menggunakan diagram aliran data, diagram urutan, cerita pengguna, dan banyak teknik lainnya.
 
-Data redundancy: Bad database designs elicit redundant data. Redundant data can cause several other problems, including data inconsistency and performance degradation. When updating a tuple that contains redundant data, the changes on the redundant data should be reflected in all the tuples that contain this data.
-Null saturation: By nature, some applications have sparse data, such as medical applications. Imagine a relation called diagnostics, which has hundreds of attributes for symptoms such as fever, headache, sneezing, and so on. Most of them are not valid for certain diagnostics, but they are valid in general. This could be modeled by utilizing complex data types such as JSON.
-Tight coupling: In some cases, tight coupling leads to complex and difficult-to-change data structures. Since business requirements change with time, some requirements might become obsolete. Modeling generalization and specialization (for example, a part-time student is a student) in a tightly coupled way may cause problems.
+Selama fase desain, pengembang basis data harus memberikan perhatian besar pada desain, menjalankan benchmark benchmark untuk memastikan kinerja, dan memvalidasi persyaratan pengguna. Pengembang memodelkan sistem sederhana bisa mulai mengkodekan secara langsung. Namun, kehati-hatian harus diambil ketika membuat desain, karena pemodelan data tidak hanya melibatkan algoritma dalam pemodelan aplikasi tetapi juga data. Perubahan dalam desain mungkin menyebabkan banyak kompleksitas di masa depan seperti migrasi data dari satu struktur data ke yang lain.
 
-Sebuah diagram ER pada dasarnya adalah cetak biru dari satu struktur basis data. Beberapa RDBMS menyediakan perangkat untuk menggambar diagram ER (contohnya Oracle Designer, MySQL workbench, PostgreSQL pgModeler) dan juga kadang menyediakan kemampuan untuk membuat struktur tabel yang telah dikonsepkan dalam bentuk diagram ke basis data.
+Saat merancang skema database, menghindari jebakan desain tidak cukup. Ada desain alternatif di mana seseorang dapat dipilih. Perangkap berikut harus dihindari:
 
-Dalam konteks GIS, ESRI menyediakan sebuah perangkat yang memungkinkan kita membuat geodatabase baru berdasarkan diagram dengan CASE (Computer-Aided Software Engineering) tools. Untuk lebih lanjutnya, Anda dapat membaca blog ini yang menyelaskan secara detil penggunaan CASE, Using Case tools in Arc GIS 10, {[}\url{http://blogs.esri.com/esri/arcgis/2010/08/05/using-case-tools-in-arcgis} -10/{]}.
+Redundansi data: Desain database yang buruk menghasilkan data yang berlebihan. Data yang berlebihan dapat menyebabkan beberapa masalah lain, termasuk inkonsistensi data dan penurunan kinerja. Saat memperbarui tuple yang berisi data redundan, perubahan pada data redundan harus tercermin dalam semua tupel yang berisi data ini. Saturasi total: Secara alami, beberapa aplikasi memiliki data yang jarang, seperti aplikasi medis. Bayangkan suatu hubungan yang disebut diagnosa, yang memiliki ratusan atribut untuk gejala seperti demam, sakit kepala, bersin, dan sebagainya. Sebagian besar tidak valid untuk diagnosa tertentu, tetapi secara umum valid. Ini bisa dimodelkan dengan menggunakan tipe data yang kompleks seperti JSON. Kopling ketat: Dalam beberapa kasus, kopling ketat menyebabkan struktur data yang kompleks dan sulit diubah. Karena persyaratan bisnis berubah seiring waktu, beberapa persyaratan mungkin menjadi usang. Pemodelan generalisasi dan spesialisasi (misalnya, seorang siswa paruh waktu adalah seorang siswa) dengan cara yang digabungkan secara ketat dapat menyebabkan masalah.
 
-\hypertarget{sample-application}{%
-\subsection{Sample application}\label{sample-application}}
+Sebuah diagram ER pada basis adalah cetak biru dari satu struktur basis data. Beberapa RDBMS menyediakan perangkat untuk menggambar diagram ER (contohnya Oracle Designer, MySQL workbench, PostgreSQL pgModeler) dan juga terkadang menyediakan kemampuan untuk membuat struktur tabel yang telah dikonsepkan dalam bentuk diagram ke basis data.
 
-In order to explain the basics of the ER model, an online web portal to buy and sell cars will be modeled. The requirements of this sample application are as follows, and an ER model will be developed step by step:
+Dalam konteks GIS, ESRI menyediakan perangkat yang memungkinkan kita membuat alat diagram geodatabase baru melalui CASE (Computer-Aided Software Engineering). Untuk lebih lanjutnya, Anda dapat membaca blog ini yang menjelaskan tentang penggunaan CASE, Menggunakan perkakas Case di Arc GIS 10, {[} \url{http://blogs.esri.com/esri/arcgis/2010/08/05/using-case-tools} -in-arcgis -10 /{]}.
 
-The portal provides the facility to register users online and provides different services for users based on their categories.
-Users might be sellers or normal users. The sellers can create new car advertisements; other users can explore and search for cars.
-All users should provide their full name and a valid email address during registration. The email address will be used for logging in.
-The seller should also provide an address.
-The user can rate the advertisement and the seller's service quality.
-All users' search history should be maintained for later use.
-The sellers have ranks and this affects the advertisement search; the rank is determined by the number of posted advertisements and the user's rank.
-The car advertisement has a date and the car can have many attributes such as color, number of doors, number of previous owners, registration number, pictures, and so on.
-Entities, attributes, and keys
-The ER diagram represents entities, attributes, and relationships. An entity is a representation of a real-world object such as a car or a user. An attribute is a property of an object and describes it. A relationship represents an association between two or more entities.
+\hypertarget{contoh-aplikasi}{%
+\subsection{Contoh aplikasi}\label{contoh-aplikasi}}
 
-The attributes might be composite or simple (atomic). Composite attributes can be divided into smaller subparts. A subpart of a composite attribute provides incomplete information that is semantically not useful by itself. For example, the address is composed of a street name, building number, and postal code. Any one of them isn't useful alone, without its counterparts.
+Untuk menjelaskan dasar-dasar model ER, portal web online untuk membeli dan menjual mobil akan dimodelkan. Persyaratan aplikasi sampel ini adalah sebagai berikut, dan model ER akan dikembangkan langkah demi langkah:
 
-Attributes could also be single-valued or multi-valued. The color of a bird is an example of a multi-valued attribute. It can be red and black, or a combination of any other colors. A multi-valued attribute can have a lower and upper bound to constrain the number of values allowed. In addition, some attributes can be derived from other attributes. Age can be derived from the birth date. In our example, the final rank of a seller is derived from the number of advertisements and the user ratings.
+Portal ini menyediakan fasilitas untuk mendaftarkan pengguna secara online dan menyediakan layanan yang berbeda untuk pengguna berdasarkan kategori mereka. Pengguna mungkin adalah penjual atau pengguna normal. Penjual dapat membuat iklan mobil baru; pengguna lain dapat menjelajahi dan mencari mobil. Semua pengguna harus memberikan nama lengkap dan alamat email yang valid saat pendaftaran. Alamat email akan digunakan untuk masuk. Penjual juga harus memberikan alamat. Pengguna dapat menilai iklan dan kualitas layanan penjual. Riwayat pencarian semua pengguna harus dipertahankan untuk digunakan nanti. Penjual memiliki peringkat dan ini mempengaruhi pencarian iklan; peringkat ditentukan oleh jumlah iklan yang dipasang dan peringkat pengguna. Iklan mobil memiliki tanggal dan mobil dapat memiliki banyak atribut seperti warna, jumlah pintu, jumlah pemilik sebelumnya, nomor registrasi, gambar, dan sebagainya. Entitas, atribut, dan kunci. Diagram ER mewakili entitas, atribut, dan hubungan. Entitas adalah representasi dari objek dunia nyata seperti mobil atau pengguna. Atribut adalah properti dari suatu objek dan menggambarkannya. Hubungan mewakili hubungan antara dua atau lebih entitas.
 
-Key attributes can identify an entity in the real world. A key attribute should be marked as a unique attribute, but not necessarily as a primary key, when physically modeling the relation. Finally, several attribute types could be grouped together to form a complex attribute:
+Atribut mungkin komposit atau sederhana (atom). Atribut komposit dapat dibagi menjadi beberapa bagian yang lebih kecil. Subbagian dari atribut gabungan memberikan informasi yang tidak lengkap yang secara semantik tidak berguna dengan sendirinya. Misalnya, alamat terdiri dari nama jalan, nomor gedung, dan kode pos. Salah satu dari mereka tidak berguna sendirian, tanpa rekan-rekannya.
+
+Atribut juga bisa bernilai tunggal atau multi-nilai. Warna burung adalah contoh atribut multi-nilai. Itu bisa merah dan hitam, atau kombinasi dari warna lain. Atribut multi-nilai dapat memiliki batas bawah dan atas untuk membatasi jumlah nilai yang diizinkan. Selain itu, beberapa atribut dapat diturunkan dari atribut lainnya. Usia dapat diturunkan dari tanggal lahir. Dalam contoh kami, peringkat akhir penjual berasal dari jumlah iklan dan peringkat pengguna.
+
+Atribut kunci dapat mengidentifikasi entitas di dunia nyata. Atribut kunci harus ditandai sebagai atribut unik, tetapi tidak harus sebagai kunci primer, ketika memodelkan relasi secara fisik. Akhirnya, beberapa tipe atribut dapat dikelompokkan bersama untuk membentuk atribut yang kompleks:
 
 \begin{figure}
 
@@ -316,46 +304,41 @@ Key attributes can identify an entity in the real world. A key attribute should 
 \caption{Simbol Entitas }\label{fig:fig11}
 \end{figure}
 
-Entities should have a name and a set of attributes. They are classified into the following:
+Entitas harus memiliki nama dan seperangkat atribut. Mereka diklasifikasikan menjadi sebagai berikut:
 
-Weak entity: Does not have key attributes of its own
-Strong entity/regular entity: Has a key attribute
-A weak entity is usually related to a strong entity. This strong entity is called the identifying entity. Weak entities have a partial key, also known as a discriminator, which is an attribute that can uniquely identify the weak entity, and it is related to the identifying entity. In our example, if we assume that the search key is distinct each time the user searches for cars, then the search key is the partial key. The weak entity symbol is distinguished by surrounding the entity box with a double line.
+Entitas lemah: Tidak memiliki atribut kunci dari entitas Kuatnya sendiri / entitas reguler: Memiliki atribut kunci Entitas yang lemah biasanya terkait dengan entitas yang kuat. Entitas yang kuat ini disebut entitas pengidentifikasi. Entitas yang lemah memiliki kunci parsial, juga dikenal sebagai diskriminator, yang merupakan atribut yang secara unik dapat mengidentifikasi entitas yang lemah, dan terkait dengan entitas yang mengidentifikasi. Dalam contoh kami, jika kami menganggap bahwa kunci pencarian berbeda setiap kali pengguna mencari mobil, maka kunci pencarian adalah kunci parsial. Simbol entitas yang lemah dibedakan dengan mengelilingi kotak entitas dengan garis ganda.
 
-The following diagram shows the preliminary design of a car portal application. The user entity has several attributes. The name attribute is a composite attribute, and email is a key attribute. The seller entity is a specialization of the user entity. The total rank is a derived attribute calculated by aggregating the user ratings and the number of advertisements. The color attribute of the car is multi-valued. The seller can be rated by the users for certain advertisements; this relation is a ternary relation, because the rating involves three entities, which are car, seller, and user.
+Diagram berikut menunjukkan desain awal aplikasi portal mobil. Entitas pengguna memiliki beberapa atribut. Atribut nama adalah atribut gabungan, dan email adalah atribut kunci. Entitas penjual adalah spesialisasi entitas pengguna. Peringkat total adalah atribut turunan yang dihitung dengan menggabungkan peringkat pengguna dan jumlah iklan. Atribut warna mobil ini bernilai multi. Penjual dapat dinilai oleh pengguna untuk iklan tertentu; hubungan ini adalah hubungan terner, karena peringkat melibatkan tiga entitas, yaitu mobil, penjual, dan pengguna.
 
-The car picture is a subpart attribute of the advertisement. The following diagram shows that the car can be advertised more than once by different sellers. In the real world, this makes sense, because one could ask more than one seller to sell his car:
+Gambar mobil adalah atribut sub bagian dari iklan. Diagram berikut menunjukkan bahwa mobil dapat diiklankan lebih dari satu kali oleh penjual yang berbeda. Di dunia nyata, ini masuk akal, karena orang dapat meminta lebih dari satu penjual untuk menjual mobilnya:
 
 \begin{center}\includegraphics[width=0.7\linewidth]{img/01/db_model2} \end{center}
 
-When an attribute of one entity refers to another entity, some relationships exist. In the ER model, these references should not be modeled as attributes but as relationships or weak entities. Similar to entities, there are two classes of relationships: weak and strong. Weak relationships associate the weak entities with other entities. Relationships can have attributes as entities. In our example, the car is advertised by the seller; the advertisement date is a property of the relationship.
+Ketika atribut dari satu entitas merujuk ke entitas lain, beberapa hubungan ada. Dalam model ER, referensi ini tidak boleh dimodelkan sebagai atribut tetapi sebagai hubungan atau entitas yang lemah. Mirip dengan entitas, ada dua kelas hubungan: lemah dan kuat. Hubungan yang lemah mengasosiasikan entitas yang lemah dengan entitas lain. Hubungan dapat memiliki atribut sebagai entitas. Dalam contoh kita, mobil diiklankan oleh penjual; tanggal iklan adalah properti hubungan.
 
-Relationships have cardinality constraints to limit the possible combinations of entities that participate in a relationship. The cardinality constraint of car and seller is 1:N; the car is advertised by one seller, and the seller can advertise many cars. The participation between seller and user is called total participation, and is denoted by a double line. This means that a seller cannot exist alone, and he must be a user.
+Hubungan memiliki batasan kardinalitas untuk membatasi kemungkinan kombinasi entitas yang berpartisipasi dalam suatu hubungan. Batasan utama mobil dan penjual adalah 1: N; mobil diiklankan oleh satu penjual, dan penjual dapat mengiklankan banyak mobil. Partisipasi antara penjual dan pengguna disebut partisipasi total, dan dilambangkan dengan garis ganda. Ini berarti bahwa penjual tidak dapat hidup sendiri, dan ia harus menjadi pengguna.
 
-Note
-The many-to-many relationship cardinality constraint is denoted by N:M to emphasize the different participation by the entities.
+Catatan
+
+Batasan hubungan kardinalitas banyak-ke-banyak dilambangkan dengan N: M untuk menekankan perbedaan partisipasi oleh entitas.
 
 \begin{center}\includegraphics[width=0.7\linewidth]{img/01/db_model3} \end{center}
 
-Up until now, only the basic concepts of ER diagrams have been covered. Some concepts, such as (min, max) cardinality notation, ternary/n-ary relationships, generalization, specialization, and enhanced entity relation(EER) diagrams, have not been discussed.
+Sampai sekarang, hanya konsep dasar diagram ER yang telah dibahas. Beberapa konsep, seperti notasi kardinalitas (min, maks), hubungan ternary / n-ary, generalisasi, spesialisasi, dan diagram entity entity (EER) yang disempurnakan, belum pernah dibahas.
 
-Mapping ER to relations
-The rules to map an ER diagram to a set of relations (that is, the database schema) are almost straightforward, but not rigid. One could model an entity as an attribute, and then refine it to a relationship. An attribute that belongs to several entities can be promoted to be an independent entity. The most common rules are as follows (note that only basic rules have been covered, and the list is not exhaustive):
+Memetakan ER ke relasi Aturan untuk memetakan diagram ER ke sekumpulan relasi (yaitu, skema basis data) hampir mudah, tetapi tidak kaku. Orang bisa memodelkan entitas sebagai atribut, dan kemudian memperbaikinya menjadi suatu hubungan. Atribut yang dimiliki beberapa entitas dapat dipromosikan menjadi entitas independen. Aturan yang paling umum adalah sebagai berikut (perhatikan bahwa hanya aturan dasar yang telah dicakup, dan daftarnya tidak lengkap):
 
-Map regular entities to relations. If entities have composite attributes, then include all the subparts of the attributes. Pick one of the key attributes as a primary key.
-Map weak entities to relations. Include simple attributes and the subparts of the composite attributes. Add a foreign key to reference the identifying entity. The primary key is normally the combination of the partial key and the foreign key.
-If a relationship has an attribute and the relation cardinality is 1:1, then the relation attribute can be assigned to one of the participating entities.
-If a relationship has an attribute and the relation cardinality is 1:N, then the relation attribute can be assigned to the participating entity on the N side.
-Map many-to-many relationships, also known as N:M, to a new relation. Add foreign keys to reference the participating entities. The primary key is the composition of foreign keys.
-Map a multi-valued attribute to a relation. Add a foreign key to reference the entity that owns the multi-valued attribute. The primary key is the composition of the foreign key and the multi-valued attribute.
-UML class diagrams
-Unified Modeling Language (UML) is a standard developed by the Object Management Group (OMG). UML diagrams are widely used in modeling software solutions, and there are several types of UML diagrams for different modeling purposes including class, use case, activity, and implementation diagrams.
+Memetakan entitas biasa ke hubungan. Jika entitas memiliki atribut gabungan, maka sertakan semua bagian dari atribut. Pilih salah satu atribut kunci sebagai kunci utama. Memetakan entitas yang lemah ke hubungan. Sertakan atribut sederhana dan sub bagian dari atribut komposit. Tambahkan kunci asing untuk referensi entitas yang mengidentifikasi. Kunci primer biasanya merupakan kombinasi dari kunci parsial dan kunci asing.
 
-A class diagram can represent several types of associations, that is, the relationship between classes. They can depict attributes as well as methods. An ER diagram can be easily translated into a UML class diagram. UML class diagrams also have the following advantages:
+Jika suatu hubungan memiliki atribut dan kardinalitas relasinya adalah 1: 1, maka atribut relasi tersebut dapat ditetapkan ke salah satu entitas yang berpartisipasi. Jika suatu hubungan memiliki atribut dan kardinalitas relasinya adalah 1: N, maka atribut relasi dapat ditetapkan ke entitas yang berpartisipasi di sisi N. Peta banyak-ke-banyak hubungan, juga dikenal sebagai N: M, ke hubungan baru. Tambahkan kunci asing untuk referensi entitas yang berpartisipasi. Kunci utama adalah komposisi kunci asing. Memetakan atribut multi-nilai ke suatu relasi. Tambahkan kunci asing untuk referensi entitas yang memiliki atribut multi-nilai. Kunci utama adalah komposisi kunci asing dan atribut multi-nilai.
 
-Code reverse-engineering: The database schema can be easily reversed to generate a UML class diagram.
-Modeling extended relational database objects: Modern relational databases have several object types such as sequences, views, indexes, functions, and stored procedures. UML class diagrams have the capability to represent these object types.
-The following class diagram is generated from reverse-engineering the SQL code of a car\_portaldatabase:
+Diagram kelas UML Unified Modeling Language (UML) adalah standar yang dikembangkan oleh Object Management Group (OMG). Diagram UML banyak digunakan dalam pemodelan solusi perangkat lunak, dan ada beberapa jenis diagram UML untuk berbagai tujuan pemodelan termasuk kelas, use case, aktivitas, dan diagram implementasi. Diagram kelas UML Unified Modeling Language (UML) adalah standar yang dikembangkan oleh Object Management Group (OMG).
+
+Diagram UML banyak digunakan dalam pemodelan solusi perangkat lunak, dan ada beberapa jenis diagram UML untuk berbagai tujuan pemodelan termasuk kelas, use case, aktivitas, dan diagram implementasi. Diagram kelas UML Unified Modeling Language (UML) adalah standar yang dikembangkan oleh Object Management Group (OMG). Diagram UML banyak digunakan dalam pemodelan solusi perangkat lunak, dan ada beberapa jenis diagram UML untuk berbagai tujuan pemodelan termasuk kelas, use case, aktivitas, dan diagram implementasi.
+
+Diagram kelas dapat mewakili beberapa jenis asosiasi, yaitu hubungan antar kelas. Mereka dapat menggambarkan atribut serta metode. Diagram ER dapat dengan mudah diterjemahkan ke dalam diagram kelas UML. Diagram kelas UML juga memiliki keuntungan sebagai berikut:
+
+Rekayasa ulang kode: Skema basis data dapat dengan mudah dibalik untuk menghasilkan diagram kelas UML. Pemodelan objek basis data relasional yang diperluas: Database relasional modern memiliki beberapa jenis objek seperti sekuens, tampilan, indeks, fungsi, dan prosedur tersimpan. Diagram kelas UML memiliki kemampuan untuk mewakili jenis objek ini. Diagram kelas berikut dihasilkan dari rekayasa ulang kode SQL dari car\_portaldatabase:
 
 \begin{center}\includegraphics[width=0.9\linewidth]{img/01/db_model4} \end{center}
 
