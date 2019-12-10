@@ -24,7 +24,7 @@
 <meta name="author" content="Firman Hadi" />
 
 
-<meta name="date" content="2019-11-12" />
+<meta name="date" content="2019-12-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -261,10 +261,10 @@
 <li>Perasa apa yang harus dibuat dalam jumlah yang lebih banyak?</li>
 </ul>
 <p>Tabel pesanan yang dapat dibuat pertama kali adalah seperti gambar berikut :</p>
-<p><img src="img/tab1_order.png" /></p>
+<p><img src="img/tab01_order.png" /></p>
 <p>Dengan skema di atas, masalah yang muncul adalah ketika mereka akan membuat sebuah query yang menghitung jumlah perasa vanilla yang diperlukan sesuai pesanan. Jumlahnya bercampur dengan nama perasa dan perasa apapun dapat dimasukkan ke dalam daftar di bagian mana saja (tidak akan konsisten dituliskan dalam kolom pertama atau kedua).</p>
 <p>Oleh karenanya, desain seperti berikut sepertinya lebih baik:</p>
-<p><img src="img/tab2_order.png" />
+<p><img src="img/tab02a_order.png" />
 Skema yang kedua ini lebih baik karena memungkinkan mereka untuk melakukan query perasa tertentu dan menjumlahkan kuantitasnya. Namun untuk menghitung perasa vanila yang diperlukan, mereka harus menghitung jumlahnya dari tiga kolom berbeda. Desain ini juga tidak akan dapat menjawab permasalahan apabila satu orang pelanggan memesan lebih dari tiga perasa.</p>
 <p>Desain seperti berikut mungkin menjawab pertanyaan di atas:</p>
 <p><img src="img/tab3_order.png" />
